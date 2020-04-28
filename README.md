@@ -26,10 +26,10 @@ Run: <br />
   $npm install <br />
   $npm start <br />
 <br />
-Try: <br />
+Try WebApps : https://[ip]:3000 <br />
 <br />
-Webapps  : https://[ip]:3000 <br />
 Username : admin <br />
 Password : password <br />
-Restfull : https://[ip]:3001/api-docs/ <br />
+<br />
+Try Restfull : https://[ip]:3001/api-docs/ <br />
 <br />
