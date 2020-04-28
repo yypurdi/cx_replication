@@ -8,9 +8,9 @@ Base Functions : <br />
 4. Payment Information <br />
 <br />
 Additional Funcations : <br />
-1. Messaging
-2. Video Conference for Agent Meeting
-3. Customer Line for Customer Interactive by VoIP
+1. Messaging <br />
+2. Video Conference for Agent Meeting <br />
+3. Customer Line for Customer Interactive by VoIP <br />
 <br />
 # Run:
   $npm install <br />
