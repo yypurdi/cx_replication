@@ -2,5 +2,5 @@
 Customer eXperience - Non Identical Replication
 
 # Run:
-npm install
+npm install \n
 npm start
