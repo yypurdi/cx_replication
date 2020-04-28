@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchDirectoryNumberMapper">			
+	
+	<select id="countDirectoryNumberSearch">
+		select count(*) from directory_number
+		<trim prefix="where" prefixOverrides="and">
+			<if test="dnId!=null">
+				and dn_id like #{dnId}
+			</if>
+			<if test="plcode!=null">
+				and plcode like #{plcode}
+			</if>
+			<if test="ndc!=null">
+				and ndc like #{ndc}
+			</if>
+			<if test="hlcode!=null">
+				and hlcode like #{hlcode}
+			</if>
+			<if test="dnNum!=null">
+				and dn_num like #{dnNum}
+			</if>
+			<if test="dnStatus!=null">
+				and dn_status like #{dnStatus}
+			</if>
+			<if test="dnStatusModDate!=null">
+				and dn_status_mod_date like #{dnStatusModDate}
+			</if>
+			<if test="dealerId!=null">
+				and dealer_id like #{dealerId}
+			</if>
+			<if test="dnAssignDate!=null">
+				and dn_assign_date like #{dnAssignDate}
+			</if>
+			<if test="dnPhoneFlag!=null">
+				and dn_phone_flag like #{dnPhoneFlag}
+			</if>
+			<if test="dnType!=null">
+				and dn_type like #{dnType}
+			</if>
+			<if test="dnStatusRequ!=null">
+				and dn_status_requ like #{dnStatusRequ}
+			</if>
+			<if test="dnStaRequDate!=null">
+				and dn_sta_requ_date like #{dnStaRequDate}
+			</if>
+			<if test="dnAssign!=null">
+				and dn_assign like #{dnAssign}
+			</if>
+			<if test="dnEntdate!=null">
+				and dn_entdate like #{dnEntdate}
+			</if>
+			<if test="dnModdate!=null">
+				and dn_moddate like #{dnModdate}
+			</if>
+			<if test="dnModflag!=null">
+				and dn_modflag like #{dnModflag}
+			</if>
+			<if test="dnAuth!=null">
+				and dn_auth like #{dnAuth}
+			</if>
+			<if test="evcode!=null">
+				and evcode like #{evcode}
+			</if>
+			<if test="hmcode!=null">
+				and hmcode like #{hmcode}
+			</if>
+			<if test="localPrefixLen!=null">
+				and local_prefix_len like #{localPrefixLen}
+			</if>
+			<if test="simpohId!=null">
+				and simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				and simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				and simpot_batch like #{simpotBatch}
+			</if>
+			<if test="externalInd!=null">
+				and external_ind like #{externalInd}
+			</if>
+			<if test="blockInd!=null">
+				and block_ind like #{blockInd}
+			</if>
+			<if test="extensionLengthMax!=null">
+				and extension_length_max like #{extensionLengthMax}
+			</if>
+			<if test="dnAuthPending!=null">
+				and dn_auth_pending like #{dnAuthPending}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="dirnumNpcode!=null">
+				and dirnum_npcode like #{dirnumNpcode}
+			</if>
+			<if test="vpnId!=null">
+				and vpn_id like #{vpnId}
+			</if>
+			<if test="staticPdpRequired!=null">
+				and static_pdp_required like #{staticPdpRequired}
+			</if>
+			<if test="roamingAllowed!=null">
+				and roaming_allowed like #{roamingAllowed}
+			</if>
+			<if test="transactionId!=null">
+				and transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+			<if test="reservedForPortingInd!=null">
+				and reserved_for_porting_ind like #{reservedForPortingInd}
+			</if>
+			<if test="portedNumberInd!=null">
+				and ported_number_ind like #{portedNumberInd}
+			</if>
+			<if test="rscode!=null">
+				and rscode like #{rscode}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchDirectoryNumber">
+		select * from directory_number  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="dnId!=null">
+				dn_id like #{dnId}
+			</if>
+			<if test="plcode!=null">
+				plcode like #{plcode}
+			</if>
+			<if test="ndc!=null">
+				ndc like #{ndc}
+			</if>
+			<if test="hlcode!=null">
+				hlcode like #{hlcode}
+			</if>
+			<if test="dnNum!=null">
+				dn_num like #{dnNum}
+			</if>
+			<if test="dnStatus!=null">
+				dn_status like #{dnStatus}
+			</if>
+			<if test="dnStatusModDate!=null">
+				dn_status_mod_date like #{dnStatusModDate}
+			</if>
+			<if test="dealerId!=null">
+				dealer_id like #{dealerId}
+			</if>
+			<if test="dnAssignDate!=null">
+				dn_assign_date like #{dnAssignDate}
+			</if>
+			<if test="dnPhoneFlag!=null">
+				dn_phone_flag like #{dnPhoneFlag}
+			</if>
+			<if test="dnType!=null">
+				dn_type like #{dnType}
+			</if>
+			<if test="dnStatusRequ!=null">
+				dn_status_requ like #{dnStatusRequ}
+			</if>
+			<if test="dnStaRequDate!=null">
+				dn_sta_requ_date like #{dnStaRequDate}
+			</if>
+			<if test="dnAssign!=null">
+				dn_assign like #{dnAssign}
+			</if>
+			<if test="dnEntdate!=null">
+				dn_entdate like #{dnEntdate}
+			</if>
+			<if test="dnModdate!=null">
+				dn_moddate like #{dnModdate}
+			</if>
+			<if test="dnModflag!=null">
+				dn_modflag like #{dnModflag}
+			</if>
+			<if test="dnAuth!=null">
+				dn_auth like #{dnAuth}
+			</if>
+			<if test="evcode!=null">
+				evcode like #{evcode}
+			</if>
+			<if test="hmcode!=null">
+				hmcode like #{hmcode}
+			</if>
+			<if test="localPrefixLen!=null">
+				local_prefix_len like #{localPrefixLen}
+			</if>
+			<if test="simpohId!=null">
+				simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				simpot_batch like #{simpotBatch}
+			</if>
+			<if test="externalInd!=null">
+				external_ind like #{externalInd}
+			</if>
+			<if test="blockInd!=null">
+				block_ind like #{blockInd}
+			</if>
+			<if test="extensionLengthMax!=null">
+				extension_length_max like #{extensionLengthMax}
+			</if>
+			<if test="dnAuthPending!=null">
+				dn_auth_pending like #{dnAuthPending}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="dirnumNpcode!=null">
+				dirnum_npcode like #{dirnumNpcode}
+			</if>
+			<if test="vpnId!=null">
+				vpn_id like #{vpnId}
+			</if>
+			<if test="staticPdpRequired!=null">
+				static_pdp_required like #{staticPdpRequired}
+			</if>
+			<if test="roamingAllowed!=null">
+				roaming_allowed like #{roamingAllowed}
+			</if>
+			<if test="transactionId!=null">
+				transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+			<if test="reservedForPortingInd!=null">
+				reserved_for_porting_ind like #{reservedForPortingInd}
+			</if>
+			<if test="portedNumberInd!=null">
+				ported_number_ind like #{portedNumberInd}
+			</if>
+			<if test="rscode!=null">
+				rscode like #{rscode}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

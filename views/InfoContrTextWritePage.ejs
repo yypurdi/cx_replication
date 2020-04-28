@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeInfoContrText" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.co_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text01.label%></td>
+                <td><input type="text" class="form-control" name="text01" value="<%=record.text01%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text02.label%></td>
+                <td><input type="text" class="form-control" name="text02" value="<%=record.text02%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text03.label%></td>
+                <td><input type="text" class="form-control" name="text03" value="<%=record.text03%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text04.label%></td>
+                <td><input type="text" class="form-control" name="text04" value="<%=record.text04%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text05.label%></td>
+                <td><input type="text" class="form-control" name="text05" value="<%=record.text05%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text06.label%></td>
+                <td><input type="text" class="form-control" name="text06" value="<%=record.text06%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text07.label%></td>
+                <td><input type="text" class="form-control" name="text07" value="<%=record.text07%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text08.label%></td>
+                <td><input type="text" class="form-control" name="text08" value="<%=record.text08%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text09.label%></td>
+                <td><input type="text" class="form-control" name="text09" value="<%=record.text09%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text10.label%></td>
+                <td><input type="text" class="form-control" name="text10" value="<%=record.text10%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text11.label%></td>
+                <td><input type="text" class="form-control" name="text11" value="<%=record.text11%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text12.label%></td>
+                <td><input type="text" class="form-control" name="text12" value="<%=record.text12%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text13.label%></td>
+                <td><input type="text" class="form-control" name="text13" value="<%=record.text13%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text14.label%></td>
+                <td><input type="text" class="form-control" name="text14" value="<%=record.text14%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text15.label%></td>
+                <td><input type="text" class="form-control" name="text15" value="<%=record.text15%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text16.label%></td>
+                <td><input type="text" class="form-control" name="text16" value="<%=record.text16%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text17.label%></td>
+                <td><input type="text" class="form-control" name="text17" value="<%=record.text17%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text18.label%></td>
+                <td><input type="text" class="form-control" name="text18" value="<%=record.text18%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text19.label%></td>
+                <td><input type="text" class="form-control" name="text19" value="<%=record.text19%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text20.label%></td>
+                <td><input type="text" class="form-control" name="text20" value="<%=record.text20%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text21.label%></td>
+                <td><input type="text" class="form-control" name="text21" value="<%=record.text21%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text22.label%></td>
+                <td><input type="text" class="form-control" name="text22" value="<%=record.text22%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text23.label%></td>
+                <td><input type="text" class="form-control" name="text23" value="<%=record.text23%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text24.label%></td>
+                <td><input type="text" class="form-control" name="text24" value="<%=record.text24%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text25.label%></td>
+                <td><input type="text" class="form-control" name="text25" value="<%=record.text25%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text26.label%></td>
+                <td><input type="text" class="form-control" name="text26" value="<%=record.text26%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text27.label%></td>
+                <td><input type="text" class="form-control" name="text27" value="<%=record.text27%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text28.label%></td>
+                <td><input type="text" class="form-control" name="text28" value="<%=record.text28%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text29.label%></td>
+                <td><input type="text" class="form-control" name="text29" value="<%=record.text29%>"/></td>
+            </tr><tr>
+                <td><%=resource.Text30.label%></td>
+                <td><input type="text" class="form-control" name="text30" value="<%=record.text30%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

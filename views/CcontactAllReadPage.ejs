@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CustomerId.label%></td>
+                        <td><%=record.customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccseq.label%></td>
+                        <td><%=record.ccseq%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cctitle.label%></td>
+                        <td><%=record.cctitle%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccname.label%></td>
+                        <td><%=record.ccname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccfname.label%></td>
+                        <td><%=record.ccfname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cclname.label%></td>
+                        <td><%=record.cclname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccstreet.label%></td>
+                        <td><%=record.ccstreet%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccstreetno.label%></td>
+                        <td><%=record.ccstreetno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cclnamemc.label%></td>
+                        <td><%=record.cclnamemc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccaddr1.label%></td>
+                        <td><%=record.ccaddr1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccaddr2.label%></td>
+                        <td><%=record.ccaddr2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccaddr3.label%></td>
+                        <td><%=record.ccaddr3%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cccity.label%></td>
+                        <td><%=record.cccity%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cczip.label%></td>
+                        <td><%=record.cczip%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cctn.label%></td>
+                        <td><%=record.cctn%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cctn2.label%></td>
+                        <td><%=record.cctn2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccfax.label%></td>
+                        <td><%=record.ccfax%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline1.label%></td>
+                        <td><%=record.ccline1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline2.label%></td>
+                        <td><%=record.ccline2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline3.label%></td>
+                        <td><%=record.ccline3%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline4.label%></td>
+                        <td><%=record.ccline4%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline5.label%></td>
+                        <td><%=record.ccline5%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccline6.label%></td>
+                        <td><%=record.ccline6%></td>						
+                    </tr><tr>
+                        <td><%=resource.CctnArea.label%></td>
+                        <td><%=record.cctn_area%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cctn2Area.label%></td>
+                        <td><%=record.cctn2_area%></td>						
+                    </tr><tr>
+                        <td><%=resource.CcfaxArea.label%></td>
+                        <td><%=record.ccfax_area%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccjobdesc.label%></td>
+                        <td><%=record.ccjobdesc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccdeftrk.label%></td>
+                        <td><%=record.ccdeftrk%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccuser.label%></td>
+                        <td><%=record.ccuser%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccbill.label%></td>
+                        <td><%=record.ccbill%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccbilldetails.label%></td>
+                        <td><%=record.ccbilldetails%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cccontract.label%></td>
+                        <td><%=record.cccontract%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccship.label%></td>
+                        <td><%=record.ccship%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccmagazine.label%></td>
+                        <td><%=record.ccmagazine%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccdirectory.label%></td>
+                        <td><%=record.ccdirectory%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccforward.label%></td>
+                        <td><%=record.ccforward%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccurgent.label%></td>
+                        <td><%=record.ccurgent%></td>						
+                    </tr><tr>
+                        <td><%=resource.Country.label%></td>
+                        <td><%=record.country%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cclanguage.label%></td>
+                        <td><%=record.cclanguage%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccadditional.label%></td>
+                        <td><%=record.ccadditional%></td>						
+                    </tr><tr>
+                        <td><%=resource.SortCriteria.label%></td>
+                        <td><%=record.sort_criteria%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccentdate.label%></td>
+                        <td><%=dateFormat(record.ccentdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccmoddate.label%></td>
+                        <td><%=dateFormat(record.ccmoddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccmod.label%></td>
+                        <td><%=record.ccmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cccounty.label%></td>
+                        <td><%=record.cccounty%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccstate.label%></td>
+                        <td><%=record.ccstate%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccvaliddate.label%></td>
+                        <td><%=dateFormat(record.ccvaliddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CcbillPrevious.label%></td>
+                        <td><%=record.ccbill_previous%></td>						
+                    </tr><tr>
+                        <td><%=resource.WelcomeCrit.label%></td>
+                        <td><%=record.welcome_crit%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccmname.label%></td>
+                        <td><%=record.ccmname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccemail.label%></td>
+                        <td><%=record.ccemail%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccaddryears.label%></td>
+                        <td><%=record.ccaddryears%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccsmsno.label%></td>
+                        <td><%=record.ccsmsno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccbilltemp.label%></td>
+                        <td><%=record.ccbilltemp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Userlastmod.label%></td>
+                        <td><%=record.userlastmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccvalidation.label%></td>
+                        <td><%=record.ccvalidation%></td>						
+                    </tr><tr>
+                        <td><%=resource.CcuserInst.label%></td>
+                        <td><%=record.ccuser_inst%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cclocation1.label%></td>
+                        <td><%=record.cclocation_1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cclocation2.label%></td>
+                        <td><%=record.cclocation_2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccremark.label%></td>
+                        <td><%=record.ccremark%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.MaritalStatus.label%></td>
+                        <td><%=record.marital_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csnationality.label%></td>
+                        <td><%=record.csnationality%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cssocialsecno.label%></td>
+                        <td><%=record.cssocialsecno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csdrivelicence.label%></td>
+                        <td><%=record.csdrivelicence%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csemployer.label%></td>
+                        <td><%=record.csemployer%></td>						
+                    </tr><tr>
+                        <td><%=resource.Employee.label%></td>
+                        <td><%=record.employee%></td>						
+                    </tr><tr>
+                        <td><%=resource.CompanyType.label%></td>
+                        <td><%=record.company_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.IdType.label%></td>
+                        <td><%=record.id_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.Passportno.label%></td>
+                        <td><%=record.passportno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Birthdate.label%></td>
+                        <td><%=dateFormat(record.birthdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscompregno.label%></td>
+                        <td><%=record.cscompregno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscomptaxno.label%></td>
+                        <td><%=record.cscomptaxno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscusttype.label%></td>
+                        <td><%=record.cscusttype%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ccsex.label%></td>
+                        <td><%=record.ccsex%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeCcontactAll?customerId=<%=record.customer_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteCcontactAll?customerId=<%=record.customer_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

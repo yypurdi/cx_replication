@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeInfoCustCombo" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customer_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo01.label%></td>
+                <td><input type="text" class="form-control" name="combo01" value="<%=record.combo01%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo02.label%></td>
+                <td><input type="text" class="form-control" name="combo02" value="<%=record.combo02%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo03.label%></td>
+                <td><input type="text" class="form-control" name="combo03" value="<%=record.combo03%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo04.label%></td>
+                <td><input type="text" class="form-control" name="combo04" value="<%=record.combo04%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo05.label%></td>
+                <td><input type="text" class="form-control" name="combo05" value="<%=record.combo05%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo06.label%></td>
+                <td><input type="text" class="form-control" name="combo06" value="<%=record.combo06%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo07.label%></td>
+                <td><input type="text" class="form-control" name="combo07" value="<%=record.combo07%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo08.label%></td>
+                <td><input type="text" class="form-control" name="combo08" value="<%=record.combo08%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo09.label%></td>
+                <td><input type="text" class="form-control" name="combo09" value="<%=record.combo09%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo10.label%></td>
+                <td><input type="text" class="form-control" name="combo10" value="<%=record.combo10%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo11.label%></td>
+                <td><input type="text" class="form-control" name="combo11" value="<%=record.combo11%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo12.label%></td>
+                <td><input type="text" class="form-control" name="combo12" value="<%=record.combo12%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo13.label%></td>
+                <td><input type="text" class="form-control" name="combo13" value="<%=record.combo13%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo14.label%></td>
+                <td><input type="text" class="form-control" name="combo14" value="<%=record.combo14%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo15.label%></td>
+                <td><input type="text" class="form-control" name="combo15" value="<%=record.combo15%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo16.label%></td>
+                <td><input type="text" class="form-control" name="combo16" value="<%=record.combo16%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo17.label%></td>
+                <td><input type="text" class="form-control" name="combo17" value="<%=record.combo17%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo18.label%></td>
+                <td><input type="text" class="form-control" name="combo18" value="<%=record.combo18%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo19.label%></td>
+                <td><input type="text" class="form-control" name="combo19" value="<%=record.combo19%>"/></td>
+            </tr><tr>
+                <td><%=resource.Combo20.label%></td>
+                <td><input type="text" class="form-control" name="combo20" value="<%=record.combo20%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

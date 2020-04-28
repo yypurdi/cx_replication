@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeContrDevicesMapper">			
+	
+	<update id="writeContrDevices">
+		update contr_devices set cd_id = #{cdId},
+		cd_seqno = #{cdSeqno},
+		co_id = #{coId},
+		port_id = #{portId},
+		dn_id = #{dnId},
+		eq_id = #{eqId},
+		cd_status = #{cdStatus},
+		cd_activ_date = #{cdActivDate},
+		cd_deactiv_date = #{cdDeactivDate},
+		cd_validfrom = #{cdValidfrom},
+		cd_entdate = #{cdEntdate},
+		cd_moddate = #{cdModdate},
+		cd_userlastmod = #{cdUserlastmod},
+		cd_sm_num = #{cdSmNum},
+		cd_channels = #{cdChannels},
+		cd_channels_excl = #{cdChannelsExcl},
+		cd_eq_num = #{cdEqNum},
+		cd_pending_state = #{cdPendingState},
+		cd_rs_id = #{cdRsId},
+		cd_plcode = #{cdPlcode},
+		hlcode = #{hlcode},
+		rec_version = #{recVersion} where cd_id = #{cdId};
+	</update>
+
+</mapper>

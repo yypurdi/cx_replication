@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writePrServStatusHistMapper">			
+	
+	<update id="writePrServStatusHist">
+		update pr_serv_status_hist set profile_id = #{profileId},
+		co_id = #{coId},
+		sncode = #{sncode},
+		histno = #{histno},
+		status = #{status},
+		reason = #{reason},
+		transactionno = #{transactionno},
+		valid_from_date = #{validFromDate},
+		entry_date = #{entryDate},
+		request_id = #{requestId},
+		rec_version = #{recVersion},
+		user_reason = #{userReason} where profile_id = #{profileId};
+	</update>
+
+</mapper>

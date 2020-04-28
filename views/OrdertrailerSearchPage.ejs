@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchOrdertrailer" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.Otxact.label%></td>    
+                <td><input type="text" class="form-control" name="otxact"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newOrdertrailer">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Ordertrailer.Otxact.header%></th>
+                <th><%=resource.Ordertrailer.Otseq.header%></th>
+                <th><%=resource.Ordertrailer.Otmeas.header%></th>
+                <th><%=resource.Ordertrailer.Otum.header%></th>
+                <th><%=resource.Ordertrailer.Otup.header%></th>
+                <th><%=resource.Ordertrailer.Otqord.header%></th>
+                <th><%=resource.Ordertrailer.Otqbkord.header%></th>
+                <th><%=resource.Ordertrailer.Otqtoshp.header%></th>
+                <th><%=resource.Ordertrailer.Otdftprc.header%></th>
+                <th><%=resource.Ordertrailer.Otprgroup.header%></th>
+                <th><%=resource.Ordertrailer.Otfrtwgt.header%></th>
+                <th><%=resource.Ordertrailer.Otjobcost.header%></th>
+                <th><%=resource.Ordertrailer.Otname.header%></th>
+                <th><%=resource.Ordertrailer.Otglsale.header%></th>
+                <th><%=resource.Ordertrailer.Otglcogs.header%></th>
+                <th><%=resource.Ordertrailer.Otglinv.header%></th>
+                <th><%=resource.Ordertrailer.Otqship.header%></th>
+                <th><%=resource.Ordertrailer.Otprmeas.header%></th>
+                <th><%=resource.Ordertrailer.Otprum.header%></th>
+                <th><%=resource.Ordertrailer.Otbillunits.header%></th>
+                <th><%=resource.Ordertrailer.Otinvunits.header%></th>
+                <th><%=resource.Ordertrailer.Otcostflg.header%></th>
+                <th><%=resource.Ordertrailer.Otinvalloc.header%></th>
+                <th><%=resource.Ordertrailer.Otshipdate.header%></th>
+                <th><%=resource.Ordertrailer.Sncode.header%></th>
+                <th><%=resource.Ordertrailer.OteqId.header%></th>
+                <th><%=resource.Ordertrailer.Oteqrate.header%></th>
+                <th><%=resource.Ordertrailer.Otleasing.header%></th>
+                <th><%=resource.Ordertrailer.OtleasFinish.header%></th>
+                <th><%=resource.Ordertrailer.Otflsqn.header%></th>
+                <th><%=resource.Ordertrailer.Otvplmn.header%></th>
+                <th><%=resource.Ordertrailer.Otflname.header%></th>
+                <th><%=resource.Ordertrailer.Otfct.header%></th>
+                <th><%=resource.Ordertrailer.Otlct.header%></th>
+                <th><%=resource.Ordertrailer.OtsimFrom.header%></th>
+                <th><%=resource.Ordertrailer.OtsimTo.header%></th>
+                <th><%=resource.Ordertrailer.OttransactionDate.header%></th>
+                <th><%=resource.Ordertrailer.ServcatCode.header%></th>
+                <th><%=resource.Ordertrailer.ServCode.header%></th>
+                <th><%=resource.Ordertrailer.ServType.header%></th>
+                <th><%=resource.Ordertrailer.TaxInclusiveInd.header%></th>
+                <th><%=resource.Ordertrailer.OtglDisc.header%></th>
+                <th><%=resource.Ordertrailer.OtjcidDisc.header%></th>
+                <th><%=resource.Ordertrailer.OtglMincom.header%></th>
+                <th><%=resource.Ordertrailer.OtjcidMincom.header%></th>
+                <th><%=resource.Ordertrailer.GlCurrency.header%></th>
+                <th><%=resource.Ordertrailer.DocumentCurrency.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtDiscGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtDiscGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtMincomGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtMincomGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtRevenueGl.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtRevenueGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchGl.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchGrossGl.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtDiscDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtDiscGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtMincomDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtMincomGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtRevenueDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtcuramtRevenueGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtgpriceDisDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtgpriceDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchDoc.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchGrossDoc.header%></th>
+                <th><%=resource.Ordertrailer.OttaxExemptedDoc.header%></th>
+                <th><%=resource.Ordertrailer.RecVersion.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtDiscGrossSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtMincomGrossSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtamtRevenueGrossSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtgpriceSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtgpriceDisSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.OtmerchGrossSecdoc.header%></th>
+                <th><%=resource.Ordertrailer.Otflrapflg.header%></th>
+                <th><%=resource.Ordertrailer.TapRefNo.header%></th>
+                <th><%=resource.Ordertrailer.TaxCalculationType.header%></th>
+                <th><%=resource.Ordertrailer.ProfileId.header%></th>
+                <th><%=resource.Ordertrailer.PaymentOption.header%></th>
+                <th><%=resource.Ordertrailer.BpCoId.header%></th>
+                <th><%=resource.Ordertrailer.Otcostcent.header%></th>
+                <th><%=resource.Ordertrailer.Otordnum.header%></th>
+                <th><%=resource.Ordertrailer.IncomingDocTaxItemSeqno.header%></th>
+                <th><%=resource.Ordertrailer.Tmcode.header%></th>
+                <th><%=resource.Ordertrailer.RateplanVscode.header%></th>
+                <th><%=resource.Ordertrailer.Spcode.header%></th>
+                <th><%=resource.Ordertrailer.InvoiceItemClassId.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.otxact%></a></td>
+                <td><a><%=row.otseq%></a></td>
+                <td><a><%=row.otmeas%></a></td>
+                <td><a><%=row.otum%></a></td>
+                <td><a><%=row.otup%></a></td>
+                <td><a><%=row.otqord%></a></td>
+                <td><a><%=row.otqbkord%></a></td>
+                <td><a><%=row.otqtoshp%></a></td>
+                <td><a><%=row.otdftprc%></a></td>
+                <td><a><%=row.otprgroup%></a></td>
+                <td><a><%=row.otfrtwgt%></a></td>
+                <td><a><%=row.otjobcost%></a></td>
+                <td><a><%=row.otname%></a></td>
+                <td><a><%=row.otglsale%></a></td>
+                <td><a><%=row.otglcogs%></a></td>
+                <td><a><%=row.otglinv%></a></td>
+                <td><a><%=row.otqship%></a></td>
+                <td><a><%=row.otprmeas%></a></td>
+                <td><a><%=row.otprum%></a></td>
+                <td><a><%=row.otbillunits%></a></td>
+                <td><a><%=row.otinvunits%></a></td>
+                <td><a><%=row.otcostflg%></a></td>
+                <td><a><%=row.otinvalloc%></a></td>
+                <td><a><%=dateFormat(row.otshipdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.sncode%></a></td>
+                <td><a><%=row.oteq_id%></a></td>
+                <td><a><%=row.oteqrate%></a></td>
+                <td><a><%=row.otleasing%></a></td>
+                <td><a><%=dateFormat(row.otleas_finish,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.otflsqn%></a></td>
+                <td><a><%=row.otvplmn%></a></td>
+                <td><a><%=row.otflname%></a></td>
+                <td><a><%=dateFormat(row.otfct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.otlct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.otsim_from%></a></td>
+                <td><a><%=row.otsim_to%></a></td>
+                <td><a><%=dateFormat(row.ottransaction_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.servcat_code%></a></td>
+                <td><a><%=row.serv_code%></a></td>
+                <td><a><%=row.serv_type%></a></td>
+                <td><a><%=row.tax_inclusive_ind%></a></td>
+                <td><a><%=row.otgl_disc%></a></td>
+                <td><a><%=row.otjcid_disc%></a></td>
+                <td><a><%=row.otgl_mincom%></a></td>
+                <td><a><%=row.otjcid_mincom%></a></td>
+                <td><a><%=row.gl_currency%></a></td>
+                <td><a><%=row.document_currency%></a></td>
+                <td><a><%=row.otamt_disc_gl%></a></td>
+                <td><a><%=row.otamt_disc_gross_gl%></a></td>
+                <td><a><%=row.otamt_mincom_gl%></a></td>
+                <td><a><%=row.otamt_mincom_gross_gl%></a></td>
+                <td><a><%=row.otamt_revenue_gl%></a></td>
+                <td><a><%=row.otamt_revenue_gross_gl%></a></td>
+                <td><a><%=row.otcuramt_disc_gl%></a></td>
+                <td><a><%=row.otcuramt_disc_gross_gl%></a></td>
+                <td><a><%=row.otcuramt_gl%></a></td>
+                <td><a><%=row.otcuramt_gross_gl%></a></td>
+                <td><a><%=row.otcuramt_mincom_gl%></a></td>
+                <td><a><%=row.otcuramt_mincom_gross_gl%></a></td>
+                <td><a><%=row.otcuramt_revenue_gl%></a></td>
+                <td><a><%=row.otcuramt_revenue_gross_gl%></a></td>
+                <td><a><%=row.otmerch_gl%></a></td>
+                <td><a><%=row.otmerch_gross_gl%></a></td>
+                <td><a><%=row.otamt_disc_doc%></a></td>
+                <td><a><%=row.otamt_disc_gross_doc%></a></td>
+                <td><a><%=row.otamt_mincom_doc%></a></td>
+                <td><a><%=row.otamt_mincom_gross_doc%></a></td>
+                <td><a><%=row.otamt_revenue_doc%></a></td>
+                <td><a><%=row.otamt_revenue_gross_doc%></a></td>
+                <td><a><%=row.otcuramt_disc_doc%></a></td>
+                <td><a><%=row.otcuramt_disc_gross_doc%></a></td>
+                <td><a><%=row.otcuramt_doc%></a></td>
+                <td><a><%=row.otcuramt_gross_doc%></a></td>
+                <td><a><%=row.otcuramt_mincom_doc%></a></td>
+                <td><a><%=row.otcuramt_mincom_gross_doc%></a></td>
+                <td><a><%=row.otcuramt_revenue_doc%></a></td>
+                <td><a><%=row.otcuramt_revenue_gross_doc%></a></td>
+                <td><a><%=row.otgprice_dis_doc%></a></td>
+                <td><a><%=row.otgprice_doc%></a></td>
+                <td><a><%=row.otmerch_doc%></a></td>
+                <td><a><%=row.otmerch_gross_doc%></a></td>
+                <td><a><%=row.ottax_exempted_doc%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.otamt_disc_secdoc%></a></td>
+                <td><a><%=row.otamt_disc_gross_secdoc%></a></td>
+                <td><a><%=row.otamt_mincom_secdoc%></a></td>
+                <td><a><%=row.otamt_mincom_gross_secdoc%></a></td>
+                <td><a><%=row.otamt_revenue_secdoc%></a></td>
+                <td><a><%=row.otamt_revenue_gross_secdoc%></a></td>
+                <td><a><%=row.otgprice_secdoc%></a></td>
+                <td><a><%=row.otgprice_dis_secdoc%></a></td>
+                <td><a><%=row.otmerch_secdoc%></a></td>
+                <td><a><%=row.otmerch__gross_secdoc%></a></td>
+                <td><a><%=row.otflrapflg%></a></td>
+                <td><a><%=row.tap_ref_no%></a></td>
+                <td><a><%=row.tax_calculation_type%></a></td>
+                <td><a><%=row.profile_id%></a></td>
+                <td><a><%=row.payment_option%></a></td>
+                <td><a><%=row.bp_co_id%></a></td>
+                <td><a><%=row.otcostcent%></a></td>
+                <td><a><%=row.otordnum%></a></td>
+                <td><a><%=row.incoming_doc_tax_item_seqno%></a></td>
+                <td><a><%=row.tmcode%></a></td>
+                <td><a><%=row.rateplan_vscode%></a></td>
+                <td><a><%=row.spcode%></a></td>
+                <td><a><%=row.invoice_item_class_id%></a></td>
+                
+                <td><a href="/readOrdertrailer?otxact=<%=row.otxact%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeOrdertrailer?otxact=<%=row.otxact%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteOrdertrailer?otxact=<%=row.otxact%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

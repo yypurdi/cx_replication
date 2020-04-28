@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeDirectoryNumberMapper">			
+	
+	<update id="writeDirectoryNumber">
+		update directory_number set dn_id = #{dnId},
+		plcode = #{plcode},
+		ndc = #{ndc},
+		hlcode = #{hlcode},
+		dn_num = #{dnNum},
+		dn_status = #{dnStatus},
+		dn_status_mod_date = #{dnStatusModDate},
+		dealer_id = #{dealerId},
+		dn_assign_date = #{dnAssignDate},
+		dn_phone_flag = #{dnPhoneFlag},
+		dn_type = #{dnType},
+		dn_status_requ = #{dnStatusRequ},
+		dn_sta_requ_date = #{dnStaRequDate},
+		dn_assign = #{dnAssign},
+		dn_entdate = #{dnEntdate},
+		dn_moddate = #{dnModdate},
+		dn_modflag = #{dnModflag},
+		dn_auth = #{dnAuth},
+		evcode = #{evcode},
+		hmcode = #{hmcode},
+		local_prefix_len = #{localPrefixLen},
+		simpoh_id = #{simpohId},
+		simpot_id = #{simpotId},
+		simpot_batch = #{simpotBatch},
+		external_ind = #{externalInd},
+		block_ind = #{blockInd},
+		extension_length_max = #{extensionLengthMax},
+		dn_auth_pending = #{dnAuthPending},
+		rec_version = #{recVersion},
+		dirnum_npcode = #{dirnumNpcode},
+		vpn_id = #{vpnId},
+		static_pdp_required = #{staticPdpRequired},
+		roaming_allowed = #{roamingAllowed},
+		transaction_id = #{transactionId},
+		business_unit_id = #{businessUnitId},
+		reserved_for_porting_ind = #{reservedForPortingInd},
+		ported_number_ind = #{portedNumberInd},
+		rscode = #{rscode} where dn_id = #{dnId};
+	</update>
+
+</mapper>

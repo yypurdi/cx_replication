@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newContrDevices" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CdId.label%></td>
+                <td><input type="text" class="form-control" name="cdId" value="<%=record.cdId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdSeqno.label%></td>
+                <td><input type="text" class="form-control" name="cdSeqno" value="<%=record.cdSeqno%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.coId%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortId.label%></td>
+                <td><input type="text" class="form-control" name="portId" value="<%=record.portId%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnId.label%></td>
+                <td><input type="text" class="form-control" name="dnId" value="<%=record.dnId%>"/></td>
+            </tr><tr>
+                <td><%=resource.EqId.label%></td>
+                <td><input type="text" class="form-control" name="eqId" value="<%=record.eqId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdStatus.label%></td>
+                <td><input type="text" class="form-control" name="cdStatus" value="<%=record.cdStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdActivDate.label%></td>
+                <td><input type="text" class="form-control" name="cdActivDate" value="<%=record.cdActivDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdDeactivDate.label%></td>
+                <td><input type="text" class="form-control" name="cdDeactivDate" value="<%=record.cdDeactivDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdValidfrom.label%></td>
+                <td><input type="text" class="form-control" name="cdValidfrom" value="<%=record.cdValidfrom%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdEntdate.label%></td>
+                <td><input type="text" class="form-control" name="cdEntdate" value="<%=record.cdEntdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdModdate.label%></td>
+                <td><input type="text" class="form-control" name="cdModdate" value="<%=record.cdModdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdUserlastmod.label%></td>
+                <td><input type="text" class="form-control" name="cdUserlastmod" value="<%=record.cdUserlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdSmNum.label%></td>
+                <td><input type="text" class="form-control" name="cdSmNum" value="<%=record.cdSmNum%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdChannels.label%></td>
+                <td><input type="text" class="form-control" name="cdChannels" value="<%=record.cdChannels%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdChannelsExcl.label%></td>
+                <td><input type="text" class="form-control" name="cdChannelsExcl" value="<%=record.cdChannelsExcl%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdEqNum.label%></td>
+                <td><input type="text" class="form-control" name="cdEqNum" value="<%=record.cdEqNum%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdPendingState.label%></td>
+                <td><input type="text" class="form-control" name="cdPendingState" value="<%=record.cdPendingState%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdRsId.label%></td>
+                <td><input type="text" class="form-control" name="cdRsId" value="<%=record.cdRsId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdPlcode.label%></td>
+                <td><input type="text" class="form-control" name="cdPlcode" value="<%=record.cdPlcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Hlcode.label%></td>
+                <td><input type="text" class="form-control" name="hlcode" value="<%=record.hlcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

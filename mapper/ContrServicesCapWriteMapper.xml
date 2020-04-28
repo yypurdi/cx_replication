@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeContrServicesCapMapper">			
+	
+	<update id="writeContrServicesCap">
+		update contr_services_cap set co_id = #{coId},
+		sncode = #{sncode},
+		seqno = #{seqno},
+		seqno_pre = #{seqnoPre},
+		bccode = #{bccode},
+		pending_bccode = #{pendingBccode},
+		dn_id = #{dnId},
+		dn_block_id = #{dnBlockId},
+		main_dirnum = #{mainDirnum},
+		cs_status = #{csStatus},
+		cs_activ_date = #{csActivDate},
+		cs_deactiv_date = #{csDeactivDate},
+		cs_request = #{csRequest},
+		rec_version = #{recVersion},
+		public_number_dn_id = #{publicNumberDnId},
+		vpn_id = #{vpnId},
+		public_block_id = #{publicBlockId},
+		profile_id = #{profileId},
+		dn_shown_in_bill = #{dnShownInBill},
+		request_id = #{requestId} where co_id = #{coId};
+	</update>
+
+</mapper>

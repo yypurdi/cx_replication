@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchOrderhdrAll" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.Ohxact.label%></td>    
+                <td><input type="text" class="form-control" name="ohxact"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newOrderhdrAll">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.OrderhdrAll.Ohxact.header%></th>
+                <th><%=resource.OrderhdrAll.Ohstatus.header%></th>
+                <th><%=resource.OrderhdrAll.Ohstatusflg.header%></th>
+                <th><%=resource.OrderhdrAll.Ohentdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohrefnum.header%></th>
+                <th><%=resource.OrderhdrAll.Ohtshdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsls.header%></th>
+                <th><%=resource.OrderhdrAll.CustomerId.header%></th>
+                <th><%=resource.OrderhdrAll.Ohcseq.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsname.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsaddr1.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsaddr2.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsaddr3.header%></th>
+                <th><%=resource.OrderhdrAll.Ohscity.header%></th>
+                <th><%=resource.OrderhdrAll.Ohsst.header%></th>
+                <th><%=resource.OrderhdrAll.Ohszip.header%></th>
+                <th><%=resource.OrderhdrAll.Ohscountry.header%></th>
+                <th><%=resource.OrderhdrAll.Ohscrc.header%></th>
+                <th><%=resource.OrderhdrAll.Ohattn.header%></th>
+                <th><%=resource.OrderhdrAll.Ohtrucker.header%></th>
+                <th><%=resource.OrderhdrAll.Ohponum.header%></th>
+                <th><%=resource.OrderhdrAll.Ohrelease.header%></th>
+                <th><%=resource.OrderhdrAll.Ohpsno.header%></th>
+                <th><%=resource.OrderhdrAll.Ohfrtterms.header%></th>
+                <th><%=resource.OrderhdrAll.Ohordtyp.header%></th>
+                <th><%=resource.OrderhdrAll.Ohcandate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohassocxact.header%></th>
+                <th><%=resource.OrderhdrAll.Ohprt1.header%></th>
+                <th><%=resource.OrderhdrAll.Ohprt2.header%></th>
+                <th><%=resource.OrderhdrAll.Ohprt3.header%></th>
+                <th><%=resource.OrderhdrAll.Ohuserid.header%></th>
+                <th><%=resource.OrderhdrAll.Ohrefdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohshpdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohduedate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohipp.header%></th>
+                <th><%=resource.OrderhdrAll.Ohilpp.header%></th>
+                <th><%=resource.OrderhdrAll.Ohpostgl.header%></th>
+                <th><%=resource.OrderhdrAll.Ohpostar.header%></th>
+                <th><%=resource.OrderhdrAll.OharcustomerId.header%></th>
+                <th><%=resource.OrderhdrAll.Ohglar.header%></th>
+                <th><%=resource.OrderhdrAll.Ohdisdate.header%></th>
+                <th><%=resource.OrderhdrAll.DdebitFlag.header%></th>
+                <th><%=resource.OrderhdrAll.Oharflg.header%></th>
+                <th><%=resource.OrderhdrAll.Ohinvtype.header%></th>
+                <th><%=resource.OrderhdrAll.Ohfulfildate.header%></th>
+                <th><%=resource.OrderhdrAll.OhpaymentId.header%></th>
+                <th><%=resource.OrderhdrAll.Ohpostfibu.header%></th>
+                <th><%=resource.OrderhdrAll.Ohreason.header%></th>
+                <th><%=resource.OrderhdrAll.OhrsId.header%></th>
+                <th><%=resource.OrderhdrAll.Ohddhflag.header%></th>
+                <th><%=resource.OrderhdrAll.Ohddhdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohfct.header%></th>
+                <th><%=resource.OrderhdrAll.Ohlct.header%></th>
+                <th><%=resource.OrderhdrAll.Ohmod.header%></th>
+                <th><%=resource.OrderhdrAll.Ohxrate.header%></th>
+                <th><%=resource.OrderhdrAll.Oheccode.header%></th>
+                <th><%=resource.OrderhdrAll.Ohecname.header%></th>
+                <th><%=resource.OrderhdrAll.Ohglexact.header%></th>
+                <th><%=resource.OrderhdrAll.Ohdunstep.header%></th>
+                <th><%=resource.OrderhdrAll.Ohflfct.header%></th>
+                <th><%=resource.OrderhdrAll.Ohfllct.header%></th>
+                <th><%=resource.OrderhdrAll.CoId.header%></th>
+                <th><%=resource.OrderhdrAll.Complaint.header%></th>
+                <th><%=resource.OrderhdrAll.ComplaintDate.header%></th>
+                <th><%=resource.OrderhdrAll.RtxStatus.header%></th>
+                <th><%=resource.OrderhdrAll.Ohbillseqno.header%></th>
+                <th><%=resource.OrderhdrAll.Ohcancelflag.header%></th>
+                <th><%=resource.OrderhdrAll.ConvdateExchange.header%></th>
+                <th><%=resource.OrderhdrAll.OhglexactTax.header%></th>
+                <th><%=resource.OrderhdrAll.GlacodeDiff.header%></th>
+                <th><%=resource.OrderhdrAll.JobcostIdDiff.header%></th>
+                <th><%=resource.OrderhdrAll.TaxRoundingFlag.header%></th>
+                <th><%=resource.OrderhdrAll.GlCurrency.header%></th>
+                <th><%=resource.OrderhdrAll.DocumentCurrency.header%></th>
+                <th><%=resource.OrderhdrAll.DocumentConvratetypeId.header%></th>
+                <th><%=resource.OrderhdrAll.SecondaryCurrency.header%></th>
+                <th><%=resource.OrderhdrAll.SecondaryConvratetypeId.header%></th>
+                <th><%=resource.OrderhdrAll.OhinvamtGl.header%></th>
+                <th><%=resource.OrderhdrAll.OhopnamtGl.header%></th>
+                <th><%=resource.OrderhdrAll.OhdisamtGl.header%></th>
+                <th><%=resource.OrderhdrAll.OhdistakamtGl.header%></th>
+                <th><%=resource.OrderhdrAll.OhtaxamtGl.header%></th>
+                <th><%=resource.OrderhdrAll.TaxamtDiffGl.header%></th>
+                <th><%=resource.OrderhdrAll.OhinvamtDoc.header%></th>
+                <th><%=resource.OrderhdrAll.OhopnamtDoc.header%></th>
+                <th><%=resource.OrderhdrAll.OhdisamtDoc.header%></th>
+                <th><%=resource.OrderhdrAll.OhdistakamtDoc.header%></th>
+                <th><%=resource.OrderhdrAll.OhtaxamtDoc.header%></th>
+                <th><%=resource.OrderhdrAll.GlConvratetypeId.header%></th>
+                <th><%=resource.OrderhdrAll.FeeBalance.header%></th>
+                <th><%=resource.OrderhdrAll.FeeBalanceGross.header%></th>
+                <th><%=resource.OrderhdrAll.Currency.header%></th>
+                <th><%=resource.OrderhdrAll.Ohcostcent.header%></th>
+                <th><%=resource.OrderhdrAll.RecVersion.header%></th>
+                <th><%=resource.OrderhdrAll.OhinvamtSecdoc.header%></th>
+                <th><%=resource.OrderhdrAll.TaxamtDiffSecdoc.header%></th>
+                <th><%=resource.OrderhdrAll.Paymentfailed.header%></th>
+                <th><%=resource.OrderhdrAll.BillingAccountId.header%></th>
+                <th><%=resource.OrderhdrAll.BalancePageEventDate.header%></th>
+                <th><%=resource.OrderhdrAll.PrepaidBalanceChangeDoc.header%></th>
+                <th><%=resource.OrderhdrAll.PrepaidBalanceChangeGl.header%></th>
+                <th><%=resource.OrderhdrAll.PrepaidGlacode.header%></th>
+                <th><%=resource.OrderhdrAll.PrepaidTaxamtDiffGl.header%></th>
+                <th><%=resource.OrderhdrAll.PrepaidTaxDiffGlacode.header%></th>
+                <th><%=resource.OrderhdrAll.PaymentConditionId.header%></th>
+                <th><%=resource.OrderhdrAll.Ohdocstatus.header%></th>
+                <th><%=resource.OrderhdrAll.Ohextrefdate.header%></th>
+                <th><%=resource.OrderhdrAll.Ohextrefnum.header%></th>
+                <th><%=resource.OrderhdrAll.Ohcmident.header%></th>
+                <th><%=resource.OrderhdrAll.Ohremark.header%></th>
+                <th><%=resource.OrderhdrAll.OhdiscbaseDoc.header%></th>
+                <th><%=resource.OrderhdrAll.Ohproppaycurr.header%></th>
+                <th><%=resource.OrderhdrAll.Ohproppaydate.header%></th>
+                <th><%=resource.OrderhdrAll.OhprocessType.header%></th>
+                <th><%=resource.OrderhdrAll.OhprocessDate.header%></th>
+                <th><%=resource.OrderhdrAll.BusinessUnitId.header%></th>
+                <th><%=resource.OrderhdrAll.ProposedPaymentMethod.header%></th>
+                <th><%=resource.OrderhdrAll.ReasonId.header%></th>
+                <th><%=resource.OrderhdrAll.IncomingDocPricingType.header%></th>
+                <th><%=resource.OrderhdrAll.IncomingDocTaxPerItem.header%></th>
+                <th><%=resource.OrderhdrAll.PaymentProposalId.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.ohxact%></a></td>
+                <td><a><%=row.ohstatus%></a></td>
+                <td><a><%=row.ohstatusflg%></a></td>
+                <td><a><%=dateFormat(row.ohentdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohrefnum%></a></td>
+                <td><a><%=dateFormat(row.ohtshdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohsls%></a></td>
+                <td><a><%=row.customer_id%></a></td>
+                <td><a><%=row.ohcseq%></a></td>
+                <td><a><%=row.ohsname%></a></td>
+                <td><a><%=row.ohsaddr1%></a></td>
+                <td><a><%=row.ohsaddr2%></a></td>
+                <td><a><%=row.ohsaddr3%></a></td>
+                <td><a><%=row.ohscity%></a></td>
+                <td><a><%=row.ohsst%></a></td>
+                <td><a><%=row.ohszip%></a></td>
+                <td><a><%=row.ohscountry%></a></td>
+                <td><a><%=row.ohscrc%></a></td>
+                <td><a><%=row.ohattn%></a></td>
+                <td><a><%=row.ohtrucker%></a></td>
+                <td><a><%=row.ohponum%></a></td>
+                <td><a><%=dateFormat(row.ohrelease,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohpsno%></a></td>
+                <td><a><%=row.ohfrtterms%></a></td>
+                <td><a><%=row.ohordtyp%></a></td>
+                <td><a><%=dateFormat(row.ohcandate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohassocxact%></a></td>
+                <td><a><%=row.ohprt1%></a></td>
+                <td><a><%=row.ohprt2%></a></td>
+                <td><a><%=row.ohprt3%></a></td>
+                <td><a><%=row.ohuserid%></a></td>
+                <td><a><%=dateFormat(row.ohrefdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohshpdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohduedate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohipp%></a></td>
+                <td><a><%=row.ohilpp%></a></td>
+                <td><a><%=dateFormat(row.ohpostgl,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohpostar,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.oharcustomer_id%></a></td>
+                <td><a><%=row.ohglar%></a></td>
+                <td><a><%=dateFormat(row.ohdisdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ddebit_flag%></a></td>
+                <td><a><%=row.oharflg%></a></td>
+                <td><a><%=row.ohinvtype%></a></td>
+                <td><a><%=dateFormat(row.ohfulfildate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohpayment_id%></a></td>
+                <td><a><%=dateFormat(row.ohpostfibu,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohreason%></a></td>
+                <td><a><%=row.ohrs_id%></a></td>
+                <td><a><%=row.ohddhflag%></a></td>
+                <td><a><%=dateFormat(row.ohddhdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohfct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohlct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohmod%></a></td>
+                <td><a><%=row.ohxrate%></a></td>
+                <td><a><%=row.oheccode%></a></td>
+                <td><a><%=row.ohecname%></a></td>
+                <td><a><%=row.ohglexact%></a></td>
+                <td><a><%=row.ohdunstep%></a></td>
+                <td><a><%=dateFormat(row.ohflfct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ohfllct,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_id%></a></td>
+                <td><a><%=row.complaint%></a></td>
+                <td><a><%=dateFormat(row.complaint_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.rtx_status%></a></td>
+                <td><a><%=row.ohbillseqno%></a></td>
+                <td><a><%=row.ohcancelflag%></a></td>
+                <td><a><%=dateFormat(row.convdate_exchange,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohglexact_tax%></a></td>
+                <td><a><%=row.glacode_diff%></a></td>
+                <td><a><%=row.jobcost_id_diff%></a></td>
+                <td><a><%=row.tax_rounding_flag%></a></td>
+                <td><a><%=row.gl_currency%></a></td>
+                <td><a><%=row.document_currency%></a></td>
+                <td><a><%=row.document_convratetype_id%></a></td>
+                <td><a><%=row.secondary_currency%></a></td>
+                <td><a><%=row.secondary_convratetype_id%></a></td>
+                <td><a><%=row.ohinvamt_gl%></a></td>
+                <td><a><%=row.ohopnamt_gl%></a></td>
+                <td><a><%=row.ohdisamt_gl%></a></td>
+                <td><a><%=row.ohdistakamt_gl%></a></td>
+                <td><a><%=row.ohtaxamt_gl%></a></td>
+                <td><a><%=row.taxamt_diff_gl%></a></td>
+                <td><a><%=row.ohinvamt_doc%></a></td>
+                <td><a><%=row.ohopnamt_doc%></a></td>
+                <td><a><%=row.ohdisamt_doc%></a></td>
+                <td><a><%=row.ohdistakamt_doc%></a></td>
+                <td><a><%=row.ohtaxamt_doc%></a></td>
+                <td><a><%=row.gl_convratetype_id%></a></td>
+                <td><a><%=row.fee_balance%></a></td>
+                <td><a><%=row.fee_balance_gross%></a></td>
+                <td><a><%=row.currency%></a></td>
+                <td><a><%=row.ohcostcent%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.ohinvamt_secdoc%></a></td>
+                <td><a><%=row.taxamt_diff_secdoc%></a></td>
+                <td><a><%=row.paymentfailed%></a></td>
+                <td><a><%=row.billing_account_id%></a></td>
+                <td><a><%=dateFormat(row.balance_page_event_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.prepaid_balance_change_doc%></a></td>
+                <td><a><%=row.prepaid_balance_change_gl%></a></td>
+                <td><a><%=row.prepaid_glacode%></a></td>
+                <td><a><%=row.prepaid_taxamt_diff_gl%></a></td>
+                <td><a><%=row.prepaid_tax_diff_glacode%></a></td>
+                <td><a><%=row.payment_condition_id%></a></td>
+                <td><a><%=row.ohdocstatus%></a></td>
+                <td><a><%=dateFormat(row.ohextrefdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohextrefnum%></a></td>
+                <td><a><%=row.ohcmident%></a></td>
+                <td><a><%=row.ohremark%></a></td>
+                <td><a><%=row.ohdiscbase_doc%></a></td>
+                <td><a><%=row.ohproppaycurr%></a></td>
+                <td><a><%=dateFormat(row.ohproppaydate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ohprocess_type%></a></td>
+                <td><a><%=dateFormat(row.ohprocess_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.business_unit_id%></a></td>
+                <td><a><%=row.proposed_payment_method%></a></td>
+                <td><a><%=row.reason_id%></a></td>
+                <td><a><%=row.incoming_doc_pricing_type%></a></td>
+                <td><a><%=row.incoming_doc_tax_per_item%></a></td>
+                <td><a><%=row.payment_proposal_id%></a></td>
+                
+                <td><a href="/readOrderhdrAll?ohxact=<%=row.ohxact%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeOrderhdrAll?ohxact=<%=row.ohxact%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteOrderhdrAll?ohxact=<%=row.ohxact%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

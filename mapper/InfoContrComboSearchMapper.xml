@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchInfoContrComboMapper">			
+	
+	<select id="countInfoContrComboSearch">
+		select count(*) from info_contr_combo
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="combo01!=null">
+				and combo01 like #{combo01}
+			</if>
+			<if test="combo02!=null">
+				and combo02 like #{combo02}
+			</if>
+			<if test="combo03!=null">
+				and combo03 like #{combo03}
+			</if>
+			<if test="combo04!=null">
+				and combo04 like #{combo04}
+			</if>
+			<if test="combo05!=null">
+				and combo05 like #{combo05}
+			</if>
+			<if test="combo06!=null">
+				and combo06 like #{combo06}
+			</if>
+			<if test="combo07!=null">
+				and combo07 like #{combo07}
+			</if>
+			<if test="combo08!=null">
+				and combo08 like #{combo08}
+			</if>
+			<if test="combo09!=null">
+				and combo09 like #{combo09}
+			</if>
+			<if test="combo10!=null">
+				and combo10 like #{combo10}
+			</if>
+			<if test="combo11!=null">
+				and combo11 like #{combo11}
+			</if>
+			<if test="combo12!=null">
+				and combo12 like #{combo12}
+			</if>
+			<if test="combo13!=null">
+				and combo13 like #{combo13}
+			</if>
+			<if test="combo14!=null">
+				and combo14 like #{combo14}
+			</if>
+			<if test="combo15!=null">
+				and combo15 like #{combo15}
+			</if>
+			<if test="combo16!=null">
+				and combo16 like #{combo16}
+			</if>
+			<if test="combo17!=null">
+				and combo17 like #{combo17}
+			</if>
+			<if test="combo18!=null">
+				and combo18 like #{combo18}
+			</if>
+			<if test="combo19!=null">
+				and combo19 like #{combo19}
+			</if>
+			<if test="combo20!=null">
+				and combo20 like #{combo20}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchInfoContrCombo">
+		select * from info_contr_combo  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="combo01!=null">
+				combo01 like #{combo01}
+			</if>
+			<if test="combo02!=null">
+				combo02 like #{combo02}
+			</if>
+			<if test="combo03!=null">
+				combo03 like #{combo03}
+			</if>
+			<if test="combo04!=null">
+				combo04 like #{combo04}
+			</if>
+			<if test="combo05!=null">
+				combo05 like #{combo05}
+			</if>
+			<if test="combo06!=null">
+				combo06 like #{combo06}
+			</if>
+			<if test="combo07!=null">
+				combo07 like #{combo07}
+			</if>
+			<if test="combo08!=null">
+				combo08 like #{combo08}
+			</if>
+			<if test="combo09!=null">
+				combo09 like #{combo09}
+			</if>
+			<if test="combo10!=null">
+				combo10 like #{combo10}
+			</if>
+			<if test="combo11!=null">
+				combo11 like #{combo11}
+			</if>
+			<if test="combo12!=null">
+				combo12 like #{combo12}
+			</if>
+			<if test="combo13!=null">
+				combo13 like #{combo13}
+			</if>
+			<if test="combo14!=null">
+				combo14 like #{combo14}
+			</if>
+			<if test="combo15!=null">
+				combo15 like #{combo15}
+			</if>
+			<if test="combo16!=null">
+				combo16 like #{combo16}
+			</if>
+			<if test="combo17!=null">
+				combo17 like #{combo17}
+			</if>
+			<if test="combo18!=null">
+				combo18 like #{combo18}
+			</if>
+			<if test="combo19!=null">
+				combo19 like #{combo19}
+			</if>
+			<if test="combo20!=null">
+				combo20 like #{combo20}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

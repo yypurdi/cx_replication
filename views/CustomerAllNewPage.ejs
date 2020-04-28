@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newCustomerAll" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CustomerIdHigh.label%></td>
+                <td><input type="text" class="form-control" name="customerIdHigh" value="<%=record.customerIdHigh%>"/></td>
+            </tr><tr>
+                <td><%=resource.Custcode.label%></td>
+                <td><input type="text" class="form-control" name="custcode" value="<%=record.custcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csst.label%></td>
+                <td><input type="text" class="form-control" name="csst" value="<%=record.csst%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cstype.label%></td>
+                <td><input type="text" class="form-control" name="cstype" value="<%=record.cstype%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csactivated.label%></td>
+                <td><input type="text" class="form-control" name="csactivated" value="<%=record.csactivated%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csdeactivated.label%></td>
+                <td><input type="text" class="form-control" name="csdeactivated" value="<%=record.csdeactivated%>"/></td>
+            </tr><tr>
+                <td><%=resource.CstypeDate.label%></td>
+                <td><input type="text" class="form-control" name="cstypeDate" value="<%=record.cstypeDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cslevel.label%></td>
+                <td><input type="text" class="form-control" name="cslevel" value="<%=record.cslevel%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cslvlname.label%></td>
+                <td><input type="text" class="form-control" name="cslvlname" value="<%=record.cslvlname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Tmcode.label%></td>
+                <td><input type="text" class="form-control" name="tmcode" value="<%=record.tmcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Prgcode.label%></td>
+                <td><input type="text" class="form-control" name="prgcode" value="<%=record.prgcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csclimit.label%></td>
+                <td><input type="text" class="form-control" name="csclimit" value="<%=record.csclimit%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscurbalance.label%></td>
+                <td><input type="text" class="form-control" name="cscurbalance" value="<%=record.cscurbalance%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csdepdate.label%></td>
+                <td><input type="text" class="form-control" name="csdepdate" value="<%=record.csdepdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cstestbillrun.label%></td>
+                <td><input type="text" class="form-control" name="cstestbillrun" value="<%=record.cstestbillrun%>"/></td>
+            </tr><tr>
+                <td><%=resource.BillLayout.label%></td>
+                <td><input type="text" class="form-control" name="billLayout" value="<%=record.billLayout%>"/></td>
+            </tr><tr>
+                <td><%=resource.Paymntresp.label%></td>
+                <td><input type="text" class="form-control" name="paymntresp" value="<%=record.paymntresp%>"/></td>
+            </tr><tr>
+                <td><%=resource.TargetReached.label%></td>
+                <td><input type="text" class="form-control" name="targetReached" value="<%=record.targetReached%>"/></td>
+            </tr><tr>
+                <td><%=resource.Pcsmethpaymnt.label%></td>
+                <td><input type="text" class="form-control" name="pcsmethpaymnt" value="<%=record.pcsmethpaymnt%>"/></td>
+            </tr><tr>
+                <td><%=resource.DunningFlag.label%></td>
+                <td><input type="text" class="form-control" name="dunningFlag" value="<%=record.dunningFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.CommNo.label%></td>
+                <td><input type="text" class="form-control" name="commNo" value="<%=record.commNo%>"/></td>
+            </tr><tr>
+                <td><%=resource.PosCommType.label%></td>
+                <td><input type="text" class="form-control" name="posCommType" value="<%=record.posCommType%>"/></td>
+            </tr><tr>
+                <td><%=resource.BtxPassword.label%></td>
+                <td><input type="text" class="form-control" name="btxPassword" value="<%=record.btxPassword%>"/></td>
+            </tr><tr>
+                <td><%=resource.BtxUser.label%></td>
+                <td><input type="text" class="form-control" name="btxUser" value="<%=record.btxUser%>"/></td>
+            </tr><tr>
+                <td><%=resource.SettlesPMonth.label%></td>
+                <td><input type="text" class="form-control" name="settlesPMonth" value="<%=record.settlesPMonth%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cashretour.label%></td>
+                <td><input type="text" class="form-control" name="cashretour" value="<%=record.cashretour%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cstradecode.label%></td>
+                <td><input type="text" class="form-control" name="cstradecode" value="<%=record.cstradecode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cspassword.label%></td>
+                <td><input type="text" class="form-control" name="cspassword" value="<%=record.cspassword%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cspromotion.label%></td>
+                <td><input type="text" class="form-control" name="cspromotion" value="<%=record.cspromotion%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csreason.label%></td>
+                <td><input type="text" class="form-control" name="csreason" value="<%=record.csreason%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscollector.label%></td>
+                <td><input type="text" class="form-control" name="cscollector" value="<%=record.cscollector%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscontresp.label%></td>
+                <td><input type="text" class="form-control" name="cscontresp" value="<%=record.cscontresp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csdeposit.label%></td>
+                <td><input type="text" class="form-control" name="csdeposit" value="<%=record.csdeposit%>"/></td>
+            </tr><tr>
+                <td><%=resource.CscreditDate.label%></td>
+                <td><input type="text" class="form-control" name="cscreditDate" value="<%=record.cscreditDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CscreditRemark.label%></td>
+                <td><input type="text" class="form-control" name="cscreditRemark" value="<%=record.cscreditRemark%>"/></td>
+            </tr><tr>
+                <td><%=resource.Suspended.label%></td>
+                <td><input type="text" class="form-control" name="suspended" value="<%=record.suspended%>"/></td>
+            </tr><tr>
+                <td><%=resource.Reactivated.label%></td>
+                <td><input type="text" class="form-control" name="reactivated" value="<%=record.reactivated%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrevBalance.label%></td>
+                <td><input type="text" class="form-control" name="prevBalance" value="<%=record.prevBalance%>"/></td>
+            </tr><tr>
+                <td><%=resource.LbcDate.label%></td>
+                <td><input type="text" class="form-control" name="lbcDate" value="<%=record.lbcDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CrlimitExc.label%></td>
+                <td><input type="text" class="form-control" name="crlimitExc" value="<%=record.crlimitExc%>"/></td>
+            </tr><tr>
+                <td><%=resource.AreaId.label%></td>
+                <td><input type="text" class="form-control" name="areaId" value="<%=record.areaId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CostcenterId.label%></td>
+                <td><input type="text" class="form-control" name="costcenterId" value="<%=record.costcenterId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csfedtaxid.label%></td>
+                <td><input type="text" class="form-control" name="csfedtaxid" value="<%=record.csfedtaxid%>"/></td>
+            </tr><tr>
+                <td><%=resource.CreditRating.label%></td>
+                <td><input type="text" class="form-control" name="creditRating" value="<%=record.creditRating%>"/></td>
+            </tr><tr>
+                <td><%=resource.CscreditStatus.label%></td>
+                <td><input type="text" class="form-control" name="cscreditStatus" value="<%=record.cscreditStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.DeactCreateDate.label%></td>
+                <td><input type="text" class="form-control" name="deactCreateDate" value="<%=record.deactCreateDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DeactReceipDate.label%></td>
+                <td><input type="text" class="form-control" name="deactReceipDate" value="<%=record.deactReceipDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.EdifactAddr.label%></td>
+                <td><input type="text" class="form-control" name="edifactAddr" value="<%=record.edifactAddr%>"/></td>
+            </tr><tr>
+                <td><%=resource.EdifactUserFlag.label%></td>
+                <td><input type="text" class="form-control" name="edifactUserFlag" value="<%=record.edifactUserFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.EdifactFlag.label%></td>
+                <td><input type="text" class="form-control" name="edifactFlag" value="<%=record.edifactFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsdepositDueDate.label%></td>
+                <td><input type="text" class="form-control" name="csdepositDueDate" value="<%=record.csdepositDueDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CalculateDeposit.label%></td>
+                <td><input type="text" class="form-control" name="calculateDeposit" value="<%=record.calculateDeposit%>"/></td>
+            </tr><tr>
+                <td><%=resource.TmcodeDate.label%></td>
+                <td><input type="text" class="form-control" name="tmcodeDate" value="<%=record.tmcodeDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csrentalbc.label%></td>
+                <td><input type="text" class="form-control" name="csrentalbc" value="<%=record.csrentalbc%>"/></td>
+            </tr><tr>
+                <td><%=resource.UserLastmod.label%></td>
+                <td><input type="text" class="form-control" name="userLastmod" value="<%=record.userLastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csentdate.label%></td>
+                <td><input type="text" class="form-control" name="csentdate" value="<%=record.csentdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csmoddate.label%></td>
+                <td><input type="text" class="form-control" name="csmoddate" value="<%=record.csmoddate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csmod.label%></td>
+                <td><input type="text" class="form-control" name="csmod" value="<%=record.csmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.CustomerIdExt.label%></td>
+                <td><input type="text" class="form-control" name="customerIdExt" value="<%=record.customerIdExt%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsclimitOTr1.label%></td>
+                <td><input type="text" class="form-control" name="csclimitOTr1" value="<%=record.csclimitOTr1%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsclimitOTr2.label%></td>
+                <td><input type="text" class="form-control" name="csclimitOTr2" value="<%=record.csclimitOTr2%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsclimitOTr3.label%></td>
+                <td><input type="text" class="form-control" name="csclimitOTr3" value="<%=record.csclimitOTr3%>"/></td>
+            </tr><tr>
+                <td><%=resource.CscreditScore.label%></td>
+                <td><input type="text" class="form-control" name="cscreditScore" value="<%=record.cscreditScore%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cstraderef.label%></td>
+                <td><input type="text" class="form-control" name="cstraderef" value="<%=record.cstraderef%>"/></td>
+            </tr><tr>
+                <td><%=resource.Wpid.label%></td>
+                <td><input type="text" class="form-control" name="wpid" value="<%=record.wpid%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csprepayment.label%></td>
+                <td><input type="text" class="form-control" name="csprepayment" value="<%=record.csprepayment%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csremark1.label%></td>
+                <td><input type="text" class="form-control" name="csremark1" value="<%=record.csremark1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csremark2.label%></td>
+                <td><input type="text" class="form-control" name="csremark2" value="<%=record.csremark2%>"/></td>
+            </tr><tr>
+                <td><%=resource.BillInformation.label%></td>
+                <td><input type="text" class="form-control" name="billInformation" value="<%=record.billInformation%>"/></td>
+            </tr><tr>
+                <td><%=resource.DealerId.label%></td>
+                <td><input type="text" class="form-control" name="dealerId" value="<%=record.dealerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.DunningMode.label%></td>
+                <td><input type="text" class="form-control" name="dunningMode" value="<%=record.dunningMode%>"/></td>
+            </tr><tr>
+                <td><%=resource.NotValid.label%></td>
+                <td><input type="text" class="form-control" name="notValid" value="<%=record.notValid%>"/></td>
+            </tr><tr>
+                <td><%=resource.CscrdcheckAgreed.label%></td>
+                <td><input type="text" class="form-control" name="cscrdcheckAgreed" value="<%=record.cscrdcheckAgreed%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExpectPayCurrId.label%></td>
+                <td><input type="text" class="form-control" name="expectPayCurrId" value="<%=record.expectPayCurrId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ConvratetypePayment.label%></td>
+                <td><input type="text" class="form-control" name="convratetypePayment" value="<%=record.convratetypePayment%>"/></td>
+            </tr><tr>
+                <td><%=resource.RefundCurrId.label%></td>
+                <td><input type="text" class="form-control" name="refundCurrId" value="<%=record.refundCurrId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ConvratetypeRefund.label%></td>
+                <td><input type="text" class="form-control" name="convratetypeRefund" value="<%=record.convratetypeRefund%>"/></td>
+            </tr><tr>
+                <td><%=resource.Srcode.label%></td>
+                <td><input type="text" class="form-control" name="srcode" value="<%=record.srcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Currency.label%></td>
+                <td><input type="text" class="form-control" name="currency" value="<%=record.currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.AnonymousCustomer.label%></td>
+                <td><input type="text" class="form-control" name="anonymousCustomer" value="<%=record.anonymousCustomer%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExternalCustomerId.label%></td>
+                <td><input type="text" class="form-control" name="externalCustomerId" value="<%=record.externalCustomerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExternalCustomerSetId.label%></td>
+                <td><input type="text" class="form-control" name="externalCustomerSetId" value="<%=record.externalCustomerSetId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Custnum.label%></td>
+                <td><input type="text" class="form-control" name="custnum" value="<%=record.custnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.businessUnitId%>"/></td>
+            </tr><tr>
+                <td><%=resource.PartyTypeId.label%></td>
+                <td><input type="text" class="form-control" name="partyTypeId" value="<%=record.partyTypeId%>"/></td>
+            </tr><tr>
+                <td><%=resource.IndividualOverdiscFlag.label%></td>
+                <td><input type="text" class="form-control" name="individualOverdiscFlag" value="<%=record.individualOverdiscFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.BillingThreshold.label%></td>
+                <td><input type="text" class="form-control" name="billingThreshold" value="<%=record.billingThreshold%>"/></td>
+            </tr><tr>
+                <td><%=resource.BillingThresholdCurrency.label%></td>
+                <td><input type="text" class="form-control" name="billingThresholdCurrency" value="<%=record.billingThresholdCurrency%>"/></td>
+            </tr><tr>
+                <td><%=resource.ThresholdBillingMode.label%></td>
+                <td><input type="text" class="form-control" name="thresholdBillingMode" value="<%=record.thresholdBillingMode%>"/></td>
+            </tr><tr>
+                <td><%=resource.ThresholdBillingPurpose.label%></td>
+                <td><input type="text" class="form-control" name="thresholdBillingPurpose" value="<%=record.thresholdBillingPurpose%>"/></td>
+            </tr><tr>
+                <td><%=resource.CollectionInd.label%></td>
+                <td><input type="text" class="form-control" name="collectionInd" value="<%=record.collectionInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.RrCandidate.label%></td>
+                <td><input type="text" class="form-control" name="rrCandidate" value="<%=record.rrCandidate%>"/></td>
+            </tr><tr>
+                <td><%=resource.BchLastRunDate.label%></td>
+                <td><input type="text" class="form-control" name="bchLastRunDate" value="<%=record.bchLastRunDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CreatedByUser.label%></td>
+                <td><input type="text" class="form-control" name="createdByUser" value="<%=record.createdByUser%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

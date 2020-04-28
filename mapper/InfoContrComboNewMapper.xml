@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newInfoContrComboMapper">			
+	
+	<insert id="newInfoContrCombo">
+		insert into info_contr_combo(co_id,combo01,combo02,combo03,combo04,combo05,combo06,combo07,combo08,combo09,combo10,combo11,combo12,combo13,combo14,combo15,combo16,combo17,combo18,combo19,combo20,rec_version) 
+		values (#{coId},#{combo01},#{combo02},#{combo03},#{combo04},#{combo05},#{combo06},#{combo07},#{combo08},#{combo09},#{combo10},#{combo11},#{combo12},#{combo13},#{combo14},#{combo15},#{combo16},#{combo17},#{combo18},#{combo19},#{combo20},#{recVersion});
+	</insert>
+
+</mapper>

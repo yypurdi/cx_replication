@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ccontactAll-tab" data-toggle="tab" href="#ccontactAll" role="tab" aria-controls="ccontactAll" aria-selected="true"><h4><%=resource.CcontactAll.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contractAll-tab" data-toggle="tab" href="#contractAll" role="tab" aria-controls="contractAll" aria-selected="true"><h4><%=resource.ContractAll.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoCustCheck-tab" data-toggle="tab" href="#infoCustCheck" role="tab" aria-controls="infoCustCheck" aria-selected="true"><h4><%=resource.InfoCustCheck.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoCustCombo-tab" data-toggle="tab" href="#infoCustCombo" role="tab" aria-controls="infoCustCombo" aria-selected="true"><h4><%=resource.InfoCustCombo.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoCustText-tab" data-toggle="tab" href="#infoCustText" role="tab" aria-controls="infoCustText" aria-selected="true"><h4><%=resource.InfoCustText.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="orderhdrAll-tab" data-toggle="tab" href="#orderhdrAll" role="tab" aria-controls="orderhdrAll" aria-selected="true"><h4><%=resource.OrderhdrAll.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CustomerId.label%></td>
+                        <td><%=record.customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CustomerIdHigh.label%></td>
+                        <td><%=record.customer_id_high%></td>						
+                    </tr><tr>
+                        <td><%=resource.Custcode.label%></td>
+                        <td><%=record.custcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csst.label%></td>
+                        <td><%=record.csst%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cstype.label%></td>
+                        <td><%=record.cstype%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csactivated.label%></td>
+                        <td><%=dateFormat(record.csactivated,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csdeactivated.label%></td>
+                        <td><%=dateFormat(record.csdeactivated,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CstypeDate.label%></td>
+                        <td><%=dateFormat(record.cstype_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cslevel.label%></td>
+                        <td><%=record.cslevel%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cslvlname.label%></td>
+                        <td><%=record.cslvlname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Tmcode.label%></td>
+                        <td><%=record.tmcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Prgcode.label%></td>
+                        <td><%=record.prgcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csclimit.label%></td>
+                        <td><%=record.csclimit%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscurbalance.label%></td>
+                        <td><%=record.cscurbalance%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csdepdate.label%></td>
+                        <td><%=dateFormat(record.csdepdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cstestbillrun.label%></td>
+                        <td><%=record.cstestbillrun%></td>						
+                    </tr><tr>
+                        <td><%=resource.BillLayout.label%></td>
+                        <td><%=record.bill_layout%></td>						
+                    </tr><tr>
+                        <td><%=resource.Paymntresp.label%></td>
+                        <td><%=record.paymntresp%></td>						
+                    </tr><tr>
+                        <td><%=resource.TargetReached.label%></td>
+                        <td><%=record.target_reached%></td>						
+                    </tr><tr>
+                        <td><%=resource.Pcsmethpaymnt.label%></td>
+                        <td><%=record.pcsmethpaymnt%></td>						
+                    </tr><tr>
+                        <td><%=resource.DunningFlag.label%></td>
+                        <td><%=record.dunning_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.CommNo.label%></td>
+                        <td><%=record.comm_no%></td>						
+                    </tr><tr>
+                        <td><%=resource.PosCommType.label%></td>
+                        <td><%=record.pos_comm_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.BtxPassword.label%></td>
+                        <td><%=record.btx_password%></td>						
+                    </tr><tr>
+                        <td><%=resource.BtxUser.label%></td>
+                        <td><%=record.btx_user%></td>						
+                    </tr><tr>
+                        <td><%=resource.SettlesPMonth.label%></td>
+                        <td><%=record.settles_p_month%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cashretour.label%></td>
+                        <td><%=record.cashretour%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cstradecode.label%></td>
+                        <td><%=record.cstradecode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cspassword.label%></td>
+                        <td><%=record.cspassword%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cspromotion.label%></td>
+                        <td><%=record.cspromotion%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csreason.label%></td>
+                        <td><%=record.csreason%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscollector.label%></td>
+                        <td><%=record.cscollector%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cscontresp.label%></td>
+                        <td><%=record.cscontresp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csdeposit.label%></td>
+                        <td><%=record.csdeposit%></td>						
+                    </tr><tr>
+                        <td><%=resource.CscreditDate.label%></td>
+                        <td><%=dateFormat(record.cscredit_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CscreditRemark.label%></td>
+                        <td><%=record.cscredit_remark%></td>						
+                    </tr><tr>
+                        <td><%=resource.Suspended.label%></td>
+                        <td><%=dateFormat(record.suspended,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Reactivated.label%></td>
+                        <td><%=dateFormat(record.reactivated,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrevBalance.label%></td>
+                        <td><%=record.prev_balance%></td>						
+                    </tr><tr>
+                        <td><%=resource.LbcDate.label%></td>
+                        <td><%=dateFormat(record.lbc_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CrlimitExc.label%></td>
+                        <td><%=record.crlimit_exc%></td>						
+                    </tr><tr>
+                        <td><%=resource.AreaId.label%></td>
+                        <td><%=record.area_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CostcenterId.label%></td>
+                        <td><%=record.costcenter_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csfedtaxid.label%></td>
+                        <td><%=record.csfedtaxid%></td>						
+                    </tr><tr>
+                        <td><%=resource.CreditRating.label%></td>
+                        <td><%=record.credit_rating%></td>						
+                    </tr><tr>
+                        <td><%=resource.CscreditStatus.label%></td>
+                        <td><%=record.cscredit_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.DeactCreateDate.label%></td>
+                        <td><%=dateFormat(record.deact_create_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DeactReceipDate.label%></td>
+                        <td><%=dateFormat(record.deact_receip_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.EdifactAddr.label%></td>
+                        <td><%=record.edifact_addr%></td>						
+                    </tr><tr>
+                        <td><%=resource.EdifactUserFlag.label%></td>
+                        <td><%=record.edifact_user_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.EdifactFlag.label%></td>
+                        <td><%=record.edifact_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.CsdepositDueDate.label%></td>
+                        <td><%=dateFormat(record.csdeposit_due_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CalculateDeposit.label%></td>
+                        <td><%=record.calculate_deposit%></td>						
+                    </tr><tr>
+                        <td><%=resource.TmcodeDate.label%></td>
+                        <td><%=dateFormat(record.tmcode_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csrentalbc.label%></td>
+                        <td><%=record.csrentalbc%></td>						
+                    </tr><tr>
+                        <td><%=resource.UserLastmod.label%></td>
+                        <td><%=record.user_lastmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csentdate.label%></td>
+                        <td><%=dateFormat(record.csentdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csmoddate.label%></td>
+                        <td><%=dateFormat(record.csmoddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csmod.label%></td>
+                        <td><%=record.csmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.CustomerIdExt.label%></td>
+                        <td><%=record.customer_id_ext%></td>						
+                    </tr><tr>
+                        <td><%=resource.CsclimitOTr1.label%></td>
+                        <td><%=record.csclimit_o_tr1%></td>						
+                    </tr><tr>
+                        <td><%=resource.CsclimitOTr2.label%></td>
+                        <td><%=record.csclimit_o_tr2%></td>						
+                    </tr><tr>
+                        <td><%=resource.CsclimitOTr3.label%></td>
+                        <td><%=record.csclimit_o_tr3%></td>						
+                    </tr><tr>
+                        <td><%=resource.CscreditScore.label%></td>
+                        <td><%=record.cscredit_score%></td>						
+                    </tr><tr>
+                        <td><%=resource.Cstraderef.label%></td>
+                        <td><%=record.cstraderef%></td>						
+                    </tr><tr>
+                        <td><%=resource.Wpid.label%></td>
+                        <td><%=record.wpid%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csprepayment.label%></td>
+                        <td><%=record.csprepayment%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csremark1.label%></td>
+                        <td><%=record.csremark_1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Csremark2.label%></td>
+                        <td><%=record.csremark_2%></td>						
+                    </tr><tr>
+                        <td><%=resource.BillInformation.label%></td>
+                        <td><%=record.bill_information%></td>						
+                    </tr><tr>
+                        <td><%=resource.DealerId.label%></td>
+                        <td><%=record.dealer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.DunningMode.label%></td>
+                        <td><%=record.dunning_mode%></td>						
+                    </tr><tr>
+                        <td><%=resource.NotValid.label%></td>
+                        <td><%=record.not_valid%></td>						
+                    </tr><tr>
+                        <td><%=resource.CscrdcheckAgreed.label%></td>
+                        <td><%=record.cscrdcheck_agreed%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExpectPayCurrId.label%></td>
+                        <td><%=record.expect_pay_curr_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ConvratetypePayment.label%></td>
+                        <td><%=record.convratetype_payment%></td>						
+                    </tr><tr>
+                        <td><%=resource.RefundCurrId.label%></td>
+                        <td><%=record.refund_curr_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ConvratetypeRefund.label%></td>
+                        <td><%=record.convratetype_refund%></td>						
+                    </tr><tr>
+                        <td><%=resource.Srcode.label%></td>
+                        <td><%=record.srcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Currency.label%></td>
+                        <td><%=record.currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.AnonymousCustomer.label%></td>
+                        <td><%=record.anonymous_customer%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExternalCustomerId.label%></td>
+                        <td><%=record.external_customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExternalCustomerSetId.label%></td>
+                        <td><%=record.external_customer_set_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Custnum.label%></td>
+                        <td><%=record.custnum%></td>						
+                    </tr><tr>
+                        <td><%=resource.BusinessUnitId.label%></td>
+                        <td><%=record.business_unit_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.PartyTypeId.label%></td>
+                        <td><%=record.party_type_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.IndividualOverdiscFlag.label%></td>
+                        <td><%=record.individual_overdisc_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.BillingThreshold.label%></td>
+                        <td><%=record.billing_threshold%></td>						
+                    </tr><tr>
+                        <td><%=resource.BillingThresholdCurrency.label%></td>
+                        <td><%=record.billing_threshold_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.ThresholdBillingMode.label%></td>
+                        <td><%=record.threshold_billing_mode%></td>						
+                    </tr><tr>
+                        <td><%=resource.ThresholdBillingPurpose.label%></td>
+                        <td><%=record.threshold_billing_purpose%></td>						
+                    </tr><tr>
+                        <td><%=resource.CollectionInd.label%></td>
+                        <td><%=record.collection_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.RrCandidate.label%></td>
+                        <td><%=record.rr_candidate%></td>						
+                    </tr><tr>
+                        <td><%=resource.BchLastRunDate.label%></td>
+                        <td><%=dateFormat(record.bch_last_run_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CreatedByUser.label%></td>
+                        <td><%=record.created_by_user%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeCustomerAll?customerId=<%=record.customer_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteCustomerAll?customerId=<%=record.customer_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+	<div class="tab-pane fade" id="ccontactAll" role="tabpanel" aria-labelledby="ccontactAll-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.CcontactAll.CustomerId.header%></th>
+                    <th><%=resource.CcontactAll.Ccseq.header%></th>
+                    <th><%=resource.CcontactAll.Cctitle.header%></th>
+                    <th><%=resource.CcontactAll.Ccname.header%></th>
+                    <th><%=resource.CcontactAll.Ccfname.header%></th>
+                    <th><%=resource.CcontactAll.Cclname.header%></th>
+                    <th><%=resource.CcontactAll.Ccstreet.header%></th>
+                    <th><%=resource.CcontactAll.Ccstreetno.header%></th>
+                    <th><%=resource.CcontactAll.Cclnamemc.header%></th>
+                    <th><%=resource.CcontactAll.Ccaddr1.header%></th>
+                    <th><%=resource.CcontactAll.Ccaddr2.header%></th>
+                    <th><%=resource.CcontactAll.Ccaddr3.header%></th>
+                    <th><%=resource.CcontactAll.Cccity.header%></th>
+                    <th><%=resource.CcontactAll.Cczip.header%></th>
+                    <th><%=resource.CcontactAll.Cctn.header%></th>
+                    <th><%=resource.CcontactAll.Cctn2.header%></th>
+                    <th><%=resource.CcontactAll.Ccfax.header%></th>
+                    <th><%=resource.CcontactAll.Ccline1.header%></th>
+                    <th><%=resource.CcontactAll.Ccline2.header%></th>
+                    <th><%=resource.CcontactAll.Ccline3.header%></th>
+                    <th><%=resource.CcontactAll.Ccline4.header%></th>
+                    <th><%=resource.CcontactAll.Ccline5.header%></th>
+                    <th><%=resource.CcontactAll.Ccline6.header%></th>
+                    <th><%=resource.CcontactAll.CctnArea.header%></th>
+                    <th><%=resource.CcontactAll.Cctn2Area.header%></th>
+                    <th><%=resource.CcontactAll.CcfaxArea.header%></th>
+                    <th><%=resource.CcontactAll.Ccjobdesc.header%></th>
+                    <th><%=resource.CcontactAll.Ccdeftrk.header%></th>
+                    <th><%=resource.CcontactAll.Ccuser.header%></th>
+                    <th><%=resource.CcontactAll.Ccbill.header%></th>
+                    <th><%=resource.CcontactAll.Ccbilldetails.header%></th>
+                    <th><%=resource.CcontactAll.Cccontract.header%></th>
+                    <th><%=resource.CcontactAll.Ccship.header%></th>
+                    <th><%=resource.CcontactAll.Ccmagazine.header%></th>
+                    <th><%=resource.CcontactAll.Ccdirectory.header%></th>
+                    <th><%=resource.CcontactAll.Ccforward.header%></th>
+                    <th><%=resource.CcontactAll.Ccurgent.header%></th>
+                    <th><%=resource.CcontactAll.Country.header%></th>
+                    <th><%=resource.CcontactAll.Cclanguage.header%></th>
+                    <th><%=resource.CcontactAll.Ccadditional.header%></th>
+                    <th><%=resource.CcontactAll.SortCriteria.header%></th>
+                    <th><%=resource.CcontactAll.Ccentdate.header%></th>
+                    <th><%=resource.CcontactAll.Ccmoddate.header%></th>
+                    <th><%=resource.CcontactAll.Ccmod.header%></th>
+                    <th><%=resource.CcontactAll.Cccounty.header%></th>
+                    <th><%=resource.CcontactAll.Ccstate.header%></th>
+                    <th><%=resource.CcontactAll.Ccvaliddate.header%></th>
+                    <th><%=resource.CcontactAll.CcbillPrevious.header%></th>
+                    <th><%=resource.CcontactAll.WelcomeCrit.header%></th>
+                    <th><%=resource.CcontactAll.Ccmname.header%></th>
+                    <th><%=resource.CcontactAll.Ccemail.header%></th>
+                    <th><%=resource.CcontactAll.Ccaddryears.header%></th>
+                    <th><%=resource.CcontactAll.Ccsmsno.header%></th>
+                    <th><%=resource.CcontactAll.Ccbilltemp.header%></th>
+                    <th><%=resource.CcontactAll.Userlastmod.header%></th>
+                    <th><%=resource.CcontactAll.Ccvalidation.header%></th>
+                    <th><%=resource.CcontactAll.CcuserInst.header%></th>
+                    <th><%=resource.CcontactAll.Cclocation1.header%></th>
+                    <th><%=resource.CcontactAll.Cclocation2.header%></th>
+                    <th><%=resource.CcontactAll.Ccremark.header%></th>
+                    <th><%=resource.CcontactAll.RecVersion.header%></th>
+                    <th><%=resource.CcontactAll.MaritalStatus.header%></th>
+                    <th><%=resource.CcontactAll.Csnationality.header%></th>
+                    <th><%=resource.CcontactAll.Cssocialsecno.header%></th>
+                    <th><%=resource.CcontactAll.Csdrivelicence.header%></th>
+                    <th><%=resource.CcontactAll.Csemployer.header%></th>
+                    <th><%=resource.CcontactAll.Employee.header%></th>
+                    <th><%=resource.CcontactAll.CompanyType.header%></th>
+                    <th><%=resource.CcontactAll.IdType.header%></th>
+                    <th><%=resource.CcontactAll.Passportno.header%></th>
+                    <th><%=resource.CcontactAll.Birthdate.header%></th>
+                    <th><%=resource.CcontactAll.Cscompregno.header%></th>
+                    <th><%=resource.CcontactAll.Cscomptaxno.header%></th>
+                    <th><%=resource.CcontactAll.Cscusttype.header%></th>
+                    <th><%=resource.CcontactAll.Ccsex.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.ccontactAll){ let rec = record.ccontactAll[i] %>
+                <tr>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.ccseq%></a></td>
+                    <td><a><%=rec.cctitle%></a></td>
+                    <td><a><%=rec.ccname%></a></td>
+                    <td><a><%=rec.ccfname%></a></td>
+                    <td><a><%=rec.cclname%></a></td>
+                    <td><a><%=rec.ccstreet%></a></td>
+                    <td><a><%=rec.ccstreetno%></a></td>
+                    <td><a><%=rec.cclnamemc%></a></td>
+                    <td><a><%=rec.ccaddr1%></a></td>
+                    <td><a><%=rec.ccaddr2%></a></td>
+                    <td><a><%=rec.ccaddr3%></a></td>
+                    <td><a><%=rec.cccity%></a></td>
+                    <td><a><%=rec.cczip%></a></td>
+                    <td><a><%=rec.cctn%></a></td>
+                    <td><a><%=rec.cctn2%></a></td>
+                    <td><a><%=rec.ccfax%></a></td>
+                    <td><a><%=rec.ccline1%></a></td>
+                    <td><a><%=rec.ccline2%></a></td>
+                    <td><a><%=rec.ccline3%></a></td>
+                    <td><a><%=rec.ccline4%></a></td>
+                    <td><a><%=rec.ccline5%></a></td>
+                    <td><a><%=rec.ccline6%></a></td>
+                    <td><a><%=rec.cctn_area%></a></td>
+                    <td><a><%=rec.cctn2_area%></a></td>
+                    <td><a><%=rec.ccfax_area%></a></td>
+                    <td><a><%=rec.ccjobdesc%></a></td>
+                    <td><a><%=rec.ccdeftrk%></a></td>
+                    <td><a><%=rec.ccuser%></a></td>
+                    <td><a><%=rec.ccbill%></a></td>
+                    <td><a><%=rec.ccbilldetails%></a></td>
+                    <td><a><%=rec.cccontract%></a></td>
+                    <td><a><%=rec.ccship%></a></td>
+                    <td><a><%=rec.ccmagazine%></a></td>
+                    <td><a><%=rec.ccdirectory%></a></td>
+                    <td><a><%=rec.ccforward%></a></td>
+                    <td><a><%=rec.ccurgent%></a></td>
+                    <td><a><%=rec.country%></a></td>
+                    <td><a><%=rec.cclanguage%></a></td>
+                    <td><a><%=rec.ccadditional%></a></td>
+                    <td><a><%=rec.sort_criteria%></a></td>
+                    <td><a><%=dateFormat(rec.ccentdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ccmoddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ccmod%></a></td>
+                    <td><a><%=rec.cccounty%></a></td>
+                    <td><a><%=rec.ccstate%></a></td>
+                    <td><a><%=dateFormat(rec.ccvaliddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ccbill_previous%></a></td>
+                    <td><a><%=rec.welcome_crit%></a></td>
+                    <td><a><%=rec.ccmname%></a></td>
+                    <td><a><%=rec.ccemail%></a></td>
+                    <td><a><%=rec.ccaddryears%></a></td>
+                    <td><a><%=rec.ccsmsno%></a></td>
+                    <td><a><%=rec.ccbilltemp%></a></td>
+                    <td><a><%=rec.userlastmod%></a></td>
+                    <td><a><%=rec.ccvalidation%></a></td>
+                    <td><a><%=rec.ccuser_inst%></a></td>
+                    <td><a><%=rec.cclocation_1%></a></td>
+                    <td><a><%=rec.cclocation_2%></a></td>
+                    <td><a><%=rec.ccremark%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.marital_status%></a></td>
+                    <td><a><%=rec.csnationality%></a></td>
+                    <td><a><%=rec.cssocialsecno%></a></td>
+                    <td><a><%=rec.csdrivelicence%></a></td>
+                    <td><a><%=rec.csemployer%></a></td>
+                    <td><a><%=rec.employee%></a></td>
+                    <td><a><%=rec.company_type%></a></td>
+                    <td><a><%=rec.id_type%></a></td>
+                    <td><a><%=rec.passportno%></a></td>
+                    <td><a><%=dateFormat(rec.birthdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.cscompregno%></a></td>
+                    <td><a><%=rec.cscomptaxno%></a></td>
+                    <td><a><%=rec.cscusttype%></a></td>
+                    <td><a><%=rec.ccsex%></a></td>
+                    
+                    <td><a href="/readCcontactAll?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeCcontactAll?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteCcontactAll?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newCcontactAll">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="contractAll" role="tabpanel" aria-labelledby="contractAll-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.ContractAll.CoId.header%></th>
+                    <th><%=resource.ContractAll.CustomerId.header%></th>
+                    <th><%=resource.ContractAll.Type.header%></th>
+                    <th><%=resource.ContractAll.Plcode.header%></th>
+                    <th><%=resource.ContractAll.Sccode.header%></th>
+                    <th><%=resource.ContractAll.SubmId.header%></th>
+                    <th><%=resource.ContractAll.CoSigned.header%></th>
+                    <th><%=resource.ContractAll.CoEquType.header%></th>
+                    <th><%=resource.ContractAll.CoRepBill.header%></th>
+                    <th><%=resource.ContractAll.CoRep.header%></th>
+                    <th><%=resource.ContractAll.CoRepBillIdno.header%></th>
+                    <th><%=resource.ContractAll.CoRepIdno.header%></th>
+                    <th><%=resource.ContractAll.CoInstalled.header%></th>
+                    <th><%=resource.ContractAll.CoArchive.header%></th>
+                    <th><%=resource.ContractAll.CoDirEntry.header%></th>
+                    <th><%=resource.ContractAll.CoOperatorDir.header%></th>
+                    <th><%=resource.ContractAll.CoPstnDir.header%></th>
+                    <th><%=resource.ContractAll.CoAssServ.header%></th>
+                    <th><%=resource.ContractAll.CoAssEqu.header%></th>
+                    <th><%=resource.ContractAll.CoCrdCheck.header%></th>
+                    <th><%=resource.ContractAll.CoCrdChkEnd.header%></th>
+                    <th><%=resource.ContractAll.CoCrdChkStart.header%></th>
+                    <th><%=resource.ContractAll.CoCrdClicks.header%></th>
+                    <th><%=resource.ContractAll.CoCrdClicksDay.header%></th>
+                    <th><%=resource.ContractAll.CoCrdDays.header%></th>
+                    <th><%=resource.ContractAll.CoComment.header%></th>
+                    <th><%=resource.ContractAll.CoReserved.header%></th>
+                    <th><%=resource.ContractAll.CoExpirDate.header%></th>
+                    <th><%=resource.ContractAll.CoActivated.header%></th>
+                    <th><%=resource.ContractAll.CoEntdate.header%></th>
+                    <th><%=resource.ContractAll.CoModdate.header%></th>
+                    <th><%=resource.ContractAll.CoUserlastmod.header%></th>
+                    <th><%=resource.ContractAll.Tmcode.header%></th>
+                    <th><%=resource.ContractAll.TmcodeDate.header%></th>
+                    <th><%=resource.ContractAll.CoCrdDTr1.header%></th>
+                    <th><%=resource.ContractAll.CoCrdDTr2.header%></th>
+                    <th><%=resource.ContractAll.CoCrdDTr3.header%></th>
+                    <th><%=resource.ContractAll.CoCrdPTr1.header%></th>
+                    <th><%=resource.ContractAll.CoCrdPTr2.header%></th>
+                    <th><%=resource.ContractAll.CoCrdPTr3.header%></th>
+                    <th><%=resource.ContractAll.EccodeLdc.header%></th>
+                    <th><%=resource.ContractAll.PendingEccodeLdc.header%></th>
+                    <th><%=resource.ContractAll.EccodeLec.header%></th>
+                    <th><%=resource.ContractAll.PendingEccodeLec.header%></th>
+                    <th><%=resource.ContractAll.CoRequest.header%></th>
+                    <th><%=resource.ContractAll.DealerId.header%></th>
+                    <th><%=resource.ContractAll.NotValid.header%></th>
+                    <th><%=resource.ContractAll.Arpcode.header%></th>
+                    <th><%=resource.ContractAll.CoAddrOnIbill.header%></th>
+                    <th><%=resource.ContractAll.CoCrdAmount.header%></th>
+                    <th><%=resource.ContractAll.CoCrdAmountDay.header%></th>
+                    <th><%=resource.ContractAll.ProductHistoryDate.header%></th>
+                    <th><%=resource.ContractAll.CoConfirm.header%></th>
+                    <th><%=resource.ContractAll.CoExtCsuin.header%></th>
+                    <th><%=resource.ContractAll.TrialEndDate.header%></th>
+                    <th><%=resource.ContractAll.CoIbCdrFlag.header%></th>
+                    <th><%=resource.ContractAll.Currency.header%></th>
+                    <th><%=resource.ContractAll.RecVersion.header%></th>
+                    <th><%=resource.ContractAll.AnPackageId.header%></th>
+                    <th><%=resource.ContractAll.CoRelType.header%></th>
+                    <th><%=resource.ContractAll.PendingTmcode.header%></th>
+                    <th><%=resource.ContractAll.ContractTemplate.header%></th>
+                    <th><%=resource.ContractAll.CoCode.header%></th>
+                    <th><%=resource.ContractAll.BusinessUnitId.header%></th>
+                    <th><%=resource.ContractAll.Description.header%></th>
+                    <th><%=resource.ContractAll.AgreementType.header%></th>
+                    <th><%=resource.ContractAll.ExtProductId.header%></th>
+                    <th><%=resource.ContractAll.RemotePlcode.header%></th>
+                    <th><%=resource.ContractAll.Eccode.header%></th>
+                    <th><%=resource.ContractAll.HplmnBidGroupId.header%></th>
+                    <th><%=resource.ContractAll.VplmnBidGroupId.header%></th>
+                    <th><%=resource.ContractAll.HomePartyId.header%></th>
+                    <th><%=resource.ContractAll.ContractTypeId.header%></th>
+                    <th><%=resource.ContractAll.TrialStartDate.header%></th>
+                    <th><%=resource.ContractAll.FohAggregationFlag.header%></th>
+                    <th><%=resource.ContractAll.GlAccPackId.header%></th>
+                    <th><%=resource.ContractAll.CdsBillMedium.header%></th>
+                    <th><%=resource.ContractAll.CdsGeneration.header%></th>
+                    <th><%=resource.ContractAll.ChargePartNum.header%></th>
+                    <th><%=resource.ContractAll.ChStatus.header%></th>
+                    <th><%=resource.ContractAll.SvpFile.header%></th>
+                    <th><%=resource.ContractAll.MakeCallsDate.header%></th>
+                    <th><%=resource.ContractAll.CoInprepayPending.header%></th>
+                    <th><%=resource.ContractAll.CoInprepay.header%></th>
+                    <th><%=resource.ContractAll.ChargePerAdjRef.header%></th>
+                    <th><%=resource.ContractAll.NextCutoffDate.header%></th>
+                    <th><%=resource.ContractAll.LastCutoffDate.header%></th>
+                    <th><%=resource.ContractAll.LastChargeDate.header%></th>
+                    <th><%=resource.ContractAll.LastNoticeDate.header%></th>
+                    <th><%=resource.ContractAll.NotBillMedium.header%></th>
+                    <th><%=resource.ContractAll.ChargeStartDate.header%></th>
+                    <th><%=resource.ContractAll.EarliestEndDate.header%></th>
+                    <th><%=resource.ContractAll.CommonRefDataInd.header%></th>
+                    <th><%=resource.ContractAll.ContractLanguage.header%></th>
+                    <th><%=resource.ContractAll.PendingLanguage.header%></th>
+                    <th><%=resource.ContractAll.RrCandidate.header%></th>
+                    <th><%=resource.ContractAll.ChStatusValidfrom.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.contractAll){ let rec = record.contractAll[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.type%></a></td>
+                    <td><a><%=rec.plcode%></a></td>
+                    <td><a><%=rec.sccode%></a></td>
+                    <td><a><%=rec.subm_id%></a></td>
+                    <td><a><%=dateFormat(rec.co_signed,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_equ_type%></a></td>
+                    <td><a><%=rec.co_rep_bill%></a></td>
+                    <td><a><%=rec.co_rep%></a></td>
+                    <td><a><%=rec.co_rep_bill_idno%></a></td>
+                    <td><a><%=rec.co_rep_idno%></a></td>
+                    <td><a><%=dateFormat(rec.co_installed,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_archive%></a></td>
+                    <td><a><%=rec.co_dir_entry%></a></td>
+                    <td><a><%=rec.co_operator_dir%></a></td>
+                    <td><a><%=rec.co_pstn_dir%></a></td>
+                    <td><a><%=rec.co_ass_serv%></a></td>
+                    <td><a><%=rec.co_ass_equ%></a></td>
+                    <td><a><%=rec.co_crd_check%></a></td>
+                    <td><a><%=dateFormat(rec.co_crd_chk_end,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.co_crd_chk_start,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_crd_clicks%></a></td>
+                    <td><a><%=rec.co_crd_clicks_day%></a></td>
+                    <td><a><%=rec.co_crd_days%></a></td>
+                    <td><a><%=rec.co_comment%></a></td>
+                    <td><a><%=dateFormat(rec.co_reserved,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.co_expir_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.co_activated,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.co_entdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.co_moddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_userlastmod%></a></td>
+                    <td><a><%=rec.tmcode%></a></td>
+                    <td><a><%=dateFormat(rec.tmcode_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_crd_d_tr1%></a></td>
+                    <td><a><%=rec.co_crd_d_tr2%></a></td>
+                    <td><a><%=rec.co_crd_d_tr3%></a></td>
+                    <td><a><%=rec.co_crd_p_tr1%></a></td>
+                    <td><a><%=rec.co_crd_p_tr2%></a></td>
+                    <td><a><%=rec.co_crd_p_tr3%></a></td>
+                    <td><a><%=rec.eccode_ldc%></a></td>
+                    <td><a><%=rec.pending_eccode_ldc%></a></td>
+                    <td><a><%=rec.eccode_lec%></a></td>
+                    <td><a><%=rec.pending_eccode_lec%></a></td>
+                    <td><a><%=rec.co_request%></a></td>
+                    <td><a><%=rec.dealer_id%></a></td>
+                    <td><a><%=rec.not_valid%></a></td>
+                    <td><a><%=rec.arpcode%></a></td>
+                    <td><a><%=rec.co_addr_on_ibill%></a></td>
+                    <td><a><%=rec.co_crd_amount%></a></td>
+                    <td><a><%=rec.co_crd_amount_day%></a></td>
+                    <td><a><%=dateFormat(rec.product_history_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_confirm%></a></td>
+                    <td><a><%=rec.co_ext_csuin%></a></td>
+                    <td><a><%=dateFormat(rec.trial_end_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_ib_cdr_flag%></a></td>
+                    <td><a><%=rec.currency%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.an_package_id%></a></td>
+                    <td><a><%=rec.co_rel_type%></a></td>
+                    <td><a><%=rec.pending_tmcode%></a></td>
+                    <td><a><%=rec.contract_template%></a></td>
+                    <td><a><%=rec.co_code%></a></td>
+                    <td><a><%=rec.business_unit_id%></a></td>
+                    <td><a><%=rec.description%></a></td>
+                    <td><a><%=rec.agreement_type%></a></td>
+                    <td><a><%=rec.ext_product_id%></a></td>
+                    <td><a><%=rec.remote_plcode%></a></td>
+                    <td><a><%=rec.eccode%></a></td>
+                    <td><a><%=rec.hplmn_bid_group_id%></a></td>
+                    <td><a><%=rec.vplmn_bid_group_id%></a></td>
+                    <td><a><%=rec.home_party_id%></a></td>
+                    <td><a><%=rec.contract_type_id%></a></td>
+                    <td><a><%=dateFormat(rec.trial_start_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.foh_aggregation_flag%></a></td>
+                    <td><a><%=rec.gl_acc_pack_id%></a></td>
+                    <td><a><%=rec.cds_bill_medium%></a></td>
+                    <td><a><%=rec.cds_generation%></a></td>
+                    <td><a><%=rec.charge_part_num%></a></td>
+                    <td><a><%=rec.ch_status%></a></td>
+                    <td><a><%=rec.svp_file%></a></td>
+                    <td><a><%=dateFormat(rec.make_calls_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_inprepay_pending%></a></td>
+                    <td><a><%=rec.co_inprepay%></a></td>
+                    <td><a><%=rec.charge_per_adj_ref%></a></td>
+                    <td><a><%=dateFormat(rec.next_cutoff_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.last_cutoff_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.last_charge_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.last_notice_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.not_bill_medium%></a></td>
+                    <td><a><%=dateFormat(rec.charge_start_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.earliest_end_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.common_ref_data_ind%></a></td>
+                    <td><a><%=rec.contract_language%></a></td>
+                    <td><a><%=rec.pending_language%></a></td>
+                    <td><a><%=rec.rr_candidate%></a></td>
+                    <td><a><%=dateFormat(rec.ch_status_validfrom,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    
+                    <td><a href="/readContractAll?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeContractAll?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteContractAll?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newContractAll">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoCustCheck" role="tabpanel" aria-labelledby="infoCustCheck-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoCustCheck.CustomerId.header%></th>
+                    <th><%=resource.InfoCustCheck.Check01.header%></th>
+                    <th><%=resource.InfoCustCheck.Check02.header%></th>
+                    <th><%=resource.InfoCustCheck.Check03.header%></th>
+                    <th><%=resource.InfoCustCheck.Check04.header%></th>
+                    <th><%=resource.InfoCustCheck.Check05.header%></th>
+                    <th><%=resource.InfoCustCheck.Check06.header%></th>
+                    <th><%=resource.InfoCustCheck.Check07.header%></th>
+                    <th><%=resource.InfoCustCheck.Check08.header%></th>
+                    <th><%=resource.InfoCustCheck.Check09.header%></th>
+                    <th><%=resource.InfoCustCheck.Check10.header%></th>
+                    <th><%=resource.InfoCustCheck.Check11.header%></th>
+                    <th><%=resource.InfoCustCheck.Check12.header%></th>
+                    <th><%=resource.InfoCustCheck.Check13.header%></th>
+                    <th><%=resource.InfoCustCheck.Check14.header%></th>
+                    <th><%=resource.InfoCustCheck.Check15.header%></th>
+                    <th><%=resource.InfoCustCheck.Check16.header%></th>
+                    <th><%=resource.InfoCustCheck.Check17.header%></th>
+                    <th><%=resource.InfoCustCheck.Check18.header%></th>
+                    <th><%=resource.InfoCustCheck.Check19.header%></th>
+                    <th><%=resource.InfoCustCheck.Check20.header%></th>
+                    <th><%=resource.InfoCustCheck.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoCustCheck){ let rec = record.infoCustCheck[i] %>
+                <tr>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.check01%></a></td>
+                    <td><a><%=rec.check02%></a></td>
+                    <td><a><%=rec.check03%></a></td>
+                    <td><a><%=rec.check04%></a></td>
+                    <td><a><%=rec.check05%></a></td>
+                    <td><a><%=rec.check06%></a></td>
+                    <td><a><%=rec.check07%></a></td>
+                    <td><a><%=rec.check08%></a></td>
+                    <td><a><%=rec.check09%></a></td>
+                    <td><a><%=rec.check10%></a></td>
+                    <td><a><%=rec.check11%></a></td>
+                    <td><a><%=rec.check12%></a></td>
+                    <td><a><%=rec.check13%></a></td>
+                    <td><a><%=rec.check14%></a></td>
+                    <td><a><%=rec.check15%></a></td>
+                    <td><a><%=rec.check16%></a></td>
+                    <td><a><%=rec.check17%></a></td>
+                    <td><a><%=rec.check18%></a></td>
+                    <td><a><%=rec.check19%></a></td>
+                    <td><a><%=rec.check20%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoCustCheck?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoCustCheck?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoCustCheck?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoCustCheck">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoCustCombo" role="tabpanel" aria-labelledby="infoCustCombo-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoCustCombo.CustomerId.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo01.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo02.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo03.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo04.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo05.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo06.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo07.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo08.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo09.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo10.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo11.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo12.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo13.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo14.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo15.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo16.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo17.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo18.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo19.header%></th>
+                    <th><%=resource.InfoCustCombo.Combo20.header%></th>
+                    <th><%=resource.InfoCustCombo.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoCustCombo){ let rec = record.infoCustCombo[i] %>
+                <tr>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.combo01%></a></td>
+                    <td><a><%=rec.combo02%></a></td>
+                    <td><a><%=rec.combo03%></a></td>
+                    <td><a><%=rec.combo04%></a></td>
+                    <td><a><%=rec.combo05%></a></td>
+                    <td><a><%=rec.combo06%></a></td>
+                    <td><a><%=rec.combo07%></a></td>
+                    <td><a><%=rec.combo08%></a></td>
+                    <td><a><%=rec.combo09%></a></td>
+                    <td><a><%=rec.combo10%></a></td>
+                    <td><a><%=rec.combo11%></a></td>
+                    <td><a><%=rec.combo12%></a></td>
+                    <td><a><%=rec.combo13%></a></td>
+                    <td><a><%=rec.combo14%></a></td>
+                    <td><a><%=rec.combo15%></a></td>
+                    <td><a><%=rec.combo16%></a></td>
+                    <td><a><%=rec.combo17%></a></td>
+                    <td><a><%=rec.combo18%></a></td>
+                    <td><a><%=rec.combo19%></a></td>
+                    <td><a><%=rec.combo20%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoCustCombo?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoCustCombo?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoCustCombo?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoCustCombo">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoCustText" role="tabpanel" aria-labelledby="infoCustText-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoCustText.CustomerId.header%></th>
+                    <th><%=resource.InfoCustText.Text01.header%></th>
+                    <th><%=resource.InfoCustText.Text02.header%></th>
+                    <th><%=resource.InfoCustText.Text03.header%></th>
+                    <th><%=resource.InfoCustText.Text04.header%></th>
+                    <th><%=resource.InfoCustText.Text05.header%></th>
+                    <th><%=resource.InfoCustText.Text06.header%></th>
+                    <th><%=resource.InfoCustText.Text07.header%></th>
+                    <th><%=resource.InfoCustText.Text08.header%></th>
+                    <th><%=resource.InfoCustText.Text09.header%></th>
+                    <th><%=resource.InfoCustText.Text10.header%></th>
+                    <th><%=resource.InfoCustText.Text11.header%></th>
+                    <th><%=resource.InfoCustText.Text12.header%></th>
+                    <th><%=resource.InfoCustText.Text13.header%></th>
+                    <th><%=resource.InfoCustText.Text14.header%></th>
+                    <th><%=resource.InfoCustText.Text15.header%></th>
+                    <th><%=resource.InfoCustText.Text16.header%></th>
+                    <th><%=resource.InfoCustText.Text17.header%></th>
+                    <th><%=resource.InfoCustText.Text18.header%></th>
+                    <th><%=resource.InfoCustText.Text19.header%></th>
+                    <th><%=resource.InfoCustText.Text20.header%></th>
+                    <th><%=resource.InfoCustText.Text21.header%></th>
+                    <th><%=resource.InfoCustText.Text22.header%></th>
+                    <th><%=resource.InfoCustText.Text23.header%></th>
+                    <th><%=resource.InfoCustText.Text24.header%></th>
+                    <th><%=resource.InfoCustText.Text25.header%></th>
+                    <th><%=resource.InfoCustText.Text26.header%></th>
+                    <th><%=resource.InfoCustText.Text27.header%></th>
+                    <th><%=resource.InfoCustText.Text28.header%></th>
+                    <th><%=resource.InfoCustText.Text29.header%></th>
+                    <th><%=resource.InfoCustText.Text30.header%></th>
+                    <th><%=resource.InfoCustText.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoCustText){ let rec = record.infoCustText[i] %>
+                <tr>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.text01%></a></td>
+                    <td><a><%=rec.text02%></a></td>
+                    <td><a><%=rec.text03%></a></td>
+                    <td><a><%=rec.text04%></a></td>
+                    <td><a><%=rec.text05%></a></td>
+                    <td><a><%=rec.text06%></a></td>
+                    <td><a><%=rec.text07%></a></td>
+                    <td><a><%=rec.text08%></a></td>
+                    <td><a><%=rec.text09%></a></td>
+                    <td><a><%=rec.text10%></a></td>
+                    <td><a><%=rec.text11%></a></td>
+                    <td><a><%=rec.text12%></a></td>
+                    <td><a><%=rec.text13%></a></td>
+                    <td><a><%=rec.text14%></a></td>
+                    <td><a><%=rec.text15%></a></td>
+                    <td><a><%=rec.text16%></a></td>
+                    <td><a><%=rec.text17%></a></td>
+                    <td><a><%=rec.text18%></a></td>
+                    <td><a><%=rec.text19%></a></td>
+                    <td><a><%=rec.text20%></a></td>
+                    <td><a><%=rec.text21%></a></td>
+                    <td><a><%=rec.text22%></a></td>
+                    <td><a><%=rec.text23%></a></td>
+                    <td><a><%=rec.text24%></a></td>
+                    <td><a><%=rec.text25%></a></td>
+                    <td><a><%=rec.text26%></a></td>
+                    <td><a><%=rec.text27%></a></td>
+                    <td><a><%=rec.text28%></a></td>
+                    <td><a><%=rec.text29%></a></td>
+                    <td><a><%=rec.text30%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoCustText?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoCustText?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoCustText?customerId=<%=rec.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoCustText">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="orderhdrAll" role="tabpanel" aria-labelledby="orderhdrAll-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.OrderhdrAll.Ohxact.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohstatus.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohstatusflg.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohentdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohrefnum.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohtshdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsls.header%></th>
+                    <th><%=resource.OrderhdrAll.CustomerId.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohcseq.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsname.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsaddr1.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsaddr2.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsaddr3.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohscity.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohsst.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohszip.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohscountry.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohscrc.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohattn.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohtrucker.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohponum.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohrelease.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohpsno.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohfrtterms.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohordtyp.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohcandate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohassocxact.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohprt1.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohprt2.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohprt3.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohuserid.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohrefdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohshpdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohduedate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohipp.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohilpp.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohpostgl.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohpostar.header%></th>
+                    <th><%=resource.OrderhdrAll.OharcustomerId.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohglar.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohdisdate.header%></th>
+                    <th><%=resource.OrderhdrAll.DdebitFlag.header%></th>
+                    <th><%=resource.OrderhdrAll.Oharflg.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohinvtype.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohfulfildate.header%></th>
+                    <th><%=resource.OrderhdrAll.OhpaymentId.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohpostfibu.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohreason.header%></th>
+                    <th><%=resource.OrderhdrAll.OhrsId.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohddhflag.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohddhdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohfct.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohlct.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohmod.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohxrate.header%></th>
+                    <th><%=resource.OrderhdrAll.Oheccode.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohecname.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohglexact.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohdunstep.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohflfct.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohfllct.header%></th>
+                    <th><%=resource.OrderhdrAll.CoId.header%></th>
+                    <th><%=resource.OrderhdrAll.Complaint.header%></th>
+                    <th><%=resource.OrderhdrAll.ComplaintDate.header%></th>
+                    <th><%=resource.OrderhdrAll.RtxStatus.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohbillseqno.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohcancelflag.header%></th>
+                    <th><%=resource.OrderhdrAll.ConvdateExchange.header%></th>
+                    <th><%=resource.OrderhdrAll.OhglexactTax.header%></th>
+                    <th><%=resource.OrderhdrAll.GlacodeDiff.header%></th>
+                    <th><%=resource.OrderhdrAll.JobcostIdDiff.header%></th>
+                    <th><%=resource.OrderhdrAll.TaxRoundingFlag.header%></th>
+                    <th><%=resource.OrderhdrAll.GlCurrency.header%></th>
+                    <th><%=resource.OrderhdrAll.DocumentCurrency.header%></th>
+                    <th><%=resource.OrderhdrAll.DocumentConvratetypeId.header%></th>
+                    <th><%=resource.OrderhdrAll.SecondaryCurrency.header%></th>
+                    <th><%=resource.OrderhdrAll.SecondaryConvratetypeId.header%></th>
+                    <th><%=resource.OrderhdrAll.OhinvamtGl.header%></th>
+                    <th><%=resource.OrderhdrAll.OhopnamtGl.header%></th>
+                    <th><%=resource.OrderhdrAll.OhdisamtGl.header%></th>
+                    <th><%=resource.OrderhdrAll.OhdistakamtGl.header%></th>
+                    <th><%=resource.OrderhdrAll.OhtaxamtGl.header%></th>
+                    <th><%=resource.OrderhdrAll.TaxamtDiffGl.header%></th>
+                    <th><%=resource.OrderhdrAll.OhinvamtDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.OhopnamtDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.OhdisamtDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.OhdistakamtDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.OhtaxamtDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.GlConvratetypeId.header%></th>
+                    <th><%=resource.OrderhdrAll.FeeBalance.header%></th>
+                    <th><%=resource.OrderhdrAll.FeeBalanceGross.header%></th>
+                    <th><%=resource.OrderhdrAll.Currency.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohcostcent.header%></th>
+                    <th><%=resource.OrderhdrAll.RecVersion.header%></th>
+                    <th><%=resource.OrderhdrAll.OhinvamtSecdoc.header%></th>
+                    <th><%=resource.OrderhdrAll.TaxamtDiffSecdoc.header%></th>
+                    <th><%=resource.OrderhdrAll.Paymentfailed.header%></th>
+                    <th><%=resource.OrderhdrAll.BillingAccountId.header%></th>
+                    <th><%=resource.OrderhdrAll.BalancePageEventDate.header%></th>
+                    <th><%=resource.OrderhdrAll.PrepaidBalanceChangeDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.PrepaidBalanceChangeGl.header%></th>
+                    <th><%=resource.OrderhdrAll.PrepaidGlacode.header%></th>
+                    <th><%=resource.OrderhdrAll.PrepaidTaxamtDiffGl.header%></th>
+                    <th><%=resource.OrderhdrAll.PrepaidTaxDiffGlacode.header%></th>
+                    <th><%=resource.OrderhdrAll.PaymentConditionId.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohdocstatus.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohextrefdate.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohextrefnum.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohcmident.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohremark.header%></th>
+                    <th><%=resource.OrderhdrAll.OhdiscbaseDoc.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohproppaycurr.header%></th>
+                    <th><%=resource.OrderhdrAll.Ohproppaydate.header%></th>
+                    <th><%=resource.OrderhdrAll.OhprocessType.header%></th>
+                    <th><%=resource.OrderhdrAll.OhprocessDate.header%></th>
+                    <th><%=resource.OrderhdrAll.BusinessUnitId.header%></th>
+                    <th><%=resource.OrderhdrAll.ProposedPaymentMethod.header%></th>
+                    <th><%=resource.OrderhdrAll.ReasonId.header%></th>
+                    <th><%=resource.OrderhdrAll.IncomingDocPricingType.header%></th>
+                    <th><%=resource.OrderhdrAll.IncomingDocTaxPerItem.header%></th>
+                    <th><%=resource.OrderhdrAll.PaymentProposalId.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.orderhdrAll){ let rec = record.orderhdrAll[i] %>
+                <tr>
+                    <td><a><%=rec.ohxact%></a></td>
+                    <td><a><%=rec.ohstatus%></a></td>
+                    <td><a><%=rec.ohstatusflg%></a></td>
+                    <td><a><%=dateFormat(rec.ohentdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohrefnum%></a></td>
+                    <td><a><%=dateFormat(rec.ohtshdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohsls%></a></td>
+                    <td><a><%=rec.customer_id%></a></td>
+                    <td><a><%=rec.ohcseq%></a></td>
+                    <td><a><%=rec.ohsname%></a></td>
+                    <td><a><%=rec.ohsaddr1%></a></td>
+                    <td><a><%=rec.ohsaddr2%></a></td>
+                    <td><a><%=rec.ohsaddr3%></a></td>
+                    <td><a><%=rec.ohscity%></a></td>
+                    <td><a><%=rec.ohsst%></a></td>
+                    <td><a><%=rec.ohszip%></a></td>
+                    <td><a><%=rec.ohscountry%></a></td>
+                    <td><a><%=rec.ohscrc%></a></td>
+                    <td><a><%=rec.ohattn%></a></td>
+                    <td><a><%=rec.ohtrucker%></a></td>
+                    <td><a><%=rec.ohponum%></a></td>
+                    <td><a><%=dateFormat(rec.ohrelease,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohpsno%></a></td>
+                    <td><a><%=rec.ohfrtterms%></a></td>
+                    <td><a><%=rec.ohordtyp%></a></td>
+                    <td><a><%=dateFormat(rec.ohcandate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohassocxact%></a></td>
+                    <td><a><%=rec.ohprt1%></a></td>
+                    <td><a><%=rec.ohprt2%></a></td>
+                    <td><a><%=rec.ohprt3%></a></td>
+                    <td><a><%=rec.ohuserid%></a></td>
+                    <td><a><%=dateFormat(rec.ohrefdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohshpdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohduedate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohipp%></a></td>
+                    <td><a><%=rec.ohilpp%></a></td>
+                    <td><a><%=dateFormat(rec.ohpostgl,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohpostar,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.oharcustomer_id%></a></td>
+                    <td><a><%=rec.ohglar%></a></td>
+                    <td><a><%=dateFormat(rec.ohdisdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ddebit_flag%></a></td>
+                    <td><a><%=rec.oharflg%></a></td>
+                    <td><a><%=rec.ohinvtype%></a></td>
+                    <td><a><%=dateFormat(rec.ohfulfildate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohpayment_id%></a></td>
+                    <td><a><%=dateFormat(rec.ohpostfibu,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohreason%></a></td>
+                    <td><a><%=rec.ohrs_id%></a></td>
+                    <td><a><%=rec.ohddhflag%></a></td>
+                    <td><a><%=dateFormat(rec.ohddhdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohfct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohlct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohmod%></a></td>
+                    <td><a><%=rec.ohxrate%></a></td>
+                    <td><a><%=rec.oheccode%></a></td>
+                    <td><a><%=rec.ohecname%></a></td>
+                    <td><a><%=rec.ohglexact%></a></td>
+                    <td><a><%=rec.ohdunstep%></a></td>
+                    <td><a><%=dateFormat(rec.ohflfct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.ohfllct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.complaint%></a></td>
+                    <td><a><%=dateFormat(rec.complaint_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.rtx_status%></a></td>
+                    <td><a><%=rec.ohbillseqno%></a></td>
+                    <td><a><%=rec.ohcancelflag%></a></td>
+                    <td><a><%=dateFormat(rec.convdate_exchange,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohglexact_tax%></a></td>
+                    <td><a><%=rec.glacode_diff%></a></td>
+                    <td><a><%=rec.jobcost_id_diff%></a></td>
+                    <td><a><%=rec.tax_rounding_flag%></a></td>
+                    <td><a><%=rec.gl_currency%></a></td>
+                    <td><a><%=rec.document_currency%></a></td>
+                    <td><a><%=rec.document_convratetype_id%></a></td>
+                    <td><a><%=rec.secondary_currency%></a></td>
+                    <td><a><%=rec.secondary_convratetype_id%></a></td>
+                    <td><a><%=rec.ohinvamt_gl%></a></td>
+                    <td><a><%=rec.ohopnamt_gl%></a></td>
+                    <td><a><%=rec.ohdisamt_gl%></a></td>
+                    <td><a><%=rec.ohdistakamt_gl%></a></td>
+                    <td><a><%=rec.ohtaxamt_gl%></a></td>
+                    <td><a><%=rec.taxamt_diff_gl%></a></td>
+                    <td><a><%=rec.ohinvamt_doc%></a></td>
+                    <td><a><%=rec.ohopnamt_doc%></a></td>
+                    <td><a><%=rec.ohdisamt_doc%></a></td>
+                    <td><a><%=rec.ohdistakamt_doc%></a></td>
+                    <td><a><%=rec.ohtaxamt_doc%></a></td>
+                    <td><a><%=rec.gl_convratetype_id%></a></td>
+                    <td><a><%=rec.fee_balance%></a></td>
+                    <td><a><%=rec.fee_balance_gross%></a></td>
+                    <td><a><%=rec.currency%></a></td>
+                    <td><a><%=rec.ohcostcent%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.ohinvamt_secdoc%></a></td>
+                    <td><a><%=rec.taxamt_diff_secdoc%></a></td>
+                    <td><a><%=rec.paymentfailed%></a></td>
+                    <td><a><%=rec.billing_account_id%></a></td>
+                    <td><a><%=dateFormat(rec.balance_page_event_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.prepaid_balance_change_doc%></a></td>
+                    <td><a><%=rec.prepaid_balance_change_gl%></a></td>
+                    <td><a><%=rec.prepaid_glacode%></a></td>
+                    <td><a><%=rec.prepaid_taxamt_diff_gl%></a></td>
+                    <td><a><%=rec.prepaid_tax_diff_glacode%></a></td>
+                    <td><a><%=rec.payment_condition_id%></a></td>
+                    <td><a><%=rec.ohdocstatus%></a></td>
+                    <td><a><%=dateFormat(rec.ohextrefdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohextrefnum%></a></td>
+                    <td><a><%=rec.ohcmident%></a></td>
+                    <td><a><%=rec.ohremark%></a></td>
+                    <td><a><%=rec.ohdiscbase_doc%></a></td>
+                    <td><a><%=rec.ohproppaycurr%></a></td>
+                    <td><a><%=dateFormat(rec.ohproppaydate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ohprocess_type%></a></td>
+                    <td><a><%=dateFormat(rec.ohprocess_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.business_unit_id%></a></td>
+                    <td><a><%=rec.proposed_payment_method%></a></td>
+                    <td><a><%=rec.reason_id%></a></td>
+                    <td><a><%=rec.incoming_doc_pricing_type%></a></td>
+                    <td><a><%=rec.incoming_doc_tax_per_item%></a></td>
+                    <td><a><%=rec.payment_proposal_id%></a></td>
+                    
+                    <td><a href="/readOrderhdrAll?ohxact=<%=rec.ohxact%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeOrderhdrAll?ohxact=<%=rec.ohxact%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteOrderhdrAll?ohxact=<%=rec.ohxact%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newOrderhdrAll">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchPort" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.PortId.label%></td>    
+                <td><input type="text" class="form-control" name="port_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newPort">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Port.PortId.header%></th>
+                <th><%=resource.Port.Plcode.header%></th>
+                <th><%=resource.Port.Hlcode.header%></th>
+                <th><%=resource.Port.PortNum.header%></th>
+                <th><%=resource.Port.PortStatus.header%></th>
+                <th><%=resource.Port.PortStatusmoddat.header%></th>
+                <th><%=resource.Port.PortKi.header%></th>
+                <th><%=resource.Port.PortKind.header%></th>
+                <th><%=resource.Port.PortChannels.header%></th>
+                <th><%=resource.Port.PortChannelsExcl.header%></th>
+                <th><%=resource.Port.SmId.header%></th>
+                <th><%=resource.Port.PortSmRequ.header%></th>
+                <th><%=resource.Port.SimpohId.header%></th>
+                <th><%=resource.Port.SimpotId.header%></th>
+                <th><%=resource.Port.SimpotBatch.header%></th>
+                <th><%=resource.Port.DnId.header%></th>
+                <th><%=resource.Port.DealerId.header%></th>
+                <th><%=resource.Port.PortAssignDate.header%></th>
+                <th><%=resource.Port.PortTkey.header%></th>
+                <th><%=resource.Port.PortStatusRequ.header%></th>
+                <th><%=resource.Port.PortStaRequDate.header%></th>
+                <th><%=resource.Port.PortActivDate.header%></th>
+                <th><%=resource.Port.PortDeactivDate.header%></th>
+                <th><%=resource.Port.PortEntdate.header%></th>
+                <th><%=resource.Port.PortModdate.header%></th>
+                <th><%=resource.Port.PortUserlastmod.header%></th>
+                <th><%=resource.Port.PreActivated.header%></th>
+                <th><%=resource.Port.SmsUpdate.header%></th>
+                <th><%=resource.Port.PortRicBatch.header%></th>
+                <th><%=resource.Port.ExternalInd.header%></th>
+                <th><%=resource.Port.Capacity.header%></th>
+                <th><%=resource.Port.AvailableCapacity.header%></th>
+                <th><%=resource.Port.PrmValueId.header%></th>
+                <th><%=resource.Port.RecVersion.header%></th>
+                <th><%=resource.Port.PortNpcode.header%></th>
+                <th><%=resource.Port.TransactionId.header%></th>
+                <th><%=resource.Port.BusinessUnitId.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.port_id%></a></td>
+                <td><a><%=row.plcode%></a></td>
+                <td><a><%=row.hlcode%></a></td>
+                <td><a><%=row.port_num%></a></td>
+                <td><a><%=row.port_status%></a></td>
+                <td><a><%=dateFormat(row.port_statusmoddat,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.port_ki%></a></td>
+                <td><a><%=row.port_kind%></a></td>
+                <td><a><%=row.port_channels%></a></td>
+                <td><a><%=row.port_channels_excl%></a></td>
+                <td><a><%=row.sm_id%></a></td>
+                <td><a><%=row.port_sm_requ%></a></td>
+                <td><a><%=row.simpoh_id%></a></td>
+                <td><a><%=row.simpot_id%></a></td>
+                <td><a><%=row.simpot_batch%></a></td>
+                <td><a><%=row.dn_id%></a></td>
+                <td><a><%=row.dealer_id%></a></td>
+                <td><a><%=dateFormat(row.port_assign_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.port_tkey%></a></td>
+                <td><a><%=row.port_status_requ%></a></td>
+                <td><a><%=dateFormat(row.port_sta_requ_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.port_activ_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.port_deactiv_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.port_entdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.port_moddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.port_userlastmod%></a></td>
+                <td><a><%=row.pre_activated%></a></td>
+                <td><a><%=row.sms_update%></a></td>
+                <td><a><%=row.port_ric_batch%></a></td>
+                <td><a><%=row.external_ind%></a></td>
+                <td><a><%=row.capacity%></a></td>
+                <td><a><%=row.available_capacity%></a></td>
+                <td><a><%=row.prm_value_id%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.port_npcode%></a></td>
+                <td><a><%=row.transaction_id%></a></td>
+                <td><a><%=row.business_unit_id%></a></td>
+                
+                <td><a href="/readPort?portId=<%=row.port_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writePort?portId=<%=row.port_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deletePort?portId=<%=row.port_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchCustomerAll" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.Custcode.label%></td>    
+                <td><input type="text" class="form-control" name="custcode"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newCustomerAll">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <!--th><%=resource.CustomerAll.CustomerId.header%></th>
+                <th><%=resource.CustomerAll.CustomerIdHigh.header%></th-->
+                <th><%=resource.CustomerAll.Custcode.header%></th>
+                <!--th><%=resource.CustomerAll.Csst.header%></th-->
+                <th><%=resource.CustomerAll.Cstype.header%></th>
+                <th><%=resource.CustomerAll.Csactivated.header%></th>
+                <th><%=resource.CustomerAll.Csdeactivated.header%></th>
+                <th><%=resource.CustomerAll.CstypeDate.header%></th>
+                <th><%=resource.CustomerAll.Cslevel.header%></th>
+                <!--th><%=resource.CustomerAll.Cslvlname.header%></th-->
+                <th><%=resource.CustomerAll.Tmcode.header%></th>
+                <th><%=resource.CustomerAll.Prgcode.header%></th>
+                <th><%=resource.CustomerAll.Csclimit.header%></th>
+                <th><%=resource.CustomerAll.Cscurbalance.header%></th>
+                <!--th><%=resource.CustomerAll.Csdepdate.header%></th>
+                <th><%=resource.CustomerAll.Cstestbillrun.header%></th>
+                <th><%=resource.CustomerAll.BillLayout.header%></th-->
+                <th><%=resource.CustomerAll.Paymntresp.header%></th>
+                <!--th><%=resource.CustomerAll.TargetReached.header%></th>
+                <th><%=resource.CustomerAll.Pcsmethpaymnt.header%></th>
+                <th><%=resource.CustomerAll.DunningFlag.header%></th>
+                <th><%=resource.CustomerAll.CommNo.header%></th>
+                <th><%=resource.CustomerAll.PosCommType.header%></th>
+                <th><%=resource.CustomerAll.BtxPassword.header%></th>
+                <th><%=resource.CustomerAll.BtxUser.header%></th>
+                <th><%=resource.CustomerAll.SettlesPMonth.header%></th>
+                <th><%=resource.CustomerAll.Cashretour.header%></th>
+                <th><%=resource.CustomerAll.Cstradecode.header%></th>
+                <th><%=resource.CustomerAll.Cspassword.header%></th>
+                <th><%=resource.CustomerAll.Cspromotion.header%></th>
+                <th><%=resource.CustomerAll.Csreason.header%></th>
+                <th><%=resource.CustomerAll.Cscollector.header%></th>
+                <th><%=resource.CustomerAll.Cscontresp.header%></th>
+                <th><%=resource.CustomerAll.Csdeposit.header%></th>
+                <th><%=resource.CustomerAll.CscreditDate.header%></th>
+                <th><%=resource.CustomerAll.CscreditRemark.header%></th>
+                <th><%=resource.CustomerAll.Suspended.header%></th>
+                <th><%=resource.CustomerAll.Reactivated.header%></th>
+                <th><%=resource.CustomerAll.PrevBalance.header%></th>
+                <th><%=resource.CustomerAll.LbcDate.header%></th>
+                <th><%=resource.CustomerAll.CrlimitExc.header%></th>
+                <th><%=resource.CustomerAll.AreaId.header%></th>
+                <th><%=resource.CustomerAll.CostcenterId.header%></th>
+                <th><%=resource.CustomerAll.Csfedtaxid.header%></th>
+                <th><%=resource.CustomerAll.CreditRating.header%></th>
+                <th><%=resource.CustomerAll.CscreditStatus.header%></th>
+                <th><%=resource.CustomerAll.DeactCreateDate.header%></th>
+                <th><%=resource.CustomerAll.DeactReceipDate.header%></th>
+                <th><%=resource.CustomerAll.EdifactAddr.header%></th>
+                <th><%=resource.CustomerAll.EdifactUserFlag.header%></th>
+                <th><%=resource.CustomerAll.EdifactFlag.header%></th>
+                <th><%=resource.CustomerAll.CsdepositDueDate.header%></th>
+                <th><%=resource.CustomerAll.CalculateDeposit.header%></th>
+                <th><%=resource.CustomerAll.TmcodeDate.header%></th>
+                <th><%=resource.CustomerAll.Csrentalbc.header%></th>
+                <th><%=resource.CustomerAll.UserLastmod.header%></th>
+                <th><%=resource.CustomerAll.Csentdate.header%></th>
+                <th><%=resource.CustomerAll.Csmoddate.header%></th>
+                <th><%=resource.CustomerAll.Csmod.header%></th>
+                <th><%=resource.CustomerAll.CustomerIdExt.header%></th>
+                <th><%=resource.CustomerAll.CsclimitOTr1.header%></th>
+                <th><%=resource.CustomerAll.CsclimitOTr2.header%></th>
+                <th><%=resource.CustomerAll.CsclimitOTr3.header%></th>
+                <th><%=resource.CustomerAll.CscreditScore.header%></th>
+                <th><%=resource.CustomerAll.Cstraderef.header%></th>
+                <th><%=resource.CustomerAll.Wpid.header%></th>
+                <th><%=resource.CustomerAll.Csprepayment.header%></th>
+                <th><%=resource.CustomerAll.Csremark1.header%></th>
+                <th><%=resource.CustomerAll.Csremark2.header%></th>
+                <th><%=resource.CustomerAll.BillInformation.header%></th>
+                <th><%=resource.CustomerAll.DealerId.header%></th>
+                <th><%=resource.CustomerAll.DunningMode.header%></th>
+                <th><%=resource.CustomerAll.NotValid.header%></th>
+                <th><%=resource.CustomerAll.CscrdcheckAgreed.header%></th>
+                <th><%=resource.CustomerAll.ExpectPayCurrId.header%></th>
+                <th><%=resource.CustomerAll.ConvratetypePayment.header%></th>
+                <th><%=resource.CustomerAll.RefundCurrId.header%></th>
+                <th><%=resource.CustomerAll.ConvratetypeRefund.header%></th>
+                <th><%=resource.CustomerAll.Srcode.header%></th>
+                <th><%=resource.CustomerAll.Currency.header%></th>
+                <th><%=resource.CustomerAll.RecVersion.header%></th>
+                <th><%=resource.CustomerAll.AnonymousCustomer.header%></th>
+                <th><%=resource.CustomerAll.ExternalCustomerId.header%></th>
+                <th><%=resource.CustomerAll.ExternalCustomerSetId.header%></th-->
+                <th><%=resource.CustomerAll.Custnum.header%></th>
+                <th><%=resource.CustomerAll.BusinessUnitId.header%></th>
+                <th><%=resource.CustomerAll.PartyTypeId.header%></th>
+                <!--th><%=resource.CustomerAll.IndividualOverdiscFlag.header%></th>
+                <th><%=resource.CustomerAll.BillingThreshold.header%></th>
+                <th><%=resource.CustomerAll.BillingThresholdCurrency.header%></th>
+                <th><%=resource.CustomerAll.ThresholdBillingMode.header%></th>
+                <th><%=resource.CustomerAll.ThresholdBillingPurpose.header%></th>
+                <th><%=resource.CustomerAll.CollectionInd.header%></th>
+                <th><%=resource.CustomerAll.RrCandidate.header%></th>
+                <th><%=resource.CustomerAll.BchLastRunDate.header%></th>
+                <th><%=resource.CustomerAll.CreatedByUser.header%></th-->
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <!--td><a><%=row.customer_id%></a></td>
+                <td><a><%=row.customer_id_high%></a></td-->
+                <td><a><%=row.custcode%></a></td>
+                <!--td><a><%=row.csst%></a></td-->
+                <td><a><%=row.cstype%></a></td>
+                <td><a><%=dateFormat(row.csactivated,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.csdeactivated,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.cstype_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.cslevel%></a></td>
+                <!--td><a><%=row.cslvlname%></a></td-->
+                <td><a><%=row.tmcode%></a></td>
+                <td><a><%=row.prgcode%></a></td>
+                <td><a><%=row.csclimit%></a></td>
+                <td><a><%=row.cscurbalance%></a></td>
+                <!--td><a><%=dateFormat(row.csdepdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.cstestbillrun%></a></td>
+                <td><a><%=row.bill_layout%></a></td-->
+                <td><a><%=row.paymntresp%></a></td>
+                <!--td><a><%=row.target_reached%></a></td>
+                <td><a><%=row.pcsmethpaymnt%></a></td>
+                <td><a><%=row.dunning_flag%></a></td>
+                <td><a><%=row.comm_no%></a></td>
+                <td><a><%=row.pos_comm_type%></a></td>
+                <td><a><%=row.btx_password%></a></td>
+                <td><a><%=row.btx_user%></a></td>
+                <td><a><%=row.settles_p_month%></a></td>
+                <td><a><%=row.cashretour%></a></td>
+                <td><a><%=row.cstradecode%></a></td>
+                <td><a><%=row.cspassword%></a></td>
+                <td><a><%=row.cspromotion%></a></td>
+                <td><a><%=row.csreason%></a></td>
+                <td><a><%=row.cscollector%></a></td>
+                <td><a><%=row.cscontresp%></a></td>
+                <td><a><%=row.csdeposit%></a></td>
+                <td><a><%=dateFormat(row.cscredit_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.cscredit_remark%></a></td>
+                <td><a><%=dateFormat(row.suspended,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.reactivated,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.prev_balance%></a></td>
+                <td><a><%=dateFormat(row.lbc_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.crlimit_exc%></a></td>
+                <td><a><%=row.area_id%></a></td>
+                <td><a><%=row.costcenter_id%></a></td>
+                <td><a><%=row.csfedtaxid%></a></td>
+                <td><a><%=row.credit_rating%></a></td>
+                <td><a><%=row.cscredit_status%></a></td>
+                <td><a><%=dateFormat(row.deact_create_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.deact_receip_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.edifact_addr%></a></td>
+                <td><a><%=row.edifact_user_flag%></a></td>
+                <td><a><%=row.edifact_flag%></a></td>
+                <td><a><%=dateFormat(row.csdeposit_due_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.calculate_deposit%></a></td>
+                <td><a><%=dateFormat(row.tmcode_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.csrentalbc%></a></td>
+                <td><a><%=row.user_lastmod%></a></td>
+                <td><a><%=dateFormat(row.csentdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.csmoddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.csmod%></a></td>
+                <td><a><%=row.customer_id_ext%></a></td>
+                <td><a><%=row.csclimit_o_tr1%></a></td>
+                <td><a><%=row.csclimit_o_tr2%></a></td>
+                <td><a><%=row.csclimit_o_tr3%></a></td>
+                <td><a><%=row.cscredit_score%></a></td>
+                <td><a><%=row.cstraderef%></a></td>
+                <td><a><%=row.wpid%></a></td>
+                <td><a><%=row.csprepayment%></a></td>
+                <td><a><%=row.csremark_1%></a></td>
+                <td><a><%=row.csremark_2%></a></td>
+                <td><a><%=row.bill_information%></a></td>
+                <td><a><%=row.dealer_id%></a></td>
+                <td><a><%=row.dunning_mode%></a></td>
+                <td><a><%=row.not_valid%></a></td>
+                <td><a><%=row.cscrdcheck_agreed%></a></td>
+                <td><a><%=row.expect_pay_curr_id%></a></td>
+                <td><a><%=row.convratetype_payment%></a></td>
+                <td><a><%=row.refund_curr_id%></a></td>
+                <td><a><%=row.convratetype_refund%></a></td>
+                <td><a><%=row.srcode%></a></td>
+                <td><a><%=row.currency%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.anonymous_customer%></a></td>
+                <td><a><%=row.external_customer_id%></a></td>
+                <td><a><%=row.external_customer_set_id%></a></td-->
+                <td><a><%=row.custnum%></a></td>
+                <td><a><%=row.business_unit_id%></a></td>
+                <td><a><%=row.party_type_id%></a></td>
+                <!--td><a><%=row.individual_overdisc_flag%></a></td>
+                <td><a><%=row.billing_threshold%></a></td>
+                <td><a><%=row.billing_threshold_currency%></a></td>
+                <td><a><%=row.threshold_billing_mode%></a></td>
+                <td><a><%=row.threshold_billing_purpose%></a></td>
+                <td><a><%=row.collection_ind%></a></td>
+                <td><a><%=row.rr_candidate%></a></td>
+                <td><a><%=dateFormat(row.bch_last_run_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.created_by_user%></a></td-->
+                
+                <td><a href="/readCustomerAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeCustomerAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteCustomerAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

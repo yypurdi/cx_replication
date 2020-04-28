@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeInfoContrComboMapper">			
+	
+	<update id="writeInfoContrCombo">
+		update info_contr_combo set co_id = #{coId},
+		combo01 = #{combo01},
+		combo02 = #{combo02},
+		combo03 = #{combo03},
+		combo04 = #{combo04},
+		combo05 = #{combo05},
+		combo06 = #{combo06},
+		combo07 = #{combo07},
+		combo08 = #{combo08},
+		combo09 = #{combo09},
+		combo10 = #{combo10},
+		combo11 = #{combo11},
+		combo12 = #{combo12},
+		combo13 = #{combo13},
+		combo14 = #{combo14},
+		combo15 = #{combo15},
+		combo16 = #{combo16},
+		combo17 = #{combo17},
+		combo18 = #{combo18},
+		combo19 = #{combo19},
+		combo20 = #{combo20},
+		rec_version = #{recVersion} where co_id = #{coId};
+	</update>
+
+</mapper>

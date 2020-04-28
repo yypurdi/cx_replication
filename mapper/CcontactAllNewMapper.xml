@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newCcontactAllMapper">			
+	
+	<insert id="newCcontactAll">
+		insert into ccontact_all(customer_id,ccseq,cctitle,ccname,ccfname,cclname,ccstreet,ccstreetno,cclnamemc,ccaddr1,ccaddr2,ccaddr3,cccity,cczip,cctn,cctn2,ccfax,ccline1,ccline2,ccline3,ccline4,ccline5,ccline6,cctn_area,cctn2_area,ccfax_area,ccjobdesc,ccdeftrk,ccuser,ccbill,ccbilldetails,cccontract,ccship,ccmagazine,ccdirectory,ccforward,ccurgent,country,cclanguage,ccadditional,sort_criteria,ccentdate,ccmoddate,ccmod,cccounty,ccstate,ccvaliddate,ccbill_previous,welcome_crit,ccmname,ccemail,ccaddryears,ccsmsno,ccbilltemp,userlastmod,ccvalidation,ccuser_inst,cclocation_1,cclocation_2,ccremark,rec_version,marital_status,csnationality,cssocialsecno,csdrivelicence,csemployer,employee,company_type,id_type,passportno,birthdate,cscompregno,cscomptaxno,cscusttype,ccsex) 
+		values (#{customerId},#{ccseq},#{cctitle},#{ccname},#{ccfname},#{cclname},#{ccstreet},#{ccstreetno},#{cclnamemc},#{ccaddr1},#{ccaddr2},#{ccaddr3},#{cccity},#{cczip},#{cctn},#{cctn2},#{ccfax},#{ccline1},#{ccline2},#{ccline3},#{ccline4},#{ccline5},#{ccline6},#{cctnArea},#{cctn2Area},#{ccfaxArea},#{ccjobdesc},#{ccdeftrk},#{ccuser},#{ccbill},#{ccbilldetails},#{cccontract},#{ccship},#{ccmagazine},#{ccdirectory},#{ccforward},#{ccurgent},#{country},#{cclanguage},#{ccadditional},#{sortCriteria},#{ccentdate},#{ccmoddate},#{ccmod},#{cccounty},#{ccstate},#{ccvaliddate},#{ccbillPrevious},#{welcomeCrit},#{ccmname},#{ccemail},#{ccaddryears},#{ccsmsno},#{ccbilltemp},#{userlastmod},#{ccvalidation},#{ccuserInst},#{cclocation1},#{cclocation2},#{ccremark},#{recVersion},#{maritalStatus},#{csnationality},#{cssocialsecno},#{csdrivelicence},#{csemployer},#{employee},#{companyType},#{idType},#{passportno},#{birthdate},#{cscompregno},#{cscomptaxno},#{cscusttype},#{ccsex});
+	</insert>
+
+</mapper>

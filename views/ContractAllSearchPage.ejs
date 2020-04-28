@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchContractAll" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>    
+                <td><input type="text" class="form-control" name="co_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newContractAll">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.ContractAll.CoId.header%></th>
+                <th><%=resource.ContractAll.CustomerId.header%></th>
+                <th><%=resource.ContractAll.Type.header%></th>
+                <th><%=resource.ContractAll.Plcode.header%></th>
+                <th><%=resource.ContractAll.Sccode.header%></th>
+                <th><%=resource.ContractAll.SubmId.header%></th>
+                <th><%=resource.ContractAll.CoSigned.header%></th>
+                <th><%=resource.ContractAll.CoEquType.header%></th>
+                <th><%=resource.ContractAll.CoRepBill.header%></th>
+                <th><%=resource.ContractAll.CoRep.header%></th>
+                <th><%=resource.ContractAll.CoRepBillIdno.header%></th>
+                <th><%=resource.ContractAll.CoRepIdno.header%></th>
+                <th><%=resource.ContractAll.CoInstalled.header%></th>
+                <th><%=resource.ContractAll.CoArchive.header%></th>
+                <th><%=resource.ContractAll.CoDirEntry.header%></th>
+                <th><%=resource.ContractAll.CoOperatorDir.header%></th>
+                <th><%=resource.ContractAll.CoPstnDir.header%></th>
+                <th><%=resource.ContractAll.CoAssServ.header%></th>
+                <th><%=resource.ContractAll.CoAssEqu.header%></th>
+                <th><%=resource.ContractAll.CoCrdCheck.header%></th>
+                <th><%=resource.ContractAll.CoCrdChkEnd.header%></th>
+                <th><%=resource.ContractAll.CoCrdChkStart.header%></th>
+                <th><%=resource.ContractAll.CoCrdClicks.header%></th>
+                <th><%=resource.ContractAll.CoCrdClicksDay.header%></th>
+                <th><%=resource.ContractAll.CoCrdDays.header%></th>
+                <th><%=resource.ContractAll.CoComment.header%></th>
+                <th><%=resource.ContractAll.CoReserved.header%></th>
+                <th><%=resource.ContractAll.CoExpirDate.header%></th>
+                <th><%=resource.ContractAll.CoActivated.header%></th>
+                <th><%=resource.ContractAll.CoEntdate.header%></th>
+                <th><%=resource.ContractAll.CoModdate.header%></th>
+                <th><%=resource.ContractAll.CoUserlastmod.header%></th>
+                <th><%=resource.ContractAll.Tmcode.header%></th>
+                <th><%=resource.ContractAll.TmcodeDate.header%></th>
+                <th><%=resource.ContractAll.CoCrdDTr1.header%></th>
+                <th><%=resource.ContractAll.CoCrdDTr2.header%></th>
+                <th><%=resource.ContractAll.CoCrdDTr3.header%></th>
+                <th><%=resource.ContractAll.CoCrdPTr1.header%></th>
+                <th><%=resource.ContractAll.CoCrdPTr2.header%></th>
+                <th><%=resource.ContractAll.CoCrdPTr3.header%></th>
+                <th><%=resource.ContractAll.EccodeLdc.header%></th>
+                <th><%=resource.ContractAll.PendingEccodeLdc.header%></th>
+                <th><%=resource.ContractAll.EccodeLec.header%></th>
+                <th><%=resource.ContractAll.PendingEccodeLec.header%></th>
+                <th><%=resource.ContractAll.CoRequest.header%></th>
+                <th><%=resource.ContractAll.DealerId.header%></th>
+                <th><%=resource.ContractAll.NotValid.header%></th>
+                <th><%=resource.ContractAll.Arpcode.header%></th>
+                <th><%=resource.ContractAll.CoAddrOnIbill.header%></th>
+                <th><%=resource.ContractAll.CoCrdAmount.header%></th>
+                <th><%=resource.ContractAll.CoCrdAmountDay.header%></th>
+                <th><%=resource.ContractAll.ProductHistoryDate.header%></th>
+                <th><%=resource.ContractAll.CoConfirm.header%></th>
+                <th><%=resource.ContractAll.CoExtCsuin.header%></th>
+                <th><%=resource.ContractAll.TrialEndDate.header%></th>
+                <th><%=resource.ContractAll.CoIbCdrFlag.header%></th>
+                <th><%=resource.ContractAll.Currency.header%></th>
+                <th><%=resource.ContractAll.RecVersion.header%></th>
+                <th><%=resource.ContractAll.AnPackageId.header%></th>
+                <th><%=resource.ContractAll.CoRelType.header%></th>
+                <th><%=resource.ContractAll.PendingTmcode.header%></th>
+                <th><%=resource.ContractAll.ContractTemplate.header%></th>
+                <th><%=resource.ContractAll.CoCode.header%></th>
+                <th><%=resource.ContractAll.BusinessUnitId.header%></th>
+                <th><%=resource.ContractAll.Description.header%></th>
+                <th><%=resource.ContractAll.AgreementType.header%></th>
+                <th><%=resource.ContractAll.ExtProductId.header%></th>
+                <th><%=resource.ContractAll.RemotePlcode.header%></th>
+                <th><%=resource.ContractAll.Eccode.header%></th>
+                <th><%=resource.ContractAll.HplmnBidGroupId.header%></th>
+                <th><%=resource.ContractAll.VplmnBidGroupId.header%></th>
+                <th><%=resource.ContractAll.HomePartyId.header%></th>
+                <th><%=resource.ContractAll.ContractTypeId.header%></th>
+                <th><%=resource.ContractAll.TrialStartDate.header%></th>
+                <th><%=resource.ContractAll.FohAggregationFlag.header%></th>
+                <th><%=resource.ContractAll.GlAccPackId.header%></th>
+                <th><%=resource.ContractAll.CdsBillMedium.header%></th>
+                <th><%=resource.ContractAll.CdsGeneration.header%></th>
+                <th><%=resource.ContractAll.ChargePartNum.header%></th>
+                <th><%=resource.ContractAll.ChStatus.header%></th>
+                <th><%=resource.ContractAll.SvpFile.header%></th>
+                <th><%=resource.ContractAll.MakeCallsDate.header%></th>
+                <th><%=resource.ContractAll.CoInprepayPending.header%></th>
+                <th><%=resource.ContractAll.CoInprepay.header%></th>
+                <th><%=resource.ContractAll.ChargePerAdjRef.header%></th>
+                <th><%=resource.ContractAll.NextCutoffDate.header%></th>
+                <th><%=resource.ContractAll.LastCutoffDate.header%></th>
+                <th><%=resource.ContractAll.LastChargeDate.header%></th>
+                <th><%=resource.ContractAll.LastNoticeDate.header%></th>
+                <th><%=resource.ContractAll.NotBillMedium.header%></th>
+                <th><%=resource.ContractAll.ChargeStartDate.header%></th>
+                <th><%=resource.ContractAll.EarliestEndDate.header%></th>
+                <th><%=resource.ContractAll.CommonRefDataInd.header%></th>
+                <th><%=resource.ContractAll.ContractLanguage.header%></th>
+                <th><%=resource.ContractAll.PendingLanguage.header%></th>
+                <th><%=resource.ContractAll.RrCandidate.header%></th>
+                <th><%=resource.ContractAll.ChStatusValidfrom.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.co_id%></a></td>
+                <td><a><%=row.customer_id%></a></td>
+                <td><a><%=row.type%></a></td>
+                <td><a><%=row.plcode%></a></td>
+                <td><a><%=row.sccode%></a></td>
+                <td><a><%=row.subm_id%></a></td>
+                <td><a><%=dateFormat(row.co_signed,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_equ_type%></a></td>
+                <td><a><%=row.co_rep_bill%></a></td>
+                <td><a><%=row.co_rep%></a></td>
+                <td><a><%=row.co_rep_bill_idno%></a></td>
+                <td><a><%=row.co_rep_idno%></a></td>
+                <td><a><%=dateFormat(row.co_installed,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_archive%></a></td>
+                <td><a><%=row.co_dir_entry%></a></td>
+                <td><a><%=row.co_operator_dir%></a></td>
+                <td><a><%=row.co_pstn_dir%></a></td>
+                <td><a><%=row.co_ass_serv%></a></td>
+                <td><a><%=row.co_ass_equ%></a></td>
+                <td><a><%=row.co_crd_check%></a></td>
+                <td><a><%=dateFormat(row.co_crd_chk_end,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.co_crd_chk_start,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_crd_clicks%></a></td>
+                <td><a><%=row.co_crd_clicks_day%></a></td>
+                <td><a><%=row.co_crd_days%></a></td>
+                <td><a><%=row.co_comment%></a></td>
+                <td><a><%=dateFormat(row.co_reserved,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.co_expir_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.co_activated,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.co_entdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.co_moddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_userlastmod%></a></td>
+                <td><a><%=row.tmcode%></a></td>
+                <td><a><%=dateFormat(row.tmcode_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_crd_d_tr1%></a></td>
+                <td><a><%=row.co_crd_d_tr2%></a></td>
+                <td><a><%=row.co_crd_d_tr3%></a></td>
+                <td><a><%=row.co_crd_p_tr1%></a></td>
+                <td><a><%=row.co_crd_p_tr2%></a></td>
+                <td><a><%=row.co_crd_p_tr3%></a></td>
+                <td><a><%=row.eccode_ldc%></a></td>
+                <td><a><%=row.pending_eccode_ldc%></a></td>
+                <td><a><%=row.eccode_lec%></a></td>
+                <td><a><%=row.pending_eccode_lec%></a></td>
+                <td><a><%=row.co_request%></a></td>
+                <td><a><%=row.dealer_id%></a></td>
+                <td><a><%=row.not_valid%></a></td>
+                <td><a><%=row.arpcode%></a></td>
+                <td><a><%=row.co_addr_on_ibill%></a></td>
+                <td><a><%=row.co_crd_amount%></a></td>
+                <td><a><%=row.co_crd_amount_day%></a></td>
+                <td><a><%=dateFormat(row.product_history_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_confirm%></a></td>
+                <td><a><%=row.co_ext_csuin%></a></td>
+                <td><a><%=dateFormat(row.trial_end_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_ib_cdr_flag%></a></td>
+                <td><a><%=row.currency%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.an_package_id%></a></td>
+                <td><a><%=row.co_rel_type%></a></td>
+                <td><a><%=row.pending_tmcode%></a></td>
+                <td><a><%=row.contract_template%></a></td>
+                <td><a><%=row.co_code%></a></td>
+                <td><a><%=row.business_unit_id%></a></td>
+                <td><a><%=row.description%></a></td>
+                <td><a><%=row.agreement_type%></a></td>
+                <td><a><%=row.ext_product_id%></a></td>
+                <td><a><%=row.remote_plcode%></a></td>
+                <td><a><%=row.eccode%></a></td>
+                <td><a><%=row.hplmn_bid_group_id%></a></td>
+                <td><a><%=row.vplmn_bid_group_id%></a></td>
+                <td><a><%=row.home_party_id%></a></td>
+                <td><a><%=row.contract_type_id%></a></td>
+                <td><a><%=dateFormat(row.trial_start_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.foh_aggregation_flag%></a></td>
+                <td><a><%=row.gl_acc_pack_id%></a></td>
+                <td><a><%=row.cds_bill_medium%></a></td>
+                <td><a><%=row.cds_generation%></a></td>
+                <td><a><%=row.charge_part_num%></a></td>
+                <td><a><%=row.ch_status%></a></td>
+                <td><a><%=row.svp_file%></a></td>
+                <td><a><%=dateFormat(row.make_calls_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.co_inprepay_pending%></a></td>
+                <td><a><%=row.co_inprepay%></a></td>
+                <td><a><%=row.charge_per_adj_ref%></a></td>
+                <td><a><%=dateFormat(row.next_cutoff_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.last_cutoff_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.last_charge_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.last_notice_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.not_bill_medium%></a></td>
+                <td><a><%=dateFormat(row.charge_start_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.earliest_end_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.common_ref_data_ind%></a></td>
+                <td><a><%=row.contract_language%></a></td>
+                <td><a><%=row.pending_language%></a></td>
+                <td><a><%=row.rr_candidate%></a></td>
+                <td><a><%=dateFormat(row.ch_status_validfrom,'mmm-dd-yyyy')%></a></td>
+                
+                <td><a href="/readContractAll?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeContractAll?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteContractAll?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

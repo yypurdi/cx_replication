@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchContrDevices" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.CdId.label%></td>    
+                <td><input type="text" class="form-control" name="cd_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newContrDevices">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.ContrDevices.CdId.header%></th>
+                <th><%=resource.ContrDevices.CdSeqno.header%></th>
+                <th><%=resource.ContrDevices.CoId.header%></th>
+                <th><%=resource.ContrDevices.PortId.header%></th>
+                <th><%=resource.ContrDevices.DnId.header%></th>
+                <th><%=resource.ContrDevices.EqId.header%></th>
+                <th><%=resource.ContrDevices.CdStatus.header%></th>
+                <th><%=resource.ContrDevices.CdActivDate.header%></th>
+                <th><%=resource.ContrDevices.CdDeactivDate.header%></th>
+                <th><%=resource.ContrDevices.CdValidfrom.header%></th>
+                <th><%=resource.ContrDevices.CdEntdate.header%></th>
+                <th><%=resource.ContrDevices.CdModdate.header%></th>
+                <th><%=resource.ContrDevices.CdUserlastmod.header%></th>
+                <th><%=resource.ContrDevices.CdSmNum.header%></th>
+                <th><%=resource.ContrDevices.CdChannels.header%></th>
+                <th><%=resource.ContrDevices.CdChannelsExcl.header%></th>
+                <th><%=resource.ContrDevices.CdEqNum.header%></th>
+                <th><%=resource.ContrDevices.CdPendingState.header%></th>
+                <th><%=resource.ContrDevices.CdRsId.header%></th>
+                <th><%=resource.ContrDevices.CdPlcode.header%></th>
+                <th><%=resource.ContrDevices.Hlcode.header%></th>
+                <th><%=resource.ContrDevices.RecVersion.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.cd_id%></a></td>
+                <td><a><%=row.cd_seqno%></a></td>
+                <td><a><%=row.co_id%></a></td>
+                <td><a><%=row.port_id%></a></td>
+                <td><a><%=row.dn_id%></a></td>
+                <td><a><%=row.eq_id%></a></td>
+                <td><a><%=row.cd_status%></a></td>
+                <td><a><%=dateFormat(row.cd_activ_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.cd_deactiv_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.cd_validfrom,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.cd_entdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.cd_moddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.cd_userlastmod%></a></td>
+                <td><a><%=row.cd_sm_num%></a></td>
+                <td><a><%=row.cd_channels%></a></td>
+                <td><a><%=row.cd_channels_excl%></a></td>
+                <td><a><%=row.cd_eq_num%></a></td>
+                <td><a><%=row.cd_pending_state%></a></td>
+                <td><a><%=row.cd_rs_id%></a></td>
+                <td><a><%=row.cd_plcode%></a></td>
+                <td><a><%=row.hlcode%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                
+                <td><a href="/readContrDevices?cdId=<%=row.cd_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeContrDevices?cdId=<%=row.cd_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteContrDevices?cdId=<%=row.cd_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

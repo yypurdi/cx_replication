@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ordertrailer-tab" data-toggle="tab" href="#ordertrailer" role="tab" aria-controls="ordertrailer" aria-selected="true"><h4><%=resource.Ordertrailer.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.Ohxact.label%></td>
+                        <td><%=record.ohxact%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohstatus.label%></td>
+                        <td><%=record.ohstatus%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohstatusflg.label%></td>
+                        <td><%=record.ohstatusflg%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohentdate.label%></td>
+                        <td><%=dateFormat(record.ohentdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohrefnum.label%></td>
+                        <td><%=record.ohrefnum%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohtshdate.label%></td>
+                        <td><%=dateFormat(record.ohtshdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsls.label%></td>
+                        <td><%=record.ohsls%></td>						
+                    </tr><tr>
+                        <td><%=resource.CustomerId.label%></td>
+                        <td><%=record.customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohcseq.label%></td>
+                        <td><%=record.ohcseq%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsname.label%></td>
+                        <td><%=record.ohsname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsaddr1.label%></td>
+                        <td><%=record.ohsaddr1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsaddr2.label%></td>
+                        <td><%=record.ohsaddr2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsaddr3.label%></td>
+                        <td><%=record.ohsaddr3%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohscity.label%></td>
+                        <td><%=record.ohscity%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohsst.label%></td>
+                        <td><%=record.ohsst%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohszip.label%></td>
+                        <td><%=record.ohszip%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohscountry.label%></td>
+                        <td><%=record.ohscountry%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohscrc.label%></td>
+                        <td><%=record.ohscrc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohattn.label%></td>
+                        <td><%=record.ohattn%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohtrucker.label%></td>
+                        <td><%=record.ohtrucker%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohponum.label%></td>
+                        <td><%=record.ohponum%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohrelease.label%></td>
+                        <td><%=dateFormat(record.ohrelease,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohpsno.label%></td>
+                        <td><%=record.ohpsno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohfrtterms.label%></td>
+                        <td><%=record.ohfrtterms%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohordtyp.label%></td>
+                        <td><%=record.ohordtyp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohcandate.label%></td>
+                        <td><%=dateFormat(record.ohcandate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohassocxact.label%></td>
+                        <td><%=record.ohassocxact%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohprt1.label%></td>
+                        <td><%=record.ohprt1%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohprt2.label%></td>
+                        <td><%=record.ohprt2%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohprt3.label%></td>
+                        <td><%=record.ohprt3%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohuserid.label%></td>
+                        <td><%=record.ohuserid%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohrefdate.label%></td>
+                        <td><%=dateFormat(record.ohrefdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohshpdate.label%></td>
+                        <td><%=dateFormat(record.ohshpdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohduedate.label%></td>
+                        <td><%=dateFormat(record.ohduedate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohipp.label%></td>
+                        <td><%=record.ohipp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohilpp.label%></td>
+                        <td><%=record.ohilpp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohpostgl.label%></td>
+                        <td><%=dateFormat(record.ohpostgl,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohpostar.label%></td>
+                        <td><%=dateFormat(record.ohpostar,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.OharcustomerId.label%></td>
+                        <td><%=record.oharcustomer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohglar.label%></td>
+                        <td><%=record.ohglar%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohdisdate.label%></td>
+                        <td><%=dateFormat(record.ohdisdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DdebitFlag.label%></td>
+                        <td><%=record.ddebit_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.Oharflg.label%></td>
+                        <td><%=record.oharflg%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohinvtype.label%></td>
+                        <td><%=record.ohinvtype%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohfulfildate.label%></td>
+                        <td><%=dateFormat(record.ohfulfildate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhpaymentId.label%></td>
+                        <td><%=record.ohpayment_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohpostfibu.label%></td>
+                        <td><%=dateFormat(record.ohpostfibu,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohreason.label%></td>
+                        <td><%=record.ohreason%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhrsId.label%></td>
+                        <td><%=record.ohrs_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohddhflag.label%></td>
+                        <td><%=record.ohddhflag%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohddhdate.label%></td>
+                        <td><%=dateFormat(record.ohddhdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohfct.label%></td>
+                        <td><%=dateFormat(record.ohfct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohlct.label%></td>
+                        <td><%=dateFormat(record.ohlct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohmod.label%></td>
+                        <td><%=record.ohmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohxrate.label%></td>
+                        <td><%=record.ohxrate%></td>						
+                    </tr><tr>
+                        <td><%=resource.Oheccode.label%></td>
+                        <td><%=record.oheccode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohecname.label%></td>
+                        <td><%=record.ohecname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohglexact.label%></td>
+                        <td><%=record.ohglexact%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohdunstep.label%></td>
+                        <td><%=record.ohdunstep%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohflfct.label%></td>
+                        <td><%=dateFormat(record.ohflfct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohfllct.label%></td>
+                        <td><%=dateFormat(record.ohfllct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoId.label%></td>
+                        <td><%=record.co_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Complaint.label%></td>
+                        <td><%=record.complaint%></td>						
+                    </tr><tr>
+                        <td><%=resource.ComplaintDate.label%></td>
+                        <td><%=dateFormat(record.complaint_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.RtxStatus.label%></td>
+                        <td><%=record.rtx_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohbillseqno.label%></td>
+                        <td><%=record.ohbillseqno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohcancelflag.label%></td>
+                        <td><%=record.ohcancelflag%></td>						
+                    </tr><tr>
+                        <td><%=resource.ConvdateExchange.label%></td>
+                        <td><%=dateFormat(record.convdate_exchange,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhglexactTax.label%></td>
+                        <td><%=record.ohglexact_tax%></td>						
+                    </tr><tr>
+                        <td><%=resource.GlacodeDiff.label%></td>
+                        <td><%=record.glacode_diff%></td>						
+                    </tr><tr>
+                        <td><%=resource.JobcostIdDiff.label%></td>
+                        <td><%=record.jobcost_id_diff%></td>						
+                    </tr><tr>
+                        <td><%=resource.TaxRoundingFlag.label%></td>
+                        <td><%=record.tax_rounding_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.GlCurrency.label%></td>
+                        <td><%=record.gl_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.DocumentCurrency.label%></td>
+                        <td><%=record.document_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.DocumentConvratetypeId.label%></td>
+                        <td><%=record.document_convratetype_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.SecondaryCurrency.label%></td>
+                        <td><%=record.secondary_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.SecondaryConvratetypeId.label%></td>
+                        <td><%=record.secondary_convratetype_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhinvamtGl.label%></td>
+                        <td><%=record.ohinvamt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhopnamtGl.label%></td>
+                        <td><%=record.ohopnamt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhdisamtGl.label%></td>
+                        <td><%=record.ohdisamt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhdistakamtGl.label%></td>
+                        <td><%=record.ohdistakamt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhtaxamtGl.label%></td>
+                        <td><%=record.ohtaxamt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.TaxamtDiffGl.label%></td>
+                        <td><%=record.taxamt_diff_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhinvamtDoc.label%></td>
+                        <td><%=record.ohinvamt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhopnamtDoc.label%></td>
+                        <td><%=record.ohopnamt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhdisamtDoc.label%></td>
+                        <td><%=record.ohdisamt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhdistakamtDoc.label%></td>
+                        <td><%=record.ohdistakamt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhtaxamtDoc.label%></td>
+                        <td><%=record.ohtaxamt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.GlConvratetypeId.label%></td>
+                        <td><%=record.gl_convratetype_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.FeeBalance.label%></td>
+                        <td><%=record.fee_balance%></td>						
+                    </tr><tr>
+                        <td><%=resource.FeeBalanceGross.label%></td>
+                        <td><%=record.fee_balance_gross%></td>						
+                    </tr><tr>
+                        <td><%=resource.Currency.label%></td>
+                        <td><%=record.currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohcostcent.label%></td>
+                        <td><%=record.ohcostcent%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhinvamtSecdoc.label%></td>
+                        <td><%=record.ohinvamt_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.TaxamtDiffSecdoc.label%></td>
+                        <td><%=record.taxamt_diff_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Paymentfailed.label%></td>
+                        <td><%=record.paymentfailed%></td>						
+                    </tr><tr>
+                        <td><%=resource.BillingAccountId.label%></td>
+                        <td><%=record.billing_account_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.BalancePageEventDate.label%></td>
+                        <td><%=dateFormat(record.balance_page_event_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrepaidBalanceChangeDoc.label%></td>
+                        <td><%=record.prepaid_balance_change_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrepaidBalanceChangeGl.label%></td>
+                        <td><%=record.prepaid_balance_change_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrepaidGlacode.label%></td>
+                        <td><%=record.prepaid_glacode%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrepaidTaxamtDiffGl.label%></td>
+                        <td><%=record.prepaid_taxamt_diff_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrepaidTaxDiffGlacode.label%></td>
+                        <td><%=record.prepaid_tax_diff_glacode%></td>						
+                    </tr><tr>
+                        <td><%=resource.PaymentConditionId.label%></td>
+                        <td><%=record.payment_condition_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohdocstatus.label%></td>
+                        <td><%=record.ohdocstatus%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohextrefdate.label%></td>
+                        <td><%=dateFormat(record.ohextrefdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohextrefnum.label%></td>
+                        <td><%=record.ohextrefnum%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohcmident.label%></td>
+                        <td><%=record.ohcmident%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohremark.label%></td>
+                        <td><%=record.ohremark%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhdiscbaseDoc.label%></td>
+                        <td><%=record.ohdiscbase_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohproppaycurr.label%></td>
+                        <td><%=record.ohproppaycurr%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ohproppaydate.label%></td>
+                        <td><%=dateFormat(record.ohproppaydate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhprocessType.label%></td>
+                        <td><%=record.ohprocess_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.OhprocessDate.label%></td>
+                        <td><%=dateFormat(record.ohprocess_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.BusinessUnitId.label%></td>
+                        <td><%=record.business_unit_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ProposedPaymentMethod.label%></td>
+                        <td><%=record.proposed_payment_method%></td>						
+                    </tr><tr>
+                        <td><%=resource.ReasonId.label%></td>
+                        <td><%=record.reason_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.IncomingDocPricingType.label%></td>
+                        <td><%=record.incoming_doc_pricing_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.IncomingDocTaxPerItem.label%></td>
+                        <td><%=record.incoming_doc_tax_per_item%></td>						
+                    </tr><tr>
+                        <td><%=resource.PaymentProposalId.label%></td>
+                        <td><%=record.payment_proposal_id%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeOrderhdrAll?ohxact=<%=record.ohxact%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteOrderhdrAll?ohxact=<%=record.ohxact%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+	<div class="tab-pane fade" id="ordertrailer" role="tabpanel" aria-labelledby="ordertrailer-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.Ordertrailer.Otxact.header%></th>
+                    <th><%=resource.Ordertrailer.Otseq.header%></th>
+                    <th><%=resource.Ordertrailer.Otmeas.header%></th>
+                    <th><%=resource.Ordertrailer.Otum.header%></th>
+                    <th><%=resource.Ordertrailer.Otup.header%></th>
+                    <th><%=resource.Ordertrailer.Otqord.header%></th>
+                    <th><%=resource.Ordertrailer.Otqbkord.header%></th>
+                    <th><%=resource.Ordertrailer.Otqtoshp.header%></th>
+                    <th><%=resource.Ordertrailer.Otdftprc.header%></th>
+                    <th><%=resource.Ordertrailer.Otprgroup.header%></th>
+                    <th><%=resource.Ordertrailer.Otfrtwgt.header%></th>
+                    <th><%=resource.Ordertrailer.Otjobcost.header%></th>
+                    <th><%=resource.Ordertrailer.Otname.header%></th>
+                    <th><%=resource.Ordertrailer.Otglsale.header%></th>
+                    <th><%=resource.Ordertrailer.Otglcogs.header%></th>
+                    <th><%=resource.Ordertrailer.Otglinv.header%></th>
+                    <th><%=resource.Ordertrailer.Otqship.header%></th>
+                    <th><%=resource.Ordertrailer.Otprmeas.header%></th>
+                    <th><%=resource.Ordertrailer.Otprum.header%></th>
+                    <th><%=resource.Ordertrailer.Otbillunits.header%></th>
+                    <th><%=resource.Ordertrailer.Otinvunits.header%></th>
+                    <th><%=resource.Ordertrailer.Otcostflg.header%></th>
+                    <th><%=resource.Ordertrailer.Otinvalloc.header%></th>
+                    <th><%=resource.Ordertrailer.Otshipdate.header%></th>
+                    <th><%=resource.Ordertrailer.Sncode.header%></th>
+                    <th><%=resource.Ordertrailer.OteqId.header%></th>
+                    <th><%=resource.Ordertrailer.Oteqrate.header%></th>
+                    <th><%=resource.Ordertrailer.Otleasing.header%></th>
+                    <th><%=resource.Ordertrailer.OtleasFinish.header%></th>
+                    <th><%=resource.Ordertrailer.Otflsqn.header%></th>
+                    <th><%=resource.Ordertrailer.Otvplmn.header%></th>
+                    <th><%=resource.Ordertrailer.Otflname.header%></th>
+                    <th><%=resource.Ordertrailer.Otfct.header%></th>
+                    <th><%=resource.Ordertrailer.Otlct.header%></th>
+                    <th><%=resource.Ordertrailer.OtsimFrom.header%></th>
+                    <th><%=resource.Ordertrailer.OtsimTo.header%></th>
+                    <th><%=resource.Ordertrailer.OttransactionDate.header%></th>
+                    <th><%=resource.Ordertrailer.ServcatCode.header%></th>
+                    <th><%=resource.Ordertrailer.ServCode.header%></th>
+                    <th><%=resource.Ordertrailer.ServType.header%></th>
+                    <th><%=resource.Ordertrailer.TaxInclusiveInd.header%></th>
+                    <th><%=resource.Ordertrailer.OtglDisc.header%></th>
+                    <th><%=resource.Ordertrailer.OtjcidDisc.header%></th>
+                    <th><%=resource.Ordertrailer.OtglMincom.header%></th>
+                    <th><%=resource.Ordertrailer.OtjcidMincom.header%></th>
+                    <th><%=resource.Ordertrailer.GlCurrency.header%></th>
+                    <th><%=resource.Ordertrailer.DocumentCurrency.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtDiscGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtDiscGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtMincomGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtMincomGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtRevenueGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtRevenueGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchGrossGl.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtDiscDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtDiscGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtMincomDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtMincomGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtRevenueDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtcuramtRevenueGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtgpriceDisDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtgpriceDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchGrossDoc.header%></th>
+                    <th><%=resource.Ordertrailer.OttaxExemptedDoc.header%></th>
+                    <th><%=resource.Ordertrailer.RecVersion.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtDiscGrossSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtMincomGrossSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtamtRevenueGrossSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtgpriceSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtgpriceDisSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.OtmerchGrossSecdoc.header%></th>
+                    <th><%=resource.Ordertrailer.Otflrapflg.header%></th>
+                    <th><%=resource.Ordertrailer.TapRefNo.header%></th>
+                    <th><%=resource.Ordertrailer.TaxCalculationType.header%></th>
+                    <th><%=resource.Ordertrailer.ProfileId.header%></th>
+                    <th><%=resource.Ordertrailer.PaymentOption.header%></th>
+                    <th><%=resource.Ordertrailer.BpCoId.header%></th>
+                    <th><%=resource.Ordertrailer.Otcostcent.header%></th>
+                    <th><%=resource.Ordertrailer.Otordnum.header%></th>
+                    <th><%=resource.Ordertrailer.IncomingDocTaxItemSeqno.header%></th>
+                    <th><%=resource.Ordertrailer.Tmcode.header%></th>
+                    <th><%=resource.Ordertrailer.RateplanVscode.header%></th>
+                    <th><%=resource.Ordertrailer.Spcode.header%></th>
+                    <th><%=resource.Ordertrailer.InvoiceItemClassId.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.ordertrailer){ let rec = record.ordertrailer[i] %>
+                <tr>
+                    <td><a><%=rec.otxact%></a></td>
+                    <td><a><%=rec.otseq%></a></td>
+                    <td><a><%=rec.otmeas%></a></td>
+                    <td><a><%=rec.otum%></a></td>
+                    <td><a><%=rec.otup%></a></td>
+                    <td><a><%=rec.otqord%></a></td>
+                    <td><a><%=rec.otqbkord%></a></td>
+                    <td><a><%=rec.otqtoshp%></a></td>
+                    <td><a><%=rec.otdftprc%></a></td>
+                    <td><a><%=rec.otprgroup%></a></td>
+                    <td><a><%=rec.otfrtwgt%></a></td>
+                    <td><a><%=rec.otjobcost%></a></td>
+                    <td><a><%=rec.otname%></a></td>
+                    <td><a><%=rec.otglsale%></a></td>
+                    <td><a><%=rec.otglcogs%></a></td>
+                    <td><a><%=rec.otglinv%></a></td>
+                    <td><a><%=rec.otqship%></a></td>
+                    <td><a><%=rec.otprmeas%></a></td>
+                    <td><a><%=rec.otprum%></a></td>
+                    <td><a><%=rec.otbillunits%></a></td>
+                    <td><a><%=rec.otinvunits%></a></td>
+                    <td><a><%=rec.otcostflg%></a></td>
+                    <td><a><%=rec.otinvalloc%></a></td>
+                    <td><a><%=dateFormat(rec.otshipdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.sncode%></a></td>
+                    <td><a><%=rec.oteq_id%></a></td>
+                    <td><a><%=rec.oteqrate%></a></td>
+                    <td><a><%=rec.otleasing%></a></td>
+                    <td><a><%=dateFormat(rec.otleas_finish,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.otflsqn%></a></td>
+                    <td><a><%=rec.otvplmn%></a></td>
+                    <td><a><%=rec.otflname%></a></td>
+                    <td><a><%=dateFormat(rec.otfct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.otlct,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.otsim_from%></a></td>
+                    <td><a><%=rec.otsim_to%></a></td>
+                    <td><a><%=dateFormat(rec.ottransaction_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.servcat_code%></a></td>
+                    <td><a><%=rec.serv_code%></a></td>
+                    <td><a><%=rec.serv_type%></a></td>
+                    <td><a><%=rec.tax_inclusive_ind%></a></td>
+                    <td><a><%=rec.otgl_disc%></a></td>
+                    <td><a><%=rec.otjcid_disc%></a></td>
+                    <td><a><%=rec.otgl_mincom%></a></td>
+                    <td><a><%=rec.otjcid_mincom%></a></td>
+                    <td><a><%=rec.gl_currency%></a></td>
+                    <td><a><%=rec.document_currency%></a></td>
+                    <td><a><%=rec.otamt_disc_gl%></a></td>
+                    <td><a><%=rec.otamt_disc_gross_gl%></a></td>
+                    <td><a><%=rec.otamt_mincom_gl%></a></td>
+                    <td><a><%=rec.otamt_mincom_gross_gl%></a></td>
+                    <td><a><%=rec.otamt_revenue_gl%></a></td>
+                    <td><a><%=rec.otamt_revenue_gross_gl%></a></td>
+                    <td><a><%=rec.otcuramt_disc_gl%></a></td>
+                    <td><a><%=rec.otcuramt_disc_gross_gl%></a></td>
+                    <td><a><%=rec.otcuramt_gl%></a></td>
+                    <td><a><%=rec.otcuramt_gross_gl%></a></td>
+                    <td><a><%=rec.otcuramt_mincom_gl%></a></td>
+                    <td><a><%=rec.otcuramt_mincom_gross_gl%></a></td>
+                    <td><a><%=rec.otcuramt_revenue_gl%></a></td>
+                    <td><a><%=rec.otcuramt_revenue_gross_gl%></a></td>
+                    <td><a><%=rec.otmerch_gl%></a></td>
+                    <td><a><%=rec.otmerch_gross_gl%></a></td>
+                    <td><a><%=rec.otamt_disc_doc%></a></td>
+                    <td><a><%=rec.otamt_disc_gross_doc%></a></td>
+                    <td><a><%=rec.otamt_mincom_doc%></a></td>
+                    <td><a><%=rec.otamt_mincom_gross_doc%></a></td>
+                    <td><a><%=rec.otamt_revenue_doc%></a></td>
+                    <td><a><%=rec.otamt_revenue_gross_doc%></a></td>
+                    <td><a><%=rec.otcuramt_disc_doc%></a></td>
+                    <td><a><%=rec.otcuramt_disc_gross_doc%></a></td>
+                    <td><a><%=rec.otcuramt_doc%></a></td>
+                    <td><a><%=rec.otcuramt_gross_doc%></a></td>
+                    <td><a><%=rec.otcuramt_mincom_doc%></a></td>
+                    <td><a><%=rec.otcuramt_mincom_gross_doc%></a></td>
+                    <td><a><%=rec.otcuramt_revenue_doc%></a></td>
+                    <td><a><%=rec.otcuramt_revenue_gross_doc%></a></td>
+                    <td><a><%=rec.otgprice_dis_doc%></a></td>
+                    <td><a><%=rec.otgprice_doc%></a></td>
+                    <td><a><%=rec.otmerch_doc%></a></td>
+                    <td><a><%=rec.otmerch_gross_doc%></a></td>
+                    <td><a><%=rec.ottax_exempted_doc%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.otamt_disc_secdoc%></a></td>
+                    <td><a><%=rec.otamt_disc_gross_secdoc%></a></td>
+                    <td><a><%=rec.otamt_mincom_secdoc%></a></td>
+                    <td><a><%=rec.otamt_mincom_gross_secdoc%></a></td>
+                    <td><a><%=rec.otamt_revenue_secdoc%></a></td>
+                    <td><a><%=rec.otamt_revenue_gross_secdoc%></a></td>
+                    <td><a><%=rec.otgprice_secdoc%></a></td>
+                    <td><a><%=rec.otgprice_dis_secdoc%></a></td>
+                    <td><a><%=rec.otmerch_secdoc%></a></td>
+                    <td><a><%=rec.otmerch__gross_secdoc%></a></td>
+                    <td><a><%=rec.otflrapflg%></a></td>
+                    <td><a><%=rec.tap_ref_no%></a></td>
+                    <td><a><%=rec.tax_calculation_type%></a></td>
+                    <td><a><%=rec.profile_id%></a></td>
+                    <td><a><%=rec.payment_option%></a></td>
+                    <td><a><%=rec.bp_co_id%></a></td>
+                    <td><a><%=rec.otcostcent%></a></td>
+                    <td><a><%=rec.otordnum%></a></td>
+                    <td><a><%=rec.incoming_doc_tax_item_seqno%></a></td>
+                    <td><a><%=rec.tmcode%></a></td>
+                    <td><a><%=rec.rateplan_vscode%></a></td>
+                    <td><a><%=rec.spcode%></a></td>
+                    <td><a><%=rec.invoice_item_class_id%></a></td>
+                    
+                    <td><a href="/readOrdertrailer?otxact=<%=rec.otxact%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeOrdertrailer?otxact=<%=rec.otxact%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteOrdertrailer?otxact=<%=rec.otxact%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newOrdertrailer">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

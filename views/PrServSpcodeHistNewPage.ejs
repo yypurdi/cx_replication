@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newPrServSpcodeHist" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.ProfileId.label%></td>
+                <td><input type="text" class="form-control" name="profileId" value="<%=record.profileId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.coId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Sncode.label%></td>
+                <td><input type="text" class="form-control" name="sncode" value="<%=record.sncode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Histno.label%></td>
+                <td><input type="text" class="form-control" name="histno" value="<%=record.histno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Spcode.label%></td>
+                <td><input type="text" class="form-control" name="spcode" value="<%=record.spcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Transactionno.label%></td>
+                <td><input type="text" class="form-control" name="transactionno" value="<%=record.transactionno%>"/></td>
+            </tr><tr>
+                <td><%=resource.ValidFromDate.label%></td>
+                <td><input type="text" class="form-control" name="validFromDate" value="<%=record.validFromDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.EntryDate.label%></td>
+                <td><input type="text" class="form-control" name="entryDate" value="<%=record.entryDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.RequestId.label%></td>
+                <td><input type="text" class="form-control" name="requestId" value="<%=record.requestId%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

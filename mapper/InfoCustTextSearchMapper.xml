@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchInfoCustTextMapper">			
+	
+	<select id="countInfoCustTextSearch">
+		select count(*) from info_cust_text
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="text01!=null">
+				and text01 like #{text01}
+			</if>
+			<if test="text02!=null">
+				and text02 like #{text02}
+			</if>
+			<if test="text03!=null">
+				and text03 like #{text03}
+			</if>
+			<if test="text04!=null">
+				and text04 like #{text04}
+			</if>
+			<if test="text05!=null">
+				and text05 like #{text05}
+			</if>
+			<if test="text06!=null">
+				and text06 like #{text06}
+			</if>
+			<if test="text07!=null">
+				and text07 like #{text07}
+			</if>
+			<if test="text08!=null">
+				and text08 like #{text08}
+			</if>
+			<if test="text09!=null">
+				and text09 like #{text09}
+			</if>
+			<if test="text10!=null">
+				and text10 like #{text10}
+			</if>
+			<if test="text11!=null">
+				and text11 like #{text11}
+			</if>
+			<if test="text12!=null">
+				and text12 like #{text12}
+			</if>
+			<if test="text13!=null">
+				and text13 like #{text13}
+			</if>
+			<if test="text14!=null">
+				and text14 like #{text14}
+			</if>
+			<if test="text15!=null">
+				and text15 like #{text15}
+			</if>
+			<if test="text16!=null">
+				and text16 like #{text16}
+			</if>
+			<if test="text17!=null">
+				and text17 like #{text17}
+			</if>
+			<if test="text18!=null">
+				and text18 like #{text18}
+			</if>
+			<if test="text19!=null">
+				and text19 like #{text19}
+			</if>
+			<if test="text20!=null">
+				and text20 like #{text20}
+			</if>
+			<if test="text21!=null">
+				and text21 like #{text21}
+			</if>
+			<if test="text22!=null">
+				and text22 like #{text22}
+			</if>
+			<if test="text23!=null">
+				and text23 like #{text23}
+			</if>
+			<if test="text24!=null">
+				and text24 like #{text24}
+			</if>
+			<if test="text25!=null">
+				and text25 like #{text25}
+			</if>
+			<if test="text26!=null">
+				and text26 like #{text26}
+			</if>
+			<if test="text27!=null">
+				and text27 like #{text27}
+			</if>
+			<if test="text28!=null">
+				and text28 like #{text28}
+			</if>
+			<if test="text29!=null">
+				and text29 like #{text29}
+			</if>
+			<if test="text30!=null">
+				and text30 like #{text30}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchInfoCustText">
+		select * from info_cust_text  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="text01!=null">
+				text01 like #{text01}
+			</if>
+			<if test="text02!=null">
+				text02 like #{text02}
+			</if>
+			<if test="text03!=null">
+				text03 like #{text03}
+			</if>
+			<if test="text04!=null">
+				text04 like #{text04}
+			</if>
+			<if test="text05!=null">
+				text05 like #{text05}
+			</if>
+			<if test="text06!=null">
+				text06 like #{text06}
+			</if>
+			<if test="text07!=null">
+				text07 like #{text07}
+			</if>
+			<if test="text08!=null">
+				text08 like #{text08}
+			</if>
+			<if test="text09!=null">
+				text09 like #{text09}
+			</if>
+			<if test="text10!=null">
+				text10 like #{text10}
+			</if>
+			<if test="text11!=null">
+				text11 like #{text11}
+			</if>
+			<if test="text12!=null">
+				text12 like #{text12}
+			</if>
+			<if test="text13!=null">
+				text13 like #{text13}
+			</if>
+			<if test="text14!=null">
+				text14 like #{text14}
+			</if>
+			<if test="text15!=null">
+				text15 like #{text15}
+			</if>
+			<if test="text16!=null">
+				text16 like #{text16}
+			</if>
+			<if test="text17!=null">
+				text17 like #{text17}
+			</if>
+			<if test="text18!=null">
+				text18 like #{text18}
+			</if>
+			<if test="text19!=null">
+				text19 like #{text19}
+			</if>
+			<if test="text20!=null">
+				text20 like #{text20}
+			</if>
+			<if test="text21!=null">
+				text21 like #{text21}
+			</if>
+			<if test="text22!=null">
+				text22 like #{text22}
+			</if>
+			<if test="text23!=null">
+				text23 like #{text23}
+			</if>
+			<if test="text24!=null">
+				text24 like #{text24}
+			</if>
+			<if test="text25!=null">
+				text25 like #{text25}
+			</if>
+			<if test="text26!=null">
+				text26 like #{text26}
+			</if>
+			<if test="text27!=null">
+				text27 like #{text27}
+			</if>
+			<if test="text28!=null">
+				text28 like #{text28}
+			</if>
+			<if test="text29!=null">
+				text29 like #{text29}
+			</if>
+			<if test="text30!=null">
+				text30 like #{text30}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

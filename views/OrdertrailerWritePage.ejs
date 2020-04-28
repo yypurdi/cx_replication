@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeOrdertrailer" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.Otxact.label%></td>
+                <td><input type="text" class="form-control" name="otxact" value="<%=record.otxact%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otseq.label%></td>
+                <td><input type="text" class="form-control" name="otseq" value="<%=record.otseq%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otmeas.label%></td>
+                <td><input type="text" class="form-control" name="otmeas" value="<%=record.otmeas%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otum.label%></td>
+                <td><input type="text" class="form-control" name="otum" value="<%=record.otum%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otup.label%></td>
+                <td><input type="text" class="form-control" name="otup" value="<%=record.otup%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otqord.label%></td>
+                <td><input type="text" class="form-control" name="otqord" value="<%=record.otqord%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otqbkord.label%></td>
+                <td><input type="text" class="form-control" name="otqbkord" value="<%=record.otqbkord%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otqtoshp.label%></td>
+                <td><input type="text" class="form-control" name="otqtoshp" value="<%=record.otqtoshp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otdftprc.label%></td>
+                <td><input type="text" class="form-control" name="otdftprc" value="<%=record.otdftprc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otprgroup.label%></td>
+                <td><input type="text" class="form-control" name="otprgroup" value="<%=record.otprgroup%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otfrtwgt.label%></td>
+                <td><input type="text" class="form-control" name="otfrtwgt" value="<%=record.otfrtwgt%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otjobcost.label%></td>
+                <td><input type="text" class="form-control" name="otjobcost" value="<%=record.otjobcost%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otname.label%></td>
+                <td><input type="text" class="form-control" name="otname" value="<%=record.otname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otglsale.label%></td>
+                <td><input type="text" class="form-control" name="otglsale" value="<%=record.otglsale%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otglcogs.label%></td>
+                <td><input type="text" class="form-control" name="otglcogs" value="<%=record.otglcogs%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otglinv.label%></td>
+                <td><input type="text" class="form-control" name="otglinv" value="<%=record.otglinv%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otqship.label%></td>
+                <td><input type="text" class="form-control" name="otqship" value="<%=record.otqship%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otprmeas.label%></td>
+                <td><input type="text" class="form-control" name="otprmeas" value="<%=record.otprmeas%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otprum.label%></td>
+                <td><input type="text" class="form-control" name="otprum" value="<%=record.otprum%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otbillunits.label%></td>
+                <td><input type="text" class="form-control" name="otbillunits" value="<%=record.otbillunits%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otinvunits.label%></td>
+                <td><input type="text" class="form-control" name="otinvunits" value="<%=record.otinvunits%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otcostflg.label%></td>
+                <td><input type="text" class="form-control" name="otcostflg" value="<%=record.otcostflg%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otinvalloc.label%></td>
+                <td><input type="text" class="form-control" name="otinvalloc" value="<%=record.otinvalloc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otshipdate.label%></td>
+                <td><input type="text" class="form-control" name="otshipdate" value="<%=record.otshipdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Sncode.label%></td>
+                <td><input type="text" class="form-control" name="sncode" value="<%=record.sncode%>"/></td>
+            </tr><tr>
+                <td><%=resource.OteqId.label%></td>
+                <td><input type="text" class="form-control" name="oteqId" value="<%=record.oteq_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Oteqrate.label%></td>
+                <td><input type="text" class="form-control" name="oteqrate" value="<%=record.oteqrate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otleasing.label%></td>
+                <td><input type="text" class="form-control" name="otleasing" value="<%=record.otleasing%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtleasFinish.label%></td>
+                <td><input type="text" class="form-control" name="otleasFinish" value="<%=record.otleas_finish%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otflsqn.label%></td>
+                <td><input type="text" class="form-control" name="otflsqn" value="<%=record.otflsqn%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otvplmn.label%></td>
+                <td><input type="text" class="form-control" name="otvplmn" value="<%=record.otvplmn%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otflname.label%></td>
+                <td><input type="text" class="form-control" name="otflname" value="<%=record.otflname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otfct.label%></td>
+                <td><input type="text" class="form-control" name="otfct" value="<%=record.otfct%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otlct.label%></td>
+                <td><input type="text" class="form-control" name="otlct" value="<%=record.otlct%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtsimFrom.label%></td>
+                <td><input type="text" class="form-control" name="otsimFrom" value="<%=record.otsim_from%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtsimTo.label%></td>
+                <td><input type="text" class="form-control" name="otsimTo" value="<%=record.otsim_to%>"/></td>
+            </tr><tr>
+                <td><%=resource.OttransactionDate.label%></td>
+                <td><input type="text" class="form-control" name="ottransactionDate" value="<%=record.ottransaction_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.ServcatCode.label%></td>
+                <td><input type="text" class="form-control" name="servcatCode" value="<%=record.servcat_code%>"/></td>
+            </tr><tr>
+                <td><%=resource.ServCode.label%></td>
+                <td><input type="text" class="form-control" name="servCode" value="<%=record.serv_code%>"/></td>
+            </tr><tr>
+                <td><%=resource.ServType.label%></td>
+                <td><input type="text" class="form-control" name="servType" value="<%=record.serv_type%>"/></td>
+            </tr><tr>
+                <td><%=resource.TaxInclusiveInd.label%></td>
+                <td><input type="text" class="form-control" name="taxInclusiveInd" value="<%=record.tax_inclusive_ind%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtglDisc.label%></td>
+                <td><input type="text" class="form-control" name="otglDisc" value="<%=record.otgl_disc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtjcidDisc.label%></td>
+                <td><input type="text" class="form-control" name="otjcidDisc" value="<%=record.otjcid_disc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtglMincom.label%></td>
+                <td><input type="text" class="form-control" name="otglMincom" value="<%=record.otgl_mincom%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtjcidMincom.label%></td>
+                <td><input type="text" class="form-control" name="otjcidMincom" value="<%=record.otjcid_mincom%>"/></td>
+            </tr><tr>
+                <td><%=resource.GlCurrency.label%></td>
+                <td><input type="text" class="form-control" name="glCurrency" value="<%=record.gl_currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.DocumentCurrency.label%></td>
+                <td><input type="text" class="form-control" name="documentCurrency" value="<%=record.document_currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscGl" value="<%=record.otamt_disc_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscGrossGl" value="<%=record.otamt_disc_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomGl" value="<%=record.otamt_mincom_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomGrossGl" value="<%=record.otamt_mincom_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueGl" value="<%=record.otamt_revenue_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueGrossGl" value="<%=record.otamt_revenue_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtDiscGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtDiscGl" value="<%=record.otcuramt_disc_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtDiscGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtDiscGrossGl" value="<%=record.otcuramt_disc_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtGl" value="<%=record.otcuramt_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtGrossGl" value="<%=record.otcuramt_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtMincomGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtMincomGl" value="<%=record.otcuramt_mincom_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtMincomGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtMincomGrossGl" value="<%=record.otcuramt_mincom_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtRevenueGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtRevenueGl" value="<%=record.otcuramt_revenue_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtRevenueGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtRevenueGrossGl" value="<%=record.otcuramt_revenue_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchGl.label%></td>
+                <td><input type="text" class="form-control" name="otmerchGl" value="<%=record.otmerch_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchGrossGl.label%></td>
+                <td><input type="text" class="form-control" name="otmerchGrossGl" value="<%=record.otmerch_gross_gl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscDoc" value="<%=record.otamt_disc_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscGrossDoc" value="<%=record.otamt_disc_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomDoc" value="<%=record.otamt_mincom_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomGrossDoc" value="<%=record.otamt_mincom_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueDoc" value="<%=record.otamt_revenue_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueGrossDoc" value="<%=record.otamt_revenue_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtDiscDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtDiscDoc" value="<%=record.otcuramt_disc_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtDiscGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtDiscGrossDoc" value="<%=record.otcuramt_disc_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtDoc" value="<%=record.otcuramt_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtGrossDoc" value="<%=record.otcuramt_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtMincomDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtMincomDoc" value="<%=record.otcuramt_mincom_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtMincomGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtMincomGrossDoc" value="<%=record.otcuramt_mincom_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtRevenueDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtRevenueDoc" value="<%=record.otcuramt_revenue_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtcuramtRevenueGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otcuramtRevenueGrossDoc" value="<%=record.otcuramt_revenue_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtgpriceDisDoc.label%></td>
+                <td><input type="text" class="form-control" name="otgpriceDisDoc" value="<%=record.otgprice_dis_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtgpriceDoc.label%></td>
+                <td><input type="text" class="form-control" name="otgpriceDoc" value="<%=record.otgprice_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchDoc.label%></td>
+                <td><input type="text" class="form-control" name="otmerchDoc" value="<%=record.otmerch_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchGrossDoc.label%></td>
+                <td><input type="text" class="form-control" name="otmerchGrossDoc" value="<%=record.otmerch_gross_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OttaxExemptedDoc.label%></td>
+                <td><input type="text" class="form-control" name="ottaxExemptedDoc" value="<%=record.ottax_exempted_doc%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscSecdoc" value="<%=record.otamt_disc_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtDiscGrossSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtDiscGrossSecdoc" value="<%=record.otamt_disc_gross_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomSecdoc" value="<%=record.otamt_mincom_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtMincomGrossSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtMincomGrossSecdoc" value="<%=record.otamt_mincom_gross_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueSecdoc" value="<%=record.otamt_revenue_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtamtRevenueGrossSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otamtRevenueGrossSecdoc" value="<%=record.otamt_revenue_gross_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtgpriceSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otgpriceSecdoc" value="<%=record.otgprice_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtgpriceDisSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otgpriceDisSecdoc" value="<%=record.otgprice_dis_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otmerchSecdoc" value="<%=record.otmerch_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OtmerchGrossSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="otmerchGrossSecdoc" value="<%=record.otmerch__gross_secdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otflrapflg.label%></td>
+                <td><input type="text" class="form-control" name="otflrapflg" value="<%=record.otflrapflg%>"/></td>
+            </tr><tr>
+                <td><%=resource.TapRefNo.label%></td>
+                <td><input type="text" class="form-control" name="tapRefNo" value="<%=record.tap_ref_no%>"/></td>
+            </tr><tr>
+                <td><%=resource.TaxCalculationType.label%></td>
+                <td><input type="text" class="form-control" name="taxCalculationType" value="<%=record.tax_calculation_type%>"/></td>
+            </tr><tr>
+                <td><%=resource.ProfileId.label%></td>
+                <td><input type="text" class="form-control" name="profileId" value="<%=record.profile_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.PaymentOption.label%></td>
+                <td><input type="text" class="form-control" name="paymentOption" value="<%=record.payment_option%>"/></td>
+            </tr><tr>
+                <td><%=resource.BpCoId.label%></td>
+                <td><input type="text" class="form-control" name="bpCoId" value="<%=record.bp_co_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otcostcent.label%></td>
+                <td><input type="text" class="form-control" name="otcostcent" value="<%=record.otcostcent%>"/></td>
+            </tr><tr>
+                <td><%=resource.Otordnum.label%></td>
+                <td><input type="text" class="form-control" name="otordnum" value="<%=record.otordnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.IncomingDocTaxItemSeqno.label%></td>
+                <td><input type="text" class="form-control" name="incomingDocTaxItemSeqno" value="<%=record.incoming_doc_tax_item_seqno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Tmcode.label%></td>
+                <td><input type="text" class="form-control" name="tmcode" value="<%=record.tmcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.RateplanVscode.label%></td>
+                <td><input type="text" class="form-control" name="rateplanVscode" value="<%=record.rateplan_vscode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Spcode.label%></td>
+                <td><input type="text" class="form-control" name="spcode" value="<%=record.spcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.InvoiceItemClassId.label%></td>
+                <td><input type="text" class="form-control" name="invoiceItemClassId" value="<%=record.invoice_item_class_id%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

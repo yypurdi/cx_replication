@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newDirectoryNumberMapper">			
+	
+	<insert id="newDirectoryNumber">
+		insert into directory_number(dn_id,plcode,ndc,hlcode,dn_num,dn_status,dn_status_mod_date,dealer_id,dn_assign_date,dn_phone_flag,dn_type,dn_status_requ,dn_sta_requ_date,dn_assign,dn_entdate,dn_moddate,dn_modflag,dn_auth,evcode,hmcode,local_prefix_len,simpoh_id,simpot_id,simpot_batch,external_ind,block_ind,extension_length_max,dn_auth_pending,rec_version,dirnum_npcode,vpn_id,static_pdp_required,roaming_allowed,transaction_id,business_unit_id,reserved_for_porting_ind,ported_number_ind,rscode) 
+		values (#{dnId},#{plcode},#{ndc},#{hlcode},#{dnNum},#{dnStatus},#{dnStatusModDate},#{dealerId},#{dnAssignDate},#{dnPhoneFlag},#{dnType},#{dnStatusRequ},#{dnStaRequDate},#{dnAssign},#{dnEntdate},#{dnModdate},#{dnModflag},#{dnAuth},#{evcode},#{hmcode},#{localPrefixLen},#{simpohId},#{simpotId},#{simpotBatch},#{externalInd},#{blockInd},#{extensionLengthMax},#{dnAuthPending},#{recVersion},#{dirnumNpcode},#{vpnId},#{staticPdpRequired},#{roamingAllowed},#{transactionId},#{businessUnitId},#{reservedForPortingInd},#{portedNumberInd},#{rscode});
+	</insert>
+
+</mapper>

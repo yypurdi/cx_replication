@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchProfileService" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.ProfileId.label%></td>    
+                <td><input type="text" class="form-control" name="profile_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newProfileService">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.ProfileService.ProfileId.header%></th>
+                <th><%=resource.ProfileService.CoId.header%></th>
+                <th><%=resource.ProfileService.Sncode.header%></th>
+                <th><%=resource.ProfileService.SpcodeHistno.header%></th>
+                <th><%=resource.ProfileService.StatusHistno.header%></th>
+                <th><%=resource.ProfileService.EntryDate.header%></th>
+                <th><%=resource.ProfileService.ChannelNum.header%></th>
+                <th><%=resource.ProfileService.OvwAccFirst.header%></th>
+                <th><%=resource.ProfileService.DateBilled.header%></th>
+                <th><%=resource.ProfileService.SnClass.header%></th>
+                <th><%=resource.ProfileService.OvwSubscr.header%></th>
+                <th><%=resource.ProfileService.Subscript.header%></th>
+                <th><%=resource.ProfileService.OvwAccess.header%></th>
+                <th><%=resource.ProfileService.OvwAccPrd.header%></th>
+                <th><%=resource.ProfileService.Accessfee.header%></th>
+                <th><%=resource.ProfileService.ChannelExcl.header%></th>
+                <th><%=resource.ProfileService.DisSubscr.header%></th>
+                <th><%=resource.ProfileService.InstallDate.header%></th>
+                <th><%=resource.ProfileService.TrialEndDate.header%></th>
+                <th><%=resource.ProfileService.PrmValueId.header%></th>
+                <th><%=resource.ProfileService.Currency.header%></th>
+                <th><%=resource.ProfileService.SrvType.header%></th>
+                <th><%=resource.ProfileService.SrvSubtype.header%></th>
+                <th><%=resource.ProfileService.OvwAdvCharge.header%></th>
+                <th><%=resource.ProfileService.AdvCharge.header%></th>
+                <th><%=resource.ProfileService.AdvChargePrd.header%></th>
+                <th><%=resource.ProfileService.DeleteFlag.header%></th>
+                <th><%=resource.ProfileService.RecVersion.header%></th>
+                <th><%=resource.ProfileService.AttribHistno.header%></th>
+                <th><%=resource.ProfileService.AttribHistnoNnp.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.profile_id%></a></td>
+                <td><a><%=row.co_id%></a></td>
+                <td><a><%=row.sncode%></a></td>
+                <td><a><%=row.spcode_histno%></a></td>
+                <td><a><%=row.status_histno%></a></td>
+                <td><a><%=dateFormat(row.entry_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.channel_num%></a></td>
+                <td><a><%=row.ovw_acc_first%></a></td>
+                <td><a><%=dateFormat(row.date_billed,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.sn_class%></a></td>
+                <td><a><%=row.ovw_subscr%></a></td>
+                <td><a><%=row.subscript%></a></td>
+                <td><a><%=row.ovw_access%></a></td>
+                <td><a><%=row.ovw_acc_prd%></a></td>
+                <td><a><%=row.accessfee%></a></td>
+                <td><a><%=row.channel_excl%></a></td>
+                <td><a><%=row.dis_subscr%></a></td>
+                <td><a><%=dateFormat(row.install_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.trial_end_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.prm_value_id%></a></td>
+                <td><a><%=row.currency%></a></td>
+                <td><a><%=row.srv_type%></a></td>
+                <td><a><%=row.srv_subtype%></a></td>
+                <td><a><%=row.ovw_adv_charge%></a></td>
+                <td><a><%=row.adv_charge%></a></td>
+                <td><a><%=row.adv_charge_prd%></a></td>
+                <td><a><%=row.delete_flag%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.attrib_histno%></a></td>
+                <td><a><%=row.attrib_histno_nnp%></a></td>
+                
+                <td><a href="/readProfileService?profileId=<%=row.profile_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeProfileService?profileId=<%=row.profile_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteProfileService?profileId=<%=row.profile_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

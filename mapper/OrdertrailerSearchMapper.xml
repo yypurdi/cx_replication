@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchOrdertrailerMapper">			
+	
+	<select id="countOrdertrailerSearch">
+		select count(*) from ordertrailer
+		<trim prefix="where" prefixOverrides="and">
+			<if test="otxact!=null">
+				and otxact like #{otxact}
+			</if>
+			<if test="otseq!=null">
+				and otseq like #{otseq}
+			</if>
+			<if test="otmeas!=null">
+				and otmeas like #{otmeas}
+			</if>
+			<if test="otum!=null">
+				and otum like #{otum}
+			</if>
+			<if test="otup!=null">
+				and otup like #{otup}
+			</if>
+			<if test="otqord!=null">
+				and otqord like #{otqord}
+			</if>
+			<if test="otqbkord!=null">
+				and otqbkord like #{otqbkord}
+			</if>
+			<if test="otqtoshp!=null">
+				and otqtoshp like #{otqtoshp}
+			</if>
+			<if test="otdftprc!=null">
+				and otdftprc like #{otdftprc}
+			</if>
+			<if test="otprgroup!=null">
+				and otprgroup like #{otprgroup}
+			</if>
+			<if test="otfrtwgt!=null">
+				and otfrtwgt like #{otfrtwgt}
+			</if>
+			<if test="otjobcost!=null">
+				and otjobcost like #{otjobcost}
+			</if>
+			<if test="otname!=null">
+				and otname like #{otname}
+			</if>
+			<if test="otglsale!=null">
+				and otglsale like #{otglsale}
+			</if>
+			<if test="otglcogs!=null">
+				and otglcogs like #{otglcogs}
+			</if>
+			<if test="otglinv!=null">
+				and otglinv like #{otglinv}
+			</if>
+			<if test="otqship!=null">
+				and otqship like #{otqship}
+			</if>
+			<if test="otprmeas!=null">
+				and otprmeas like #{otprmeas}
+			</if>
+			<if test="otprum!=null">
+				and otprum like #{otprum}
+			</if>
+			<if test="otbillunits!=null">
+				and otbillunits like #{otbillunits}
+			</if>
+			<if test="otinvunits!=null">
+				and otinvunits like #{otinvunits}
+			</if>
+			<if test="otcostflg!=null">
+				and otcostflg like #{otcostflg}
+			</if>
+			<if test="otinvalloc!=null">
+				and otinvalloc like #{otinvalloc}
+			</if>
+			<if test="otshipdate!=null">
+				and otshipdate like #{otshipdate}
+			</if>
+			<if test="sncode!=null">
+				and sncode like #{sncode}
+			</if>
+			<if test="oteqId!=null">
+				and oteq_id like #{oteqId}
+			</if>
+			<if test="oteqrate!=null">
+				and oteqrate like #{oteqrate}
+			</if>
+			<if test="otleasing!=null">
+				and otleasing like #{otleasing}
+			</if>
+			<if test="otleasFinish!=null">
+				and otleas_finish like #{otleasFinish}
+			</if>
+			<if test="otflsqn!=null">
+				and otflsqn like #{otflsqn}
+			</if>
+			<if test="otvplmn!=null">
+				and otvplmn like #{otvplmn}
+			</if>
+			<if test="otflname!=null">
+				and otflname like #{otflname}
+			</if>
+			<if test="otfct!=null">
+				and otfct like #{otfct}
+			</if>
+			<if test="otlct!=null">
+				and otlct like #{otlct}
+			</if>
+			<if test="otsimFrom!=null">
+				and otsim_from like #{otsimFrom}
+			</if>
+			<if test="otsimTo!=null">
+				and otsim_to like #{otsimTo}
+			</if>
+			<if test="ottransactionDate!=null">
+				and ottransaction_date like #{ottransactionDate}
+			</if>
+			<if test="servcatCode!=null">
+				and servcat_code like #{servcatCode}
+			</if>
+			<if test="servCode!=null">
+				and serv_code like #{servCode}
+			</if>
+			<if test="servType!=null">
+				and serv_type like #{servType}
+			</if>
+			<if test="taxInclusiveInd!=null">
+				and tax_inclusive_ind like #{taxInclusiveInd}
+			</if>
+			<if test="otglDisc!=null">
+				and otgl_disc like #{otglDisc}
+			</if>
+			<if test="otjcidDisc!=null">
+				and otjcid_disc like #{otjcidDisc}
+			</if>
+			<if test="otglMincom!=null">
+				and otgl_mincom like #{otglMincom}
+			</if>
+			<if test="otjcidMincom!=null">
+				and otjcid_mincom like #{otjcidMincom}
+			</if>
+			<if test="glCurrency!=null">
+				and gl_currency like #{glCurrency}
+			</if>
+			<if test="documentCurrency!=null">
+				and document_currency like #{documentCurrency}
+			</if>
+			<if test="otamtDiscGl!=null">
+				and otamt_disc_gl like #{otamtDiscGl}
+			</if>
+			<if test="otamtDiscGrossGl!=null">
+				and otamt_disc_gross_gl like #{otamtDiscGrossGl}
+			</if>
+			<if test="otamtMincomGl!=null">
+				and otamt_mincom_gl like #{otamtMincomGl}
+			</if>
+			<if test="otamtMincomGrossGl!=null">
+				and otamt_mincom_gross_gl like #{otamtMincomGrossGl}
+			</if>
+			<if test="otamtRevenueGl!=null">
+				and otamt_revenue_gl like #{otamtRevenueGl}
+			</if>
+			<if test="otamtRevenueGrossGl!=null">
+				and otamt_revenue_gross_gl like #{otamtRevenueGrossGl}
+			</if>
+			<if test="otcuramtDiscGl!=null">
+				and otcuramt_disc_gl like #{otcuramtDiscGl}
+			</if>
+			<if test="otcuramtDiscGrossGl!=null">
+				and otcuramt_disc_gross_gl like #{otcuramtDiscGrossGl}
+			</if>
+			<if test="otcuramtGl!=null">
+				and otcuramt_gl like #{otcuramtGl}
+			</if>
+			<if test="otcuramtGrossGl!=null">
+				and otcuramt_gross_gl like #{otcuramtGrossGl}
+			</if>
+			<if test="otcuramtMincomGl!=null">
+				and otcuramt_mincom_gl like #{otcuramtMincomGl}
+			</if>
+			<if test="otcuramtMincomGrossGl!=null">
+				and otcuramt_mincom_gross_gl like #{otcuramtMincomGrossGl}
+			</if>
+			<if test="otcuramtRevenueGl!=null">
+				and otcuramt_revenue_gl like #{otcuramtRevenueGl}
+			</if>
+			<if test="otcuramtRevenueGrossGl!=null">
+				and otcuramt_revenue_gross_gl like #{otcuramtRevenueGrossGl}
+			</if>
+			<if test="otmerchGl!=null">
+				and otmerch_gl like #{otmerchGl}
+			</if>
+			<if test="otmerchGrossGl!=null">
+				and otmerch_gross_gl like #{otmerchGrossGl}
+			</if>
+			<if test="otamtDiscDoc!=null">
+				and otamt_disc_doc like #{otamtDiscDoc}
+			</if>
+			<if test="otamtDiscGrossDoc!=null">
+				and otamt_disc_gross_doc like #{otamtDiscGrossDoc}
+			</if>
+			<if test="otamtMincomDoc!=null">
+				and otamt_mincom_doc like #{otamtMincomDoc}
+			</if>
+			<if test="otamtMincomGrossDoc!=null">
+				and otamt_mincom_gross_doc like #{otamtMincomGrossDoc}
+			</if>
+			<if test="otamtRevenueDoc!=null">
+				and otamt_revenue_doc like #{otamtRevenueDoc}
+			</if>
+			<if test="otamtRevenueGrossDoc!=null">
+				and otamt_revenue_gross_doc like #{otamtRevenueGrossDoc}
+			</if>
+			<if test="otcuramtDiscDoc!=null">
+				and otcuramt_disc_doc like #{otcuramtDiscDoc}
+			</if>
+			<if test="otcuramtDiscGrossDoc!=null">
+				and otcuramt_disc_gross_doc like #{otcuramtDiscGrossDoc}
+			</if>
+			<if test="otcuramtDoc!=null">
+				and otcuramt_doc like #{otcuramtDoc}
+			</if>
+			<if test="otcuramtGrossDoc!=null">
+				and otcuramt_gross_doc like #{otcuramtGrossDoc}
+			</if>
+			<if test="otcuramtMincomDoc!=null">
+				and otcuramt_mincom_doc like #{otcuramtMincomDoc}
+			</if>
+			<if test="otcuramtMincomGrossDoc!=null">
+				and otcuramt_mincom_gross_doc like #{otcuramtMincomGrossDoc}
+			</if>
+			<if test="otcuramtRevenueDoc!=null">
+				and otcuramt_revenue_doc like #{otcuramtRevenueDoc}
+			</if>
+			<if test="otcuramtRevenueGrossDoc!=null">
+				and otcuramt_revenue_gross_doc like #{otcuramtRevenueGrossDoc}
+			</if>
+			<if test="otgpriceDisDoc!=null">
+				and otgprice_dis_doc like #{otgpriceDisDoc}
+			</if>
+			<if test="otgpriceDoc!=null">
+				and otgprice_doc like #{otgpriceDoc}
+			</if>
+			<if test="otmerchDoc!=null">
+				and otmerch_doc like #{otmerchDoc}
+			</if>
+			<if test="otmerchGrossDoc!=null">
+				and otmerch_gross_doc like #{otmerchGrossDoc}
+			</if>
+			<if test="ottaxExemptedDoc!=null">
+				and ottax_exempted_doc like #{ottaxExemptedDoc}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="otamtDiscSecdoc!=null">
+				and otamt_disc_secdoc like #{otamtDiscSecdoc}
+			</if>
+			<if test="otamtDiscGrossSecdoc!=null">
+				and otamt_disc_gross_secdoc like #{otamtDiscGrossSecdoc}
+			</if>
+			<if test="otamtMincomSecdoc!=null">
+				and otamt_mincom_secdoc like #{otamtMincomSecdoc}
+			</if>
+			<if test="otamtMincomGrossSecdoc!=null">
+				and otamt_mincom_gross_secdoc like #{otamtMincomGrossSecdoc}
+			</if>
+			<if test="otamtRevenueSecdoc!=null">
+				and otamt_revenue_secdoc like #{otamtRevenueSecdoc}
+			</if>
+			<if test="otamtRevenueGrossSecdoc!=null">
+				and otamt_revenue_gross_secdoc like #{otamtRevenueGrossSecdoc}
+			</if>
+			<if test="otgpriceSecdoc!=null">
+				and otgprice_secdoc like #{otgpriceSecdoc}
+			</if>
+			<if test="otgpriceDisSecdoc!=null">
+				and otgprice_dis_secdoc like #{otgpriceDisSecdoc}
+			</if>
+			<if test="otmerchSecdoc!=null">
+				and otmerch_secdoc like #{otmerchSecdoc}
+			</if>
+			<if test="otmerchGrossSecdoc!=null">
+				and otmerch__gross_secdoc like #{otmerchGrossSecdoc}
+			</if>
+			<if test="otflrapflg!=null">
+				and otflrapflg like #{otflrapflg}
+			</if>
+			<if test="tapRefNo!=null">
+				and tap_ref_no like #{tapRefNo}
+			</if>
+			<if test="taxCalculationType!=null">
+				and tax_calculation_type like #{taxCalculationType}
+			</if>
+			<if test="profileId!=null">
+				and profile_id like #{profileId}
+			</if>
+			<if test="paymentOption!=null">
+				and payment_option like #{paymentOption}
+			</if>
+			<if test="bpCoId!=null">
+				and bp_co_id like #{bpCoId}
+			</if>
+			<if test="otcostcent!=null">
+				and otcostcent like #{otcostcent}
+			</if>
+			<if test="otordnum!=null">
+				and otordnum like #{otordnum}
+			</if>
+			<if test="incomingDocTaxItemSeqno!=null">
+				and incoming_doc_tax_item_seqno like #{incomingDocTaxItemSeqno}
+			</if>
+			<if test="tmcode!=null">
+				and tmcode like #{tmcode}
+			</if>
+			<if test="rateplanVscode!=null">
+				and rateplan_vscode like #{rateplanVscode}
+			</if>
+			<if test="spcode!=null">
+				and spcode like #{spcode}
+			</if>
+			<if test="invoiceItemClassId!=null">
+				and invoice_item_class_id like #{invoiceItemClassId}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchOrdertrailer">
+		select * from ordertrailer  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="otxact!=null">
+				otxact like #{otxact}
+			</if>
+			<if test="otseq!=null">
+				otseq like #{otseq}
+			</if>
+			<if test="otmeas!=null">
+				otmeas like #{otmeas}
+			</if>
+			<if test="otum!=null">
+				otum like #{otum}
+			</if>
+			<if test="otup!=null">
+				otup like #{otup}
+			</if>
+			<if test="otqord!=null">
+				otqord like #{otqord}
+			</if>
+			<if test="otqbkord!=null">
+				otqbkord like #{otqbkord}
+			</if>
+			<if test="otqtoshp!=null">
+				otqtoshp like #{otqtoshp}
+			</if>
+			<if test="otdftprc!=null">
+				otdftprc like #{otdftprc}
+			</if>
+			<if test="otprgroup!=null">
+				otprgroup like #{otprgroup}
+			</if>
+			<if test="otfrtwgt!=null">
+				otfrtwgt like #{otfrtwgt}
+			</if>
+			<if test="otjobcost!=null">
+				otjobcost like #{otjobcost}
+			</if>
+			<if test="otname!=null">
+				otname like #{otname}
+			</if>
+			<if test="otglsale!=null">
+				otglsale like #{otglsale}
+			</if>
+			<if test="otglcogs!=null">
+				otglcogs like #{otglcogs}
+			</if>
+			<if test="otglinv!=null">
+				otglinv like #{otglinv}
+			</if>
+			<if test="otqship!=null">
+				otqship like #{otqship}
+			</if>
+			<if test="otprmeas!=null">
+				otprmeas like #{otprmeas}
+			</if>
+			<if test="otprum!=null">
+				otprum like #{otprum}
+			</if>
+			<if test="otbillunits!=null">
+				otbillunits like #{otbillunits}
+			</if>
+			<if test="otinvunits!=null">
+				otinvunits like #{otinvunits}
+			</if>
+			<if test="otcostflg!=null">
+				otcostflg like #{otcostflg}
+			</if>
+			<if test="otinvalloc!=null">
+				otinvalloc like #{otinvalloc}
+			</if>
+			<if test="otshipdate!=null">
+				otshipdate like #{otshipdate}
+			</if>
+			<if test="sncode!=null">
+				sncode like #{sncode}
+			</if>
+			<if test="oteqId!=null">
+				oteq_id like #{oteqId}
+			</if>
+			<if test="oteqrate!=null">
+				oteqrate like #{oteqrate}
+			</if>
+			<if test="otleasing!=null">
+				otleasing like #{otleasing}
+			</if>
+			<if test="otleasFinish!=null">
+				otleas_finish like #{otleasFinish}
+			</if>
+			<if test="otflsqn!=null">
+				otflsqn like #{otflsqn}
+			</if>
+			<if test="otvplmn!=null">
+				otvplmn like #{otvplmn}
+			</if>
+			<if test="otflname!=null">
+				otflname like #{otflname}
+			</if>
+			<if test="otfct!=null">
+				otfct like #{otfct}
+			</if>
+			<if test="otlct!=null">
+				otlct like #{otlct}
+			</if>
+			<if test="otsimFrom!=null">
+				otsim_from like #{otsimFrom}
+			</if>
+			<if test="otsimTo!=null">
+				otsim_to like #{otsimTo}
+			</if>
+			<if test="ottransactionDate!=null">
+				ottransaction_date like #{ottransactionDate}
+			</if>
+			<if test="servcatCode!=null">
+				servcat_code like #{servcatCode}
+			</if>
+			<if test="servCode!=null">
+				serv_code like #{servCode}
+			</if>
+			<if test="servType!=null">
+				serv_type like #{servType}
+			</if>
+			<if test="taxInclusiveInd!=null">
+				tax_inclusive_ind like #{taxInclusiveInd}
+			</if>
+			<if test="otglDisc!=null">
+				otgl_disc like #{otglDisc}
+			</if>
+			<if test="otjcidDisc!=null">
+				otjcid_disc like #{otjcidDisc}
+			</if>
+			<if test="otglMincom!=null">
+				otgl_mincom like #{otglMincom}
+			</if>
+			<if test="otjcidMincom!=null">
+				otjcid_mincom like #{otjcidMincom}
+			</if>
+			<if test="glCurrency!=null">
+				gl_currency like #{glCurrency}
+			</if>
+			<if test="documentCurrency!=null">
+				document_currency like #{documentCurrency}
+			</if>
+			<if test="otamtDiscGl!=null">
+				otamt_disc_gl like #{otamtDiscGl}
+			</if>
+			<if test="otamtDiscGrossGl!=null">
+				otamt_disc_gross_gl like #{otamtDiscGrossGl}
+			</if>
+			<if test="otamtMincomGl!=null">
+				otamt_mincom_gl like #{otamtMincomGl}
+			</if>
+			<if test="otamtMincomGrossGl!=null">
+				otamt_mincom_gross_gl like #{otamtMincomGrossGl}
+			</if>
+			<if test="otamtRevenueGl!=null">
+				otamt_revenue_gl like #{otamtRevenueGl}
+			</if>
+			<if test="otamtRevenueGrossGl!=null">
+				otamt_revenue_gross_gl like #{otamtRevenueGrossGl}
+			</if>
+			<if test="otcuramtDiscGl!=null">
+				otcuramt_disc_gl like #{otcuramtDiscGl}
+			</if>
+			<if test="otcuramtDiscGrossGl!=null">
+				otcuramt_disc_gross_gl like #{otcuramtDiscGrossGl}
+			</if>
+			<if test="otcuramtGl!=null">
+				otcuramt_gl like #{otcuramtGl}
+			</if>
+			<if test="otcuramtGrossGl!=null">
+				otcuramt_gross_gl like #{otcuramtGrossGl}
+			</if>
+			<if test="otcuramtMincomGl!=null">
+				otcuramt_mincom_gl like #{otcuramtMincomGl}
+			</if>
+			<if test="otcuramtMincomGrossGl!=null">
+				otcuramt_mincom_gross_gl like #{otcuramtMincomGrossGl}
+			</if>
+			<if test="otcuramtRevenueGl!=null">
+				otcuramt_revenue_gl like #{otcuramtRevenueGl}
+			</if>
+			<if test="otcuramtRevenueGrossGl!=null">
+				otcuramt_revenue_gross_gl like #{otcuramtRevenueGrossGl}
+			</if>
+			<if test="otmerchGl!=null">
+				otmerch_gl like #{otmerchGl}
+			</if>
+			<if test="otmerchGrossGl!=null">
+				otmerch_gross_gl like #{otmerchGrossGl}
+			</if>
+			<if test="otamtDiscDoc!=null">
+				otamt_disc_doc like #{otamtDiscDoc}
+			</if>
+			<if test="otamtDiscGrossDoc!=null">
+				otamt_disc_gross_doc like #{otamtDiscGrossDoc}
+			</if>
+			<if test="otamtMincomDoc!=null">
+				otamt_mincom_doc like #{otamtMincomDoc}
+			</if>
+			<if test="otamtMincomGrossDoc!=null">
+				otamt_mincom_gross_doc like #{otamtMincomGrossDoc}
+			</if>
+			<if test="otamtRevenueDoc!=null">
+				otamt_revenue_doc like #{otamtRevenueDoc}
+			</if>
+			<if test="otamtRevenueGrossDoc!=null">
+				otamt_revenue_gross_doc like #{otamtRevenueGrossDoc}
+			</if>
+			<if test="otcuramtDiscDoc!=null">
+				otcuramt_disc_doc like #{otcuramtDiscDoc}
+			</if>
+			<if test="otcuramtDiscGrossDoc!=null">
+				otcuramt_disc_gross_doc like #{otcuramtDiscGrossDoc}
+			</if>
+			<if test="otcuramtDoc!=null">
+				otcuramt_doc like #{otcuramtDoc}
+			</if>
+			<if test="otcuramtGrossDoc!=null">
+				otcuramt_gross_doc like #{otcuramtGrossDoc}
+			</if>
+			<if test="otcuramtMincomDoc!=null">
+				otcuramt_mincom_doc like #{otcuramtMincomDoc}
+			</if>
+			<if test="otcuramtMincomGrossDoc!=null">
+				otcuramt_mincom_gross_doc like #{otcuramtMincomGrossDoc}
+			</if>
+			<if test="otcuramtRevenueDoc!=null">
+				otcuramt_revenue_doc like #{otcuramtRevenueDoc}
+			</if>
+			<if test="otcuramtRevenueGrossDoc!=null">
+				otcuramt_revenue_gross_doc like #{otcuramtRevenueGrossDoc}
+			</if>
+			<if test="otgpriceDisDoc!=null">
+				otgprice_dis_doc like #{otgpriceDisDoc}
+			</if>
+			<if test="otgpriceDoc!=null">
+				otgprice_doc like #{otgpriceDoc}
+			</if>
+			<if test="otmerchDoc!=null">
+				otmerch_doc like #{otmerchDoc}
+			</if>
+			<if test="otmerchGrossDoc!=null">
+				otmerch_gross_doc like #{otmerchGrossDoc}
+			</if>
+			<if test="ottaxExemptedDoc!=null">
+				ottax_exempted_doc like #{ottaxExemptedDoc}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="otamtDiscSecdoc!=null">
+				otamt_disc_secdoc like #{otamtDiscSecdoc}
+			</if>
+			<if test="otamtDiscGrossSecdoc!=null">
+				otamt_disc_gross_secdoc like #{otamtDiscGrossSecdoc}
+			</if>
+			<if test="otamtMincomSecdoc!=null">
+				otamt_mincom_secdoc like #{otamtMincomSecdoc}
+			</if>
+			<if test="otamtMincomGrossSecdoc!=null">
+				otamt_mincom_gross_secdoc like #{otamtMincomGrossSecdoc}
+			</if>
+			<if test="otamtRevenueSecdoc!=null">
+				otamt_revenue_secdoc like #{otamtRevenueSecdoc}
+			</if>
+			<if test="otamtRevenueGrossSecdoc!=null">
+				otamt_revenue_gross_secdoc like #{otamtRevenueGrossSecdoc}
+			</if>
+			<if test="otgpriceSecdoc!=null">
+				otgprice_secdoc like #{otgpriceSecdoc}
+			</if>
+			<if test="otgpriceDisSecdoc!=null">
+				otgprice_dis_secdoc like #{otgpriceDisSecdoc}
+			</if>
+			<if test="otmerchSecdoc!=null">
+				otmerch_secdoc like #{otmerchSecdoc}
+			</if>
+			<if test="otmerchGrossSecdoc!=null">
+				otmerch__gross_secdoc like #{otmerchGrossSecdoc}
+			</if>
+			<if test="otflrapflg!=null">
+				otflrapflg like #{otflrapflg}
+			</if>
+			<if test="tapRefNo!=null">
+				tap_ref_no like #{tapRefNo}
+			</if>
+			<if test="taxCalculationType!=null">
+				tax_calculation_type like #{taxCalculationType}
+			</if>
+			<if test="profileId!=null">
+				profile_id like #{profileId}
+			</if>
+			<if test="paymentOption!=null">
+				payment_option like #{paymentOption}
+			</if>
+			<if test="bpCoId!=null">
+				bp_co_id like #{bpCoId}
+			</if>
+			<if test="otcostcent!=null">
+				otcostcent like #{otcostcent}
+			</if>
+			<if test="otordnum!=null">
+				otordnum like #{otordnum}
+			</if>
+			<if test="incomingDocTaxItemSeqno!=null">
+				incoming_doc_tax_item_seqno like #{incomingDocTaxItemSeqno}
+			</if>
+			<if test="tmcode!=null">
+				tmcode like #{tmcode}
+			</if>
+			<if test="rateplanVscode!=null">
+				rateplan_vscode like #{rateplanVscode}
+			</if>
+			<if test="spcode!=null">
+				spcode like #{spcode}
+			</if>
+			<if test="invoiceItemClassId!=null">
+				invoice_item_class_id like #{invoiceItemClassId}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

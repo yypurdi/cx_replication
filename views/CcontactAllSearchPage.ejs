@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchCcontactAll" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>    
+                <td><input type="text" class="form-control" name="customer_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newCcontactAll">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.CcontactAll.CustomerId.header%></th>
+                <th><%=resource.CcontactAll.Ccseq.header%></th>
+                <th><%=resource.CcontactAll.Cctitle.header%></th>
+                <th><%=resource.CcontactAll.Ccname.header%></th>
+                <th><%=resource.CcontactAll.Ccfname.header%></th>
+                <th><%=resource.CcontactAll.Cclname.header%></th>
+                <th><%=resource.CcontactAll.Ccstreet.header%></th>
+                <th><%=resource.CcontactAll.Ccstreetno.header%></th>
+                <th><%=resource.CcontactAll.Cclnamemc.header%></th>
+                <th><%=resource.CcontactAll.Ccaddr1.header%></th>
+                <th><%=resource.CcontactAll.Ccaddr2.header%></th>
+                <th><%=resource.CcontactAll.Ccaddr3.header%></th>
+                <th><%=resource.CcontactAll.Cccity.header%></th>
+                <th><%=resource.CcontactAll.Cczip.header%></th>
+                <th><%=resource.CcontactAll.Cctn.header%></th>
+                <th><%=resource.CcontactAll.Cctn2.header%></th>
+                <th><%=resource.CcontactAll.Ccfax.header%></th>
+                <th><%=resource.CcontactAll.Ccline1.header%></th>
+                <th><%=resource.CcontactAll.Ccline2.header%></th>
+                <th><%=resource.CcontactAll.Ccline3.header%></th>
+                <th><%=resource.CcontactAll.Ccline4.header%></th>
+                <th><%=resource.CcontactAll.Ccline5.header%></th>
+                <th><%=resource.CcontactAll.Ccline6.header%></th>
+                <th><%=resource.CcontactAll.CctnArea.header%></th>
+                <th><%=resource.CcontactAll.Cctn2Area.header%></th>
+                <th><%=resource.CcontactAll.CcfaxArea.header%></th>
+                <th><%=resource.CcontactAll.Ccjobdesc.header%></th>
+                <th><%=resource.CcontactAll.Ccdeftrk.header%></th>
+                <th><%=resource.CcontactAll.Ccuser.header%></th>
+                <th><%=resource.CcontactAll.Ccbill.header%></th>
+                <th><%=resource.CcontactAll.Ccbilldetails.header%></th>
+                <th><%=resource.CcontactAll.Cccontract.header%></th>
+                <th><%=resource.CcontactAll.Ccship.header%></th>
+                <th><%=resource.CcontactAll.Ccmagazine.header%></th>
+                <th><%=resource.CcontactAll.Ccdirectory.header%></th>
+                <th><%=resource.CcontactAll.Ccforward.header%></th>
+                <th><%=resource.CcontactAll.Ccurgent.header%></th>
+                <th><%=resource.CcontactAll.Country.header%></th>
+                <th><%=resource.CcontactAll.Cclanguage.header%></th>
+                <th><%=resource.CcontactAll.Ccadditional.header%></th>
+                <th><%=resource.CcontactAll.SortCriteria.header%></th>
+                <th><%=resource.CcontactAll.Ccentdate.header%></th>
+                <th><%=resource.CcontactAll.Ccmoddate.header%></th>
+                <th><%=resource.CcontactAll.Ccmod.header%></th>
+                <th><%=resource.CcontactAll.Cccounty.header%></th>
+                <th><%=resource.CcontactAll.Ccstate.header%></th>
+                <th><%=resource.CcontactAll.Ccvaliddate.header%></th>
+                <th><%=resource.CcontactAll.CcbillPrevious.header%></th>
+                <th><%=resource.CcontactAll.WelcomeCrit.header%></th>
+                <th><%=resource.CcontactAll.Ccmname.header%></th>
+                <th><%=resource.CcontactAll.Ccemail.header%></th>
+                <th><%=resource.CcontactAll.Ccaddryears.header%></th>
+                <th><%=resource.CcontactAll.Ccsmsno.header%></th>
+                <th><%=resource.CcontactAll.Ccbilltemp.header%></th>
+                <th><%=resource.CcontactAll.Userlastmod.header%></th>
+                <th><%=resource.CcontactAll.Ccvalidation.header%></th>
+                <th><%=resource.CcontactAll.CcuserInst.header%></th>
+                <th><%=resource.CcontactAll.Cclocation1.header%></th>
+                <th><%=resource.CcontactAll.Cclocation2.header%></th>
+                <th><%=resource.CcontactAll.Ccremark.header%></th>
+                <th><%=resource.CcontactAll.RecVersion.header%></th>
+                <th><%=resource.CcontactAll.MaritalStatus.header%></th>
+                <th><%=resource.CcontactAll.Csnationality.header%></th>
+                <th><%=resource.CcontactAll.Cssocialsecno.header%></th>
+                <th><%=resource.CcontactAll.Csdrivelicence.header%></th>
+                <th><%=resource.CcontactAll.Csemployer.header%></th>
+                <th><%=resource.CcontactAll.Employee.header%></th>
+                <th><%=resource.CcontactAll.CompanyType.header%></th>
+                <th><%=resource.CcontactAll.IdType.header%></th>
+                <th><%=resource.CcontactAll.Passportno.header%></th>
+                <th><%=resource.CcontactAll.Birthdate.header%></th>
+                <th><%=resource.CcontactAll.Cscompregno.header%></th>
+                <th><%=resource.CcontactAll.Cscomptaxno.header%></th>
+                <th><%=resource.CcontactAll.Cscusttype.header%></th>
+                <th><%=resource.CcontactAll.Ccsex.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.customer_id%></a></td>
+                <td><a><%=row.ccseq%></a></td>
+                <td><a><%=row.cctitle%></a></td>
+                <td><a><%=row.ccname%></a></td>
+                <td><a><%=row.ccfname%></a></td>
+                <td><a><%=row.cclname%></a></td>
+                <td><a><%=row.ccstreet%></a></td>
+                <td><a><%=row.ccstreetno%></a></td>
+                <td><a><%=row.cclnamemc%></a></td>
+                <td><a><%=row.ccaddr1%></a></td>
+                <td><a><%=row.ccaddr2%></a></td>
+                <td><a><%=row.ccaddr3%></a></td>
+                <td><a><%=row.cccity%></a></td>
+                <td><a><%=row.cczip%></a></td>
+                <td><a><%=row.cctn%></a></td>
+                <td><a><%=row.cctn2%></a></td>
+                <td><a><%=row.ccfax%></a></td>
+                <td><a><%=row.ccline1%></a></td>
+                <td><a><%=row.ccline2%></a></td>
+                <td><a><%=row.ccline3%></a></td>
+                <td><a><%=row.ccline4%></a></td>
+                <td><a><%=row.ccline5%></a></td>
+                <td><a><%=row.ccline6%></a></td>
+                <td><a><%=row.cctn_area%></a></td>
+                <td><a><%=row.cctn2_area%></a></td>
+                <td><a><%=row.ccfax_area%></a></td>
+                <td><a><%=row.ccjobdesc%></a></td>
+                <td><a><%=row.ccdeftrk%></a></td>
+                <td><a><%=row.ccuser%></a></td>
+                <td><a><%=row.ccbill%></a></td>
+                <td><a><%=row.ccbilldetails%></a></td>
+                <td><a><%=row.cccontract%></a></td>
+                <td><a><%=row.ccship%></a></td>
+                <td><a><%=row.ccmagazine%></a></td>
+                <td><a><%=row.ccdirectory%></a></td>
+                <td><a><%=row.ccforward%></a></td>
+                <td><a><%=row.ccurgent%></a></td>
+                <td><a><%=row.country%></a></td>
+                <td><a><%=row.cclanguage%></a></td>
+                <td><a><%=row.ccadditional%></a></td>
+                <td><a><%=row.sort_criteria%></a></td>
+                <td><a><%=dateFormat(row.ccentdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.ccmoddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ccmod%></a></td>
+                <td><a><%=row.cccounty%></a></td>
+                <td><a><%=row.ccstate%></a></td>
+                <td><a><%=dateFormat(row.ccvaliddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.ccbill_previous%></a></td>
+                <td><a><%=row.welcome_crit%></a></td>
+                <td><a><%=row.ccmname%></a></td>
+                <td><a><%=row.ccemail%></a></td>
+                <td><a><%=row.ccaddryears%></a></td>
+                <td><a><%=row.ccsmsno%></a></td>
+                <td><a><%=row.ccbilltemp%></a></td>
+                <td><a><%=row.userlastmod%></a></td>
+                <td><a><%=row.ccvalidation%></a></td>
+                <td><a><%=row.ccuser_inst%></a></td>
+                <td><a><%=row.cclocation_1%></a></td>
+                <td><a><%=row.cclocation_2%></a></td>
+                <td><a><%=row.ccremark%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.marital_status%></a></td>
+                <td><a><%=row.csnationality%></a></td>
+                <td><a><%=row.cssocialsecno%></a></td>
+                <td><a><%=row.csdrivelicence%></a></td>
+                <td><a><%=row.csemployer%></a></td>
+                <td><a><%=row.employee%></a></td>
+                <td><a><%=row.company_type%></a></td>
+                <td><a><%=row.id_type%></a></td>
+                <td><a><%=row.passportno%></a></td>
+                <td><a><%=dateFormat(row.birthdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.cscompregno%></a></td>
+                <td><a><%=row.cscomptaxno%></a></td>
+                <td><a><%=row.cscusttype%></a></td>
+                <td><a><%=row.ccsex%></a></td>
+                
+                <td><a href="/readCcontactAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeCcontactAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteCcontactAll?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

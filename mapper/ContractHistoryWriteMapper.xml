@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeContractHistoryMapper">			
+	
+	<update id="writeContractHistory">
+		update contract_history set co_id = #{coId},
+		ch_seqno = #{chSeqno},
+		ch_status = #{chStatus},
+		ch_reason = #{chReason},
+		ch_validfrom = #{chValidfrom},
+		ch_pending = #{chPending},
+		entdate = #{entdate},
+		userlastmod = #{userlastmod},
+		request = #{request},
+		rec_version = #{recVersion} where co_id = #{coId};
+	</update>
+
+</mapper>

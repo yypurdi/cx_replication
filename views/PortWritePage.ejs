@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writePort" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.PortId.label%></td>
+                <td><input type="text" class="form-control" name="portId" value="<%=record.port_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Plcode.label%></td>
+                <td><input type="text" class="form-control" name="plcode" value="<%=record.plcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Hlcode.label%></td>
+                <td><input type="text" class="form-control" name="hlcode" value="<%=record.hlcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortNum.label%></td>
+                <td><input type="text" class="form-control" name="portNum" value="<%=record.port_num%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortStatus.label%></td>
+                <td><input type="text" class="form-control" name="portStatus" value="<%=record.port_status%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortStatusmoddat.label%></td>
+                <td><input type="text" class="form-control" name="portStatusmoddat" value="<%=record.port_statusmoddat%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortKi.label%></td>
+                <td><input type="text" class="form-control" name="portKi" value="<%=record.port_ki%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortKind.label%></td>
+                <td><input type="text" class="form-control" name="portKind" value="<%=record.port_kind%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortChannels.label%></td>
+                <td><input type="text" class="form-control" name="portChannels" value="<%=record.port_channels%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortChannelsExcl.label%></td>
+                <td><input type="text" class="form-control" name="portChannelsExcl" value="<%=record.port_channels_excl%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmId.label%></td>
+                <td><input type="text" class="form-control" name="smId" value="<%=record.sm_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortSmRequ.label%></td>
+                <td><input type="text" class="form-control" name="portSmRequ" value="<%=record.port_sm_requ%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpohId.label%></td>
+                <td><input type="text" class="form-control" name="simpohId" value="<%=record.simpoh_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotId.label%></td>
+                <td><input type="text" class="form-control" name="simpotId" value="<%=record.simpot_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotBatch.label%></td>
+                <td><input type="text" class="form-control" name="simpotBatch" value="<%=record.simpot_batch%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnId.label%></td>
+                <td><input type="text" class="form-control" name="dnId" value="<%=record.dn_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.DealerId.label%></td>
+                <td><input type="text" class="form-control" name="dealerId" value="<%=record.dealer_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortAssignDate.label%></td>
+                <td><input type="text" class="form-control" name="portAssignDate" value="<%=record.port_assign_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortTkey.label%></td>
+                <td><input type="text" class="form-control" name="portTkey" value="<%=record.port_tkey%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortStatusRequ.label%></td>
+                <td><input type="text" class="form-control" name="portStatusRequ" value="<%=record.port_status_requ%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortStaRequDate.label%></td>
+                <td><input type="text" class="form-control" name="portStaRequDate" value="<%=record.port_sta_requ_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortActivDate.label%></td>
+                <td><input type="text" class="form-control" name="portActivDate" value="<%=record.port_activ_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortDeactivDate.label%></td>
+                <td><input type="text" class="form-control" name="portDeactivDate" value="<%=record.port_deactiv_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortEntdate.label%></td>
+                <td><input type="text" class="form-control" name="portEntdate" value="<%=record.port_entdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortModdate.label%></td>
+                <td><input type="text" class="form-control" name="portModdate" value="<%=record.port_moddate%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortUserlastmod.label%></td>
+                <td><input type="text" class="form-control" name="portUserlastmod" value="<%=record.port_userlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.PreActivated.label%></td>
+                <td><input type="text" class="form-control" name="preActivated" value="<%=record.pre_activated%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmsUpdate.label%></td>
+                <td><input type="text" class="form-control" name="smsUpdate" value="<%=record.sms_update%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortRicBatch.label%></td>
+                <td><input type="text" class="form-control" name="portRicBatch" value="<%=record.port_ric_batch%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExternalInd.label%></td>
+                <td><input type="text" class="form-control" name="externalInd" value="<%=record.external_ind%>"/></td>
+            </tr><tr>
+                <td><%=resource.Capacity.label%></td>
+                <td><input type="text" class="form-control" name="capacity" value="<%=record.capacity%>"/></td>
+            </tr><tr>
+                <td><%=resource.AvailableCapacity.label%></td>
+                <td><input type="text" class="form-control" name="availableCapacity" value="<%=record.available_capacity%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrmValueId.label%></td>
+                <td><input type="text" class="form-control" name="prmValueId" value="<%=record.prm_value_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortNpcode.label%></td>
+                <td><input type="text" class="form-control" name="portNpcode" value="<%=record.port_npcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.TransactionId.label%></td>
+                <td><input type="text" class="form-control" name="transactionId" value="<%=record.transaction_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.business_unit_id%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

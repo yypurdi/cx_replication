@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchInfoContrCheck" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>    
+                <td><input type="text" class="form-control" name="co_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newInfoContrCheck">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.InfoContrCheck.CoId.header%></th>
+                <th><%=resource.InfoContrCheck.Check01.header%></th>
+                <th><%=resource.InfoContrCheck.Check02.header%></th>
+                <th><%=resource.InfoContrCheck.Check03.header%></th>
+                <th><%=resource.InfoContrCheck.Check04.header%></th>
+                <th><%=resource.InfoContrCheck.Check05.header%></th>
+                <th><%=resource.InfoContrCheck.Check06.header%></th>
+                <th><%=resource.InfoContrCheck.Check07.header%></th>
+                <th><%=resource.InfoContrCheck.Check08.header%></th>
+                <th><%=resource.InfoContrCheck.Check09.header%></th>
+                <th><%=resource.InfoContrCheck.Check10.header%></th>
+                <th><%=resource.InfoContrCheck.Check11.header%></th>
+                <th><%=resource.InfoContrCheck.Check12.header%></th>
+                <th><%=resource.InfoContrCheck.Check13.header%></th>
+                <th><%=resource.InfoContrCheck.Check14.header%></th>
+                <th><%=resource.InfoContrCheck.Check15.header%></th>
+                <th><%=resource.InfoContrCheck.Check16.header%></th>
+                <th><%=resource.InfoContrCheck.Check17.header%></th>
+                <th><%=resource.InfoContrCheck.Check18.header%></th>
+                <th><%=resource.InfoContrCheck.Check19.header%></th>
+                <th><%=resource.InfoContrCheck.Check20.header%></th>
+                <th><%=resource.InfoContrCheck.RecVersion.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.co_id%></a></td>
+                <td><a><%=row.check01%></a></td>
+                <td><a><%=row.check02%></a></td>
+                <td><a><%=row.check03%></a></td>
+                <td><a><%=row.check04%></a></td>
+                <td><a><%=row.check05%></a></td>
+                <td><a><%=row.check06%></a></td>
+                <td><a><%=row.check07%></a></td>
+                <td><a><%=row.check08%></a></td>
+                <td><a><%=row.check09%></a></td>
+                <td><a><%=row.check10%></a></td>
+                <td><a><%=row.check11%></a></td>
+                <td><a><%=row.check12%></a></td>
+                <td><a><%=row.check13%></a></td>
+                <td><a><%=row.check14%></a></td>
+                <td><a><%=row.check15%></a></td>
+                <td><a><%=row.check16%></a></td>
+                <td><a><%=row.check17%></a></td>
+                <td><a><%=row.check18%></a></td>
+                <td><a><%=row.check19%></a></td>
+                <td><a><%=row.check20%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                
+                <td><a href="/readInfoContrCheck?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeInfoContrCheck?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteInfoContrCheck?coId=<%=row.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

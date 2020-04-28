@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchInfoCustCombo" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>    
+                <td><input type="text" class="form-control" name="customer_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newInfoCustCombo">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.InfoCustCombo.CustomerId.header%></th>
+                <th><%=resource.InfoCustCombo.Combo01.header%></th>
+                <th><%=resource.InfoCustCombo.Combo02.header%></th>
+                <th><%=resource.InfoCustCombo.Combo03.header%></th>
+                <th><%=resource.InfoCustCombo.Combo04.header%></th>
+                <th><%=resource.InfoCustCombo.Combo05.header%></th>
+                <th><%=resource.InfoCustCombo.Combo06.header%></th>
+                <th><%=resource.InfoCustCombo.Combo07.header%></th>
+                <th><%=resource.InfoCustCombo.Combo08.header%></th>
+                <th><%=resource.InfoCustCombo.Combo09.header%></th>
+                <th><%=resource.InfoCustCombo.Combo10.header%></th>
+                <th><%=resource.InfoCustCombo.Combo11.header%></th>
+                <th><%=resource.InfoCustCombo.Combo12.header%></th>
+                <th><%=resource.InfoCustCombo.Combo13.header%></th>
+                <th><%=resource.InfoCustCombo.Combo14.header%></th>
+                <th><%=resource.InfoCustCombo.Combo15.header%></th>
+                <th><%=resource.InfoCustCombo.Combo16.header%></th>
+                <th><%=resource.InfoCustCombo.Combo17.header%></th>
+                <th><%=resource.InfoCustCombo.Combo18.header%></th>
+                <th><%=resource.InfoCustCombo.Combo19.header%></th>
+                <th><%=resource.InfoCustCombo.Combo20.header%></th>
+                <th><%=resource.InfoCustCombo.RecVersion.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.customer_id%></a></td>
+                <td><a><%=row.combo01%></a></td>
+                <td><a><%=row.combo02%></a></td>
+                <td><a><%=row.combo03%></a></td>
+                <td><a><%=row.combo04%></a></td>
+                <td><a><%=row.combo05%></a></td>
+                <td><a><%=row.combo06%></a></td>
+                <td><a><%=row.combo07%></a></td>
+                <td><a><%=row.combo08%></a></td>
+                <td><a><%=row.combo09%></a></td>
+                <td><a><%=row.combo10%></a></td>
+                <td><a><%=row.combo11%></a></td>
+                <td><a><%=row.combo12%></a></td>
+                <td><a><%=row.combo13%></a></td>
+                <td><a><%=row.combo14%></a></td>
+                <td><a><%=row.combo15%></a></td>
+                <td><a><%=row.combo16%></a></td>
+                <td><a><%=row.combo17%></a></td>
+                <td><a><%=row.combo18%></a></td>
+                <td><a><%=row.combo19%></a></td>
+                <td><a><%=row.combo20%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                
+                <td><a href="/readInfoCustCombo?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeInfoCustCombo?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteInfoCustCombo?customerId=<%=row.customer_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

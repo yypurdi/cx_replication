@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newStorageMediumMapper">			
+	
+	<insert id="newStorageMedium">
+		insert into storage_medium(sm_id,plcode,smc_id,sm_serialnum,sm_status,sm_status_mod_date,dealer_id,sm_delivery_id,sm_delivery_date,simpoh_id,simpot_id,simpot_batch,sm_pin,sm_puk,sm_acc_control,sm_code_adm,sp_id_e,sp_id_g,sm_status_requ,sm_sta_requ_date,sm_entdate,sm_moddate,sm_userlastmod,sm_pin2,sm_puk2,sm_auth,pi_id,external_ind,vendcode,sm_adm1,sm_adm2,sm_adm3,sm_adm4,sm_code_retailer,sm_code_a,sm_code_b,sm_auth_pending,rec_version,sm_orig_esn_id,prepaid_profile_id,ra_process_id,transaction_id,business_unit_id) 
+		values (#{smId},#{plcode},#{smcId},#{smSerialnum},#{smStatus},#{smStatusModDate},#{dealerId},#{smDeliveryId},#{smDeliveryDate},#{simpohId},#{simpotId},#{simpotBatch},#{smPin},#{smPuk},#{smAccControl},#{smCodeAdm},#{spIdE},#{spIdG},#{smStatusRequ},#{smStaRequDate},#{smEntdate},#{smModdate},#{smUserlastmod},#{smPin2},#{smPuk2},#{smAuth},#{piId},#{externalInd},#{vendcode},#{smAdm1},#{smAdm2},#{smAdm3},#{smAdm4},#{smCodeRetailer},#{smCodeA},#{smCodeB},#{smAuthPending},#{recVersion},#{smOrigEsnId},#{prepaidProfileId},#{raProcessId},#{transactionId},#{businessUnitId});
+	</insert>
+
+</mapper>

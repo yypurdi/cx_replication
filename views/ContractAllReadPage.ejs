@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contrDevices-tab" data-toggle="tab" href="#contrDevices" role="tab" aria-controls="contrDevices" aria-selected="true"><h4><%=resource.ContrDevices.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contrServicesCap-tab" data-toggle="tab" href="#contrServicesCap" role="tab" aria-controls="contrServicesCap" aria-selected="true"><h4><%=resource.ContrServicesCap.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contractHistory-tab" data-toggle="tab" href="#contractHistory" role="tab" aria-controls="contractHistory" aria-selected="true"><h4><%=resource.ContractHistory.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoContrCheck-tab" data-toggle="tab" href="#infoContrCheck" role="tab" aria-controls="infoContrCheck" aria-selected="true"><h4><%=resource.InfoContrCheck.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoContrCombo-tab" data-toggle="tab" href="#infoContrCombo" role="tab" aria-controls="infoContrCombo" aria-selected="true"><h4><%=resource.InfoContrCombo.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infoContrText-tab" data-toggle="tab" href="#infoContrText" role="tab" aria-controls="infoContrText" aria-selected="true"><h4><%=resource.InfoContrText.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profileService-tab" data-toggle="tab" href="#profileService" role="tab" aria-controls="profileService" aria-selected="true"><h4><%=resource.ProfileService.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CoId.label%></td>
+                        <td><%=record.co_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CustomerId.label%></td>
+                        <td><%=record.customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Type.label%></td>
+                        <td><%=record.type%></td>						
+                    </tr><tr>
+                        <td><%=resource.Plcode.label%></td>
+                        <td><%=record.plcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Sccode.label%></td>
+                        <td><%=record.sccode%></td>						
+                    </tr><tr>
+                        <td><%=resource.SubmId.label%></td>
+                        <td><%=record.subm_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoSigned.label%></td>
+                        <td><%=dateFormat(record.co_signed,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoEquType.label%></td>
+                        <td><%=record.co_equ_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRepBill.label%></td>
+                        <td><%=record.co_rep_bill%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRep.label%></td>
+                        <td><%=record.co_rep%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRepBillIdno.label%></td>
+                        <td><%=record.co_rep_bill_idno%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRepIdno.label%></td>
+                        <td><%=record.co_rep_idno%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoInstalled.label%></td>
+                        <td><%=dateFormat(record.co_installed,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoArchive.label%></td>
+                        <td><%=record.co_archive%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoDirEntry.label%></td>
+                        <td><%=record.co_dir_entry%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoOperatorDir.label%></td>
+                        <td><%=record.co_operator_dir%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoPstnDir.label%></td>
+                        <td><%=record.co_pstn_dir%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoAssServ.label%></td>
+                        <td><%=record.co_ass_serv%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoAssEqu.label%></td>
+                        <td><%=record.co_ass_equ%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdCheck.label%></td>
+                        <td><%=record.co_crd_check%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdChkEnd.label%></td>
+                        <td><%=dateFormat(record.co_crd_chk_end,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdChkStart.label%></td>
+                        <td><%=dateFormat(record.co_crd_chk_start,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdClicks.label%></td>
+                        <td><%=record.co_crd_clicks%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdClicksDay.label%></td>
+                        <td><%=record.co_crd_clicks_day%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdDays.label%></td>
+                        <td><%=record.co_crd_days%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoComment.label%></td>
+                        <td><%=record.co_comment%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoReserved.label%></td>
+                        <td><%=dateFormat(record.co_reserved,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoExpirDate.label%></td>
+                        <td><%=dateFormat(record.co_expir_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoActivated.label%></td>
+                        <td><%=dateFormat(record.co_activated,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoEntdate.label%></td>
+                        <td><%=dateFormat(record.co_entdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoModdate.label%></td>
+                        <td><%=dateFormat(record.co_moddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoUserlastmod.label%></td>
+                        <td><%=record.co_userlastmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.Tmcode.label%></td>
+                        <td><%=record.tmcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.TmcodeDate.label%></td>
+                        <td><%=dateFormat(record.tmcode_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdDTr1.label%></td>
+                        <td><%=record.co_crd_d_tr1%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdDTr2.label%></td>
+                        <td><%=record.co_crd_d_tr2%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdDTr3.label%></td>
+                        <td><%=record.co_crd_d_tr3%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdPTr1.label%></td>
+                        <td><%=record.co_crd_p_tr1%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdPTr2.label%></td>
+                        <td><%=record.co_crd_p_tr2%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdPTr3.label%></td>
+                        <td><%=record.co_crd_p_tr3%></td>						
+                    </tr><tr>
+                        <td><%=resource.EccodeLdc.label%></td>
+                        <td><%=record.eccode_ldc%></td>						
+                    </tr><tr>
+                        <td><%=resource.PendingEccodeLdc.label%></td>
+                        <td><%=record.pending_eccode_ldc%></td>						
+                    </tr><tr>
+                        <td><%=resource.EccodeLec.label%></td>
+                        <td><%=record.eccode_lec%></td>						
+                    </tr><tr>
+                        <td><%=resource.PendingEccodeLec.label%></td>
+                        <td><%=record.pending_eccode_lec%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRequest.label%></td>
+                        <td><%=record.co_request%></td>						
+                    </tr><tr>
+                        <td><%=resource.DealerId.label%></td>
+                        <td><%=record.dealer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.NotValid.label%></td>
+                        <td><%=record.not_valid%></td>						
+                    </tr><tr>
+                        <td><%=resource.Arpcode.label%></td>
+                        <td><%=record.arpcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoAddrOnIbill.label%></td>
+                        <td><%=record.co_addr_on_ibill%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdAmount.label%></td>
+                        <td><%=record.co_crd_amount%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCrdAmountDay.label%></td>
+                        <td><%=record.co_crd_amount_day%></td>						
+                    </tr><tr>
+                        <td><%=resource.ProductHistoryDate.label%></td>
+                        <td><%=dateFormat(record.product_history_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoConfirm.label%></td>
+                        <td><%=record.co_confirm%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoExtCsuin.label%></td>
+                        <td><%=record.co_ext_csuin%></td>						
+                    </tr><tr>
+                        <td><%=resource.TrialEndDate.label%></td>
+                        <td><%=dateFormat(record.trial_end_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoIbCdrFlag.label%></td>
+                        <td><%=record.co_ib_cdr_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.Currency.label%></td>
+                        <td><%=record.currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.AnPackageId.label%></td>
+                        <td><%=record.an_package_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoRelType.label%></td>
+                        <td><%=record.co_rel_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.PendingTmcode.label%></td>
+                        <td><%=record.pending_tmcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.ContractTemplate.label%></td>
+                        <td><%=record.contract_template%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoCode.label%></td>
+                        <td><%=record.co_code%></td>						
+                    </tr><tr>
+                        <td><%=resource.BusinessUnitId.label%></td>
+                        <td><%=record.business_unit_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Description.label%></td>
+                        <td><%=record.description%></td>						
+                    </tr><tr>
+                        <td><%=resource.AgreementType.label%></td>
+                        <td><%=record.agreement_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExtProductId.label%></td>
+                        <td><%=record.ext_product_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.RemotePlcode.label%></td>
+                        <td><%=record.remote_plcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Eccode.label%></td>
+                        <td><%=record.eccode%></td>						
+                    </tr><tr>
+                        <td><%=resource.HplmnBidGroupId.label%></td>
+                        <td><%=record.hplmn_bid_group_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.VplmnBidGroupId.label%></td>
+                        <td><%=record.vplmn_bid_group_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.HomePartyId.label%></td>
+                        <td><%=record.home_party_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ContractTypeId.label%></td>
+                        <td><%=record.contract_type_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.TrialStartDate.label%></td>
+                        <td><%=dateFormat(record.trial_start_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.FohAggregationFlag.label%></td>
+                        <td><%=record.foh_aggregation_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.GlAccPackId.label%></td>
+                        <td><%=record.gl_acc_pack_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdsBillMedium.label%></td>
+                        <td><%=record.cds_bill_medium%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdsGeneration.label%></td>
+                        <td><%=record.cds_generation%></td>						
+                    </tr><tr>
+                        <td><%=resource.ChargePartNum.label%></td>
+                        <td><%=record.charge_part_num%></td>						
+                    </tr><tr>
+                        <td><%=resource.ChStatus.label%></td>
+                        <td><%=record.ch_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.SvpFile.label%></td>
+                        <td><%=record.svp_file%></td>						
+                    </tr><tr>
+                        <td><%=resource.MakeCallsDate.label%></td>
+                        <td><%=dateFormat(record.make_calls_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoInprepayPending.label%></td>
+                        <td><%=record.co_inprepay_pending%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoInprepay.label%></td>
+                        <td><%=record.co_inprepay%></td>						
+                    </tr><tr>
+                        <td><%=resource.ChargePerAdjRef.label%></td>
+                        <td><%=record.charge_per_adj_ref%></td>						
+                    </tr><tr>
+                        <td><%=resource.NextCutoffDate.label%></td>
+                        <td><%=dateFormat(record.next_cutoff_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.LastCutoffDate.label%></td>
+                        <td><%=dateFormat(record.last_cutoff_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.LastChargeDate.label%></td>
+                        <td><%=dateFormat(record.last_charge_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.LastNoticeDate.label%></td>
+                        <td><%=dateFormat(record.last_notice_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.NotBillMedium.label%></td>
+                        <td><%=record.not_bill_medium%></td>						
+                    </tr><tr>
+                        <td><%=resource.ChargeStartDate.label%></td>
+                        <td><%=dateFormat(record.charge_start_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.EarliestEndDate.label%></td>
+                        <td><%=dateFormat(record.earliest_end_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CommonRefDataInd.label%></td>
+                        <td><%=record.common_ref_data_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.ContractLanguage.label%></td>
+                        <td><%=record.contract_language%></td>						
+                    </tr><tr>
+                        <td><%=resource.PendingLanguage.label%></td>
+                        <td><%=record.pending_language%></td>						
+                    </tr><tr>
+                        <td><%=resource.RrCandidate.label%></td>
+                        <td><%=record.rr_candidate%></td>						
+                    </tr><tr>
+                        <td><%=resource.ChStatusValidfrom.label%></td>
+                        <td><%=dateFormat(record.ch_status_validfrom,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeContractAll?coId=<%=record.co_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteContractAll?coId=<%=record.co_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+	<div class="tab-pane fade" id="contrDevices" role="tabpanel" aria-labelledby="contrDevices-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.ContrDevices.CdId.header%></th>
+                    <th><%=resource.ContrDevices.CdSeqno.header%></th>
+                    <th><%=resource.ContrDevices.CoId.header%></th>
+                    <th><%=resource.ContrDevices.PortId.header%></th>
+                    <th><%=resource.ContrDevices.DnId.header%></th>
+                    <th><%=resource.ContrDevices.EqId.header%></th>
+                    <th><%=resource.ContrDevices.CdStatus.header%></th>
+                    <th><%=resource.ContrDevices.CdActivDate.header%></th>
+                    <th><%=resource.ContrDevices.CdDeactivDate.header%></th>
+                    <th><%=resource.ContrDevices.CdValidfrom.header%></th>
+                    <th><%=resource.ContrDevices.CdEntdate.header%></th>
+                    <th><%=resource.ContrDevices.CdModdate.header%></th>
+                    <th><%=resource.ContrDevices.CdUserlastmod.header%></th>
+                    <th><%=resource.ContrDevices.CdSmNum.header%></th>
+                    <th><%=resource.ContrDevices.CdChannels.header%></th>
+                    <th><%=resource.ContrDevices.CdChannelsExcl.header%></th>
+                    <th><%=resource.ContrDevices.CdEqNum.header%></th>
+                    <th><%=resource.ContrDevices.CdPendingState.header%></th>
+                    <th><%=resource.ContrDevices.CdRsId.header%></th>
+                    <th><%=resource.ContrDevices.CdPlcode.header%></th>
+                    <th><%=resource.ContrDevices.Hlcode.header%></th>
+                    <th><%=resource.ContrDevices.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.contrDevices){ let rec = record.contrDevices[i] %>
+                <tr>
+                    <td><a><%=rec.cd_id%></a></td>
+                    <td><a><%=rec.cd_seqno%></a></td>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.port_id%></a></td>
+                    <td><a><%=rec.dn_id%></a></td>
+                    <td><a><%=rec.eq_id%></a></td>
+                    <td><a><%=rec.cd_status%></a></td>
+                    <td><a><%=dateFormat(rec.cd_activ_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.cd_deactiv_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.cd_validfrom,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.cd_entdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.cd_moddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.cd_userlastmod%></a></td>
+                    <td><a><%=rec.cd_sm_num%></a></td>
+                    <td><a><%=rec.cd_channels%></a></td>
+                    <td><a><%=rec.cd_channels_excl%></a></td>
+                    <td><a><%=rec.cd_eq_num%></a></td>
+                    <td><a><%=rec.cd_pending_state%></a></td>
+                    <td><a><%=rec.cd_rs_id%></a></td>
+                    <td><a><%=rec.cd_plcode%></a></td>
+                    <td><a><%=rec.hlcode%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readContrDevices?cdId=<%=rec.cd_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeContrDevices?cdId=<%=rec.cd_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteContrDevices?cdId=<%=rec.cd_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newContrDevices">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="contrServicesCap" role="tabpanel" aria-labelledby="contrServicesCap-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.ContrServicesCap.CoId.header%></th>
+                    <th><%=resource.ContrServicesCap.Sncode.header%></th>
+                    <th><%=resource.ContrServicesCap.Seqno.header%></th>
+                    <th><%=resource.ContrServicesCap.SeqnoPre.header%></th>
+                    <th><%=resource.ContrServicesCap.Bccode.header%></th>
+                    <th><%=resource.ContrServicesCap.PendingBccode.header%></th>
+                    <th><%=resource.ContrServicesCap.DnId.header%></th>
+                    <th><%=resource.ContrServicesCap.DnBlockId.header%></th>
+                    <th><%=resource.ContrServicesCap.MainDirnum.header%></th>
+                    <th><%=resource.ContrServicesCap.CsStatus.header%></th>
+                    <th><%=resource.ContrServicesCap.CsActivDate.header%></th>
+                    <th><%=resource.ContrServicesCap.CsDeactivDate.header%></th>
+                    <th><%=resource.ContrServicesCap.CsRequest.header%></th>
+                    <th><%=resource.ContrServicesCap.RecVersion.header%></th>
+                    <th><%=resource.ContrServicesCap.PublicNumberDnId.header%></th>
+                    <th><%=resource.ContrServicesCap.VpnId.header%></th>
+                    <th><%=resource.ContrServicesCap.PublicBlockId.header%></th>
+                    <th><%=resource.ContrServicesCap.ProfileId.header%></th>
+                    <th><%=resource.ContrServicesCap.DnShownInBill.header%></th>
+                    <th><%=resource.ContrServicesCap.RequestId.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.contrServicesCap){ let rec = record.contrServicesCap[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.sncode%></a></td>
+                    <td><a><%=rec.seqno%></a></td>
+                    <td><a><%=rec.seqno_pre%></a></td>
+                    <td><a><%=rec.bccode%></a></td>
+                    <td><a><%=rec.pending_bccode%></a></td>
+                    <td><a><%=rec.dn_id%></a></td>
+                    <td><a><%=rec.dn_block_id%></a></td>
+                    <td><a><%=rec.main_dirnum%></a></td>
+                    <td><a><%=rec.cs_status%></a></td>
+                    <td><a><%=dateFormat(rec.cs_activ_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.cs_deactiv_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.cs_request%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.public_number_dn_id%></a></td>
+                    <td><a><%=rec.vpn_id%></a></td>
+                    <td><a><%=rec.public_block_id%></a></td>
+                    <td><a><%=rec.profile_id%></a></td>
+                    <td><a><%=rec.dn_shown_in_bill%></a></td>
+                    <td><a><%=rec.request_id%></a></td>
+                    
+                    <td><a href="/readContrServicesCap?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeContrServicesCap?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteContrServicesCap?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newContrServicesCap">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="contractHistory" role="tabpanel" aria-labelledby="contractHistory-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.ContractHistory.CoId.header%></th>
+                    <th><%=resource.ContractHistory.ChSeqno.header%></th>
+                    <th><%=resource.ContractHistory.ChStatus.header%></th>
+                    <th><%=resource.ContractHistory.ChReason.header%></th>
+                    <th><%=resource.ContractHistory.ChValidfrom.header%></th>
+                    <th><%=resource.ContractHistory.ChPending.header%></th>
+                    <th><%=resource.ContractHistory.Entdate.header%></th>
+                    <th><%=resource.ContractHistory.Userlastmod.header%></th>
+                    <th><%=resource.ContractHistory.Request.header%></th>
+                    <th><%=resource.ContractHistory.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.contractHistory){ let rec = record.contractHistory[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.ch_seqno%></a></td>
+                    <td><a><%=rec.ch_status%></a></td>
+                    <td><a><%=rec.ch_reason%></a></td>
+                    <td><a><%=dateFormat(rec.ch_validfrom,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.ch_pending%></a></td>
+                    <td><a><%=dateFormat(rec.entdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.userlastmod%></a></td>
+                    <td><a><%=rec.request%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readContractHistory?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeContractHistory?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteContractHistory?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newContractHistory">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoContrCheck" role="tabpanel" aria-labelledby="infoContrCheck-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoContrCheck.CoId.header%></th>
+                    <th><%=resource.InfoContrCheck.Check01.header%></th>
+                    <th><%=resource.InfoContrCheck.Check02.header%></th>
+                    <th><%=resource.InfoContrCheck.Check03.header%></th>
+                    <th><%=resource.InfoContrCheck.Check04.header%></th>
+                    <th><%=resource.InfoContrCheck.Check05.header%></th>
+                    <th><%=resource.InfoContrCheck.Check06.header%></th>
+                    <th><%=resource.InfoContrCheck.Check07.header%></th>
+                    <th><%=resource.InfoContrCheck.Check08.header%></th>
+                    <th><%=resource.InfoContrCheck.Check09.header%></th>
+                    <th><%=resource.InfoContrCheck.Check10.header%></th>
+                    <th><%=resource.InfoContrCheck.Check11.header%></th>
+                    <th><%=resource.InfoContrCheck.Check12.header%></th>
+                    <th><%=resource.InfoContrCheck.Check13.header%></th>
+                    <th><%=resource.InfoContrCheck.Check14.header%></th>
+                    <th><%=resource.InfoContrCheck.Check15.header%></th>
+                    <th><%=resource.InfoContrCheck.Check16.header%></th>
+                    <th><%=resource.InfoContrCheck.Check17.header%></th>
+                    <th><%=resource.InfoContrCheck.Check18.header%></th>
+                    <th><%=resource.InfoContrCheck.Check19.header%></th>
+                    <th><%=resource.InfoContrCheck.Check20.header%></th>
+                    <th><%=resource.InfoContrCheck.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoContrCheck){ let rec = record.infoContrCheck[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.check01%></a></td>
+                    <td><a><%=rec.check02%></a></td>
+                    <td><a><%=rec.check03%></a></td>
+                    <td><a><%=rec.check04%></a></td>
+                    <td><a><%=rec.check05%></a></td>
+                    <td><a><%=rec.check06%></a></td>
+                    <td><a><%=rec.check07%></a></td>
+                    <td><a><%=rec.check08%></a></td>
+                    <td><a><%=rec.check09%></a></td>
+                    <td><a><%=rec.check10%></a></td>
+                    <td><a><%=rec.check11%></a></td>
+                    <td><a><%=rec.check12%></a></td>
+                    <td><a><%=rec.check13%></a></td>
+                    <td><a><%=rec.check14%></a></td>
+                    <td><a><%=rec.check15%></a></td>
+                    <td><a><%=rec.check16%></a></td>
+                    <td><a><%=rec.check17%></a></td>
+                    <td><a><%=rec.check18%></a></td>
+                    <td><a><%=rec.check19%></a></td>
+                    <td><a><%=rec.check20%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoContrCheck?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoContrCheck?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoContrCheck?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoContrCheck">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoContrCombo" role="tabpanel" aria-labelledby="infoContrCombo-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoContrCombo.CoId.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo01.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo02.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo03.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo04.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo05.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo06.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo07.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo08.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo09.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo10.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo11.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo12.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo13.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo14.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo15.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo16.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo17.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo18.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo19.header%></th>
+                    <th><%=resource.InfoContrCombo.Combo20.header%></th>
+                    <th><%=resource.InfoContrCombo.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoContrCombo){ let rec = record.infoContrCombo[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.combo01%></a></td>
+                    <td><a><%=rec.combo02%></a></td>
+                    <td><a><%=rec.combo03%></a></td>
+                    <td><a><%=rec.combo04%></a></td>
+                    <td><a><%=rec.combo05%></a></td>
+                    <td><a><%=rec.combo06%></a></td>
+                    <td><a><%=rec.combo07%></a></td>
+                    <td><a><%=rec.combo08%></a></td>
+                    <td><a><%=rec.combo09%></a></td>
+                    <td><a><%=rec.combo10%></a></td>
+                    <td><a><%=rec.combo11%></a></td>
+                    <td><a><%=rec.combo12%></a></td>
+                    <td><a><%=rec.combo13%></a></td>
+                    <td><a><%=rec.combo14%></a></td>
+                    <td><a><%=rec.combo15%></a></td>
+                    <td><a><%=rec.combo16%></a></td>
+                    <td><a><%=rec.combo17%></a></td>
+                    <td><a><%=rec.combo18%></a></td>
+                    <td><a><%=rec.combo19%></a></td>
+                    <td><a><%=rec.combo20%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoContrCombo?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoContrCombo?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoContrCombo?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoContrCombo">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="infoContrText" role="tabpanel" aria-labelledby="infoContrText-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.InfoContrText.CoId.header%></th>
+                    <th><%=resource.InfoContrText.Text01.header%></th>
+                    <th><%=resource.InfoContrText.Text02.header%></th>
+                    <th><%=resource.InfoContrText.Text03.header%></th>
+                    <th><%=resource.InfoContrText.Text04.header%></th>
+                    <th><%=resource.InfoContrText.Text05.header%></th>
+                    <th><%=resource.InfoContrText.Text06.header%></th>
+                    <th><%=resource.InfoContrText.Text07.header%></th>
+                    <th><%=resource.InfoContrText.Text08.header%></th>
+                    <th><%=resource.InfoContrText.Text09.header%></th>
+                    <th><%=resource.InfoContrText.Text10.header%></th>
+                    <th><%=resource.InfoContrText.Text11.header%></th>
+                    <th><%=resource.InfoContrText.Text12.header%></th>
+                    <th><%=resource.InfoContrText.Text13.header%></th>
+                    <th><%=resource.InfoContrText.Text14.header%></th>
+                    <th><%=resource.InfoContrText.Text15.header%></th>
+                    <th><%=resource.InfoContrText.Text16.header%></th>
+                    <th><%=resource.InfoContrText.Text17.header%></th>
+                    <th><%=resource.InfoContrText.Text18.header%></th>
+                    <th><%=resource.InfoContrText.Text19.header%></th>
+                    <th><%=resource.InfoContrText.Text20.header%></th>
+                    <th><%=resource.InfoContrText.Text21.header%></th>
+                    <th><%=resource.InfoContrText.Text22.header%></th>
+                    <th><%=resource.InfoContrText.Text23.header%></th>
+                    <th><%=resource.InfoContrText.Text24.header%></th>
+                    <th><%=resource.InfoContrText.Text25.header%></th>
+                    <th><%=resource.InfoContrText.Text26.header%></th>
+                    <th><%=resource.InfoContrText.Text27.header%></th>
+                    <th><%=resource.InfoContrText.Text28.header%></th>
+                    <th><%=resource.InfoContrText.Text29.header%></th>
+                    <th><%=resource.InfoContrText.Text30.header%></th>
+                    <th><%=resource.InfoContrText.RecVersion.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.infoContrText){ let rec = record.infoContrText[i] %>
+                <tr>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.text01%></a></td>
+                    <td><a><%=rec.text02%></a></td>
+                    <td><a><%=rec.text03%></a></td>
+                    <td><a><%=rec.text04%></a></td>
+                    <td><a><%=rec.text05%></a></td>
+                    <td><a><%=rec.text06%></a></td>
+                    <td><a><%=rec.text07%></a></td>
+                    <td><a><%=rec.text08%></a></td>
+                    <td><a><%=rec.text09%></a></td>
+                    <td><a><%=rec.text10%></a></td>
+                    <td><a><%=rec.text11%></a></td>
+                    <td><a><%=rec.text12%></a></td>
+                    <td><a><%=rec.text13%></a></td>
+                    <td><a><%=rec.text14%></a></td>
+                    <td><a><%=rec.text15%></a></td>
+                    <td><a><%=rec.text16%></a></td>
+                    <td><a><%=rec.text17%></a></td>
+                    <td><a><%=rec.text18%></a></td>
+                    <td><a><%=rec.text19%></a></td>
+                    <td><a><%=rec.text20%></a></td>
+                    <td><a><%=rec.text21%></a></td>
+                    <td><a><%=rec.text22%></a></td>
+                    <td><a><%=rec.text23%></a></td>
+                    <td><a><%=rec.text24%></a></td>
+                    <td><a><%=rec.text25%></a></td>
+                    <td><a><%=rec.text26%></a></td>
+                    <td><a><%=rec.text27%></a></td>
+                    <td><a><%=rec.text28%></a></td>
+                    <td><a><%=rec.text29%></a></td>
+                    <td><a><%=rec.text30%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    
+                    <td><a href="/readInfoContrText?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeInfoContrText?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteInfoContrText?coId=<%=rec.co_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newInfoContrText">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+	<div class="tab-pane fade" id="profileService" role="tabpanel" aria-labelledby="profileService-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.ProfileService.ProfileId.header%></th>
+                    <th><%=resource.ProfileService.CoId.header%></th>
+                    <th><%=resource.ProfileService.Sncode.header%></th>
+                    <th><%=resource.ProfileService.SpcodeHistno.header%></th>
+                    <th><%=resource.ProfileService.StatusHistno.header%></th>
+                    <th><%=resource.ProfileService.EntryDate.header%></th>
+                    <th><%=resource.ProfileService.ChannelNum.header%></th>
+                    <th><%=resource.ProfileService.OvwAccFirst.header%></th>
+                    <th><%=resource.ProfileService.DateBilled.header%></th>
+                    <th><%=resource.ProfileService.SnClass.header%></th>
+                    <th><%=resource.ProfileService.OvwSubscr.header%></th>
+                    <th><%=resource.ProfileService.Subscript.header%></th>
+                    <th><%=resource.ProfileService.OvwAccess.header%></th>
+                    <th><%=resource.ProfileService.OvwAccPrd.header%></th>
+                    <th><%=resource.ProfileService.Accessfee.header%></th>
+                    <th><%=resource.ProfileService.ChannelExcl.header%></th>
+                    <th><%=resource.ProfileService.DisSubscr.header%></th>
+                    <th><%=resource.ProfileService.InstallDate.header%></th>
+                    <th><%=resource.ProfileService.TrialEndDate.header%></th>
+                    <th><%=resource.ProfileService.PrmValueId.header%></th>
+                    <th><%=resource.ProfileService.Currency.header%></th>
+                    <th><%=resource.ProfileService.SrvType.header%></th>
+                    <th><%=resource.ProfileService.SrvSubtype.header%></th>
+                    <th><%=resource.ProfileService.OvwAdvCharge.header%></th>
+                    <th><%=resource.ProfileService.AdvCharge.header%></th>
+                    <th><%=resource.ProfileService.AdvChargePrd.header%></th>
+                    <th><%=resource.ProfileService.DeleteFlag.header%></th>
+                    <th><%=resource.ProfileService.RecVersion.header%></th>
+                    <th><%=resource.ProfileService.AttribHistno.header%></th>
+                    <th><%=resource.ProfileService.AttribHistnoNnp.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.profileService){ let rec = record.profileService[i] %>
+                <tr>
+                    <td><a><%=rec.profile_id%></a></td>
+                    <td><a><%=rec.co_id%></a></td>
+                    <td><a><%=rec.sncode%></a></td>
+                    <td><a><%=rec.spcode_histno%></a></td>
+                    <td><a><%=rec.status_histno%></a></td>
+                    <td><a><%=dateFormat(rec.entry_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.channel_num%></a></td>
+                    <td><a><%=rec.ovw_acc_first%></a></td>
+                    <td><a><%=dateFormat(rec.date_billed,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.sn_class%></a></td>
+                    <td><a><%=rec.ovw_subscr%></a></td>
+                    <td><a><%=rec.subscript%></a></td>
+                    <td><a><%=rec.ovw_access%></a></td>
+                    <td><a><%=rec.ovw_acc_prd%></a></td>
+                    <td><a><%=rec.accessfee%></a></td>
+                    <td><a><%=rec.channel_excl%></a></td>
+                    <td><a><%=rec.dis_subscr%></a></td>
+                    <td><a><%=dateFormat(rec.install_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.trial_end_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.prm_value_id%></a></td>
+                    <td><a><%=rec.currency%></a></td>
+                    <td><a><%=rec.srv_type%></a></td>
+                    <td><a><%=rec.srv_subtype%></a></td>
+                    <td><a><%=rec.ovw_adv_charge%></a></td>
+                    <td><a><%=rec.adv_charge%></a></td>
+                    <td><a><%=rec.adv_charge_prd%></a></td>
+                    <td><a><%=rec.delete_flag%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.attrib_histno%></a></td>
+                    <td><a><%=rec.attrib_histno_nnp%></a></td>
+                    
+                    <td><a href="/readProfileService?profileId=<%=rec.profile_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeProfileService?profileId=<%=rec.profile_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteProfileService?profileId=<%=rec.profile_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newProfileService">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

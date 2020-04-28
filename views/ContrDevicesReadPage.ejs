@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="port-tab" data-toggle="tab" href="#port" role="tab" aria-controls="port" aria-selected="true"><h4><%=resource.Port.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CdId.label%></td>
+                        <td><%=record.cd_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdSeqno.label%></td>
+                        <td><%=record.cd_seqno%></td>						
+                    </tr><tr>
+                        <td><%=resource.CoId.label%></td>
+                        <td><%=record.co_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortId.label%></td>
+                        <td><%=record.port_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnId.label%></td>
+                        <td><%=record.dn_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.EqId.label%></td>
+                        <td><%=record.eq_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdStatus.label%></td>
+                        <td><%=record.cd_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdActivDate.label%></td>
+                        <td><%=dateFormat(record.cd_activ_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdDeactivDate.label%></td>
+                        <td><%=dateFormat(record.cd_deactiv_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdValidfrom.label%></td>
+                        <td><%=dateFormat(record.cd_validfrom,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdEntdate.label%></td>
+                        <td><%=dateFormat(record.cd_entdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdModdate.label%></td>
+                        <td><%=dateFormat(record.cd_moddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdUserlastmod.label%></td>
+                        <td><%=record.cd_userlastmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdSmNum.label%></td>
+                        <td><%=record.cd_sm_num%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdChannels.label%></td>
+                        <td><%=record.cd_channels%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdChannelsExcl.label%></td>
+                        <td><%=record.cd_channels_excl%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdEqNum.label%></td>
+                        <td><%=record.cd_eq_num%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdPendingState.label%></td>
+                        <td><%=record.cd_pending_state%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdRsId.label%></td>
+                        <td><%=record.cd_rs_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.CdPlcode.label%></td>
+                        <td><%=record.cd_plcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Hlcode.label%></td>
+                        <td><%=record.hlcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeContrDevices?cdId=<%=record.cd_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteContrDevices?cdId=<%=record.cd_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+	<div class="tab-pane fade" id="port" role="tabpanel" aria-labelledby="port-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.Port.PortId.header%></th>
+                    <th><%=resource.Port.Plcode.header%></th>
+                    <th><%=resource.Port.Hlcode.header%></th>
+                    <th><%=resource.Port.PortNum.header%></th>
+                    <th><%=resource.Port.PortStatus.header%></th>
+                    <th><%=resource.Port.PortStatusmoddat.header%></th>
+                    <th><%=resource.Port.PortKi.header%></th>
+                    <th><%=resource.Port.PortKind.header%></th>
+                    <th><%=resource.Port.PortChannels.header%></th>
+                    <th><%=resource.Port.PortChannelsExcl.header%></th>
+                    <th><%=resource.Port.SmId.header%></th>
+                    <th><%=resource.Port.PortSmRequ.header%></th>
+                    <th><%=resource.Port.SimpohId.header%></th>
+                    <th><%=resource.Port.SimpotId.header%></th>
+                    <th><%=resource.Port.SimpotBatch.header%></th>
+                    <th><%=resource.Port.DnId.header%></th>
+                    <th><%=resource.Port.DealerId.header%></th>
+                    <th><%=resource.Port.PortAssignDate.header%></th>
+                    <th><%=resource.Port.PortTkey.header%></th>
+                    <th><%=resource.Port.PortStatusRequ.header%></th>
+                    <th><%=resource.Port.PortStaRequDate.header%></th>
+                    <th><%=resource.Port.PortActivDate.header%></th>
+                    <th><%=resource.Port.PortDeactivDate.header%></th>
+                    <th><%=resource.Port.PortEntdate.header%></th>
+                    <th><%=resource.Port.PortModdate.header%></th>
+                    <th><%=resource.Port.PortUserlastmod.header%></th>
+                    <th><%=resource.Port.PreActivated.header%></th>
+                    <th><%=resource.Port.SmsUpdate.header%></th>
+                    <th><%=resource.Port.PortRicBatch.header%></th>
+                    <th><%=resource.Port.ExternalInd.header%></th>
+                    <th><%=resource.Port.Capacity.header%></th>
+                    <th><%=resource.Port.AvailableCapacity.header%></th>
+                    <th><%=resource.Port.PrmValueId.header%></th>
+                    <th><%=resource.Port.RecVersion.header%></th>
+                    <th><%=resource.Port.PortNpcode.header%></th>
+                    <th><%=resource.Port.TransactionId.header%></th>
+                    <th><%=resource.Port.BusinessUnitId.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.port){ let rec = record.port[i] %>
+                <tr>
+                    <td><a><%=rec.port_id%></a></td>
+                    <td><a><%=rec.plcode%></a></td>
+                    <td><a><%=rec.hlcode%></a></td>
+                    <td><a><%=rec.port_num%></a></td>
+                    <td><a><%=rec.port_status%></a></td>
+                    <td><a><%=dateFormat(rec.port_statusmoddat,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.port_ki%></a></td>
+                    <td><a><%=rec.port_kind%></a></td>
+                    <td><a><%=rec.port_channels%></a></td>
+                    <td><a><%=rec.port_channels_excl%></a></td>
+                    <td><a><%=rec.sm_id%></a></td>
+                    <td><a><%=rec.port_sm_requ%></a></td>
+                    <td><a><%=rec.simpoh_id%></a></td>
+                    <td><a><%=rec.simpot_id%></a></td>
+                    <td><a><%=rec.simpot_batch%></a></td>
+                    <td><a><%=rec.dn_id%></a></td>
+                    <td><a><%=rec.dealer_id%></a></td>
+                    <td><a><%=dateFormat(rec.port_assign_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.port_tkey%></a></td>
+                    <td><a><%=rec.port_status_requ%></a></td>
+                    <td><a><%=dateFormat(rec.port_sta_requ_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.port_activ_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.port_deactiv_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.port_entdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.port_moddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.port_userlastmod%></a></td>
+                    <td><a><%=rec.pre_activated%></a></td>
+                    <td><a><%=rec.sms_update%></a></td>
+                    <td><a><%=rec.port_ric_batch%></a></td>
+                    <td><a><%=rec.external_ind%></a></td>
+                    <td><a><%=rec.capacity%></a></td>
+                    <td><a><%=rec.available_capacity%></a></td>
+                    <td><a><%=rec.prm_value_id%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.port_npcode%></a></td>
+                    <td><a><%=rec.transaction_id%></a></td>
+                    <td><a><%=rec.business_unit_id%></a></td>
+                    
+                    <td><a href="/readPort?portId=<%=rec.port_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writePort?portId=<%=rec.port_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deletePort?portId=<%=rec.port_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newPort">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

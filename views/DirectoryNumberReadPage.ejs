@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.DnId.label%></td>
+                        <td><%=record.dn_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Plcode.label%></td>
+                        <td><%=record.plcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Ndc.label%></td>
+                        <td><%=record.ndc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Hlcode.label%></td>
+                        <td><%=record.hlcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnNum.label%></td>
+                        <td><%=record.dn_num%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnStatus.label%></td>
+                        <td><%=record.dn_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnStatusModDate.label%></td>
+                        <td><%=dateFormat(record.dn_status_mod_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DealerId.label%></td>
+                        <td><%=record.dealer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnAssignDate.label%></td>
+                        <td><%=dateFormat(record.dn_assign_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnPhoneFlag.label%></td>
+                        <td><%=record.dn_phone_flag%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnType.label%></td>
+                        <td><%=record.dn_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnStatusRequ.label%></td>
+                        <td><%=record.dn_status_requ%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnStaRequDate.label%></td>
+                        <td><%=dateFormat(record.dn_sta_requ_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnAssign.label%></td>
+                        <td><%=record.dn_assign%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnEntdate.label%></td>
+                        <td><%=dateFormat(record.dn_entdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnModdate.label%></td>
+                        <td><%=dateFormat(record.dn_moddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnModflag.label%></td>
+                        <td><%=record.dn_modflag%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnAuth.label%></td>
+                        <td><%=record.dn_auth%></td>						
+                    </tr><tr>
+                        <td><%=resource.Evcode.label%></td>
+                        <td><%=record.evcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Hmcode.label%></td>
+                        <td><%=record.hmcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.LocalPrefixLen.label%></td>
+                        <td><%=record.local_prefix_len%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpohId.label%></td>
+                        <td><%=record.simpoh_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpotId.label%></td>
+                        <td><%=record.simpot_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpotBatch.label%></td>
+                        <td><%=record.simpot_batch%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExternalInd.label%></td>
+                        <td><%=record.external_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.BlockInd.label%></td>
+                        <td><%=record.block_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExtensionLengthMax.label%></td>
+                        <td><%=record.extension_length_max%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnAuthPending.label%></td>
+                        <td><%=record.dn_auth_pending%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.DirnumNpcode.label%></td>
+                        <td><%=record.dirnum_npcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.VpnId.label%></td>
+                        <td><%=record.vpn_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.StaticPdpRequired.label%></td>
+                        <td><%=record.static_pdp_required%></td>						
+                    </tr><tr>
+                        <td><%=resource.RoamingAllowed.label%></td>
+                        <td><%=record.roaming_allowed%></td>						
+                    </tr><tr>
+                        <td><%=resource.TransactionId.label%></td>
+                        <td><%=record.transaction_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.BusinessUnitId.label%></td>
+                        <td><%=record.business_unit_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.ReservedForPortingInd.label%></td>
+                        <td><%=record.reserved_for_porting_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortedNumberInd.label%></td>
+                        <td><%=record.ported_number_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.Rscode.label%></td>
+                        <td><%=record.rscode%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeDirectoryNumber?dnId=<%=record.dn_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteDirectoryNumber?dnId=<%=record.dn_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

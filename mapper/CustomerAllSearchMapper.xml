@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchCustomerAllMapper">			
+	
+	<select id="countCustomerAllSearch">
+		select count(*) from customer_all
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="customerIdHigh!=null">
+				and customer_id_high like #{customerIdHigh}
+			</if>
+			<if test="custcode!=null">
+				and custcode like #{custcode}
+			</if>
+			<if test="csst!=null">
+				and csst like #{csst}
+			</if>
+			<if test="cstype!=null">
+				and cstype like #{cstype}
+			</if>
+			<if test="csactivated!=null">
+				and csactivated like #{csactivated}
+			</if>
+			<if test="csdeactivated!=null">
+				and csdeactivated like #{csdeactivated}
+			</if>
+			<if test="cstypeDate!=null">
+				and cstype_date like #{cstypeDate}
+			</if>
+			<if test="cslevel!=null">
+				and cslevel like #{cslevel}
+			</if>
+			<if test="cslvlname!=null">
+				and cslvlname like #{cslvlname}
+			</if>
+			<if test="tmcode!=null">
+				and tmcode like #{tmcode}
+			</if>
+			<if test="prgcode!=null">
+				and prgcode like #{prgcode}
+			</if>
+			<if test="csclimit!=null">
+				and csclimit like #{csclimit}
+			</if>
+			<if test="cscurbalance!=null">
+				and cscurbalance like #{cscurbalance}
+			</if>
+			<if test="csdepdate!=null">
+				and csdepdate like #{csdepdate}
+			</if>
+			<if test="cstestbillrun!=null">
+				and cstestbillrun like #{cstestbillrun}
+			</if>
+			<if test="billLayout!=null">
+				and bill_layout like #{billLayout}
+			</if>
+			<if test="paymntresp!=null">
+				and paymntresp like #{paymntresp}
+			</if>
+			<if test="targetReached!=null">
+				and target_reached like #{targetReached}
+			</if>
+			<if test="pcsmethpaymnt!=null">
+				and pcsmethpaymnt like #{pcsmethpaymnt}
+			</if>
+			<if test="dunningFlag!=null">
+				and dunning_flag like #{dunningFlag}
+			</if>
+			<if test="commNo!=null">
+				and comm_no like #{commNo}
+			</if>
+			<if test="posCommType!=null">
+				and pos_comm_type like #{posCommType}
+			</if>
+			<if test="btxPassword!=null">
+				and btx_password like #{btxPassword}
+			</if>
+			<if test="btxUser!=null">
+				and btx_user like #{btxUser}
+			</if>
+			<if test="settlesPMonth!=null">
+				and settles_p_month like #{settlesPMonth}
+			</if>
+			<if test="cashretour!=null">
+				and cashretour like #{cashretour}
+			</if>
+			<if test="cstradecode!=null">
+				and cstradecode like #{cstradecode}
+			</if>
+			<if test="cspassword!=null">
+				and cspassword like #{cspassword}
+			</if>
+			<if test="cspromotion!=null">
+				and cspromotion like #{cspromotion}
+			</if>
+			<if test="csreason!=null">
+				and csreason like #{csreason}
+			</if>
+			<if test="cscollector!=null">
+				and cscollector like #{cscollector}
+			</if>
+			<if test="cscontresp!=null">
+				and cscontresp like #{cscontresp}
+			</if>
+			<if test="csdeposit!=null">
+				and csdeposit like #{csdeposit}
+			</if>
+			<if test="cscreditDate!=null">
+				and cscredit_date like #{cscreditDate}
+			</if>
+			<if test="cscreditRemark!=null">
+				and cscredit_remark like #{cscreditRemark}
+			</if>
+			<if test="suspended!=null">
+				and suspended like #{suspended}
+			</if>
+			<if test="reactivated!=null">
+				and reactivated like #{reactivated}
+			</if>
+			<if test="prevBalance!=null">
+				and prev_balance like #{prevBalance}
+			</if>
+			<if test="lbcDate!=null">
+				and lbc_date like #{lbcDate}
+			</if>
+			<if test="crlimitExc!=null">
+				and crlimit_exc like #{crlimitExc}
+			</if>
+			<if test="areaId!=null">
+				and area_id like #{areaId}
+			</if>
+			<if test="costcenterId!=null">
+				and costcenter_id like #{costcenterId}
+			</if>
+			<if test="csfedtaxid!=null">
+				and csfedtaxid like #{csfedtaxid}
+			</if>
+			<if test="creditRating!=null">
+				and credit_rating like #{creditRating}
+			</if>
+			<if test="cscreditStatus!=null">
+				and cscredit_status like #{cscreditStatus}
+			</if>
+			<if test="deactCreateDate!=null">
+				and deact_create_date like #{deactCreateDate}
+			</if>
+			<if test="deactReceipDate!=null">
+				and deact_receip_date like #{deactReceipDate}
+			</if>
+			<if test="edifactAddr!=null">
+				and edifact_addr like #{edifactAddr}
+			</if>
+			<if test="edifactUserFlag!=null">
+				and edifact_user_flag like #{edifactUserFlag}
+			</if>
+			<if test="edifactFlag!=null">
+				and edifact_flag like #{edifactFlag}
+			</if>
+			<if test="csdepositDueDate!=null">
+				and csdeposit_due_date like #{csdepositDueDate}
+			</if>
+			<if test="calculateDeposit!=null">
+				and calculate_deposit like #{calculateDeposit}
+			</if>
+			<if test="tmcodeDate!=null">
+				and tmcode_date like #{tmcodeDate}
+			</if>
+			<if test="csrentalbc!=null">
+				and csrentalbc like #{csrentalbc}
+			</if>
+			<if test="userLastmod!=null">
+				and user_lastmod like #{userLastmod}
+			</if>
+			<if test="csentdate!=null">
+				and csentdate like #{csentdate}
+			</if>
+			<if test="csmoddate!=null">
+				and csmoddate like #{csmoddate}
+			</if>
+			<if test="csmod!=null">
+				and csmod like #{csmod}
+			</if>
+			<if test="customerIdExt!=null">
+				and customer_id_ext like #{customerIdExt}
+			</if>
+			<if test="csclimitOTr1!=null">
+				and csclimit_o_tr1 like #{csclimitOTr1}
+			</if>
+			<if test="csclimitOTr2!=null">
+				and csclimit_o_tr2 like #{csclimitOTr2}
+			</if>
+			<if test="csclimitOTr3!=null">
+				and csclimit_o_tr3 like #{csclimitOTr3}
+			</if>
+			<if test="cscreditScore!=null">
+				and cscredit_score like #{cscreditScore}
+			</if>
+			<if test="cstraderef!=null">
+				and cstraderef like #{cstraderef}
+			</if>
+			<if test="wpid!=null">
+				and wpid like #{wpid}
+			</if>
+			<if test="csprepayment!=null">
+				and csprepayment like #{csprepayment}
+			</if>
+			<if test="csremark1!=null">
+				and csremark_1 like #{csremark1}
+			</if>
+			<if test="csremark2!=null">
+				and csremark_2 like #{csremark2}
+			</if>
+			<if test="billInformation!=null">
+				and bill_information like #{billInformation}
+			</if>
+			<if test="dealerId!=null">
+				and dealer_id like #{dealerId}
+			</if>
+			<if test="dunningMode!=null">
+				and dunning_mode like #{dunningMode}
+			</if>
+			<if test="notValid!=null">
+				and not_valid like #{notValid}
+			</if>
+			<if test="cscrdcheckAgreed!=null">
+				and cscrdcheck_agreed like #{cscrdcheckAgreed}
+			</if>
+			<if test="expectPayCurrId!=null">
+				and expect_pay_curr_id like #{expectPayCurrId}
+			</if>
+			<if test="convratetypePayment!=null">
+				and convratetype_payment like #{convratetypePayment}
+			</if>
+			<if test="refundCurrId!=null">
+				and refund_curr_id like #{refundCurrId}
+			</if>
+			<if test="convratetypeRefund!=null">
+				and convratetype_refund like #{convratetypeRefund}
+			</if>
+			<if test="srcode!=null">
+				and srcode like #{srcode}
+			</if>
+			<if test="currency!=null">
+				and currency like #{currency}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="anonymousCustomer!=null">
+				and anonymous_customer like #{anonymousCustomer}
+			</if>
+			<if test="externalCustomerId!=null">
+				and external_customer_id like #{externalCustomerId}
+			</if>
+			<if test="externalCustomerSetId!=null">
+				and external_customer_set_id like #{externalCustomerSetId}
+			</if>
+			<if test="custnum!=null">
+				and custnum like #{custnum}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+			<if test="partyTypeId!=null">
+				and party_type_id like #{partyTypeId}
+			</if>
+			<if test="individualOverdiscFlag!=null">
+				and individual_overdisc_flag like #{individualOverdiscFlag}
+			</if>
+			<if test="billingThreshold!=null">
+				and billing_threshold like #{billingThreshold}
+			</if>
+			<if test="billingThresholdCurrency!=null">
+				and billing_threshold_currency like #{billingThresholdCurrency}
+			</if>
+			<if test="thresholdBillingMode!=null">
+				and threshold_billing_mode like #{thresholdBillingMode}
+			</if>
+			<if test="thresholdBillingPurpose!=null">
+				and threshold_billing_purpose like #{thresholdBillingPurpose}
+			</if>
+			<if test="collectionInd!=null">
+				and collection_ind like #{collectionInd}
+			</if>
+			<if test="rrCandidate!=null">
+				and rr_candidate like #{rrCandidate}
+			</if>
+			<if test="bchLastRunDate!=null">
+				and bch_last_run_date like #{bchLastRunDate}
+			</if>
+			<if test="createdByUser!=null">
+				and created_by_user like #{createdByUser}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchCustomerAll">
+		select * from customer_all  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="customerIdHigh!=null">
+				customer_id_high like #{customerIdHigh}
+			</if>
+			<if test="custcode!=null">
+				custcode like #{custcode}
+			</if>
+			<if test="csst!=null">
+				csst like #{csst}
+			</if>
+			<if test="cstype!=null">
+				cstype like #{cstype}
+			</if>
+			<if test="csactivated!=null">
+				csactivated like #{csactivated}
+			</if>
+			<if test="csdeactivated!=null">
+				csdeactivated like #{csdeactivated}
+			</if>
+			<if test="cstypeDate!=null">
+				cstype_date like #{cstypeDate}
+			</if>
+			<if test="cslevel!=null">
+				cslevel like #{cslevel}
+			</if>
+			<if test="cslvlname!=null">
+				cslvlname like #{cslvlname}
+			</if>
+			<if test="tmcode!=null">
+				tmcode like #{tmcode}
+			</if>
+			<if test="prgcode!=null">
+				prgcode like #{prgcode}
+			</if>
+			<if test="csclimit!=null">
+				csclimit like #{csclimit}
+			</if>
+			<if test="cscurbalance!=null">
+				cscurbalance like #{cscurbalance}
+			</if>
+			<if test="csdepdate!=null">
+				csdepdate like #{csdepdate}
+			</if>
+			<if test="cstestbillrun!=null">
+				cstestbillrun like #{cstestbillrun}
+			</if>
+			<if test="billLayout!=null">
+				bill_layout like #{billLayout}
+			</if>
+			<if test="paymntresp!=null">
+				paymntresp like #{paymntresp}
+			</if>
+			<if test="targetReached!=null">
+				target_reached like #{targetReached}
+			</if>
+			<if test="pcsmethpaymnt!=null">
+				pcsmethpaymnt like #{pcsmethpaymnt}
+			</if>
+			<if test="dunningFlag!=null">
+				dunning_flag like #{dunningFlag}
+			</if>
+			<if test="commNo!=null">
+				comm_no like #{commNo}
+			</if>
+			<if test="posCommType!=null">
+				pos_comm_type like #{posCommType}
+			</if>
+			<if test="btxPassword!=null">
+				btx_password like #{btxPassword}
+			</if>
+			<if test="btxUser!=null">
+				btx_user like #{btxUser}
+			</if>
+			<if test="settlesPMonth!=null">
+				settles_p_month like #{settlesPMonth}
+			</if>
+			<if test="cashretour!=null">
+				cashretour like #{cashretour}
+			</if>
+			<if test="cstradecode!=null">
+				cstradecode like #{cstradecode}
+			</if>
+			<if test="cspassword!=null">
+				cspassword like #{cspassword}
+			</if>
+			<if test="cspromotion!=null">
+				cspromotion like #{cspromotion}
+			</if>
+			<if test="csreason!=null">
+				csreason like #{csreason}
+			</if>
+			<if test="cscollector!=null">
+				cscollector like #{cscollector}
+			</if>
+			<if test="cscontresp!=null">
+				cscontresp like #{cscontresp}
+			</if>
+			<if test="csdeposit!=null">
+				csdeposit like #{csdeposit}
+			</if>
+			<if test="cscreditDate!=null">
+				cscredit_date like #{cscreditDate}
+			</if>
+			<if test="cscreditRemark!=null">
+				cscredit_remark like #{cscreditRemark}
+			</if>
+			<if test="suspended!=null">
+				suspended like #{suspended}
+			</if>
+			<if test="reactivated!=null">
+				reactivated like #{reactivated}
+			</if>
+			<if test="prevBalance!=null">
+				prev_balance like #{prevBalance}
+			</if>
+			<if test="lbcDate!=null">
+				lbc_date like #{lbcDate}
+			</if>
+			<if test="crlimitExc!=null">
+				crlimit_exc like #{crlimitExc}
+			</if>
+			<if test="areaId!=null">
+				area_id like #{areaId}
+			</if>
+			<if test="costcenterId!=null">
+				costcenter_id like #{costcenterId}
+			</if>
+			<if test="csfedtaxid!=null">
+				csfedtaxid like #{csfedtaxid}
+			</if>
+			<if test="creditRating!=null">
+				credit_rating like #{creditRating}
+			</if>
+			<if test="cscreditStatus!=null">
+				cscredit_status like #{cscreditStatus}
+			</if>
+			<if test="deactCreateDate!=null">
+				deact_create_date like #{deactCreateDate}
+			</if>
+			<if test="deactReceipDate!=null">
+				deact_receip_date like #{deactReceipDate}
+			</if>
+			<if test="edifactAddr!=null">
+				edifact_addr like #{edifactAddr}
+			</if>
+			<if test="edifactUserFlag!=null">
+				edifact_user_flag like #{edifactUserFlag}
+			</if>
+			<if test="edifactFlag!=null">
+				edifact_flag like #{edifactFlag}
+			</if>
+			<if test="csdepositDueDate!=null">
+				csdeposit_due_date like #{csdepositDueDate}
+			</if>
+			<if test="calculateDeposit!=null">
+				calculate_deposit like #{calculateDeposit}
+			</if>
+			<if test="tmcodeDate!=null">
+				tmcode_date like #{tmcodeDate}
+			</if>
+			<if test="csrentalbc!=null">
+				csrentalbc like #{csrentalbc}
+			</if>
+			<if test="userLastmod!=null">
+				user_lastmod like #{userLastmod}
+			</if>
+			<if test="csentdate!=null">
+				csentdate like #{csentdate}
+			</if>
+			<if test="csmoddate!=null">
+				csmoddate like #{csmoddate}
+			</if>
+			<if test="csmod!=null">
+				csmod like #{csmod}
+			</if>
+			<if test="customerIdExt!=null">
+				customer_id_ext like #{customerIdExt}
+			</if>
+			<if test="csclimitOTr1!=null">
+				csclimit_o_tr1 like #{csclimitOTr1}
+			</if>
+			<if test="csclimitOTr2!=null">
+				csclimit_o_tr2 like #{csclimitOTr2}
+			</if>
+			<if test="csclimitOTr3!=null">
+				csclimit_o_tr3 like #{csclimitOTr3}
+			</if>
+			<if test="cscreditScore!=null">
+				cscredit_score like #{cscreditScore}
+			</if>
+			<if test="cstraderef!=null">
+				cstraderef like #{cstraderef}
+			</if>
+			<if test="wpid!=null">
+				wpid like #{wpid}
+			</if>
+			<if test="csprepayment!=null">
+				csprepayment like #{csprepayment}
+			</if>
+			<if test="csremark1!=null">
+				csremark_1 like #{csremark1}
+			</if>
+			<if test="csremark2!=null">
+				csremark_2 like #{csremark2}
+			</if>
+			<if test="billInformation!=null">
+				bill_information like #{billInformation}
+			</if>
+			<if test="dealerId!=null">
+				dealer_id like #{dealerId}
+			</if>
+			<if test="dunningMode!=null">
+				dunning_mode like #{dunningMode}
+			</if>
+			<if test="notValid!=null">
+				not_valid like #{notValid}
+			</if>
+			<if test="cscrdcheckAgreed!=null">
+				cscrdcheck_agreed like #{cscrdcheckAgreed}
+			</if>
+			<if test="expectPayCurrId!=null">
+				expect_pay_curr_id like #{expectPayCurrId}
+			</if>
+			<if test="convratetypePayment!=null">
+				convratetype_payment like #{convratetypePayment}
+			</if>
+			<if test="refundCurrId!=null">
+				refund_curr_id like #{refundCurrId}
+			</if>
+			<if test="convratetypeRefund!=null">
+				convratetype_refund like #{convratetypeRefund}
+			</if>
+			<if test="srcode!=null">
+				srcode like #{srcode}
+			</if>
+			<if test="currency!=null">
+				currency like #{currency}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="anonymousCustomer!=null">
+				anonymous_customer like #{anonymousCustomer}
+			</if>
+			<if test="externalCustomerId!=null">
+				external_customer_id like #{externalCustomerId}
+			</if>
+			<if test="externalCustomerSetId!=null">
+				external_customer_set_id like #{externalCustomerSetId}
+			</if>
+			<if test="custnum!=null">
+				custnum like #{custnum}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+			<if test="partyTypeId!=null">
+				party_type_id like #{partyTypeId}
+			</if>
+			<if test="individualOverdiscFlag!=null">
+				individual_overdisc_flag like #{individualOverdiscFlag}
+			</if>
+			<if test="billingThreshold!=null">
+				billing_threshold like #{billingThreshold}
+			</if>
+			<if test="billingThresholdCurrency!=null">
+				billing_threshold_currency like #{billingThresholdCurrency}
+			</if>
+			<if test="thresholdBillingMode!=null">
+				threshold_billing_mode like #{thresholdBillingMode}
+			</if>
+			<if test="thresholdBillingPurpose!=null">
+				threshold_billing_purpose like #{thresholdBillingPurpose}
+			</if>
+			<if test="collectionInd!=null">
+				collection_ind like #{collectionInd}
+			</if>
+			<if test="rrCandidate!=null">
+				rr_candidate like #{rrCandidate}
+			</if>
+			<if test="bchLastRunDate!=null">
+				bch_last_run_date like #{bchLastRunDate}
+			</if>
+			<if test="createdByUser!=null">
+				created_by_user like #{createdByUser}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

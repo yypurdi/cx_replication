@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeProfileService" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.ProfileId.label%></td>
+                <td><input type="text" class="form-control" name="profileId" value="<%=record.profile_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.co_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Sncode.label%></td>
+                <td><input type="text" class="form-control" name="sncode" value="<%=record.sncode%>"/></td>
+            </tr><tr>
+                <td><%=resource.SpcodeHistno.label%></td>
+                <td><input type="text" class="form-control" name="spcodeHistno" value="<%=record.spcode_histno%>"/></td>
+            </tr><tr>
+                <td><%=resource.StatusHistno.label%></td>
+                <td><input type="text" class="form-control" name="statusHistno" value="<%=record.status_histno%>"/></td>
+            </tr><tr>
+                <td><%=resource.EntryDate.label%></td>
+                <td><input type="text" class="form-control" name="entryDate" value="<%=record.entry_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChannelNum.label%></td>
+                <td><input type="text" class="form-control" name="channelNum" value="<%=record.channel_num%>"/></td>
+            </tr><tr>
+                <td><%=resource.OvwAccFirst.label%></td>
+                <td><input type="text" class="form-control" name="ovwAccFirst" value="<%=record.ovw_acc_first%>"/></td>
+            </tr><tr>
+                <td><%=resource.DateBilled.label%></td>
+                <td><input type="text" class="form-control" name="dateBilled" value="<%=record.date_billed%>"/></td>
+            </tr><tr>
+                <td><%=resource.SnClass.label%></td>
+                <td><input type="text" class="form-control" name="snClass" value="<%=record.sn_class%>"/></td>
+            </tr><tr>
+                <td><%=resource.OvwSubscr.label%></td>
+                <td><input type="text" class="form-control" name="ovwSubscr" value="<%=record.ovw_subscr%>"/></td>
+            </tr><tr>
+                <td><%=resource.Subscript.label%></td>
+                <td><input type="text" class="form-control" name="subscript" value="<%=record.subscript%>"/></td>
+            </tr><tr>
+                <td><%=resource.OvwAccess.label%></td>
+                <td><input type="text" class="form-control" name="ovwAccess" value="<%=record.ovw_access%>"/></td>
+            </tr><tr>
+                <td><%=resource.OvwAccPrd.label%></td>
+                <td><input type="text" class="form-control" name="ovwAccPrd" value="<%=record.ovw_acc_prd%>"/></td>
+            </tr><tr>
+                <td><%=resource.Accessfee.label%></td>
+                <td><input type="text" class="form-control" name="accessfee" value="<%=record.accessfee%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChannelExcl.label%></td>
+                <td><input type="text" class="form-control" name="channelExcl" value="<%=record.channel_excl%>"/></td>
+            </tr><tr>
+                <td><%=resource.DisSubscr.label%></td>
+                <td><input type="text" class="form-control" name="disSubscr" value="<%=record.dis_subscr%>"/></td>
+            </tr><tr>
+                <td><%=resource.InstallDate.label%></td>
+                <td><input type="text" class="form-control" name="installDate" value="<%=record.install_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.TrialEndDate.label%></td>
+                <td><input type="text" class="form-control" name="trialEndDate" value="<%=record.trial_end_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrmValueId.label%></td>
+                <td><input type="text" class="form-control" name="prmValueId" value="<%=record.prm_value_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Currency.label%></td>
+                <td><input type="text" class="form-control" name="currency" value="<%=record.currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.SrvType.label%></td>
+                <td><input type="text" class="form-control" name="srvType" value="<%=record.srv_type%>"/></td>
+            </tr><tr>
+                <td><%=resource.SrvSubtype.label%></td>
+                <td><input type="text" class="form-control" name="srvSubtype" value="<%=record.srv_subtype%>"/></td>
+            </tr><tr>
+                <td><%=resource.OvwAdvCharge.label%></td>
+                <td><input type="text" class="form-control" name="ovwAdvCharge" value="<%=record.ovw_adv_charge%>"/></td>
+            </tr><tr>
+                <td><%=resource.AdvCharge.label%></td>
+                <td><input type="text" class="form-control" name="advCharge" value="<%=record.adv_charge%>"/></td>
+            </tr><tr>
+                <td><%=resource.AdvChargePrd.label%></td>
+                <td><input type="text" class="form-control" name="advChargePrd" value="<%=record.adv_charge_prd%>"/></td>
+            </tr><tr>
+                <td><%=resource.DeleteFlag.label%></td>
+                <td><input type="text" class="form-control" name="deleteFlag" value="<%=record.delete_flag%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr><tr>
+                <td><%=resource.AttribHistno.label%></td>
+                <td><input type="text" class="form-control" name="attribHistno" value="<%=record.attrib_histno%>"/></td>
+            </tr><tr>
+                <td><%=resource.AttribHistnoNnp.label%></td>
+                <td><input type="text" class="form-control" name="attribHistnoNnp" value="<%=record.attrib_histno_nnp%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

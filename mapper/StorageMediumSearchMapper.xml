@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchStorageMediumMapper">			
+	
+	<select id="countStorageMediumSearch">
+		select count(*) from storage_medium
+		<trim prefix="where" prefixOverrides="and">
+			<if test="smId!=null">
+				and sm_id like #{smId}
+			</if>
+			<if test="plcode!=null">
+				and plcode like #{plcode}
+			</if>
+			<if test="smcId!=null">
+				and smc_id like #{smcId}
+			</if>
+			<if test="smSerialnum!=null">
+				and sm_serialnum like #{smSerialnum}
+			</if>
+			<if test="smStatus!=null">
+				and sm_status like #{smStatus}
+			</if>
+			<if test="smStatusModDate!=null">
+				and sm_status_mod_date like #{smStatusModDate}
+			</if>
+			<if test="dealerId!=null">
+				and dealer_id like #{dealerId}
+			</if>
+			<if test="smDeliveryId!=null">
+				and sm_delivery_id like #{smDeliveryId}
+			</if>
+			<if test="smDeliveryDate!=null">
+				and sm_delivery_date like #{smDeliveryDate}
+			</if>
+			<if test="simpohId!=null">
+				and simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				and simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				and simpot_batch like #{simpotBatch}
+			</if>
+			<if test="smPin!=null">
+				and sm_pin like #{smPin}
+			</if>
+			<if test="smPuk!=null">
+				and sm_puk like #{smPuk}
+			</if>
+			<if test="smAccControl!=null">
+				and sm_acc_control like #{smAccControl}
+			</if>
+			<if test="smCodeAdm!=null">
+				and sm_code_adm like #{smCodeAdm}
+			</if>
+			<if test="spIdE!=null">
+				and sp_id_e like #{spIdE}
+			</if>
+			<if test="spIdG!=null">
+				and sp_id_g like #{spIdG}
+			</if>
+			<if test="smStatusRequ!=null">
+				and sm_status_requ like #{smStatusRequ}
+			</if>
+			<if test="smStaRequDate!=null">
+				and sm_sta_requ_date like #{smStaRequDate}
+			</if>
+			<if test="smEntdate!=null">
+				and sm_entdate like #{smEntdate}
+			</if>
+			<if test="smModdate!=null">
+				and sm_moddate like #{smModdate}
+			</if>
+			<if test="smUserlastmod!=null">
+				and sm_userlastmod like #{smUserlastmod}
+			</if>
+			<if test="smPin2!=null">
+				and sm_pin2 like #{smPin2}
+			</if>
+			<if test="smPuk2!=null">
+				and sm_puk2 like #{smPuk2}
+			</if>
+			<if test="smAuth!=null">
+				and sm_auth like #{smAuth}
+			</if>
+			<if test="piId!=null">
+				and pi_id like #{piId}
+			</if>
+			<if test="externalInd!=null">
+				and external_ind like #{externalInd}
+			</if>
+			<if test="vendcode!=null">
+				and vendcode like #{vendcode}
+			</if>
+			<if test="smAdm1!=null">
+				and sm_adm1 like #{smAdm1}
+			</if>
+			<if test="smAdm2!=null">
+				and sm_adm2 like #{smAdm2}
+			</if>
+			<if test="smAdm3!=null">
+				and sm_adm3 like #{smAdm3}
+			</if>
+			<if test="smAdm4!=null">
+				and sm_adm4 like #{smAdm4}
+			</if>
+			<if test="smCodeRetailer!=null">
+				and sm_code_retailer like #{smCodeRetailer}
+			</if>
+			<if test="smCodeA!=null">
+				and sm_code_a like #{smCodeA}
+			</if>
+			<if test="smCodeB!=null">
+				and sm_code_b like #{smCodeB}
+			</if>
+			<if test="smAuthPending!=null">
+				and sm_auth_pending like #{smAuthPending}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="smOrigEsnId!=null">
+				and sm_orig_esn_id like #{smOrigEsnId}
+			</if>
+			<if test="prepaidProfileId!=null">
+				and prepaid_profile_id like #{prepaidProfileId}
+			</if>
+			<if test="raProcessId!=null">
+				and ra_process_id like #{raProcessId}
+			</if>
+			<if test="transactionId!=null">
+				and transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchStorageMedium">
+		select * from storage_medium  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="smId!=null">
+				sm_id like #{smId}
+			</if>
+			<if test="plcode!=null">
+				plcode like #{plcode}
+			</if>
+			<if test="smcId!=null">
+				smc_id like #{smcId}
+			</if>
+			<if test="smSerialnum!=null">
+				sm_serialnum like #{smSerialnum}
+			</if>
+			<if test="smStatus!=null">
+				sm_status like #{smStatus}
+			</if>
+			<if test="smStatusModDate!=null">
+				sm_status_mod_date like #{smStatusModDate}
+			</if>
+			<if test="dealerId!=null">
+				dealer_id like #{dealerId}
+			</if>
+			<if test="smDeliveryId!=null">
+				sm_delivery_id like #{smDeliveryId}
+			</if>
+			<if test="smDeliveryDate!=null">
+				sm_delivery_date like #{smDeliveryDate}
+			</if>
+			<if test="simpohId!=null">
+				simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				simpot_batch like #{simpotBatch}
+			</if>
+			<if test="smPin!=null">
+				sm_pin like #{smPin}
+			</if>
+			<if test="smPuk!=null">
+				sm_puk like #{smPuk}
+			</if>
+			<if test="smAccControl!=null">
+				sm_acc_control like #{smAccControl}
+			</if>
+			<if test="smCodeAdm!=null">
+				sm_code_adm like #{smCodeAdm}
+			</if>
+			<if test="spIdE!=null">
+				sp_id_e like #{spIdE}
+			</if>
+			<if test="spIdG!=null">
+				sp_id_g like #{spIdG}
+			</if>
+			<if test="smStatusRequ!=null">
+				sm_status_requ like #{smStatusRequ}
+			</if>
+			<if test="smStaRequDate!=null">
+				sm_sta_requ_date like #{smStaRequDate}
+			</if>
+			<if test="smEntdate!=null">
+				sm_entdate like #{smEntdate}
+			</if>
+			<if test="smModdate!=null">
+				sm_moddate like #{smModdate}
+			</if>
+			<if test="smUserlastmod!=null">
+				sm_userlastmod like #{smUserlastmod}
+			</if>
+			<if test="smPin2!=null">
+				sm_pin2 like #{smPin2}
+			</if>
+			<if test="smPuk2!=null">
+				sm_puk2 like #{smPuk2}
+			</if>
+			<if test="smAuth!=null">
+				sm_auth like #{smAuth}
+			</if>
+			<if test="piId!=null">
+				pi_id like #{piId}
+			</if>
+			<if test="externalInd!=null">
+				external_ind like #{externalInd}
+			</if>
+			<if test="vendcode!=null">
+				vendcode like #{vendcode}
+			</if>
+			<if test="smAdm1!=null">
+				sm_adm1 like #{smAdm1}
+			</if>
+			<if test="smAdm2!=null">
+				sm_adm2 like #{smAdm2}
+			</if>
+			<if test="smAdm3!=null">
+				sm_adm3 like #{smAdm3}
+			</if>
+			<if test="smAdm4!=null">
+				sm_adm4 like #{smAdm4}
+			</if>
+			<if test="smCodeRetailer!=null">
+				sm_code_retailer like #{smCodeRetailer}
+			</if>
+			<if test="smCodeA!=null">
+				sm_code_a like #{smCodeA}
+			</if>
+			<if test="smCodeB!=null">
+				sm_code_b like #{smCodeB}
+			</if>
+			<if test="smAuthPending!=null">
+				sm_auth_pending like #{smAuthPending}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="smOrigEsnId!=null">
+				sm_orig_esn_id like #{smOrigEsnId}
+			</if>
+			<if test="prepaidProfileId!=null">
+				prepaid_profile_id like #{prepaidProfileId}
+			</if>
+			<if test="raProcessId!=null">
+				ra_process_id like #{raProcessId}
+			</if>
+			<if test="transactionId!=null">
+				transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

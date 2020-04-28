@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchPrServSpcodeHistMapper">			
+	
+	<select id="countPrServSpcodeHistSearch">
+		select count(*) from pr_serv_spcode_hist
+		<trim prefix="where" prefixOverrides="and">
+			<if test="profileId!=null">
+				and profile_id like #{profileId}
+			</if>
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				and sncode like #{sncode}
+			</if>
+			<if test="histno!=null">
+				and histno like #{histno}
+			</if>
+			<if test="spcode!=null">
+				and spcode like #{spcode}
+			</if>
+			<if test="transactionno!=null">
+				and transactionno like #{transactionno}
+			</if>
+			<if test="validFromDate!=null">
+				and valid_from_date like #{validFromDate}
+			</if>
+			<if test="entryDate!=null">
+				and entry_date like #{entryDate}
+			</if>
+			<if test="requestId!=null">
+				and request_id like #{requestId}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchPrServSpcodeHist">
+		select * from pr_serv_spcode_hist  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="profileId!=null">
+				profile_id like #{profileId}
+			</if>
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				sncode like #{sncode}
+			</if>
+			<if test="histno!=null">
+				histno like #{histno}
+			</if>
+			<if test="spcode!=null">
+				spcode like #{spcode}
+			</if>
+			<if test="transactionno!=null">
+				transactionno like #{transactionno}
+			</if>
+			<if test="validFromDate!=null">
+				valid_from_date like #{validFromDate}
+			</if>
+			<if test="entryDate!=null">
+				entry_date like #{entryDate}
+			</if>
+			<if test="requestId!=null">
+				request_id like #{requestId}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

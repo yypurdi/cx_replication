@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchProfileServiceMapper">			
+	
+	<select id="countProfileServiceSearch">
+		select count(*) from profile_service
+		<trim prefix="where" prefixOverrides="and">
+			<if test="profileId!=null">
+				and profile_id like #{profileId}
+			</if>
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				and sncode like #{sncode}
+			</if>
+			<if test="spcodeHistno!=null">
+				and spcode_histno like #{spcodeHistno}
+			</if>
+			<if test="statusHistno!=null">
+				and status_histno like #{statusHistno}
+			</if>
+			<if test="entryDate!=null">
+				and entry_date like #{entryDate}
+			</if>
+			<if test="channelNum!=null">
+				and channel_num like #{channelNum}
+			</if>
+			<if test="ovwAccFirst!=null">
+				and ovw_acc_first like #{ovwAccFirst}
+			</if>
+			<if test="dateBilled!=null">
+				and date_billed like #{dateBilled}
+			</if>
+			<if test="snClass!=null">
+				and sn_class like #{snClass}
+			</if>
+			<if test="ovwSubscr!=null">
+				and ovw_subscr like #{ovwSubscr}
+			</if>
+			<if test="subscript!=null">
+				and subscript like #{subscript}
+			</if>
+			<if test="ovwAccess!=null">
+				and ovw_access like #{ovwAccess}
+			</if>
+			<if test="ovwAccPrd!=null">
+				and ovw_acc_prd like #{ovwAccPrd}
+			</if>
+			<if test="accessfee!=null">
+				and accessfee like #{accessfee}
+			</if>
+			<if test="channelExcl!=null">
+				and channel_excl like #{channelExcl}
+			</if>
+			<if test="disSubscr!=null">
+				and dis_subscr like #{disSubscr}
+			</if>
+			<if test="installDate!=null">
+				and install_date like #{installDate}
+			</if>
+			<if test="trialEndDate!=null">
+				and trial_end_date like #{trialEndDate}
+			</if>
+			<if test="prmValueId!=null">
+				and prm_value_id like #{prmValueId}
+			</if>
+			<if test="currency!=null">
+				and currency like #{currency}
+			</if>
+			<if test="srvType!=null">
+				and srv_type like #{srvType}
+			</if>
+			<if test="srvSubtype!=null">
+				and srv_subtype like #{srvSubtype}
+			</if>
+			<if test="ovwAdvCharge!=null">
+				and ovw_adv_charge like #{ovwAdvCharge}
+			</if>
+			<if test="advCharge!=null">
+				and adv_charge like #{advCharge}
+			</if>
+			<if test="advChargePrd!=null">
+				and adv_charge_prd like #{advChargePrd}
+			</if>
+			<if test="deleteFlag!=null">
+				and delete_flag like #{deleteFlag}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="attribHistno!=null">
+				and attrib_histno like #{attribHistno}
+			</if>
+			<if test="attribHistnoNnp!=null">
+				and attrib_histno_nnp like #{attribHistnoNnp}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchProfileService">
+		select * from profile_service  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="profileId!=null">
+				profile_id like #{profileId}
+			</if>
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				sncode like #{sncode}
+			</if>
+			<if test="spcodeHistno!=null">
+				spcode_histno like #{spcodeHistno}
+			</if>
+			<if test="statusHistno!=null">
+				status_histno like #{statusHistno}
+			</if>
+			<if test="entryDate!=null">
+				entry_date like #{entryDate}
+			</if>
+			<if test="channelNum!=null">
+				channel_num like #{channelNum}
+			</if>
+			<if test="ovwAccFirst!=null">
+				ovw_acc_first like #{ovwAccFirst}
+			</if>
+			<if test="dateBilled!=null">
+				date_billed like #{dateBilled}
+			</if>
+			<if test="snClass!=null">
+				sn_class like #{snClass}
+			</if>
+			<if test="ovwSubscr!=null">
+				ovw_subscr like #{ovwSubscr}
+			</if>
+			<if test="subscript!=null">
+				subscript like #{subscript}
+			</if>
+			<if test="ovwAccess!=null">
+				ovw_access like #{ovwAccess}
+			</if>
+			<if test="ovwAccPrd!=null">
+				ovw_acc_prd like #{ovwAccPrd}
+			</if>
+			<if test="accessfee!=null">
+				accessfee like #{accessfee}
+			</if>
+			<if test="channelExcl!=null">
+				channel_excl like #{channelExcl}
+			</if>
+			<if test="disSubscr!=null">
+				dis_subscr like #{disSubscr}
+			</if>
+			<if test="installDate!=null">
+				install_date like #{installDate}
+			</if>
+			<if test="trialEndDate!=null">
+				trial_end_date like #{trialEndDate}
+			</if>
+			<if test="prmValueId!=null">
+				prm_value_id like #{prmValueId}
+			</if>
+			<if test="currency!=null">
+				currency like #{currency}
+			</if>
+			<if test="srvType!=null">
+				srv_type like #{srvType}
+			</if>
+			<if test="srvSubtype!=null">
+				srv_subtype like #{srvSubtype}
+			</if>
+			<if test="ovwAdvCharge!=null">
+				ovw_adv_charge like #{ovwAdvCharge}
+			</if>
+			<if test="advCharge!=null">
+				adv_charge like #{advCharge}
+			</if>
+			<if test="advChargePrd!=null">
+				adv_charge_prd like #{advChargePrd}
+			</if>
+			<if test="deleteFlag!=null">
+				delete_flag like #{deleteFlag}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="attribHistno!=null">
+				attrib_histno like #{attribHistno}
+			</if>
+			<if test="attribHistnoNnp!=null">
+				attrib_histno_nnp like #{attribHistnoNnp}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

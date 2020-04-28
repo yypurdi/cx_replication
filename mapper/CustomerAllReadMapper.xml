@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="readCustomerAllMapper">			
+	
+	<select id="readCustomerAll">
+		select * from customer_all where customer_id = #{customerId};
+	</select>
+
+	<select id="ccontactAll_ZKH9Q">         
+		select * from ccontact_all where customer_id = #{customerId};
+	</select>
+  
+	<select id="contractAll_IQ02A">         
+		select * from contract_all where customer_id = #{customerId};
+	</select>
+  
+	<select id="infoCustCheck_JCIZU">         
+		select * from info_cust_check where customer_id = #{customerId};
+	</select>
+  
+	<select id="infoCustCombo_GQF1J">         
+		select * from info_cust_combo where customer_id = #{customerId};
+	</select>
+  
+	<select id="infoCustText_BZFLX">         
+		select * from info_cust_text where customer_id = #{customerId};
+	</select>
+  
+	<select id="orderhdrAll_SJPLF">         
+		select * from orderhdr_all where customer_id = #{customerId};
+	</select>
+  
+</mapper>

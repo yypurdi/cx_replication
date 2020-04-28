@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchPortMapper">			
+	
+	<select id="countPortSearch">
+		select count(*) from port
+		<trim prefix="where" prefixOverrides="and">
+			<if test="portId!=null">
+				and port_id like #{portId}
+			</if>
+			<if test="plcode!=null">
+				and plcode like #{plcode}
+			</if>
+			<if test="hlcode!=null">
+				and hlcode like #{hlcode}
+			</if>
+			<if test="portNum!=null">
+				and port_num like #{portNum}
+			</if>
+			<if test="portStatus!=null">
+				and port_status like #{portStatus}
+			</if>
+			<if test="portStatusmoddat!=null">
+				and port_statusmoddat like #{portStatusmoddat}
+			</if>
+			<if test="portKi!=null">
+				and port_ki like #{portKi}
+			</if>
+			<if test="portKind!=null">
+				and port_kind like #{portKind}
+			</if>
+			<if test="portChannels!=null">
+				and port_channels like #{portChannels}
+			</if>
+			<if test="portChannelsExcl!=null">
+				and port_channels_excl like #{portChannelsExcl}
+			</if>
+			<if test="smId!=null">
+				and sm_id like #{smId}
+			</if>
+			<if test="portSmRequ!=null">
+				and port_sm_requ like #{portSmRequ}
+			</if>
+			<if test="simpohId!=null">
+				and simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				and simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				and simpot_batch like #{simpotBatch}
+			</if>
+			<if test="dnId!=null">
+				and dn_id like #{dnId}
+			</if>
+			<if test="dealerId!=null">
+				and dealer_id like #{dealerId}
+			</if>
+			<if test="portAssignDate!=null">
+				and port_assign_date like #{portAssignDate}
+			</if>
+			<if test="portTkey!=null">
+				and port_tkey like #{portTkey}
+			</if>
+			<if test="portStatusRequ!=null">
+				and port_status_requ like #{portStatusRequ}
+			</if>
+			<if test="portStaRequDate!=null">
+				and port_sta_requ_date like #{portStaRequDate}
+			</if>
+			<if test="portActivDate!=null">
+				and port_activ_date like #{portActivDate}
+			</if>
+			<if test="portDeactivDate!=null">
+				and port_deactiv_date like #{portDeactivDate}
+			</if>
+			<if test="portEntdate!=null">
+				and port_entdate like #{portEntdate}
+			</if>
+			<if test="portModdate!=null">
+				and port_moddate like #{portModdate}
+			</if>
+			<if test="portUserlastmod!=null">
+				and port_userlastmod like #{portUserlastmod}
+			</if>
+			<if test="preActivated!=null">
+				and pre_activated like #{preActivated}
+			</if>
+			<if test="smsUpdate!=null">
+				and sms_update like #{smsUpdate}
+			</if>
+			<if test="portRicBatch!=null">
+				and port_ric_batch like #{portRicBatch}
+			</if>
+			<if test="externalInd!=null">
+				and external_ind like #{externalInd}
+			</if>
+			<if test="capacity!=null">
+				and capacity like #{capacity}
+			</if>
+			<if test="availableCapacity!=null">
+				and available_capacity like #{availableCapacity}
+			</if>
+			<if test="prmValueId!=null">
+				and prm_value_id like #{prmValueId}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="portNpcode!=null">
+				and port_npcode like #{portNpcode}
+			</if>
+			<if test="transactionId!=null">
+				and transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchPort">
+		select * from port  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="portId!=null">
+				port_id like #{portId}
+			</if>
+			<if test="plcode!=null">
+				plcode like #{plcode}
+			</if>
+			<if test="hlcode!=null">
+				hlcode like #{hlcode}
+			</if>
+			<if test="portNum!=null">
+				port_num like #{portNum}
+			</if>
+			<if test="portStatus!=null">
+				port_status like #{portStatus}
+			</if>
+			<if test="portStatusmoddat!=null">
+				port_statusmoddat like #{portStatusmoddat}
+			</if>
+			<if test="portKi!=null">
+				port_ki like #{portKi}
+			</if>
+			<if test="portKind!=null">
+				port_kind like #{portKind}
+			</if>
+			<if test="portChannels!=null">
+				port_channels like #{portChannels}
+			</if>
+			<if test="portChannelsExcl!=null">
+				port_channels_excl like #{portChannelsExcl}
+			</if>
+			<if test="smId!=null">
+				sm_id like #{smId}
+			</if>
+			<if test="portSmRequ!=null">
+				port_sm_requ like #{portSmRequ}
+			</if>
+			<if test="simpohId!=null">
+				simpoh_id like #{simpohId}
+			</if>
+			<if test="simpotId!=null">
+				simpot_id like #{simpotId}
+			</if>
+			<if test="simpotBatch!=null">
+				simpot_batch like #{simpotBatch}
+			</if>
+			<if test="dnId!=null">
+				dn_id like #{dnId}
+			</if>
+			<if test="dealerId!=null">
+				dealer_id like #{dealerId}
+			</if>
+			<if test="portAssignDate!=null">
+				port_assign_date like #{portAssignDate}
+			</if>
+			<if test="portTkey!=null">
+				port_tkey like #{portTkey}
+			</if>
+			<if test="portStatusRequ!=null">
+				port_status_requ like #{portStatusRequ}
+			</if>
+			<if test="portStaRequDate!=null">
+				port_sta_requ_date like #{portStaRequDate}
+			</if>
+			<if test="portActivDate!=null">
+				port_activ_date like #{portActivDate}
+			</if>
+			<if test="portDeactivDate!=null">
+				port_deactiv_date like #{portDeactivDate}
+			</if>
+			<if test="portEntdate!=null">
+				port_entdate like #{portEntdate}
+			</if>
+			<if test="portModdate!=null">
+				port_moddate like #{portModdate}
+			</if>
+			<if test="portUserlastmod!=null">
+				port_userlastmod like #{portUserlastmod}
+			</if>
+			<if test="preActivated!=null">
+				pre_activated like #{preActivated}
+			</if>
+			<if test="smsUpdate!=null">
+				sms_update like #{smsUpdate}
+			</if>
+			<if test="portRicBatch!=null">
+				port_ric_batch like #{portRicBatch}
+			</if>
+			<if test="externalInd!=null">
+				external_ind like #{externalInd}
+			</if>
+			<if test="capacity!=null">
+				capacity like #{capacity}
+			</if>
+			<if test="availableCapacity!=null">
+				available_capacity like #{availableCapacity}
+			</if>
+			<if test="prmValueId!=null">
+				prm_value_id like #{prmValueId}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="portNpcode!=null">
+				port_npcode like #{portNpcode}
+			</if>
+			<if test="transactionId!=null">
+				transaction_id like #{transactionId}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

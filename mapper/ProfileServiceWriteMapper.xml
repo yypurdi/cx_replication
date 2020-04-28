@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeProfileServiceMapper">			
+	
+	<update id="writeProfileService">
+		update profile_service set profile_id = #{profileId},
+		co_id = #{coId},
+		sncode = #{sncode},
+		spcode_histno = #{spcodeHistno},
+		status_histno = #{statusHistno},
+		entry_date = #{entryDate},
+		channel_num = #{channelNum},
+		ovw_acc_first = #{ovwAccFirst},
+		date_billed = #{dateBilled},
+		sn_class = #{snClass},
+		ovw_subscr = #{ovwSubscr},
+		subscript = #{subscript},
+		ovw_access = #{ovwAccess},
+		ovw_acc_prd = #{ovwAccPrd},
+		accessfee = #{accessfee},
+		channel_excl = #{channelExcl},
+		dis_subscr = #{disSubscr},
+		install_date = #{installDate},
+		trial_end_date = #{trialEndDate},
+		prm_value_id = #{prmValueId},
+		currency = #{currency},
+		srv_type = #{srvType},
+		srv_subtype = #{srvSubtype},
+		ovw_adv_charge = #{ovwAdvCharge},
+		adv_charge = #{advCharge},
+		adv_charge_prd = #{advChargePrd},
+		delete_flag = #{deleteFlag},
+		rec_version = #{recVersion},
+		attrib_histno = #{attribHistno},
+		attrib_histno_nnp = #{attribHistnoNnp} where profile_id = #{profileId};
+	</update>
+
+</mapper>

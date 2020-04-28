@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchInfoCustCheckMapper">			
+	
+	<select id="countInfoCustCheckSearch">
+		select count(*) from info_cust_check
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="check01!=null">
+				and check01 like #{check01}
+			</if>
+			<if test="check02!=null">
+				and check02 like #{check02}
+			</if>
+			<if test="check03!=null">
+				and check03 like #{check03}
+			</if>
+			<if test="check04!=null">
+				and check04 like #{check04}
+			</if>
+			<if test="check05!=null">
+				and check05 like #{check05}
+			</if>
+			<if test="check06!=null">
+				and check06 like #{check06}
+			</if>
+			<if test="check07!=null">
+				and check07 like #{check07}
+			</if>
+			<if test="check08!=null">
+				and check08 like #{check08}
+			</if>
+			<if test="check09!=null">
+				and check09 like #{check09}
+			</if>
+			<if test="check10!=null">
+				and check10 like #{check10}
+			</if>
+			<if test="check11!=null">
+				and check11 like #{check11}
+			</if>
+			<if test="check12!=null">
+				and check12 like #{check12}
+			</if>
+			<if test="check13!=null">
+				and check13 like #{check13}
+			</if>
+			<if test="check14!=null">
+				and check14 like #{check14}
+			</if>
+			<if test="check15!=null">
+				and check15 like #{check15}
+			</if>
+			<if test="check16!=null">
+				and check16 like #{check16}
+			</if>
+			<if test="check17!=null">
+				and check17 like #{check17}
+			</if>
+			<if test="check18!=null">
+				and check18 like #{check18}
+			</if>
+			<if test="check19!=null">
+				and check19 like #{check19}
+			</if>
+			<if test="check20!=null">
+				and check20 like #{check20}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchInfoCustCheck">
+		select * from info_cust_check  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="check01!=null">
+				check01 like #{check01}
+			</if>
+			<if test="check02!=null">
+				check02 like #{check02}
+			</if>
+			<if test="check03!=null">
+				check03 like #{check03}
+			</if>
+			<if test="check04!=null">
+				check04 like #{check04}
+			</if>
+			<if test="check05!=null">
+				check05 like #{check05}
+			</if>
+			<if test="check06!=null">
+				check06 like #{check06}
+			</if>
+			<if test="check07!=null">
+				check07 like #{check07}
+			</if>
+			<if test="check08!=null">
+				check08 like #{check08}
+			</if>
+			<if test="check09!=null">
+				check09 like #{check09}
+			</if>
+			<if test="check10!=null">
+				check10 like #{check10}
+			</if>
+			<if test="check11!=null">
+				check11 like #{check11}
+			</if>
+			<if test="check12!=null">
+				check12 like #{check12}
+			</if>
+			<if test="check13!=null">
+				check13 like #{check13}
+			</if>
+			<if test="check14!=null">
+				check14 like #{check14}
+			</if>
+			<if test="check15!=null">
+				check15 like #{check15}
+			</if>
+			<if test="check16!=null">
+				check16 like #{check16}
+			</if>
+			<if test="check17!=null">
+				check17 like #{check17}
+			</if>
+			<if test="check18!=null">
+				check18 like #{check18}
+			</if>
+			<if test="check19!=null">
+				check19 like #{check19}
+			</if>
+			<if test="check20!=null">
+				check20 like #{check20}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

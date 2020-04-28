@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchContrServicesCapMapper">			
+	
+	<select id="countContrServicesCapSearch">
+		select count(*) from contr_services_cap
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				and sncode like #{sncode}
+			</if>
+			<if test="seqno!=null">
+				and seqno like #{seqno}
+			</if>
+			<if test="seqnoPre!=null">
+				and seqno_pre like #{seqnoPre}
+			</if>
+			<if test="bccode!=null">
+				and bccode like #{bccode}
+			</if>
+			<if test="pendingBccode!=null">
+				and pending_bccode like #{pendingBccode}
+			</if>
+			<if test="dnId!=null">
+				and dn_id like #{dnId}
+			</if>
+			<if test="dnBlockId!=null">
+				and dn_block_id like #{dnBlockId}
+			</if>
+			<if test="mainDirnum!=null">
+				and main_dirnum like #{mainDirnum}
+			</if>
+			<if test="csStatus!=null">
+				and cs_status like #{csStatus}
+			</if>
+			<if test="csActivDate!=null">
+				and cs_activ_date like #{csActivDate}
+			</if>
+			<if test="csDeactivDate!=null">
+				and cs_deactiv_date like #{csDeactivDate}
+			</if>
+			<if test="csRequest!=null">
+				and cs_request like #{csRequest}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="publicNumberDnId!=null">
+				and public_number_dn_id like #{publicNumberDnId}
+			</if>
+			<if test="vpnId!=null">
+				and vpn_id like #{vpnId}
+			</if>
+			<if test="publicBlockId!=null">
+				and public_block_id like #{publicBlockId}
+			</if>
+			<if test="profileId!=null">
+				and profile_id like #{profileId}
+			</if>
+			<if test="dnShownInBill!=null">
+				and dn_shown_in_bill like #{dnShownInBill}
+			</if>
+			<if test="requestId!=null">
+				and request_id like #{requestId}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchContrServicesCap">
+		select * from contr_services_cap  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="sncode!=null">
+				sncode like #{sncode}
+			</if>
+			<if test="seqno!=null">
+				seqno like #{seqno}
+			</if>
+			<if test="seqnoPre!=null">
+				seqno_pre like #{seqnoPre}
+			</if>
+			<if test="bccode!=null">
+				bccode like #{bccode}
+			</if>
+			<if test="pendingBccode!=null">
+				pending_bccode like #{pendingBccode}
+			</if>
+			<if test="dnId!=null">
+				dn_id like #{dnId}
+			</if>
+			<if test="dnBlockId!=null">
+				dn_block_id like #{dnBlockId}
+			</if>
+			<if test="mainDirnum!=null">
+				main_dirnum like #{mainDirnum}
+			</if>
+			<if test="csStatus!=null">
+				cs_status like #{csStatus}
+			</if>
+			<if test="csActivDate!=null">
+				cs_activ_date like #{csActivDate}
+			</if>
+			<if test="csDeactivDate!=null">
+				cs_deactiv_date like #{csDeactivDate}
+			</if>
+			<if test="csRequest!=null">
+				cs_request like #{csRequest}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="publicNumberDnId!=null">
+				public_number_dn_id like #{publicNumberDnId}
+			</if>
+			<if test="vpnId!=null">
+				vpn_id like #{vpnId}
+			</if>
+			<if test="publicBlockId!=null">
+				public_block_id like #{publicBlockId}
+			</if>
+			<if test="profileId!=null">
+				profile_id like #{profileId}
+			</if>
+			<if test="dnShownInBill!=null">
+				dn_shown_in_bill like #{dnShownInBill}
+			</if>
+			<if test="requestId!=null">
+				request_id like #{requestId}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

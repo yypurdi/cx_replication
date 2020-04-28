@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchContractAllMapper">			
+	
+	<select id="countContractAllSearch">
+		select count(*) from contract_all
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="type!=null">
+				and type like #{type}
+			</if>
+			<if test="plcode!=null">
+				and plcode like #{plcode}
+			</if>
+			<if test="sccode!=null">
+				and sccode like #{sccode}
+			</if>
+			<if test="submId!=null">
+				and subm_id like #{submId}
+			</if>
+			<if test="coSigned!=null">
+				and co_signed like #{coSigned}
+			</if>
+			<if test="coEquType!=null">
+				and co_equ_type like #{coEquType}
+			</if>
+			<if test="coRepBill!=null">
+				and co_rep_bill like #{coRepBill}
+			</if>
+			<if test="coRep!=null">
+				and co_rep like #{coRep}
+			</if>
+			<if test="coRepBillIdno!=null">
+				and co_rep_bill_idno like #{coRepBillIdno}
+			</if>
+			<if test="coRepIdno!=null">
+				and co_rep_idno like #{coRepIdno}
+			</if>
+			<if test="coInstalled!=null">
+				and co_installed like #{coInstalled}
+			</if>
+			<if test="coArchive!=null">
+				and co_archive like #{coArchive}
+			</if>
+			<if test="coDirEntry!=null">
+				and co_dir_entry like #{coDirEntry}
+			</if>
+			<if test="coOperatorDir!=null">
+				and co_operator_dir like #{coOperatorDir}
+			</if>
+			<if test="coPstnDir!=null">
+				and co_pstn_dir like #{coPstnDir}
+			</if>
+			<if test="coAssServ!=null">
+				and co_ass_serv like #{coAssServ}
+			</if>
+			<if test="coAssEqu!=null">
+				and co_ass_equ like #{coAssEqu}
+			</if>
+			<if test="coCrdCheck!=null">
+				and co_crd_check like #{coCrdCheck}
+			</if>
+			<if test="coCrdChkEnd!=null">
+				and co_crd_chk_end like #{coCrdChkEnd}
+			</if>
+			<if test="coCrdChkStart!=null">
+				and co_crd_chk_start like #{coCrdChkStart}
+			</if>
+			<if test="coCrdClicks!=null">
+				and co_crd_clicks like #{coCrdClicks}
+			</if>
+			<if test="coCrdClicksDay!=null">
+				and co_crd_clicks_day like #{coCrdClicksDay}
+			</if>
+			<if test="coCrdDays!=null">
+				and co_crd_days like #{coCrdDays}
+			</if>
+			<if test="coComment!=null">
+				and co_comment like #{coComment}
+			</if>
+			<if test="coReserved!=null">
+				and co_reserved like #{coReserved}
+			</if>
+			<if test="coExpirDate!=null">
+				and co_expir_date like #{coExpirDate}
+			</if>
+			<if test="coActivated!=null">
+				and co_activated like #{coActivated}
+			</if>
+			<if test="coEntdate!=null">
+				and co_entdate like #{coEntdate}
+			</if>
+			<if test="coModdate!=null">
+				and co_moddate like #{coModdate}
+			</if>
+			<if test="coUserlastmod!=null">
+				and co_userlastmod like #{coUserlastmod}
+			</if>
+			<if test="tmcode!=null">
+				and tmcode like #{tmcode}
+			</if>
+			<if test="tmcodeDate!=null">
+				and tmcode_date like #{tmcodeDate}
+			</if>
+			<if test="coCrdDTr1!=null">
+				and co_crd_d_tr1 like #{coCrdDTr1}
+			</if>
+			<if test="coCrdDTr2!=null">
+				and co_crd_d_tr2 like #{coCrdDTr2}
+			</if>
+			<if test="coCrdDTr3!=null">
+				and co_crd_d_tr3 like #{coCrdDTr3}
+			</if>
+			<if test="coCrdPTr1!=null">
+				and co_crd_p_tr1 like #{coCrdPTr1}
+			</if>
+			<if test="coCrdPTr2!=null">
+				and co_crd_p_tr2 like #{coCrdPTr2}
+			</if>
+			<if test="coCrdPTr3!=null">
+				and co_crd_p_tr3 like #{coCrdPTr3}
+			</if>
+			<if test="eccodeLdc!=null">
+				and eccode_ldc like #{eccodeLdc}
+			</if>
+			<if test="pendingEccodeLdc!=null">
+				and pending_eccode_ldc like #{pendingEccodeLdc}
+			</if>
+			<if test="eccodeLec!=null">
+				and eccode_lec like #{eccodeLec}
+			</if>
+			<if test="pendingEccodeLec!=null">
+				and pending_eccode_lec like #{pendingEccodeLec}
+			</if>
+			<if test="coRequest!=null">
+				and co_request like #{coRequest}
+			</if>
+			<if test="dealerId!=null">
+				and dealer_id like #{dealerId}
+			</if>
+			<if test="notValid!=null">
+				and not_valid like #{notValid}
+			</if>
+			<if test="arpcode!=null">
+				and arpcode like #{arpcode}
+			</if>
+			<if test="coAddrOnIbill!=null">
+				and co_addr_on_ibill like #{coAddrOnIbill}
+			</if>
+			<if test="coCrdAmount!=null">
+				and co_crd_amount like #{coCrdAmount}
+			</if>
+			<if test="coCrdAmountDay!=null">
+				and co_crd_amount_day like #{coCrdAmountDay}
+			</if>
+			<if test="productHistoryDate!=null">
+				and product_history_date like #{productHistoryDate}
+			</if>
+			<if test="coConfirm!=null">
+				and co_confirm like #{coConfirm}
+			</if>
+			<if test="coExtCsuin!=null">
+				and co_ext_csuin like #{coExtCsuin}
+			</if>
+			<if test="trialEndDate!=null">
+				and trial_end_date like #{trialEndDate}
+			</if>
+			<if test="coIbCdrFlag!=null">
+				and co_ib_cdr_flag like #{coIbCdrFlag}
+			</if>
+			<if test="currency!=null">
+				and currency like #{currency}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="anPackageId!=null">
+				and an_package_id like #{anPackageId}
+			</if>
+			<if test="coRelType!=null">
+				and co_rel_type like #{coRelType}
+			</if>
+			<if test="pendingTmcode!=null">
+				and pending_tmcode like #{pendingTmcode}
+			</if>
+			<if test="contractTemplate!=null">
+				and contract_template like #{contractTemplate}
+			</if>
+			<if test="coCode!=null">
+				and co_code like #{coCode}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+			<if test="description!=null">
+				and description like #{description}
+			</if>
+			<if test="agreementType!=null">
+				and agreement_type like #{agreementType}
+			</if>
+			<if test="extProductId!=null">
+				and ext_product_id like #{extProductId}
+			</if>
+			<if test="remotePlcode!=null">
+				and remote_plcode like #{remotePlcode}
+			</if>
+			<if test="eccode!=null">
+				and eccode like #{eccode}
+			</if>
+			<if test="hplmnBidGroupId!=null">
+				and hplmn_bid_group_id like #{hplmnBidGroupId}
+			</if>
+			<if test="vplmnBidGroupId!=null">
+				and vplmn_bid_group_id like #{vplmnBidGroupId}
+			</if>
+			<if test="homePartyId!=null">
+				and home_party_id like #{homePartyId}
+			</if>
+			<if test="contractTypeId!=null">
+				and contract_type_id like #{contractTypeId}
+			</if>
+			<if test="trialStartDate!=null">
+				and trial_start_date like #{trialStartDate}
+			</if>
+			<if test="fohAggregationFlag!=null">
+				and foh_aggregation_flag like #{fohAggregationFlag}
+			</if>
+			<if test="glAccPackId!=null">
+				and gl_acc_pack_id like #{glAccPackId}
+			</if>
+			<if test="cdsBillMedium!=null">
+				and cds_bill_medium like #{cdsBillMedium}
+			</if>
+			<if test="cdsGeneration!=null">
+				and cds_generation like #{cdsGeneration}
+			</if>
+			<if test="chargePartNum!=null">
+				and charge_part_num like #{chargePartNum}
+			</if>
+			<if test="chStatus!=null">
+				and ch_status like #{chStatus}
+			</if>
+			<if test="svpFile!=null">
+				and svp_file like #{svpFile}
+			</if>
+			<if test="makeCallsDate!=null">
+				and make_calls_date like #{makeCallsDate}
+			</if>
+			<if test="coInprepayPending!=null">
+				and co_inprepay_pending like #{coInprepayPending}
+			</if>
+			<if test="coInprepay!=null">
+				and co_inprepay like #{coInprepay}
+			</if>
+			<if test="chargePerAdjRef!=null">
+				and charge_per_adj_ref like #{chargePerAdjRef}
+			</if>
+			<if test="nextCutoffDate!=null">
+				and next_cutoff_date like #{nextCutoffDate}
+			</if>
+			<if test="lastCutoffDate!=null">
+				and last_cutoff_date like #{lastCutoffDate}
+			</if>
+			<if test="lastChargeDate!=null">
+				and last_charge_date like #{lastChargeDate}
+			</if>
+			<if test="lastNoticeDate!=null">
+				and last_notice_date like #{lastNoticeDate}
+			</if>
+			<if test="notBillMedium!=null">
+				and not_bill_medium like #{notBillMedium}
+			</if>
+			<if test="chargeStartDate!=null">
+				and charge_start_date like #{chargeStartDate}
+			</if>
+			<if test="earliestEndDate!=null">
+				and earliest_end_date like #{earliestEndDate}
+			</if>
+			<if test="commonRefDataInd!=null">
+				and common_ref_data_ind like #{commonRefDataInd}
+			</if>
+			<if test="contractLanguage!=null">
+				and contract_language like #{contractLanguage}
+			</if>
+			<if test="pendingLanguage!=null">
+				and pending_language like #{pendingLanguage}
+			</if>
+			<if test="rrCandidate!=null">
+				and rr_candidate like #{rrCandidate}
+			</if>
+			<if test="chStatusValidfrom!=null">
+				and ch_status_validfrom like #{chStatusValidfrom}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchContractAll">
+		select * from contract_all  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="type!=null">
+				type like #{type}
+			</if>
+			<if test="plcode!=null">
+				plcode like #{plcode}
+			</if>
+			<if test="sccode!=null">
+				sccode like #{sccode}
+			</if>
+			<if test="submId!=null">
+				subm_id like #{submId}
+			</if>
+			<if test="coSigned!=null">
+				co_signed like #{coSigned}
+			</if>
+			<if test="coEquType!=null">
+				co_equ_type like #{coEquType}
+			</if>
+			<if test="coRepBill!=null">
+				co_rep_bill like #{coRepBill}
+			</if>
+			<if test="coRep!=null">
+				co_rep like #{coRep}
+			</if>
+			<if test="coRepBillIdno!=null">
+				co_rep_bill_idno like #{coRepBillIdno}
+			</if>
+			<if test="coRepIdno!=null">
+				co_rep_idno like #{coRepIdno}
+			</if>
+			<if test="coInstalled!=null">
+				co_installed like #{coInstalled}
+			</if>
+			<if test="coArchive!=null">
+				co_archive like #{coArchive}
+			</if>
+			<if test="coDirEntry!=null">
+				co_dir_entry like #{coDirEntry}
+			</if>
+			<if test="coOperatorDir!=null">
+				co_operator_dir like #{coOperatorDir}
+			</if>
+			<if test="coPstnDir!=null">
+				co_pstn_dir like #{coPstnDir}
+			</if>
+			<if test="coAssServ!=null">
+				co_ass_serv like #{coAssServ}
+			</if>
+			<if test="coAssEqu!=null">
+				co_ass_equ like #{coAssEqu}
+			</if>
+			<if test="coCrdCheck!=null">
+				co_crd_check like #{coCrdCheck}
+			</if>
+			<if test="coCrdChkEnd!=null">
+				co_crd_chk_end like #{coCrdChkEnd}
+			</if>
+			<if test="coCrdChkStart!=null">
+				co_crd_chk_start like #{coCrdChkStart}
+			</if>
+			<if test="coCrdClicks!=null">
+				co_crd_clicks like #{coCrdClicks}
+			</if>
+			<if test="coCrdClicksDay!=null">
+				co_crd_clicks_day like #{coCrdClicksDay}
+			</if>
+			<if test="coCrdDays!=null">
+				co_crd_days like #{coCrdDays}
+			</if>
+			<if test="coComment!=null">
+				co_comment like #{coComment}
+			</if>
+			<if test="coReserved!=null">
+				co_reserved like #{coReserved}
+			</if>
+			<if test="coExpirDate!=null">
+				co_expir_date like #{coExpirDate}
+			</if>
+			<if test="coActivated!=null">
+				co_activated like #{coActivated}
+			</if>
+			<if test="coEntdate!=null">
+				co_entdate like #{coEntdate}
+			</if>
+			<if test="coModdate!=null">
+				co_moddate like #{coModdate}
+			</if>
+			<if test="coUserlastmod!=null">
+				co_userlastmod like #{coUserlastmod}
+			</if>
+			<if test="tmcode!=null">
+				tmcode like #{tmcode}
+			</if>
+			<if test="tmcodeDate!=null">
+				tmcode_date like #{tmcodeDate}
+			</if>
+			<if test="coCrdDTr1!=null">
+				co_crd_d_tr1 like #{coCrdDTr1}
+			</if>
+			<if test="coCrdDTr2!=null">
+				co_crd_d_tr2 like #{coCrdDTr2}
+			</if>
+			<if test="coCrdDTr3!=null">
+				co_crd_d_tr3 like #{coCrdDTr3}
+			</if>
+			<if test="coCrdPTr1!=null">
+				co_crd_p_tr1 like #{coCrdPTr1}
+			</if>
+			<if test="coCrdPTr2!=null">
+				co_crd_p_tr2 like #{coCrdPTr2}
+			</if>
+			<if test="coCrdPTr3!=null">
+				co_crd_p_tr3 like #{coCrdPTr3}
+			</if>
+			<if test="eccodeLdc!=null">
+				eccode_ldc like #{eccodeLdc}
+			</if>
+			<if test="pendingEccodeLdc!=null">
+				pending_eccode_ldc like #{pendingEccodeLdc}
+			</if>
+			<if test="eccodeLec!=null">
+				eccode_lec like #{eccodeLec}
+			</if>
+			<if test="pendingEccodeLec!=null">
+				pending_eccode_lec like #{pendingEccodeLec}
+			</if>
+			<if test="coRequest!=null">
+				co_request like #{coRequest}
+			</if>
+			<if test="dealerId!=null">
+				dealer_id like #{dealerId}
+			</if>
+			<if test="notValid!=null">
+				not_valid like #{notValid}
+			</if>
+			<if test="arpcode!=null">
+				arpcode like #{arpcode}
+			</if>
+			<if test="coAddrOnIbill!=null">
+				co_addr_on_ibill like #{coAddrOnIbill}
+			</if>
+			<if test="coCrdAmount!=null">
+				co_crd_amount like #{coCrdAmount}
+			</if>
+			<if test="coCrdAmountDay!=null">
+				co_crd_amount_day like #{coCrdAmountDay}
+			</if>
+			<if test="productHistoryDate!=null">
+				product_history_date like #{productHistoryDate}
+			</if>
+			<if test="coConfirm!=null">
+				co_confirm like #{coConfirm}
+			</if>
+			<if test="coExtCsuin!=null">
+				co_ext_csuin like #{coExtCsuin}
+			</if>
+			<if test="trialEndDate!=null">
+				trial_end_date like #{trialEndDate}
+			</if>
+			<if test="coIbCdrFlag!=null">
+				co_ib_cdr_flag like #{coIbCdrFlag}
+			</if>
+			<if test="currency!=null">
+				currency like #{currency}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="anPackageId!=null">
+				an_package_id like #{anPackageId}
+			</if>
+			<if test="coRelType!=null">
+				co_rel_type like #{coRelType}
+			</if>
+			<if test="pendingTmcode!=null">
+				pending_tmcode like #{pendingTmcode}
+			</if>
+			<if test="contractTemplate!=null">
+				contract_template like #{contractTemplate}
+			</if>
+			<if test="coCode!=null">
+				co_code like #{coCode}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+			<if test="description!=null">
+				description like #{description}
+			</if>
+			<if test="agreementType!=null">
+				agreement_type like #{agreementType}
+			</if>
+			<if test="extProductId!=null">
+				ext_product_id like #{extProductId}
+			</if>
+			<if test="remotePlcode!=null">
+				remote_plcode like #{remotePlcode}
+			</if>
+			<if test="eccode!=null">
+				eccode like #{eccode}
+			</if>
+			<if test="hplmnBidGroupId!=null">
+				hplmn_bid_group_id like #{hplmnBidGroupId}
+			</if>
+			<if test="vplmnBidGroupId!=null">
+				vplmn_bid_group_id like #{vplmnBidGroupId}
+			</if>
+			<if test="homePartyId!=null">
+				home_party_id like #{homePartyId}
+			</if>
+			<if test="contractTypeId!=null">
+				contract_type_id like #{contractTypeId}
+			</if>
+			<if test="trialStartDate!=null">
+				trial_start_date like #{trialStartDate}
+			</if>
+			<if test="fohAggregationFlag!=null">
+				foh_aggregation_flag like #{fohAggregationFlag}
+			</if>
+			<if test="glAccPackId!=null">
+				gl_acc_pack_id like #{glAccPackId}
+			</if>
+			<if test="cdsBillMedium!=null">
+				cds_bill_medium like #{cdsBillMedium}
+			</if>
+			<if test="cdsGeneration!=null">
+				cds_generation like #{cdsGeneration}
+			</if>
+			<if test="chargePartNum!=null">
+				charge_part_num like #{chargePartNum}
+			</if>
+			<if test="chStatus!=null">
+				ch_status like #{chStatus}
+			</if>
+			<if test="svpFile!=null">
+				svp_file like #{svpFile}
+			</if>
+			<if test="makeCallsDate!=null">
+				make_calls_date like #{makeCallsDate}
+			</if>
+			<if test="coInprepayPending!=null">
+				co_inprepay_pending like #{coInprepayPending}
+			</if>
+			<if test="coInprepay!=null">
+				co_inprepay like #{coInprepay}
+			</if>
+			<if test="chargePerAdjRef!=null">
+				charge_per_adj_ref like #{chargePerAdjRef}
+			</if>
+			<if test="nextCutoffDate!=null">
+				next_cutoff_date like #{nextCutoffDate}
+			</if>
+			<if test="lastCutoffDate!=null">
+				last_cutoff_date like #{lastCutoffDate}
+			</if>
+			<if test="lastChargeDate!=null">
+				last_charge_date like #{lastChargeDate}
+			</if>
+			<if test="lastNoticeDate!=null">
+				last_notice_date like #{lastNoticeDate}
+			</if>
+			<if test="notBillMedium!=null">
+				not_bill_medium like #{notBillMedium}
+			</if>
+			<if test="chargeStartDate!=null">
+				charge_start_date like #{chargeStartDate}
+			</if>
+			<if test="earliestEndDate!=null">
+				earliest_end_date like #{earliestEndDate}
+			</if>
+			<if test="commonRefDataInd!=null">
+				common_ref_data_ind like #{commonRefDataInd}
+			</if>
+			<if test="contractLanguage!=null">
+				contract_language like #{contractLanguage}
+			</if>
+			<if test="pendingLanguage!=null">
+				pending_language like #{pendingLanguage}
+			</if>
+			<if test="rrCandidate!=null">
+				rr_candidate like #{rrCandidate}
+			</if>
+			<if test="chStatusValidfrom!=null">
+				ch_status_validfrom like #{chStatusValidfrom}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

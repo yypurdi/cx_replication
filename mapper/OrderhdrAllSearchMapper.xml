@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchOrderhdrAllMapper">			
+	
+	<select id="countOrderhdrAllSearch">
+		select count(*) from orderhdr_all
+		<trim prefix="where" prefixOverrides="and">
+			<if test="ohxact!=null">
+				and ohxact like #{ohxact}
+			</if>
+			<if test="ohstatus!=null">
+				and ohstatus like #{ohstatus}
+			</if>
+			<if test="ohstatusflg!=null">
+				and ohstatusflg like #{ohstatusflg}
+			</if>
+			<if test="ohentdate!=null">
+				and ohentdate like #{ohentdate}
+			</if>
+			<if test="ohrefnum!=null">
+				and ohrefnum like #{ohrefnum}
+			</if>
+			<if test="ohtshdate!=null">
+				and ohtshdate like #{ohtshdate}
+			</if>
+			<if test="ohsls!=null">
+				and ohsls like #{ohsls}
+			</if>
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="ohcseq!=null">
+				and ohcseq like #{ohcseq}
+			</if>
+			<if test="ohsname!=null">
+				and ohsname like #{ohsname}
+			</if>
+			<if test="ohsaddr1!=null">
+				and ohsaddr1 like #{ohsaddr1}
+			</if>
+			<if test="ohsaddr2!=null">
+				and ohsaddr2 like #{ohsaddr2}
+			</if>
+			<if test="ohsaddr3!=null">
+				and ohsaddr3 like #{ohsaddr3}
+			</if>
+			<if test="ohscity!=null">
+				and ohscity like #{ohscity}
+			</if>
+			<if test="ohsst!=null">
+				and ohsst like #{ohsst}
+			</if>
+			<if test="ohszip!=null">
+				and ohszip like #{ohszip}
+			</if>
+			<if test="ohscountry!=null">
+				and ohscountry like #{ohscountry}
+			</if>
+			<if test="ohscrc!=null">
+				and ohscrc like #{ohscrc}
+			</if>
+			<if test="ohattn!=null">
+				and ohattn like #{ohattn}
+			</if>
+			<if test="ohtrucker!=null">
+				and ohtrucker like #{ohtrucker}
+			</if>
+			<if test="ohponum!=null">
+				and ohponum like #{ohponum}
+			</if>
+			<if test="ohrelease!=null">
+				and ohrelease like #{ohrelease}
+			</if>
+			<if test="ohpsno!=null">
+				and ohpsno like #{ohpsno}
+			</if>
+			<if test="ohfrtterms!=null">
+				and ohfrtterms like #{ohfrtterms}
+			</if>
+			<if test="ohordtyp!=null">
+				and ohordtyp like #{ohordtyp}
+			</if>
+			<if test="ohcandate!=null">
+				and ohcandate like #{ohcandate}
+			</if>
+			<if test="ohassocxact!=null">
+				and ohassocxact like #{ohassocxact}
+			</if>
+			<if test="ohprt1!=null">
+				and ohprt1 like #{ohprt1}
+			</if>
+			<if test="ohprt2!=null">
+				and ohprt2 like #{ohprt2}
+			</if>
+			<if test="ohprt3!=null">
+				and ohprt3 like #{ohprt3}
+			</if>
+			<if test="ohuserid!=null">
+				and ohuserid like #{ohuserid}
+			</if>
+			<if test="ohrefdate!=null">
+				and ohrefdate like #{ohrefdate}
+			</if>
+			<if test="ohshpdate!=null">
+				and ohshpdate like #{ohshpdate}
+			</if>
+			<if test="ohduedate!=null">
+				and ohduedate like #{ohduedate}
+			</if>
+			<if test="ohipp!=null">
+				and ohipp like #{ohipp}
+			</if>
+			<if test="ohilpp!=null">
+				and ohilpp like #{ohilpp}
+			</if>
+			<if test="ohpostgl!=null">
+				and ohpostgl like #{ohpostgl}
+			</if>
+			<if test="ohpostar!=null">
+				and ohpostar like #{ohpostar}
+			</if>
+			<if test="oharcustomerId!=null">
+				and oharcustomer_id like #{oharcustomerId}
+			</if>
+			<if test="ohglar!=null">
+				and ohglar like #{ohglar}
+			</if>
+			<if test="ohdisdate!=null">
+				and ohdisdate like #{ohdisdate}
+			</if>
+			<if test="ddebitFlag!=null">
+				and ddebit_flag like #{ddebitFlag}
+			</if>
+			<if test="oharflg!=null">
+				and oharflg like #{oharflg}
+			</if>
+			<if test="ohinvtype!=null">
+				and ohinvtype like #{ohinvtype}
+			</if>
+			<if test="ohfulfildate!=null">
+				and ohfulfildate like #{ohfulfildate}
+			</if>
+			<if test="ohpaymentId!=null">
+				and ohpayment_id like #{ohpaymentId}
+			</if>
+			<if test="ohpostfibu!=null">
+				and ohpostfibu like #{ohpostfibu}
+			</if>
+			<if test="ohreason!=null">
+				and ohreason like #{ohreason}
+			</if>
+			<if test="ohrsId!=null">
+				and ohrs_id like #{ohrsId}
+			</if>
+			<if test="ohddhflag!=null">
+				and ohddhflag like #{ohddhflag}
+			</if>
+			<if test="ohddhdate!=null">
+				and ohddhdate like #{ohddhdate}
+			</if>
+			<if test="ohfct!=null">
+				and ohfct like #{ohfct}
+			</if>
+			<if test="ohlct!=null">
+				and ohlct like #{ohlct}
+			</if>
+			<if test="ohmod!=null">
+				and ohmod like #{ohmod}
+			</if>
+			<if test="ohxrate!=null">
+				and ohxrate like #{ohxrate}
+			</if>
+			<if test="oheccode!=null">
+				and oheccode like #{oheccode}
+			</if>
+			<if test="ohecname!=null">
+				and ohecname like #{ohecname}
+			</if>
+			<if test="ohglexact!=null">
+				and ohglexact like #{ohglexact}
+			</if>
+			<if test="ohdunstep!=null">
+				and ohdunstep like #{ohdunstep}
+			</if>
+			<if test="ohflfct!=null">
+				and ohflfct like #{ohflfct}
+			</if>
+			<if test="ohfllct!=null">
+				and ohfllct like #{ohfllct}
+			</if>
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="complaint!=null">
+				and complaint like #{complaint}
+			</if>
+			<if test="complaintDate!=null">
+				and complaint_date like #{complaintDate}
+			</if>
+			<if test="rtxStatus!=null">
+				and rtx_status like #{rtxStatus}
+			</if>
+			<if test="ohbillseqno!=null">
+				and ohbillseqno like #{ohbillseqno}
+			</if>
+			<if test="ohcancelflag!=null">
+				and ohcancelflag like #{ohcancelflag}
+			</if>
+			<if test="convdateExchange!=null">
+				and convdate_exchange like #{convdateExchange}
+			</if>
+			<if test="ohglexactTax!=null">
+				and ohglexact_tax like #{ohglexactTax}
+			</if>
+			<if test="glacodeDiff!=null">
+				and glacode_diff like #{glacodeDiff}
+			</if>
+			<if test="jobcostIdDiff!=null">
+				and jobcost_id_diff like #{jobcostIdDiff}
+			</if>
+			<if test="taxRoundingFlag!=null">
+				and tax_rounding_flag like #{taxRoundingFlag}
+			</if>
+			<if test="glCurrency!=null">
+				and gl_currency like #{glCurrency}
+			</if>
+			<if test="documentCurrency!=null">
+				and document_currency like #{documentCurrency}
+			</if>
+			<if test="documentConvratetypeId!=null">
+				and document_convratetype_id like #{documentConvratetypeId}
+			</if>
+			<if test="secondaryCurrency!=null">
+				and secondary_currency like #{secondaryCurrency}
+			</if>
+			<if test="secondaryConvratetypeId!=null">
+				and secondary_convratetype_id like #{secondaryConvratetypeId}
+			</if>
+			<if test="ohinvamtGl!=null">
+				and ohinvamt_gl like #{ohinvamtGl}
+			</if>
+			<if test="ohopnamtGl!=null">
+				and ohopnamt_gl like #{ohopnamtGl}
+			</if>
+			<if test="ohdisamtGl!=null">
+				and ohdisamt_gl like #{ohdisamtGl}
+			</if>
+			<if test="ohdistakamtGl!=null">
+				and ohdistakamt_gl like #{ohdistakamtGl}
+			</if>
+			<if test="ohtaxamtGl!=null">
+				and ohtaxamt_gl like #{ohtaxamtGl}
+			</if>
+			<if test="taxamtDiffGl!=null">
+				and taxamt_diff_gl like #{taxamtDiffGl}
+			</if>
+			<if test="ohinvamtDoc!=null">
+				and ohinvamt_doc like #{ohinvamtDoc}
+			</if>
+			<if test="ohopnamtDoc!=null">
+				and ohopnamt_doc like #{ohopnamtDoc}
+			</if>
+			<if test="ohdisamtDoc!=null">
+				and ohdisamt_doc like #{ohdisamtDoc}
+			</if>
+			<if test="ohdistakamtDoc!=null">
+				and ohdistakamt_doc like #{ohdistakamtDoc}
+			</if>
+			<if test="ohtaxamtDoc!=null">
+				and ohtaxamt_doc like #{ohtaxamtDoc}
+			</if>
+			<if test="glConvratetypeId!=null">
+				and gl_convratetype_id like #{glConvratetypeId}
+			</if>
+			<if test="feeBalance!=null">
+				and fee_balance like #{feeBalance}
+			</if>
+			<if test="feeBalanceGross!=null">
+				and fee_balance_gross like #{feeBalanceGross}
+			</if>
+			<if test="currency!=null">
+				and currency like #{currency}
+			</if>
+			<if test="ohcostcent!=null">
+				and ohcostcent like #{ohcostcent}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="ohinvamtSecdoc!=null">
+				and ohinvamt_secdoc like #{ohinvamtSecdoc}
+			</if>
+			<if test="taxamtDiffSecdoc!=null">
+				and taxamt_diff_secdoc like #{taxamtDiffSecdoc}
+			</if>
+			<if test="paymentfailed!=null">
+				and paymentfailed like #{paymentfailed}
+			</if>
+			<if test="billingAccountId!=null">
+				and billing_account_id like #{billingAccountId}
+			</if>
+			<if test="balancePageEventDate!=null">
+				and balance_page_event_date like #{balancePageEventDate}
+			</if>
+			<if test="prepaidBalanceChangeDoc!=null">
+				and prepaid_balance_change_doc like #{prepaidBalanceChangeDoc}
+			</if>
+			<if test="prepaidBalanceChangeGl!=null">
+				and prepaid_balance_change_gl like #{prepaidBalanceChangeGl}
+			</if>
+			<if test="prepaidGlacode!=null">
+				and prepaid_glacode like #{prepaidGlacode}
+			</if>
+			<if test="prepaidTaxamtDiffGl!=null">
+				and prepaid_taxamt_diff_gl like #{prepaidTaxamtDiffGl}
+			</if>
+			<if test="prepaidTaxDiffGlacode!=null">
+				and prepaid_tax_diff_glacode like #{prepaidTaxDiffGlacode}
+			</if>
+			<if test="paymentConditionId!=null">
+				and payment_condition_id like #{paymentConditionId}
+			</if>
+			<if test="ohdocstatus!=null">
+				and ohdocstatus like #{ohdocstatus}
+			</if>
+			<if test="ohextrefdate!=null">
+				and ohextrefdate like #{ohextrefdate}
+			</if>
+			<if test="ohextrefnum!=null">
+				and ohextrefnum like #{ohextrefnum}
+			</if>
+			<if test="ohcmident!=null">
+				and ohcmident like #{ohcmident}
+			</if>
+			<if test="ohremark!=null">
+				and ohremark like #{ohremark}
+			</if>
+			<if test="ohdiscbaseDoc!=null">
+				and ohdiscbase_doc like #{ohdiscbaseDoc}
+			</if>
+			<if test="ohproppaycurr!=null">
+				and ohproppaycurr like #{ohproppaycurr}
+			</if>
+			<if test="ohproppaydate!=null">
+				and ohproppaydate like #{ohproppaydate}
+			</if>
+			<if test="ohprocessType!=null">
+				and ohprocess_type like #{ohprocessType}
+			</if>
+			<if test="ohprocessDate!=null">
+				and ohprocess_date like #{ohprocessDate}
+			</if>
+			<if test="businessUnitId!=null">
+				and business_unit_id like #{businessUnitId}
+			</if>
+			<if test="proposedPaymentMethod!=null">
+				and proposed_payment_method like #{proposedPaymentMethod}
+			</if>
+			<if test="reasonId!=null">
+				and reason_id like #{reasonId}
+			</if>
+			<if test="incomingDocPricingType!=null">
+				and incoming_doc_pricing_type like #{incomingDocPricingType}
+			</if>
+			<if test="incomingDocTaxPerItem!=null">
+				and incoming_doc_tax_per_item like #{incomingDocTaxPerItem}
+			</if>
+			<if test="paymentProposalId!=null">
+				and payment_proposal_id like #{paymentProposalId}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchOrderhdrAll">
+		select * from orderhdr_all  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="ohxact!=null">
+				ohxact like #{ohxact}
+			</if>
+			<if test="ohstatus!=null">
+				ohstatus like #{ohstatus}
+			</if>
+			<if test="ohstatusflg!=null">
+				ohstatusflg like #{ohstatusflg}
+			</if>
+			<if test="ohentdate!=null">
+				ohentdate like #{ohentdate}
+			</if>
+			<if test="ohrefnum!=null">
+				ohrefnum like #{ohrefnum}
+			</if>
+			<if test="ohtshdate!=null">
+				ohtshdate like #{ohtshdate}
+			</if>
+			<if test="ohsls!=null">
+				ohsls like #{ohsls}
+			</if>
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="ohcseq!=null">
+				ohcseq like #{ohcseq}
+			</if>
+			<if test="ohsname!=null">
+				ohsname like #{ohsname}
+			</if>
+			<if test="ohsaddr1!=null">
+				ohsaddr1 like #{ohsaddr1}
+			</if>
+			<if test="ohsaddr2!=null">
+				ohsaddr2 like #{ohsaddr2}
+			</if>
+			<if test="ohsaddr3!=null">
+				ohsaddr3 like #{ohsaddr3}
+			</if>
+			<if test="ohscity!=null">
+				ohscity like #{ohscity}
+			</if>
+			<if test="ohsst!=null">
+				ohsst like #{ohsst}
+			</if>
+			<if test="ohszip!=null">
+				ohszip like #{ohszip}
+			</if>
+			<if test="ohscountry!=null">
+				ohscountry like #{ohscountry}
+			</if>
+			<if test="ohscrc!=null">
+				ohscrc like #{ohscrc}
+			</if>
+			<if test="ohattn!=null">
+				ohattn like #{ohattn}
+			</if>
+			<if test="ohtrucker!=null">
+				ohtrucker like #{ohtrucker}
+			</if>
+			<if test="ohponum!=null">
+				ohponum like #{ohponum}
+			</if>
+			<if test="ohrelease!=null">
+				ohrelease like #{ohrelease}
+			</if>
+			<if test="ohpsno!=null">
+				ohpsno like #{ohpsno}
+			</if>
+			<if test="ohfrtterms!=null">
+				ohfrtterms like #{ohfrtterms}
+			</if>
+			<if test="ohordtyp!=null">
+				ohordtyp like #{ohordtyp}
+			</if>
+			<if test="ohcandate!=null">
+				ohcandate like #{ohcandate}
+			</if>
+			<if test="ohassocxact!=null">
+				ohassocxact like #{ohassocxact}
+			</if>
+			<if test="ohprt1!=null">
+				ohprt1 like #{ohprt1}
+			</if>
+			<if test="ohprt2!=null">
+				ohprt2 like #{ohprt2}
+			</if>
+			<if test="ohprt3!=null">
+				ohprt3 like #{ohprt3}
+			</if>
+			<if test="ohuserid!=null">
+				ohuserid like #{ohuserid}
+			</if>
+			<if test="ohrefdate!=null">
+				ohrefdate like #{ohrefdate}
+			</if>
+			<if test="ohshpdate!=null">
+				ohshpdate like #{ohshpdate}
+			</if>
+			<if test="ohduedate!=null">
+				ohduedate like #{ohduedate}
+			</if>
+			<if test="ohipp!=null">
+				ohipp like #{ohipp}
+			</if>
+			<if test="ohilpp!=null">
+				ohilpp like #{ohilpp}
+			</if>
+			<if test="ohpostgl!=null">
+				ohpostgl like #{ohpostgl}
+			</if>
+			<if test="ohpostar!=null">
+				ohpostar like #{ohpostar}
+			</if>
+			<if test="oharcustomerId!=null">
+				oharcustomer_id like #{oharcustomerId}
+			</if>
+			<if test="ohglar!=null">
+				ohglar like #{ohglar}
+			</if>
+			<if test="ohdisdate!=null">
+				ohdisdate like #{ohdisdate}
+			</if>
+			<if test="ddebitFlag!=null">
+				ddebit_flag like #{ddebitFlag}
+			</if>
+			<if test="oharflg!=null">
+				oharflg like #{oharflg}
+			</if>
+			<if test="ohinvtype!=null">
+				ohinvtype like #{ohinvtype}
+			</if>
+			<if test="ohfulfildate!=null">
+				ohfulfildate like #{ohfulfildate}
+			</if>
+			<if test="ohpaymentId!=null">
+				ohpayment_id like #{ohpaymentId}
+			</if>
+			<if test="ohpostfibu!=null">
+				ohpostfibu like #{ohpostfibu}
+			</if>
+			<if test="ohreason!=null">
+				ohreason like #{ohreason}
+			</if>
+			<if test="ohrsId!=null">
+				ohrs_id like #{ohrsId}
+			</if>
+			<if test="ohddhflag!=null">
+				ohddhflag like #{ohddhflag}
+			</if>
+			<if test="ohddhdate!=null">
+				ohddhdate like #{ohddhdate}
+			</if>
+			<if test="ohfct!=null">
+				ohfct like #{ohfct}
+			</if>
+			<if test="ohlct!=null">
+				ohlct like #{ohlct}
+			</if>
+			<if test="ohmod!=null">
+				ohmod like #{ohmod}
+			</if>
+			<if test="ohxrate!=null">
+				ohxrate like #{ohxrate}
+			</if>
+			<if test="oheccode!=null">
+				oheccode like #{oheccode}
+			</if>
+			<if test="ohecname!=null">
+				ohecname like #{ohecname}
+			</if>
+			<if test="ohglexact!=null">
+				ohglexact like #{ohglexact}
+			</if>
+			<if test="ohdunstep!=null">
+				ohdunstep like #{ohdunstep}
+			</if>
+			<if test="ohflfct!=null">
+				ohflfct like #{ohflfct}
+			</if>
+			<if test="ohfllct!=null">
+				ohfllct like #{ohfllct}
+			</if>
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="complaint!=null">
+				complaint like #{complaint}
+			</if>
+			<if test="complaintDate!=null">
+				complaint_date like #{complaintDate}
+			</if>
+			<if test="rtxStatus!=null">
+				rtx_status like #{rtxStatus}
+			</if>
+			<if test="ohbillseqno!=null">
+				ohbillseqno like #{ohbillseqno}
+			</if>
+			<if test="ohcancelflag!=null">
+				ohcancelflag like #{ohcancelflag}
+			</if>
+			<if test="convdateExchange!=null">
+				convdate_exchange like #{convdateExchange}
+			</if>
+			<if test="ohglexactTax!=null">
+				ohglexact_tax like #{ohglexactTax}
+			</if>
+			<if test="glacodeDiff!=null">
+				glacode_diff like #{glacodeDiff}
+			</if>
+			<if test="jobcostIdDiff!=null">
+				jobcost_id_diff like #{jobcostIdDiff}
+			</if>
+			<if test="taxRoundingFlag!=null">
+				tax_rounding_flag like #{taxRoundingFlag}
+			</if>
+			<if test="glCurrency!=null">
+				gl_currency like #{glCurrency}
+			</if>
+			<if test="documentCurrency!=null">
+				document_currency like #{documentCurrency}
+			</if>
+			<if test="documentConvratetypeId!=null">
+				document_convratetype_id like #{documentConvratetypeId}
+			</if>
+			<if test="secondaryCurrency!=null">
+				secondary_currency like #{secondaryCurrency}
+			</if>
+			<if test="secondaryConvratetypeId!=null">
+				secondary_convratetype_id like #{secondaryConvratetypeId}
+			</if>
+			<if test="ohinvamtGl!=null">
+				ohinvamt_gl like #{ohinvamtGl}
+			</if>
+			<if test="ohopnamtGl!=null">
+				ohopnamt_gl like #{ohopnamtGl}
+			</if>
+			<if test="ohdisamtGl!=null">
+				ohdisamt_gl like #{ohdisamtGl}
+			</if>
+			<if test="ohdistakamtGl!=null">
+				ohdistakamt_gl like #{ohdistakamtGl}
+			</if>
+			<if test="ohtaxamtGl!=null">
+				ohtaxamt_gl like #{ohtaxamtGl}
+			</if>
+			<if test="taxamtDiffGl!=null">
+				taxamt_diff_gl like #{taxamtDiffGl}
+			</if>
+			<if test="ohinvamtDoc!=null">
+				ohinvamt_doc like #{ohinvamtDoc}
+			</if>
+			<if test="ohopnamtDoc!=null">
+				ohopnamt_doc like #{ohopnamtDoc}
+			</if>
+			<if test="ohdisamtDoc!=null">
+				ohdisamt_doc like #{ohdisamtDoc}
+			</if>
+			<if test="ohdistakamtDoc!=null">
+				ohdistakamt_doc like #{ohdistakamtDoc}
+			</if>
+			<if test="ohtaxamtDoc!=null">
+				ohtaxamt_doc like #{ohtaxamtDoc}
+			</if>
+			<if test="glConvratetypeId!=null">
+				gl_convratetype_id like #{glConvratetypeId}
+			</if>
+			<if test="feeBalance!=null">
+				fee_balance like #{feeBalance}
+			</if>
+			<if test="feeBalanceGross!=null">
+				fee_balance_gross like #{feeBalanceGross}
+			</if>
+			<if test="currency!=null">
+				currency like #{currency}
+			</if>
+			<if test="ohcostcent!=null">
+				ohcostcent like #{ohcostcent}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="ohinvamtSecdoc!=null">
+				ohinvamt_secdoc like #{ohinvamtSecdoc}
+			</if>
+			<if test="taxamtDiffSecdoc!=null">
+				taxamt_diff_secdoc like #{taxamtDiffSecdoc}
+			</if>
+			<if test="paymentfailed!=null">
+				paymentfailed like #{paymentfailed}
+			</if>
+			<if test="billingAccountId!=null">
+				billing_account_id like #{billingAccountId}
+			</if>
+			<if test="balancePageEventDate!=null">
+				balance_page_event_date like #{balancePageEventDate}
+			</if>
+			<if test="prepaidBalanceChangeDoc!=null">
+				prepaid_balance_change_doc like #{prepaidBalanceChangeDoc}
+			</if>
+			<if test="prepaidBalanceChangeGl!=null">
+				prepaid_balance_change_gl like #{prepaidBalanceChangeGl}
+			</if>
+			<if test="prepaidGlacode!=null">
+				prepaid_glacode like #{prepaidGlacode}
+			</if>
+			<if test="prepaidTaxamtDiffGl!=null">
+				prepaid_taxamt_diff_gl like #{prepaidTaxamtDiffGl}
+			</if>
+			<if test="prepaidTaxDiffGlacode!=null">
+				prepaid_tax_diff_glacode like #{prepaidTaxDiffGlacode}
+			</if>
+			<if test="paymentConditionId!=null">
+				payment_condition_id like #{paymentConditionId}
+			</if>
+			<if test="ohdocstatus!=null">
+				ohdocstatus like #{ohdocstatus}
+			</if>
+			<if test="ohextrefdate!=null">
+				ohextrefdate like #{ohextrefdate}
+			</if>
+			<if test="ohextrefnum!=null">
+				ohextrefnum like #{ohextrefnum}
+			</if>
+			<if test="ohcmident!=null">
+				ohcmident like #{ohcmident}
+			</if>
+			<if test="ohremark!=null">
+				ohremark like #{ohremark}
+			</if>
+			<if test="ohdiscbaseDoc!=null">
+				ohdiscbase_doc like #{ohdiscbaseDoc}
+			</if>
+			<if test="ohproppaycurr!=null">
+				ohproppaycurr like #{ohproppaycurr}
+			</if>
+			<if test="ohproppaydate!=null">
+				ohproppaydate like #{ohproppaydate}
+			</if>
+			<if test="ohprocessType!=null">
+				ohprocess_type like #{ohprocessType}
+			</if>
+			<if test="ohprocessDate!=null">
+				ohprocess_date like #{ohprocessDate}
+			</if>
+			<if test="businessUnitId!=null">
+				business_unit_id like #{businessUnitId}
+			</if>
+			<if test="proposedPaymentMethod!=null">
+				proposed_payment_method like #{proposedPaymentMethod}
+			</if>
+			<if test="reasonId!=null">
+				reason_id like #{reasonId}
+			</if>
+			<if test="incomingDocPricingType!=null">
+				incoming_doc_pricing_type like #{incomingDocPricingType}
+			</if>
+			<if test="incomingDocTaxPerItem!=null">
+				incoming_doc_tax_per_item like #{incomingDocTaxPerItem}
+			</if>
+			<if test="paymentProposalId!=null">
+				payment_proposal_id like #{paymentProposalId}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

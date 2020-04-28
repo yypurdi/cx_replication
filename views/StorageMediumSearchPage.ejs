@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchStorageMedium" method="get">    
+    <div style="width:50%">
+    <h3><%=resource.Title%></h3>
+        <input type="hidden" class="form-control" name="rowid" value="0"/>    
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><%=resource.SmId.label%></td>    
+                <td><input type="text" class="form-control" name="sm_id"/></td>
+                <td>
+                    <button type="submit" name="action" value="first" class="btn btn-default">Find</button>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <button type="submit" class="btn btn-default"><a href="/newStorageMedium">Add</a></button>
+                    <% } %>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+    <div style="width:75%">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.StorageMedium.SmId.header%></th>
+                <th><%=resource.StorageMedium.Plcode.header%></th>
+                <th><%=resource.StorageMedium.SmcId.header%></th>
+                <th><%=resource.StorageMedium.SmSerialnum.header%></th>
+                <th><%=resource.StorageMedium.SmStatus.header%></th>
+                <th><%=resource.StorageMedium.SmStatusModDate.header%></th>
+                <th><%=resource.StorageMedium.DealerId.header%></th>
+                <th><%=resource.StorageMedium.SmDeliveryId.header%></th>
+                <th><%=resource.StorageMedium.SmDeliveryDate.header%></th>
+                <th><%=resource.StorageMedium.SimpohId.header%></th>
+                <th><%=resource.StorageMedium.SimpotId.header%></th>
+                <th><%=resource.StorageMedium.SimpotBatch.header%></th>
+                <th><%=resource.StorageMedium.SmPin.header%></th>
+                <th><%=resource.StorageMedium.SmPuk.header%></th>
+                <th><%=resource.StorageMedium.SmAccControl.header%></th>
+                <th><%=resource.StorageMedium.SmCodeAdm.header%></th>
+                <th><%=resource.StorageMedium.SpIdE.header%></th>
+                <th><%=resource.StorageMedium.SpIdG.header%></th>
+                <th><%=resource.StorageMedium.SmStatusRequ.header%></th>
+                <th><%=resource.StorageMedium.SmStaRequDate.header%></th>
+                <th><%=resource.StorageMedium.SmEntdate.header%></th>
+                <th><%=resource.StorageMedium.SmModdate.header%></th>
+                <th><%=resource.StorageMedium.SmUserlastmod.header%></th>
+                <th><%=resource.StorageMedium.SmPin2.header%></th>
+                <th><%=resource.StorageMedium.SmPuk2.header%></th>
+                <th><%=resource.StorageMedium.SmAuth.header%></th>
+                <th><%=resource.StorageMedium.PiId.header%></th>
+                <th><%=resource.StorageMedium.ExternalInd.header%></th>
+                <th><%=resource.StorageMedium.Vendcode.header%></th>
+                <th><%=resource.StorageMedium.SmAdm1.header%></th>
+                <th><%=resource.StorageMedium.SmAdm2.header%></th>
+                <th><%=resource.StorageMedium.SmAdm3.header%></th>
+                <th><%=resource.StorageMedium.SmAdm4.header%></th>
+                <th><%=resource.StorageMedium.SmCodeRetailer.header%></th>
+                <th><%=resource.StorageMedium.SmCodeA.header%></th>
+                <th><%=resource.StorageMedium.SmCodeB.header%></th>
+                <th><%=resource.StorageMedium.SmAuthPending.header%></th>
+                <th><%=resource.StorageMedium.RecVersion.header%></th>
+                <th><%=resource.StorageMedium.SmOrigEsnId.header%></th>
+                <th><%=resource.StorageMedium.PrepaidProfileId.header%></th>
+                <th><%=resource.StorageMedium.RaProcessId.header%></th>
+                <th><%=resource.StorageMedium.TransactionId.header%></th>
+                <th><%=resource.StorageMedium.BusinessUnitId.header%></th>
+                
+            	<th>View</th>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <th>Edit</th>
+                <th>Delete</th>
+                <% } %>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+                <td><a><%=row.sm_id%></a></td>
+                <td><a><%=row.plcode%></a></td>
+                <td><a><%=row.smc_id%></a></td>
+                <td><a><%=row.sm_serialnum%></a></td>
+                <td><a><%=row.sm_status%></a></td>
+                <td><a><%=dateFormat(row.sm_status_mod_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.dealer_id%></a></td>
+                <td><a><%=row.sm_delivery_id%></a></td>
+                <td><a><%=dateFormat(row.sm_delivery_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.simpoh_id%></a></td>
+                <td><a><%=row.simpot_id%></a></td>
+                <td><a><%=row.simpot_batch%></a></td>
+                <td><a><%=row.sm_pin%></a></td>
+                <td><a><%=row.sm_puk%></a></td>
+                <td><a><%=row.sm_acc_control%></a></td>
+                <td><a><%=row.sm_code_adm%></a></td>
+                <td><a><%=row.sp_id_e%></a></td>
+                <td><a><%=row.sp_id_g%></a></td>
+                <td><a><%=row.sm_status_requ%></a></td>
+                <td><a><%=dateFormat(row.sm_sta_requ_date,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.sm_entdate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=dateFormat(row.sm_moddate,'mmm-dd-yyyy')%></a></td>
+                <td><a><%=row.sm_userlastmod%></a></td>
+                <td><a><%=row.sm_pin2%></a></td>
+                <td><a><%=row.sm_puk2%></a></td>
+                <td><a><%=row.sm_auth%></a></td>
+                <td><a><%=row.pi_id%></a></td>
+                <td><a><%=row.external_ind%></a></td>
+                <td><a><%=row.vendcode%></a></td>
+                <td><a><%=row.sm_adm1%></a></td>
+                <td><a><%=row.sm_adm2%></a></td>
+                <td><a><%=row.sm_adm3%></a></td>
+                <td><a><%=row.sm_adm4%></a></td>
+                <td><a><%=row.sm_code_retailer%></a></td>
+                <td><a><%=row.sm_code_a%></a></td>
+                <td><a><%=row.sm_code_b%></a></td>
+                <td><a><%=row.sm_auth_pending%></a></td>
+                <td><a><%=row.rec_version%></a></td>
+                <td><a><%=row.sm_orig_esn_id%></a></td>
+                <td><a><%=row.prepaid_profile_id%></a></td>
+                <td><a><%=row.ra_process_id%></a></td>
+                <td><a><%=row.transaction_id%></a></td>
+                <td><a><%=row.business_unit_id%></a></td>
+                
+                <td><a href="/readStorageMedium?smId=<%=row.sm_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <td><a href="/writeStorageMedium?smId=<%=row.sm_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="/deleteStorageMedium?smId=<%=row.sm_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <% } %>
+            </tr>
+            <% } %>            
+        </table>
+        
+        <div class="table-pagination">
+           <ul class="pagination">
+                 <li><button type="submit" name="action" value="first" class="btn btn-default">First</button></li>
+                 <li><button type="submit" name="action" value="previous" class="btn btn-default">Previous</button></li>
+                 <li><button type="submit" name="action" value="next" class="btn btn-default">Next</button></li>
+                 <li><button type="submit" name="action" value="last" class="btn btn-default">Last</button></li>
+           </ul>	        
+        </div>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newDirectoryNumber" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.DnId.label%></td>
+                <td><input type="text" class="form-control" name="dnId" value="<%=record.dnId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Plcode.label%></td>
+                <td><input type="text" class="form-control" name="plcode" value="<%=record.plcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ndc.label%></td>
+                <td><input type="text" class="form-control" name="ndc" value="<%=record.ndc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Hlcode.label%></td>
+                <td><input type="text" class="form-control" name="hlcode" value="<%=record.hlcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnNum.label%></td>
+                <td><input type="text" class="form-control" name="dnNum" value="<%=record.dnNum%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnStatus.label%></td>
+                <td><input type="text" class="form-control" name="dnStatus" value="<%=record.dnStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnStatusModDate.label%></td>
+                <td><input type="text" class="form-control" name="dnStatusModDate" value="<%=record.dnStatusModDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DealerId.label%></td>
+                <td><input type="text" class="form-control" name="dealerId" value="<%=record.dealerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnAssignDate.label%></td>
+                <td><input type="text" class="form-control" name="dnAssignDate" value="<%=record.dnAssignDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnPhoneFlag.label%></td>
+                <td><input type="text" class="form-control" name="dnPhoneFlag" value="<%=record.dnPhoneFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnType.label%></td>
+                <td><input type="text" class="form-control" name="dnType" value="<%=record.dnType%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnStatusRequ.label%></td>
+                <td><input type="text" class="form-control" name="dnStatusRequ" value="<%=record.dnStatusRequ%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnStaRequDate.label%></td>
+                <td><input type="text" class="form-control" name="dnStaRequDate" value="<%=record.dnStaRequDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnAssign.label%></td>
+                <td><input type="text" class="form-control" name="dnAssign" value="<%=record.dnAssign%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnEntdate.label%></td>
+                <td><input type="text" class="form-control" name="dnEntdate" value="<%=record.dnEntdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnModdate.label%></td>
+                <td><input type="text" class="form-control" name="dnModdate" value="<%=record.dnModdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnModflag.label%></td>
+                <td><input type="text" class="form-control" name="dnModflag" value="<%=record.dnModflag%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnAuth.label%></td>
+                <td><input type="text" class="form-control" name="dnAuth" value="<%=record.dnAuth%>"/></td>
+            </tr><tr>
+                <td><%=resource.Evcode.label%></td>
+                <td><input type="text" class="form-control" name="evcode" value="<%=record.evcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Hmcode.label%></td>
+                <td><input type="text" class="form-control" name="hmcode" value="<%=record.hmcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.LocalPrefixLen.label%></td>
+                <td><input type="text" class="form-control" name="localPrefixLen" value="<%=record.localPrefixLen%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpohId.label%></td>
+                <td><input type="text" class="form-control" name="simpohId" value="<%=record.simpohId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotId.label%></td>
+                <td><input type="text" class="form-control" name="simpotId" value="<%=record.simpotId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotBatch.label%></td>
+                <td><input type="text" class="form-control" name="simpotBatch" value="<%=record.simpotBatch%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExternalInd.label%></td>
+                <td><input type="text" class="form-control" name="externalInd" value="<%=record.externalInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.BlockInd.label%></td>
+                <td><input type="text" class="form-control" name="blockInd" value="<%=record.blockInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExtensionLengthMax.label%></td>
+                <td><input type="text" class="form-control" name="extensionLengthMax" value="<%=record.extensionLengthMax%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnAuthPending.label%></td>
+                <td><input type="text" class="form-control" name="dnAuthPending" value="<%=record.dnAuthPending%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.DirnumNpcode.label%></td>
+                <td><input type="text" class="form-control" name="dirnumNpcode" value="<%=record.dirnumNpcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.VpnId.label%></td>
+                <td><input type="text" class="form-control" name="vpnId" value="<%=record.vpnId%>"/></td>
+            </tr><tr>
+                <td><%=resource.StaticPdpRequired.label%></td>
+                <td><input type="text" class="form-control" name="staticPdpRequired" value="<%=record.staticPdpRequired%>"/></td>
+            </tr><tr>
+                <td><%=resource.RoamingAllowed.label%></td>
+                <td><input type="text" class="form-control" name="roamingAllowed" value="<%=record.roamingAllowed%>"/></td>
+            </tr><tr>
+                <td><%=resource.TransactionId.label%></td>
+                <td><input type="text" class="form-control" name="transactionId" value="<%=record.transactionId%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.businessUnitId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ReservedForPortingInd.label%></td>
+                <td><input type="text" class="form-control" name="reservedForPortingInd" value="<%=record.reservedForPortingInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.PortedNumberInd.label%></td>
+                <td><input type="text" class="form-control" name="portedNumberInd" value="<%=record.portedNumberInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.Rscode.label%></td>
+                <td><input type="text" class="form-control" name="rscode" value="<%=record.rscode%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

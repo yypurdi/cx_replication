@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newContractAll" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.coId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Type.label%></td>
+                <td><input type="text" class="form-control" name="type" value="<%=record.type%>"/></td>
+            </tr><tr>
+                <td><%=resource.Plcode.label%></td>
+                <td><input type="text" class="form-control" name="plcode" value="<%=record.plcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Sccode.label%></td>
+                <td><input type="text" class="form-control" name="sccode" value="<%=record.sccode%>"/></td>
+            </tr><tr>
+                <td><%=resource.SubmId.label%></td>
+                <td><input type="text" class="form-control" name="submId" value="<%=record.submId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoSigned.label%></td>
+                <td><input type="text" class="form-control" name="coSigned" value="<%=record.coSigned%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoEquType.label%></td>
+                <td><input type="text" class="form-control" name="coEquType" value="<%=record.coEquType%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRepBill.label%></td>
+                <td><input type="text" class="form-control" name="coRepBill" value="<%=record.coRepBill%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRep.label%></td>
+                <td><input type="text" class="form-control" name="coRep" value="<%=record.coRep%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRepBillIdno.label%></td>
+                <td><input type="text" class="form-control" name="coRepBillIdno" value="<%=record.coRepBillIdno%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRepIdno.label%></td>
+                <td><input type="text" class="form-control" name="coRepIdno" value="<%=record.coRepIdno%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoInstalled.label%></td>
+                <td><input type="text" class="form-control" name="coInstalled" value="<%=record.coInstalled%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoArchive.label%></td>
+                <td><input type="text" class="form-control" name="coArchive" value="<%=record.coArchive%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoDirEntry.label%></td>
+                <td><input type="text" class="form-control" name="coDirEntry" value="<%=record.coDirEntry%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoOperatorDir.label%></td>
+                <td><input type="text" class="form-control" name="coOperatorDir" value="<%=record.coOperatorDir%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoPstnDir.label%></td>
+                <td><input type="text" class="form-control" name="coPstnDir" value="<%=record.coPstnDir%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoAssServ.label%></td>
+                <td><input type="text" class="form-control" name="coAssServ" value="<%=record.coAssServ%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoAssEqu.label%></td>
+                <td><input type="text" class="form-control" name="coAssEqu" value="<%=record.coAssEqu%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdCheck.label%></td>
+                <td><input type="text" class="form-control" name="coCrdCheck" value="<%=record.coCrdCheck%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdChkEnd.label%></td>
+                <td><input type="text" class="form-control" name="coCrdChkEnd" value="<%=record.coCrdChkEnd%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdChkStart.label%></td>
+                <td><input type="text" class="form-control" name="coCrdChkStart" value="<%=record.coCrdChkStart%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdClicks.label%></td>
+                <td><input type="text" class="form-control" name="coCrdClicks" value="<%=record.coCrdClicks%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdClicksDay.label%></td>
+                <td><input type="text" class="form-control" name="coCrdClicksDay" value="<%=record.coCrdClicksDay%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdDays.label%></td>
+                <td><input type="text" class="form-control" name="coCrdDays" value="<%=record.coCrdDays%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoComment.label%></td>
+                <td><input type="text" class="form-control" name="coComment" value="<%=record.coComment%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoReserved.label%></td>
+                <td><input type="text" class="form-control" name="coReserved" value="<%=record.coReserved%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoExpirDate.label%></td>
+                <td><input type="text" class="form-control" name="coExpirDate" value="<%=record.coExpirDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoActivated.label%></td>
+                <td><input type="text" class="form-control" name="coActivated" value="<%=record.coActivated%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoEntdate.label%></td>
+                <td><input type="text" class="form-control" name="coEntdate" value="<%=record.coEntdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoModdate.label%></td>
+                <td><input type="text" class="form-control" name="coModdate" value="<%=record.coModdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoUserlastmod.label%></td>
+                <td><input type="text" class="form-control" name="coUserlastmod" value="<%=record.coUserlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Tmcode.label%></td>
+                <td><input type="text" class="form-control" name="tmcode" value="<%=record.tmcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.TmcodeDate.label%></td>
+                <td><input type="text" class="form-control" name="tmcodeDate" value="<%=record.tmcodeDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdDTr1.label%></td>
+                <td><input type="text" class="form-control" name="coCrdDTr1" value="<%=record.coCrdDTr1%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdDTr2.label%></td>
+                <td><input type="text" class="form-control" name="coCrdDTr2" value="<%=record.coCrdDTr2%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdDTr3.label%></td>
+                <td><input type="text" class="form-control" name="coCrdDTr3" value="<%=record.coCrdDTr3%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdPTr1.label%></td>
+                <td><input type="text" class="form-control" name="coCrdPTr1" value="<%=record.coCrdPTr1%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdPTr2.label%></td>
+                <td><input type="text" class="form-control" name="coCrdPTr2" value="<%=record.coCrdPTr2%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdPTr3.label%></td>
+                <td><input type="text" class="form-control" name="coCrdPTr3" value="<%=record.coCrdPTr3%>"/></td>
+            </tr><tr>
+                <td><%=resource.EccodeLdc.label%></td>
+                <td><input type="text" class="form-control" name="eccodeLdc" value="<%=record.eccodeLdc%>"/></td>
+            </tr><tr>
+                <td><%=resource.PendingEccodeLdc.label%></td>
+                <td><input type="text" class="form-control" name="pendingEccodeLdc" value="<%=record.pendingEccodeLdc%>"/></td>
+            </tr><tr>
+                <td><%=resource.EccodeLec.label%></td>
+                <td><input type="text" class="form-control" name="eccodeLec" value="<%=record.eccodeLec%>"/></td>
+            </tr><tr>
+                <td><%=resource.PendingEccodeLec.label%></td>
+                <td><input type="text" class="form-control" name="pendingEccodeLec" value="<%=record.pendingEccodeLec%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRequest.label%></td>
+                <td><input type="text" class="form-control" name="coRequest" value="<%=record.coRequest%>"/></td>
+            </tr><tr>
+                <td><%=resource.DealerId.label%></td>
+                <td><input type="text" class="form-control" name="dealerId" value="<%=record.dealerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.NotValid.label%></td>
+                <td><input type="text" class="form-control" name="notValid" value="<%=record.notValid%>"/></td>
+            </tr><tr>
+                <td><%=resource.Arpcode.label%></td>
+                <td><input type="text" class="form-control" name="arpcode" value="<%=record.arpcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoAddrOnIbill.label%></td>
+                <td><input type="text" class="form-control" name="coAddrOnIbill" value="<%=record.coAddrOnIbill%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdAmount.label%></td>
+                <td><input type="text" class="form-control" name="coCrdAmount" value="<%=record.coCrdAmount%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCrdAmountDay.label%></td>
+                <td><input type="text" class="form-control" name="coCrdAmountDay" value="<%=record.coCrdAmountDay%>"/></td>
+            </tr><tr>
+                <td><%=resource.ProductHistoryDate.label%></td>
+                <td><input type="text" class="form-control" name="productHistoryDate" value="<%=record.productHistoryDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoConfirm.label%></td>
+                <td><input type="text" class="form-control" name="coConfirm" value="<%=record.coConfirm%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoExtCsuin.label%></td>
+                <td><input type="text" class="form-control" name="coExtCsuin" value="<%=record.coExtCsuin%>"/></td>
+            </tr><tr>
+                <td><%=resource.TrialEndDate.label%></td>
+                <td><input type="text" class="form-control" name="trialEndDate" value="<%=record.trialEndDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoIbCdrFlag.label%></td>
+                <td><input type="text" class="form-control" name="coIbCdrFlag" value="<%=record.coIbCdrFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.Currency.label%></td>
+                <td><input type="text" class="form-control" name="currency" value="<%=record.currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.AnPackageId.label%></td>
+                <td><input type="text" class="form-control" name="anPackageId" value="<%=record.anPackageId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoRelType.label%></td>
+                <td><input type="text" class="form-control" name="coRelType" value="<%=record.coRelType%>"/></td>
+            </tr><tr>
+                <td><%=resource.PendingTmcode.label%></td>
+                <td><input type="text" class="form-control" name="pendingTmcode" value="<%=record.pendingTmcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.ContractTemplate.label%></td>
+                <td><input type="text" class="form-control" name="contractTemplate" value="<%=record.contractTemplate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoCode.label%></td>
+                <td><input type="text" class="form-control" name="coCode" value="<%=record.coCode%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.businessUnitId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Description.label%></td>
+                <td><input type="text" class="form-control" name="description" value="<%=record.description%>"/></td>
+            </tr><tr>
+                <td><%=resource.AgreementType.label%></td>
+                <td><input type="text" class="form-control" name="agreementType" value="<%=record.agreementType%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExtProductId.label%></td>
+                <td><input type="text" class="form-control" name="extProductId" value="<%=record.extProductId%>"/></td>
+            </tr><tr>
+                <td><%=resource.RemotePlcode.label%></td>
+                <td><input type="text" class="form-control" name="remotePlcode" value="<%=record.remotePlcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Eccode.label%></td>
+                <td><input type="text" class="form-control" name="eccode" value="<%=record.eccode%>"/></td>
+            </tr><tr>
+                <td><%=resource.HplmnBidGroupId.label%></td>
+                <td><input type="text" class="form-control" name="hplmnBidGroupId" value="<%=record.hplmnBidGroupId%>"/></td>
+            </tr><tr>
+                <td><%=resource.VplmnBidGroupId.label%></td>
+                <td><input type="text" class="form-control" name="vplmnBidGroupId" value="<%=record.vplmnBidGroupId%>"/></td>
+            </tr><tr>
+                <td><%=resource.HomePartyId.label%></td>
+                <td><input type="text" class="form-control" name="homePartyId" value="<%=record.homePartyId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ContractTypeId.label%></td>
+                <td><input type="text" class="form-control" name="contractTypeId" value="<%=record.contractTypeId%>"/></td>
+            </tr><tr>
+                <td><%=resource.TrialStartDate.label%></td>
+                <td><input type="text" class="form-control" name="trialStartDate" value="<%=record.trialStartDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.FohAggregationFlag.label%></td>
+                <td><input type="text" class="form-control" name="fohAggregationFlag" value="<%=record.fohAggregationFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.GlAccPackId.label%></td>
+                <td><input type="text" class="form-control" name="glAccPackId" value="<%=record.glAccPackId%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdsBillMedium.label%></td>
+                <td><input type="text" class="form-control" name="cdsBillMedium" value="<%=record.cdsBillMedium%>"/></td>
+            </tr><tr>
+                <td><%=resource.CdsGeneration.label%></td>
+                <td><input type="text" class="form-control" name="cdsGeneration" value="<%=record.cdsGeneration%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChargePartNum.label%></td>
+                <td><input type="text" class="form-control" name="chargePartNum" value="<%=record.chargePartNum%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChStatus.label%></td>
+                <td><input type="text" class="form-control" name="chStatus" value="<%=record.chStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.SvpFile.label%></td>
+                <td><input type="text" class="form-control" name="svpFile" value="<%=record.svpFile%>"/></td>
+            </tr><tr>
+                <td><%=resource.MakeCallsDate.label%></td>
+                <td><input type="text" class="form-control" name="makeCallsDate" value="<%=record.makeCallsDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoInprepayPending.label%></td>
+                <td><input type="text" class="form-control" name="coInprepayPending" value="<%=record.coInprepayPending%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoInprepay.label%></td>
+                <td><input type="text" class="form-control" name="coInprepay" value="<%=record.coInprepay%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChargePerAdjRef.label%></td>
+                <td><input type="text" class="form-control" name="chargePerAdjRef" value="<%=record.chargePerAdjRef%>"/></td>
+            </tr><tr>
+                <td><%=resource.NextCutoffDate.label%></td>
+                <td><input type="text" class="form-control" name="nextCutoffDate" value="<%=record.nextCutoffDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.LastCutoffDate.label%></td>
+                <td><input type="text" class="form-control" name="lastCutoffDate" value="<%=record.lastCutoffDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.LastChargeDate.label%></td>
+                <td><input type="text" class="form-control" name="lastChargeDate" value="<%=record.lastChargeDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.LastNoticeDate.label%></td>
+                <td><input type="text" class="form-control" name="lastNoticeDate" value="<%=record.lastNoticeDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.NotBillMedium.label%></td>
+                <td><input type="text" class="form-control" name="notBillMedium" value="<%=record.notBillMedium%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChargeStartDate.label%></td>
+                <td><input type="text" class="form-control" name="chargeStartDate" value="<%=record.chargeStartDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.EarliestEndDate.label%></td>
+                <td><input type="text" class="form-control" name="earliestEndDate" value="<%=record.earliestEndDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CommonRefDataInd.label%></td>
+                <td><input type="text" class="form-control" name="commonRefDataInd" value="<%=record.commonRefDataInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.ContractLanguage.label%></td>
+                <td><input type="text" class="form-control" name="contractLanguage" value="<%=record.contractLanguage%>"/></td>
+            </tr><tr>
+                <td><%=resource.PendingLanguage.label%></td>
+                <td><input type="text" class="form-control" name="pendingLanguage" value="<%=record.pendingLanguage%>"/></td>
+            </tr><tr>
+                <td><%=resource.RrCandidate.label%></td>
+                <td><input type="text" class="form-control" name="rrCandidate" value="<%=record.rrCandidate%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChStatusValidfrom.label%></td>
+                <td><input type="text" class="form-control" name="chStatusValidfrom" value="<%=record.chStatusValidfrom%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

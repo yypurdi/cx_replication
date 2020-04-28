@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newContrDevicesMapper">			
+	
+	<insert id="newContrDevices">
+		insert into contr_devices(cd_id,cd_seqno,co_id,port_id,dn_id,eq_id,cd_status,cd_activ_date,cd_deactiv_date,cd_validfrom,cd_entdate,cd_moddate,cd_userlastmod,cd_sm_num,cd_channels,cd_channels_excl,cd_eq_num,cd_pending_state,cd_rs_id,cd_plcode,hlcode,rec_version) 
+		values (#{cdId},#{cdSeqno},#{coId},#{portId},#{dnId},#{eqId},#{cdStatus},#{cdActivDate},#{cdDeactivDate},#{cdValidfrom},#{cdEntdate},#{cdModdate},#{cdUserlastmod},#{cdSmNum},#{cdChannels},#{cdChannelsExcl},#{cdEqNum},#{cdPendingState},#{cdRsId},#{cdPlcode},#{hlcode},#{recVersion});
+	</insert>
+
+</mapper>

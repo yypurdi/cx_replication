@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newContrServicesCapMapper">			
+	
+	<insert id="newContrServicesCap">
+		insert into contr_services_cap(co_id,sncode,seqno,seqno_pre,bccode,pending_bccode,dn_id,dn_block_id,main_dirnum,cs_status,cs_activ_date,cs_deactiv_date,cs_request,rec_version,public_number_dn_id,vpn_id,public_block_id,profile_id,dn_shown_in_bill,request_id) 
+		values (#{coId},#{sncode},#{seqno},#{seqnoPre},#{bccode},#{pendingBccode},#{dnId},#{dnBlockId},#{mainDirnum},#{csStatus},#{csActivDate},#{csDeactivDate},#{csRequest},#{recVersion},#{publicNumberDnId},#{vpnId},#{publicBlockId},#{profileId},#{dnShownInBill},#{requestId});
+	</insert>
+
+</mapper>

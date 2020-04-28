@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newPrServSpcodeHistMapper">			
+	
+	<insert id="newPrServSpcodeHist">
+		insert into pr_serv_spcode_hist(profile_id,co_id,sncode,histno,spcode,transactionno,valid_from_date,entry_date,request_id,rec_version) 
+		values (#{profileId},#{coId},#{sncode},#{histno},#{spcode},#{transactionno},#{validFromDate},#{entryDate},#{requestId},#{recVersion});
+	</insert>
+
+</mapper>

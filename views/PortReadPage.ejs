@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="storageMedium-tab" data-toggle="tab" href="#storageMedium" role="tab" aria-controls="storageMedium" aria-selected="true"><h4><%=resource.StorageMedium.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.PortId.label%></td>
+                        <td><%=record.port_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Plcode.label%></td>
+                        <td><%=record.plcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Hlcode.label%></td>
+                        <td><%=record.hlcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortNum.label%></td>
+                        <td><%=record.port_num%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortStatus.label%></td>
+                        <td><%=record.port_status%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortStatusmoddat.label%></td>
+                        <td><%=dateFormat(record.port_statusmoddat,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortKi.label%></td>
+                        <td><%=record.port_ki%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortKind.label%></td>
+                        <td><%=record.port_kind%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortChannels.label%></td>
+                        <td><%=record.port_channels%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortChannelsExcl.label%></td>
+                        <td><%=record.port_channels_excl%></td>						
+                    </tr><tr>
+                        <td><%=resource.SmId.label%></td>
+                        <td><%=record.sm_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortSmRequ.label%></td>
+                        <td><%=record.port_sm_requ%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpohId.label%></td>
+                        <td><%=record.simpoh_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpotId.label%></td>
+                        <td><%=record.simpot_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.SimpotBatch.label%></td>
+                        <td><%=record.simpot_batch%></td>						
+                    </tr><tr>
+                        <td><%=resource.DnId.label%></td>
+                        <td><%=record.dn_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.DealerId.label%></td>
+                        <td><%=record.dealer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortAssignDate.label%></td>
+                        <td><%=dateFormat(record.port_assign_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortTkey.label%></td>
+                        <td><%=record.port_tkey%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortStatusRequ.label%></td>
+                        <td><%=record.port_status_requ%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortStaRequDate.label%></td>
+                        <td><%=dateFormat(record.port_sta_requ_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortActivDate.label%></td>
+                        <td><%=dateFormat(record.port_activ_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortDeactivDate.label%></td>
+                        <td><%=dateFormat(record.port_deactiv_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortEntdate.label%></td>
+                        <td><%=dateFormat(record.port_entdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortModdate.label%></td>
+                        <td><%=dateFormat(record.port_moddate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortUserlastmod.label%></td>
+                        <td><%=record.port_userlastmod%></td>						
+                    </tr><tr>
+                        <td><%=resource.PreActivated.label%></td>
+                        <td><%=record.pre_activated%></td>						
+                    </tr><tr>
+                        <td><%=resource.SmsUpdate.label%></td>
+                        <td><%=record.sms_update%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortRicBatch.label%></td>
+                        <td><%=record.port_ric_batch%></td>						
+                    </tr><tr>
+                        <td><%=resource.ExternalInd.label%></td>
+                        <td><%=record.external_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.Capacity.label%></td>
+                        <td><%=record.capacity%></td>						
+                    </tr><tr>
+                        <td><%=resource.AvailableCapacity.label%></td>
+                        <td><%=record.available_capacity%></td>						
+                    </tr><tr>
+                        <td><%=resource.PrmValueId.label%></td>
+                        <td><%=record.prm_value_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.PortNpcode.label%></td>
+                        <td><%=record.port_npcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.TransactionId.label%></td>
+                        <td><%=record.transaction_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.BusinessUnitId.label%></td>
+                        <td><%=record.business_unit_id%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writePort?portId=<%=record.port_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deletePort?portId=<%=record.port_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+	<div class="tab-pane fade" id="storageMedium" role="tabpanel" aria-labelledby="storageMedium-tab">
+            <div style="width:75%">
+            <table class="table table-striped">
+                <tr class="heading-tr">
+                    <th><%=resource.StorageMedium.SmId.header%></th>
+                    <th><%=resource.StorageMedium.Plcode.header%></th>
+                    <th><%=resource.StorageMedium.SmcId.header%></th>
+                    <th><%=resource.StorageMedium.SmSerialnum.header%></th>
+                    <th><%=resource.StorageMedium.SmStatus.header%></th>
+                    <th><%=resource.StorageMedium.SmStatusModDate.header%></th>
+                    <th><%=resource.StorageMedium.DealerId.header%></th>
+                    <th><%=resource.StorageMedium.SmDeliveryId.header%></th>
+                    <th><%=resource.StorageMedium.SmDeliveryDate.header%></th>
+                    <th><%=resource.StorageMedium.SimpohId.header%></th>
+                    <th><%=resource.StorageMedium.SimpotId.header%></th>
+                    <th><%=resource.StorageMedium.SimpotBatch.header%></th>
+                    <th><%=resource.StorageMedium.SmPin.header%></th>
+                    <th><%=resource.StorageMedium.SmPuk.header%></th>
+                    <th><%=resource.StorageMedium.SmAccControl.header%></th>
+                    <th><%=resource.StorageMedium.SmCodeAdm.header%></th>
+                    <th><%=resource.StorageMedium.SpIdE.header%></th>
+                    <th><%=resource.StorageMedium.SpIdG.header%></th>
+                    <th><%=resource.StorageMedium.SmStatusRequ.header%></th>
+                    <th><%=resource.StorageMedium.SmStaRequDate.header%></th>
+                    <th><%=resource.StorageMedium.SmEntdate.header%></th>
+                    <th><%=resource.StorageMedium.SmModdate.header%></th>
+                    <th><%=resource.StorageMedium.SmUserlastmod.header%></th>
+                    <th><%=resource.StorageMedium.SmPin2.header%></th>
+                    <th><%=resource.StorageMedium.SmPuk2.header%></th>
+                    <th><%=resource.StorageMedium.SmAuth.header%></th>
+                    <th><%=resource.StorageMedium.PiId.header%></th>
+                    <th><%=resource.StorageMedium.ExternalInd.header%></th>
+                    <th><%=resource.StorageMedium.Vendcode.header%></th>
+                    <th><%=resource.StorageMedium.SmAdm1.header%></th>
+                    <th><%=resource.StorageMedium.SmAdm2.header%></th>
+                    <th><%=resource.StorageMedium.SmAdm3.header%></th>
+                    <th><%=resource.StorageMedium.SmAdm4.header%></th>
+                    <th><%=resource.StorageMedium.SmCodeRetailer.header%></th>
+                    <th><%=resource.StorageMedium.SmCodeA.header%></th>
+                    <th><%=resource.StorageMedium.SmCodeB.header%></th>
+                    <th><%=resource.StorageMedium.SmAuthPending.header%></th>
+                    <th><%=resource.StorageMedium.RecVersion.header%></th>
+                    <th><%=resource.StorageMedium.SmOrigEsnId.header%></th>
+                    <th><%=resource.StorageMedium.PrepaidProfileId.header%></th>
+                    <th><%=resource.StorageMedium.RaProcessId.header%></th>
+                    <th><%=resource.StorageMedium.TransactionId.header%></th>
+                    <th><%=resource.StorageMedium.BusinessUnitId.header%></th>
+                                        
+                    <th>View</th>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <% } %>
+                </tr>
+                <% for(let i in record.storageMedium){ let rec = record.storageMedium[i] %>
+                <tr>
+                    <td><a><%=rec.sm_id%></a></td>
+                    <td><a><%=rec.plcode%></a></td>
+                    <td><a><%=rec.smc_id%></a></td>
+                    <td><a><%=rec.sm_serialnum%></a></td>
+                    <td><a><%=rec.sm_status%></a></td>
+                    <td><a><%=dateFormat(rec.sm_status_mod_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.dealer_id%></a></td>
+                    <td><a><%=rec.sm_delivery_id%></a></td>
+                    <td><a><%=dateFormat(rec.sm_delivery_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.simpoh_id%></a></td>
+                    <td><a><%=rec.simpot_id%></a></td>
+                    <td><a><%=rec.simpot_batch%></a></td>
+                    <td><a><%=rec.sm_pin%></a></td>
+                    <td><a><%=rec.sm_puk%></a></td>
+                    <td><a><%=rec.sm_acc_control%></a></td>
+                    <td><a><%=rec.sm_code_adm%></a></td>
+                    <td><a><%=rec.sp_id_e%></a></td>
+                    <td><a><%=rec.sp_id_g%></a></td>
+                    <td><a><%=rec.sm_status_requ%></a></td>
+                    <td><a><%=dateFormat(rec.sm_sta_requ_date,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.sm_entdate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=dateFormat(rec.sm_moddate,'mmm-dd-yyyy h:MM:ss TT')%></a></td>
+                    <td><a><%=rec.sm_userlastmod%></a></td>
+                    <td><a><%=rec.sm_pin2%></a></td>
+                    <td><a><%=rec.sm_puk2%></a></td>
+                    <td><a><%=rec.sm_auth%></a></td>
+                    <td><a><%=rec.pi_id%></a></td>
+                    <td><a><%=rec.external_ind%></a></td>
+                    <td><a><%=rec.vendcode%></a></td>
+                    <td><a><%=rec.sm_adm1%></a></td>
+                    <td><a><%=rec.sm_adm2%></a></td>
+                    <td><a><%=rec.sm_adm3%></a></td>
+                    <td><a><%=rec.sm_adm4%></a></td>
+                    <td><a><%=rec.sm_code_retailer%></a></td>
+                    <td><a><%=rec.sm_code_a%></a></td>
+                    <td><a><%=rec.sm_code_b%></a></td>
+                    <td><a><%=rec.sm_auth_pending%></a></td>
+                    <td><a><%=rec.rec_version%></a></td>
+                    <td><a><%=rec.sm_orig_esn_id%></a></td>
+                    <td><a><%=rec.prepaid_profile_id%></a></td>
+                    <td><a><%=rec.ra_process_id%></a></td>
+                    <td><a><%=rec.transaction_id%></a></td>
+                    <td><a><%=rec.business_unit_id%></a></td>
+                    
+                    <td><a href="/readStorageMedium?smId=<%=rec.sm_id%>" style="color: green"><span class="glyphicon glyphicon-open"></span></a></td>
+                    <% if(session.user_acl=='ROLE_ADMIN') { %>
+                    <td><a href="/writeStorageMedium?smId=<%=rec.sm_id%>" style="color: green"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="/deleteStorageMedium?smId=<%=rec.sm_id%>" style="color: green"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </table>        
+	    <button type="submit" class="btn btn-default"><a href="/newStorageMedium">Add</a></button>
+	    <button type="submit" class="btn btn-default">Clear</button>
+	    </div>	    
+        </div>            
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

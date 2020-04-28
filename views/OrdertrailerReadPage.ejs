@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.Otxact.label%></td>
+                        <td><%=record.otxact%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otseq.label%></td>
+                        <td><%=record.otseq%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otmeas.label%></td>
+                        <td><%=record.otmeas%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otum.label%></td>
+                        <td><%=record.otum%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otup.label%></td>
+                        <td><%=record.otup%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otqord.label%></td>
+                        <td><%=record.otqord%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otqbkord.label%></td>
+                        <td><%=record.otqbkord%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otqtoshp.label%></td>
+                        <td><%=record.otqtoshp%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otdftprc.label%></td>
+                        <td><%=record.otdftprc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otprgroup.label%></td>
+                        <td><%=record.otprgroup%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otfrtwgt.label%></td>
+                        <td><%=record.otfrtwgt%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otjobcost.label%></td>
+                        <td><%=record.otjobcost%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otname.label%></td>
+                        <td><%=record.otname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otglsale.label%></td>
+                        <td><%=record.otglsale%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otglcogs.label%></td>
+                        <td><%=record.otglcogs%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otglinv.label%></td>
+                        <td><%=record.otglinv%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otqship.label%></td>
+                        <td><%=record.otqship%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otprmeas.label%></td>
+                        <td><%=record.otprmeas%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otprum.label%></td>
+                        <td><%=record.otprum%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otbillunits.label%></td>
+                        <td><%=record.otbillunits%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otinvunits.label%></td>
+                        <td><%=record.otinvunits%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otcostflg.label%></td>
+                        <td><%=record.otcostflg%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otinvalloc.label%></td>
+                        <td><%=record.otinvalloc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otshipdate.label%></td>
+                        <td><%=dateFormat(record.otshipdate,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Sncode.label%></td>
+                        <td><%=record.sncode%></td>						
+                    </tr><tr>
+                        <td><%=resource.OteqId.label%></td>
+                        <td><%=record.oteq_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Oteqrate.label%></td>
+                        <td><%=record.oteqrate%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otleasing.label%></td>
+                        <td><%=record.otleasing%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtleasFinish.label%></td>
+                        <td><%=dateFormat(record.otleas_finish,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otflsqn.label%></td>
+                        <td><%=record.otflsqn%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otvplmn.label%></td>
+                        <td><%=record.otvplmn%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otflname.label%></td>
+                        <td><%=record.otflname%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otfct.label%></td>
+                        <td><%=dateFormat(record.otfct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otlct.label%></td>
+                        <td><%=dateFormat(record.otlct,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtsimFrom.label%></td>
+                        <td><%=record.otsim_from%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtsimTo.label%></td>
+                        <td><%=record.otsim_to%></td>						
+                    </tr><tr>
+                        <td><%=resource.OttransactionDate.label%></td>
+                        <td><%=dateFormat(record.ottransaction_date,'mmm-dd-yyyy HH:MM:ss')%></td>						
+                    </tr><tr>
+                        <td><%=resource.ServcatCode.label%></td>
+                        <td><%=record.servcat_code%></td>						
+                    </tr><tr>
+                        <td><%=resource.ServCode.label%></td>
+                        <td><%=record.serv_code%></td>						
+                    </tr><tr>
+                        <td><%=resource.ServType.label%></td>
+                        <td><%=record.serv_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.TaxInclusiveInd.label%></td>
+                        <td><%=record.tax_inclusive_ind%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtglDisc.label%></td>
+                        <td><%=record.otgl_disc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtjcidDisc.label%></td>
+                        <td><%=record.otjcid_disc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtglMincom.label%></td>
+                        <td><%=record.otgl_mincom%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtjcidMincom.label%></td>
+                        <td><%=record.otjcid_mincom%></td>						
+                    </tr><tr>
+                        <td><%=resource.GlCurrency.label%></td>
+                        <td><%=record.gl_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.DocumentCurrency.label%></td>
+                        <td><%=record.document_currency%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscGl.label%></td>
+                        <td><%=record.otamt_disc_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscGrossGl.label%></td>
+                        <td><%=record.otamt_disc_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomGl.label%></td>
+                        <td><%=record.otamt_mincom_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomGrossGl.label%></td>
+                        <td><%=record.otamt_mincom_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueGl.label%></td>
+                        <td><%=record.otamt_revenue_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueGrossGl.label%></td>
+                        <td><%=record.otamt_revenue_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtDiscGl.label%></td>
+                        <td><%=record.otcuramt_disc_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtDiscGrossGl.label%></td>
+                        <td><%=record.otcuramt_disc_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtGl.label%></td>
+                        <td><%=record.otcuramt_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtGrossGl.label%></td>
+                        <td><%=record.otcuramt_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtMincomGl.label%></td>
+                        <td><%=record.otcuramt_mincom_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtMincomGrossGl.label%></td>
+                        <td><%=record.otcuramt_mincom_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtRevenueGl.label%></td>
+                        <td><%=record.otcuramt_revenue_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtRevenueGrossGl.label%></td>
+                        <td><%=record.otcuramt_revenue_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchGl.label%></td>
+                        <td><%=record.otmerch_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchGrossGl.label%></td>
+                        <td><%=record.otmerch_gross_gl%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscDoc.label%></td>
+                        <td><%=record.otamt_disc_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscGrossDoc.label%></td>
+                        <td><%=record.otamt_disc_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomDoc.label%></td>
+                        <td><%=record.otamt_mincom_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomGrossDoc.label%></td>
+                        <td><%=record.otamt_mincom_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueDoc.label%></td>
+                        <td><%=record.otamt_revenue_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueGrossDoc.label%></td>
+                        <td><%=record.otamt_revenue_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtDiscDoc.label%></td>
+                        <td><%=record.otcuramt_disc_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtDiscGrossDoc.label%></td>
+                        <td><%=record.otcuramt_disc_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtDoc.label%></td>
+                        <td><%=record.otcuramt_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtGrossDoc.label%></td>
+                        <td><%=record.otcuramt_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtMincomDoc.label%></td>
+                        <td><%=record.otcuramt_mincom_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtMincomGrossDoc.label%></td>
+                        <td><%=record.otcuramt_mincom_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtRevenueDoc.label%></td>
+                        <td><%=record.otcuramt_revenue_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtcuramtRevenueGrossDoc.label%></td>
+                        <td><%=record.otcuramt_revenue_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtgpriceDisDoc.label%></td>
+                        <td><%=record.otgprice_dis_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtgpriceDoc.label%></td>
+                        <td><%=record.otgprice_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchDoc.label%></td>
+                        <td><%=record.otmerch_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchGrossDoc.label%></td>
+                        <td><%=record.otmerch_gross_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OttaxExemptedDoc.label%></td>
+                        <td><%=record.ottax_exempted_doc%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscSecdoc.label%></td>
+                        <td><%=record.otamt_disc_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtDiscGrossSecdoc.label%></td>
+                        <td><%=record.otamt_disc_gross_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomSecdoc.label%></td>
+                        <td><%=record.otamt_mincom_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtMincomGrossSecdoc.label%></td>
+                        <td><%=record.otamt_mincom_gross_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueSecdoc.label%></td>
+                        <td><%=record.otamt_revenue_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtamtRevenueGrossSecdoc.label%></td>
+                        <td><%=record.otamt_revenue_gross_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtgpriceSecdoc.label%></td>
+                        <td><%=record.otgprice_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtgpriceDisSecdoc.label%></td>
+                        <td><%=record.otgprice_dis_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchSecdoc.label%></td>
+                        <td><%=record.otmerch_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.OtmerchGrossSecdoc.label%></td>
+                        <td><%=record.otmerch__gross_secdoc%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otflrapflg.label%></td>
+                        <td><%=record.otflrapflg%></td>						
+                    </tr><tr>
+                        <td><%=resource.TapRefNo.label%></td>
+                        <td><%=record.tap_ref_no%></td>						
+                    </tr><tr>
+                        <td><%=resource.TaxCalculationType.label%></td>
+                        <td><%=record.tax_calculation_type%></td>						
+                    </tr><tr>
+                        <td><%=resource.ProfileId.label%></td>
+                        <td><%=record.profile_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.PaymentOption.label%></td>
+                        <td><%=record.payment_option%></td>						
+                    </tr><tr>
+                        <td><%=resource.BpCoId.label%></td>
+                        <td><%=record.bp_co_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otcostcent.label%></td>
+                        <td><%=record.otcostcent%></td>						
+                    </tr><tr>
+                        <td><%=resource.Otordnum.label%></td>
+                        <td><%=record.otordnum%></td>						
+                    </tr><tr>
+                        <td><%=resource.IncomingDocTaxItemSeqno.label%></td>
+                        <td><%=record.incoming_doc_tax_item_seqno%></td>						
+                    </tr><tr>
+                        <td><%=resource.Tmcode.label%></td>
+                        <td><%=record.tmcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.RateplanVscode.label%></td>
+                        <td><%=record.rateplan_vscode%></td>						
+                    </tr><tr>
+                        <td><%=resource.Spcode.label%></td>
+                        <td><%=record.spcode%></td>						
+                    </tr><tr>
+                        <td><%=resource.InvoiceItemClassId.label%></td>
+                        <td><%=record.invoice_item_class_id%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeOrdertrailer?otxact=<%=record.otxact%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteOrdertrailer?otxact=<%=record.otxact%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

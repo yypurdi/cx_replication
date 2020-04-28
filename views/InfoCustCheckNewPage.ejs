@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newInfoCustCheck" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check01.label%></td>
+                <td><input type="text" class="form-control" name="check01" value="<%=record.check01%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check02.label%></td>
+                <td><input type="text" class="form-control" name="check02" value="<%=record.check02%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check03.label%></td>
+                <td><input type="text" class="form-control" name="check03" value="<%=record.check03%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check04.label%></td>
+                <td><input type="text" class="form-control" name="check04" value="<%=record.check04%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check05.label%></td>
+                <td><input type="text" class="form-control" name="check05" value="<%=record.check05%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check06.label%></td>
+                <td><input type="text" class="form-control" name="check06" value="<%=record.check06%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check07.label%></td>
+                <td><input type="text" class="form-control" name="check07" value="<%=record.check07%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check08.label%></td>
+                <td><input type="text" class="form-control" name="check08" value="<%=record.check08%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check09.label%></td>
+                <td><input type="text" class="form-control" name="check09" value="<%=record.check09%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check10.label%></td>
+                <td><input type="text" class="form-control" name="check10" value="<%=record.check10%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check11.label%></td>
+                <td><input type="text" class="form-control" name="check11" value="<%=record.check11%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check12.label%></td>
+                <td><input type="text" class="form-control" name="check12" value="<%=record.check12%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check13.label%></td>
+                <td><input type="text" class="form-control" name="check13" value="<%=record.check13%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check14.label%></td>
+                <td><input type="text" class="form-control" name="check14" value="<%=record.check14%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check15.label%></td>
+                <td><input type="text" class="form-control" name="check15" value="<%=record.check15%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check16.label%></td>
+                <td><input type="text" class="form-control" name="check16" value="<%=record.check16%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check17.label%></td>
+                <td><input type="text" class="form-control" name="check17" value="<%=record.check17%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check18.label%></td>
+                <td><input type="text" class="form-control" name="check18" value="<%=record.check18%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check19.label%></td>
+                <td><input type="text" class="form-control" name="check19" value="<%=record.check19%>"/></td>
+            </tr><tr>
+                <td><%=resource.Check20.label%></td>
+                <td><input type="text" class="form-control" name="check20" value="<%=record.check20%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

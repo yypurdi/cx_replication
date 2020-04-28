@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="readContrServicesCapMapper">			
+	
+	<select id="readContrServicesCap">
+		select * from contr_services_cap where co_id = #{coId};
+	</select>
+
+	<select id="directoryNumber_XK6CR">         
+		select * from directory_number where co_id = #{coId};
+	</select>
+  
+</mapper>

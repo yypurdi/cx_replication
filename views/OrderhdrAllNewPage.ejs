@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newOrderhdrAll" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.Ohxact.label%></td>
+                <td><input type="text" class="form-control" name="ohxact" value="<%=record.ohxact%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohstatus.label%></td>
+                <td><input type="text" class="form-control" name="ohstatus" value="<%=record.ohstatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohstatusflg.label%></td>
+                <td><input type="text" class="form-control" name="ohstatusflg" value="<%=record.ohstatusflg%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohentdate.label%></td>
+                <td><input type="text" class="form-control" name="ohentdate" value="<%=record.ohentdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohrefnum.label%></td>
+                <td><input type="text" class="form-control" name="ohrefnum" value="<%=record.ohrefnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohtshdate.label%></td>
+                <td><input type="text" class="form-control" name="ohtshdate" value="<%=record.ohtshdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsls.label%></td>
+                <td><input type="text" class="form-control" name="ohsls" value="<%=record.ohsls%>"/></td>
+            </tr><tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohcseq.label%></td>
+                <td><input type="text" class="form-control" name="ohcseq" value="<%=record.ohcseq%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsname.label%></td>
+                <td><input type="text" class="form-control" name="ohsname" value="<%=record.ohsname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsaddr1.label%></td>
+                <td><input type="text" class="form-control" name="ohsaddr1" value="<%=record.ohsaddr1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsaddr2.label%></td>
+                <td><input type="text" class="form-control" name="ohsaddr2" value="<%=record.ohsaddr2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsaddr3.label%></td>
+                <td><input type="text" class="form-control" name="ohsaddr3" value="<%=record.ohsaddr3%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohscity.label%></td>
+                <td><input type="text" class="form-control" name="ohscity" value="<%=record.ohscity%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohsst.label%></td>
+                <td><input type="text" class="form-control" name="ohsst" value="<%=record.ohsst%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohszip.label%></td>
+                <td><input type="text" class="form-control" name="ohszip" value="<%=record.ohszip%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohscountry.label%></td>
+                <td><input type="text" class="form-control" name="ohscountry" value="<%=record.ohscountry%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohscrc.label%></td>
+                <td><input type="text" class="form-control" name="ohscrc" value="<%=record.ohscrc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohattn.label%></td>
+                <td><input type="text" class="form-control" name="ohattn" value="<%=record.ohattn%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohtrucker.label%></td>
+                <td><input type="text" class="form-control" name="ohtrucker" value="<%=record.ohtrucker%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohponum.label%></td>
+                <td><input type="text" class="form-control" name="ohponum" value="<%=record.ohponum%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohrelease.label%></td>
+                <td><input type="text" class="form-control" name="ohrelease" value="<%=record.ohrelease%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohpsno.label%></td>
+                <td><input type="text" class="form-control" name="ohpsno" value="<%=record.ohpsno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohfrtterms.label%></td>
+                <td><input type="text" class="form-control" name="ohfrtterms" value="<%=record.ohfrtterms%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohordtyp.label%></td>
+                <td><input type="text" class="form-control" name="ohordtyp" value="<%=record.ohordtyp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohcandate.label%></td>
+                <td><input type="text" class="form-control" name="ohcandate" value="<%=record.ohcandate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohassocxact.label%></td>
+                <td><input type="text" class="form-control" name="ohassocxact" value="<%=record.ohassocxact%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohprt1.label%></td>
+                <td><input type="text" class="form-control" name="ohprt1" value="<%=record.ohprt1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohprt2.label%></td>
+                <td><input type="text" class="form-control" name="ohprt2" value="<%=record.ohprt2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohprt3.label%></td>
+                <td><input type="text" class="form-control" name="ohprt3" value="<%=record.ohprt3%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohuserid.label%></td>
+                <td><input type="text" class="form-control" name="ohuserid" value="<%=record.ohuserid%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohrefdate.label%></td>
+                <td><input type="text" class="form-control" name="ohrefdate" value="<%=record.ohrefdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohshpdate.label%></td>
+                <td><input type="text" class="form-control" name="ohshpdate" value="<%=record.ohshpdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohduedate.label%></td>
+                <td><input type="text" class="form-control" name="ohduedate" value="<%=record.ohduedate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohipp.label%></td>
+                <td><input type="text" class="form-control" name="ohipp" value="<%=record.ohipp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohilpp.label%></td>
+                <td><input type="text" class="form-control" name="ohilpp" value="<%=record.ohilpp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohpostgl.label%></td>
+                <td><input type="text" class="form-control" name="ohpostgl" value="<%=record.ohpostgl%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohpostar.label%></td>
+                <td><input type="text" class="form-control" name="ohpostar" value="<%=record.ohpostar%>"/></td>
+            </tr><tr>
+                <td><%=resource.OharcustomerId.label%></td>
+                <td><input type="text" class="form-control" name="oharcustomerId" value="<%=record.oharcustomerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohglar.label%></td>
+                <td><input type="text" class="form-control" name="ohglar" value="<%=record.ohglar%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohdisdate.label%></td>
+                <td><input type="text" class="form-control" name="ohdisdate" value="<%=record.ohdisdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DdebitFlag.label%></td>
+                <td><input type="text" class="form-control" name="ddebitFlag" value="<%=record.ddebitFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.Oharflg.label%></td>
+                <td><input type="text" class="form-control" name="oharflg" value="<%=record.oharflg%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohinvtype.label%></td>
+                <td><input type="text" class="form-control" name="ohinvtype" value="<%=record.ohinvtype%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohfulfildate.label%></td>
+                <td><input type="text" class="form-control" name="ohfulfildate" value="<%=record.ohfulfildate%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhpaymentId.label%></td>
+                <td><input type="text" class="form-control" name="ohpaymentId" value="<%=record.ohpaymentId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohpostfibu.label%></td>
+                <td><input type="text" class="form-control" name="ohpostfibu" value="<%=record.ohpostfibu%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohreason.label%></td>
+                <td><input type="text" class="form-control" name="ohreason" value="<%=record.ohreason%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhrsId.label%></td>
+                <td><input type="text" class="form-control" name="ohrsId" value="<%=record.ohrsId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohddhflag.label%></td>
+                <td><input type="text" class="form-control" name="ohddhflag" value="<%=record.ohddhflag%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohddhdate.label%></td>
+                <td><input type="text" class="form-control" name="ohddhdate" value="<%=record.ohddhdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohfct.label%></td>
+                <td><input type="text" class="form-control" name="ohfct" value="<%=record.ohfct%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohlct.label%></td>
+                <td><input type="text" class="form-control" name="ohlct" value="<%=record.ohlct%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohmod.label%></td>
+                <td><input type="text" class="form-control" name="ohmod" value="<%=record.ohmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohxrate.label%></td>
+                <td><input type="text" class="form-control" name="ohxrate" value="<%=record.ohxrate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Oheccode.label%></td>
+                <td><input type="text" class="form-control" name="oheccode" value="<%=record.oheccode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohecname.label%></td>
+                <td><input type="text" class="form-control" name="ohecname" value="<%=record.ohecname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohglexact.label%></td>
+                <td><input type="text" class="form-control" name="ohglexact" value="<%=record.ohglexact%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohdunstep.label%></td>
+                <td><input type="text" class="form-control" name="ohdunstep" value="<%=record.ohdunstep%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohflfct.label%></td>
+                <td><input type="text" class="form-control" name="ohflfct" value="<%=record.ohflfct%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohfllct.label%></td>
+                <td><input type="text" class="form-control" name="ohfllct" value="<%=record.ohfllct%>"/></td>
+            </tr><tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.coId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Complaint.label%></td>
+                <td><input type="text" class="form-control" name="complaint" value="<%=record.complaint%>"/></td>
+            </tr><tr>
+                <td><%=resource.ComplaintDate.label%></td>
+                <td><input type="text" class="form-control" name="complaintDate" value="<%=record.complaintDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.RtxStatus.label%></td>
+                <td><input type="text" class="form-control" name="rtxStatus" value="<%=record.rtxStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohbillseqno.label%></td>
+                <td><input type="text" class="form-control" name="ohbillseqno" value="<%=record.ohbillseqno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohcancelflag.label%></td>
+                <td><input type="text" class="form-control" name="ohcancelflag" value="<%=record.ohcancelflag%>"/></td>
+            </tr><tr>
+                <td><%=resource.ConvdateExchange.label%></td>
+                <td><input type="text" class="form-control" name="convdateExchange" value="<%=record.convdateExchange%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhglexactTax.label%></td>
+                <td><input type="text" class="form-control" name="ohglexactTax" value="<%=record.ohglexactTax%>"/></td>
+            </tr><tr>
+                <td><%=resource.GlacodeDiff.label%></td>
+                <td><input type="text" class="form-control" name="glacodeDiff" value="<%=record.glacodeDiff%>"/></td>
+            </tr><tr>
+                <td><%=resource.JobcostIdDiff.label%></td>
+                <td><input type="text" class="form-control" name="jobcostIdDiff" value="<%=record.jobcostIdDiff%>"/></td>
+            </tr><tr>
+                <td><%=resource.TaxRoundingFlag.label%></td>
+                <td><input type="text" class="form-control" name="taxRoundingFlag" value="<%=record.taxRoundingFlag%>"/></td>
+            </tr><tr>
+                <td><%=resource.GlCurrency.label%></td>
+                <td><input type="text" class="form-control" name="glCurrency" value="<%=record.glCurrency%>"/></td>
+            </tr><tr>
+                <td><%=resource.DocumentCurrency.label%></td>
+                <td><input type="text" class="form-control" name="documentCurrency" value="<%=record.documentCurrency%>"/></td>
+            </tr><tr>
+                <td><%=resource.DocumentConvratetypeId.label%></td>
+                <td><input type="text" class="form-control" name="documentConvratetypeId" value="<%=record.documentConvratetypeId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SecondaryCurrency.label%></td>
+                <td><input type="text" class="form-control" name="secondaryCurrency" value="<%=record.secondaryCurrency%>"/></td>
+            </tr><tr>
+                <td><%=resource.SecondaryConvratetypeId.label%></td>
+                <td><input type="text" class="form-control" name="secondaryConvratetypeId" value="<%=record.secondaryConvratetypeId%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhinvamtGl.label%></td>
+                <td><input type="text" class="form-control" name="ohinvamtGl" value="<%=record.ohinvamtGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhopnamtGl.label%></td>
+                <td><input type="text" class="form-control" name="ohopnamtGl" value="<%=record.ohopnamtGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhdisamtGl.label%></td>
+                <td><input type="text" class="form-control" name="ohdisamtGl" value="<%=record.ohdisamtGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhdistakamtGl.label%></td>
+                <td><input type="text" class="form-control" name="ohdistakamtGl" value="<%=record.ohdistakamtGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhtaxamtGl.label%></td>
+                <td><input type="text" class="form-control" name="ohtaxamtGl" value="<%=record.ohtaxamtGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.TaxamtDiffGl.label%></td>
+                <td><input type="text" class="form-control" name="taxamtDiffGl" value="<%=record.taxamtDiffGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhinvamtDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohinvamtDoc" value="<%=record.ohinvamtDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhopnamtDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohopnamtDoc" value="<%=record.ohopnamtDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhdisamtDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohdisamtDoc" value="<%=record.ohdisamtDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhdistakamtDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohdistakamtDoc" value="<%=record.ohdistakamtDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhtaxamtDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohtaxamtDoc" value="<%=record.ohtaxamtDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.GlConvratetypeId.label%></td>
+                <td><input type="text" class="form-control" name="glConvratetypeId" value="<%=record.glConvratetypeId%>"/></td>
+            </tr><tr>
+                <td><%=resource.FeeBalance.label%></td>
+                <td><input type="text" class="form-control" name="feeBalance" value="<%=record.feeBalance%>"/></td>
+            </tr><tr>
+                <td><%=resource.FeeBalanceGross.label%></td>
+                <td><input type="text" class="form-control" name="feeBalanceGross" value="<%=record.feeBalanceGross%>"/></td>
+            </tr><tr>
+                <td><%=resource.Currency.label%></td>
+                <td><input type="text" class="form-control" name="currency" value="<%=record.currency%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohcostcent.label%></td>
+                <td><input type="text" class="form-control" name="ohcostcent" value="<%=record.ohcostcent%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhinvamtSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="ohinvamtSecdoc" value="<%=record.ohinvamtSecdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.TaxamtDiffSecdoc.label%></td>
+                <td><input type="text" class="form-control" name="taxamtDiffSecdoc" value="<%=record.taxamtDiffSecdoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Paymentfailed.label%></td>
+                <td><input type="text" class="form-control" name="paymentfailed" value="<%=record.paymentfailed%>"/></td>
+            </tr><tr>
+                <td><%=resource.BillingAccountId.label%></td>
+                <td><input type="text" class="form-control" name="billingAccountId" value="<%=record.billingAccountId%>"/></td>
+            </tr><tr>
+                <td><%=resource.BalancePageEventDate.label%></td>
+                <td><input type="text" class="form-control" name="balancePageEventDate" value="<%=record.balancePageEventDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidBalanceChangeDoc.label%></td>
+                <td><input type="text" class="form-control" name="prepaidBalanceChangeDoc" value="<%=record.prepaidBalanceChangeDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidBalanceChangeGl.label%></td>
+                <td><input type="text" class="form-control" name="prepaidBalanceChangeGl" value="<%=record.prepaidBalanceChangeGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidGlacode.label%></td>
+                <td><input type="text" class="form-control" name="prepaidGlacode" value="<%=record.prepaidGlacode%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidTaxamtDiffGl.label%></td>
+                <td><input type="text" class="form-control" name="prepaidTaxamtDiffGl" value="<%=record.prepaidTaxamtDiffGl%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidTaxDiffGlacode.label%></td>
+                <td><input type="text" class="form-control" name="prepaidTaxDiffGlacode" value="<%=record.prepaidTaxDiffGlacode%>"/></td>
+            </tr><tr>
+                <td><%=resource.PaymentConditionId.label%></td>
+                <td><input type="text" class="form-control" name="paymentConditionId" value="<%=record.paymentConditionId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohdocstatus.label%></td>
+                <td><input type="text" class="form-control" name="ohdocstatus" value="<%=record.ohdocstatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohextrefdate.label%></td>
+                <td><input type="text" class="form-control" name="ohextrefdate" value="<%=record.ohextrefdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohextrefnum.label%></td>
+                <td><input type="text" class="form-control" name="ohextrefnum" value="<%=record.ohextrefnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohcmident.label%></td>
+                <td><input type="text" class="form-control" name="ohcmident" value="<%=record.ohcmident%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohremark.label%></td>
+                <td><input type="text" class="form-control" name="ohremark" value="<%=record.ohremark%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhdiscbaseDoc.label%></td>
+                <td><input type="text" class="form-control" name="ohdiscbaseDoc" value="<%=record.ohdiscbaseDoc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohproppaycurr.label%></td>
+                <td><input type="text" class="form-control" name="ohproppaycurr" value="<%=record.ohproppaycurr%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ohproppaydate.label%></td>
+                <td><input type="text" class="form-control" name="ohproppaydate" value="<%=record.ohproppaydate%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhprocessType.label%></td>
+                <td><input type="text" class="form-control" name="ohprocessType" value="<%=record.ohprocessType%>"/></td>
+            </tr><tr>
+                <td><%=resource.OhprocessDate.label%></td>
+                <td><input type="text" class="form-control" name="ohprocessDate" value="<%=record.ohprocessDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.businessUnitId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ProposedPaymentMethod.label%></td>
+                <td><input type="text" class="form-control" name="proposedPaymentMethod" value="<%=record.proposedPaymentMethod%>"/></td>
+            </tr><tr>
+                <td><%=resource.ReasonId.label%></td>
+                <td><input type="text" class="form-control" name="reasonId" value="<%=record.reasonId%>"/></td>
+            </tr><tr>
+                <td><%=resource.IncomingDocPricingType.label%></td>
+                <td><input type="text" class="form-control" name="incomingDocPricingType" value="<%=record.incomingDocPricingType%>"/></td>
+            </tr><tr>
+                <td><%=resource.IncomingDocTaxPerItem.label%></td>
+                <td><input type="text" class="form-control" name="incomingDocTaxPerItem" value="<%=record.incomingDocTaxPerItem%>"/></td>
+            </tr><tr>
+                <td><%=resource.PaymentProposalId.label%></td>
+                <td><input type="text" class="form-control" name="paymentProposalId" value="<%=record.paymentProposalId%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

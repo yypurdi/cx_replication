@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchCcontactAllMapper">			
+	
+	<select id="countCcontactAllSearch">
+		select count(*) from ccontact_all
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				and customer_id like #{customerId}
+			</if>
+			<if test="ccseq!=null">
+				and ccseq like #{ccseq}
+			</if>
+			<if test="cctitle!=null">
+				and cctitle like #{cctitle}
+			</if>
+			<if test="ccname!=null">
+				and ccname like #{ccname}
+			</if>
+			<if test="ccfname!=null">
+				and ccfname like #{ccfname}
+			</if>
+			<if test="cclname!=null">
+				and cclname like #{cclname}
+			</if>
+			<if test="ccstreet!=null">
+				and ccstreet like #{ccstreet}
+			</if>
+			<if test="ccstreetno!=null">
+				and ccstreetno like #{ccstreetno}
+			</if>
+			<if test="cclnamemc!=null">
+				and cclnamemc like #{cclnamemc}
+			</if>
+			<if test="ccaddr1!=null">
+				and ccaddr1 like #{ccaddr1}
+			</if>
+			<if test="ccaddr2!=null">
+				and ccaddr2 like #{ccaddr2}
+			</if>
+			<if test="ccaddr3!=null">
+				and ccaddr3 like #{ccaddr3}
+			</if>
+			<if test="cccity!=null">
+				and cccity like #{cccity}
+			</if>
+			<if test="cczip!=null">
+				and cczip like #{cczip}
+			</if>
+			<if test="cctn!=null">
+				and cctn like #{cctn}
+			</if>
+			<if test="cctn2!=null">
+				and cctn2 like #{cctn2}
+			</if>
+			<if test="ccfax!=null">
+				and ccfax like #{ccfax}
+			</if>
+			<if test="ccline1!=null">
+				and ccline1 like #{ccline1}
+			</if>
+			<if test="ccline2!=null">
+				and ccline2 like #{ccline2}
+			</if>
+			<if test="ccline3!=null">
+				and ccline3 like #{ccline3}
+			</if>
+			<if test="ccline4!=null">
+				and ccline4 like #{ccline4}
+			</if>
+			<if test="ccline5!=null">
+				and ccline5 like #{ccline5}
+			</if>
+			<if test="ccline6!=null">
+				and ccline6 like #{ccline6}
+			</if>
+			<if test="cctnArea!=null">
+				and cctn_area like #{cctnArea}
+			</if>
+			<if test="cctn2Area!=null">
+				and cctn2_area like #{cctn2Area}
+			</if>
+			<if test="ccfaxArea!=null">
+				and ccfax_area like #{ccfaxArea}
+			</if>
+			<if test="ccjobdesc!=null">
+				and ccjobdesc like #{ccjobdesc}
+			</if>
+			<if test="ccdeftrk!=null">
+				and ccdeftrk like #{ccdeftrk}
+			</if>
+			<if test="ccuser!=null">
+				and ccuser like #{ccuser}
+			</if>
+			<if test="ccbill!=null">
+				and ccbill like #{ccbill}
+			</if>
+			<if test="ccbilldetails!=null">
+				and ccbilldetails like #{ccbilldetails}
+			</if>
+			<if test="cccontract!=null">
+				and cccontract like #{cccontract}
+			</if>
+			<if test="ccship!=null">
+				and ccship like #{ccship}
+			</if>
+			<if test="ccmagazine!=null">
+				and ccmagazine like #{ccmagazine}
+			</if>
+			<if test="ccdirectory!=null">
+				and ccdirectory like #{ccdirectory}
+			</if>
+			<if test="ccforward!=null">
+				and ccforward like #{ccforward}
+			</if>
+			<if test="ccurgent!=null">
+				and ccurgent like #{ccurgent}
+			</if>
+			<if test="country!=null">
+				and country like #{country}
+			</if>
+			<if test="cclanguage!=null">
+				and cclanguage like #{cclanguage}
+			</if>
+			<if test="ccadditional!=null">
+				and ccadditional like #{ccadditional}
+			</if>
+			<if test="sortCriteria!=null">
+				and sort_criteria like #{sortCriteria}
+			</if>
+			<if test="ccentdate!=null">
+				and ccentdate like #{ccentdate}
+			</if>
+			<if test="ccmoddate!=null">
+				and ccmoddate like #{ccmoddate}
+			</if>
+			<if test="ccmod!=null">
+				and ccmod like #{ccmod}
+			</if>
+			<if test="cccounty!=null">
+				and cccounty like #{cccounty}
+			</if>
+			<if test="ccstate!=null">
+				and ccstate like #{ccstate}
+			</if>
+			<if test="ccvaliddate!=null">
+				and ccvaliddate like #{ccvaliddate}
+			</if>
+			<if test="ccbillPrevious!=null">
+				and ccbill_previous like #{ccbillPrevious}
+			</if>
+			<if test="welcomeCrit!=null">
+				and welcome_crit like #{welcomeCrit}
+			</if>
+			<if test="ccmname!=null">
+				and ccmname like #{ccmname}
+			</if>
+			<if test="ccemail!=null">
+				and ccemail like #{ccemail}
+			</if>
+			<if test="ccaddryears!=null">
+				and ccaddryears like #{ccaddryears}
+			</if>
+			<if test="ccsmsno!=null">
+				and ccsmsno like #{ccsmsno}
+			</if>
+			<if test="ccbilltemp!=null">
+				and ccbilltemp like #{ccbilltemp}
+			</if>
+			<if test="userlastmod!=null">
+				and userlastmod like #{userlastmod}
+			</if>
+			<if test="ccvalidation!=null">
+				and ccvalidation like #{ccvalidation}
+			</if>
+			<if test="ccuserInst!=null">
+				and ccuser_inst like #{ccuserInst}
+			</if>
+			<if test="cclocation1!=null">
+				and cclocation_1 like #{cclocation1}
+			</if>
+			<if test="cclocation2!=null">
+				and cclocation_2 like #{cclocation2}
+			</if>
+			<if test="ccremark!=null">
+				and ccremark like #{ccremark}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+			<if test="maritalStatus!=null">
+				and marital_status like #{maritalStatus}
+			</if>
+			<if test="csnationality!=null">
+				and csnationality like #{csnationality}
+			</if>
+			<if test="cssocialsecno!=null">
+				and cssocialsecno like #{cssocialsecno}
+			</if>
+			<if test="csdrivelicence!=null">
+				and csdrivelicence like #{csdrivelicence}
+			</if>
+			<if test="csemployer!=null">
+				and csemployer like #{csemployer}
+			</if>
+			<if test="employee!=null">
+				and employee like #{employee}
+			</if>
+			<if test="companyType!=null">
+				and company_type like #{companyType}
+			</if>
+			<if test="idType!=null">
+				and id_type like #{idType}
+			</if>
+			<if test="passportno!=null">
+				and passportno like #{passportno}
+			</if>
+			<if test="birthdate!=null">
+				and birthdate like #{birthdate}
+			</if>
+			<if test="cscompregno!=null">
+				and cscompregno like #{cscompregno}
+			</if>
+			<if test="cscomptaxno!=null">
+				and cscomptaxno like #{cscomptaxno}
+			</if>
+			<if test="cscusttype!=null">
+				and cscusttype like #{cscusttype}
+			</if>
+			<if test="ccsex!=null">
+				and ccsex like #{ccsex}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchCcontactAll">
+		select * from ccontact_all  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="customerId!=null">
+				customer_id like #{customerId}
+			</if>
+			<if test="ccseq!=null">
+				ccseq like #{ccseq}
+			</if>
+			<if test="cctitle!=null">
+				cctitle like #{cctitle}
+			</if>
+			<if test="ccname!=null">
+				ccname like #{ccname}
+			</if>
+			<if test="ccfname!=null">
+				ccfname like #{ccfname}
+			</if>
+			<if test="cclname!=null">
+				cclname like #{cclname}
+			</if>
+			<if test="ccstreet!=null">
+				ccstreet like #{ccstreet}
+			</if>
+			<if test="ccstreetno!=null">
+				ccstreetno like #{ccstreetno}
+			</if>
+			<if test="cclnamemc!=null">
+				cclnamemc like #{cclnamemc}
+			</if>
+			<if test="ccaddr1!=null">
+				ccaddr1 like #{ccaddr1}
+			</if>
+			<if test="ccaddr2!=null">
+				ccaddr2 like #{ccaddr2}
+			</if>
+			<if test="ccaddr3!=null">
+				ccaddr3 like #{ccaddr3}
+			</if>
+			<if test="cccity!=null">
+				cccity like #{cccity}
+			</if>
+			<if test="cczip!=null">
+				cczip like #{cczip}
+			</if>
+			<if test="cctn!=null">
+				cctn like #{cctn}
+			</if>
+			<if test="cctn2!=null">
+				cctn2 like #{cctn2}
+			</if>
+			<if test="ccfax!=null">
+				ccfax like #{ccfax}
+			</if>
+			<if test="ccline1!=null">
+				ccline1 like #{ccline1}
+			</if>
+			<if test="ccline2!=null">
+				ccline2 like #{ccline2}
+			</if>
+			<if test="ccline3!=null">
+				ccline3 like #{ccline3}
+			</if>
+			<if test="ccline4!=null">
+				ccline4 like #{ccline4}
+			</if>
+			<if test="ccline5!=null">
+				ccline5 like #{ccline5}
+			</if>
+			<if test="ccline6!=null">
+				ccline6 like #{ccline6}
+			</if>
+			<if test="cctnArea!=null">
+				cctn_area like #{cctnArea}
+			</if>
+			<if test="cctn2Area!=null">
+				cctn2_area like #{cctn2Area}
+			</if>
+			<if test="ccfaxArea!=null">
+				ccfax_area like #{ccfaxArea}
+			</if>
+			<if test="ccjobdesc!=null">
+				ccjobdesc like #{ccjobdesc}
+			</if>
+			<if test="ccdeftrk!=null">
+				ccdeftrk like #{ccdeftrk}
+			</if>
+			<if test="ccuser!=null">
+				ccuser like #{ccuser}
+			</if>
+			<if test="ccbill!=null">
+				ccbill like #{ccbill}
+			</if>
+			<if test="ccbilldetails!=null">
+				ccbilldetails like #{ccbilldetails}
+			</if>
+			<if test="cccontract!=null">
+				cccontract like #{cccontract}
+			</if>
+			<if test="ccship!=null">
+				ccship like #{ccship}
+			</if>
+			<if test="ccmagazine!=null">
+				ccmagazine like #{ccmagazine}
+			</if>
+			<if test="ccdirectory!=null">
+				ccdirectory like #{ccdirectory}
+			</if>
+			<if test="ccforward!=null">
+				ccforward like #{ccforward}
+			</if>
+			<if test="ccurgent!=null">
+				ccurgent like #{ccurgent}
+			</if>
+			<if test="country!=null">
+				country like #{country}
+			</if>
+			<if test="cclanguage!=null">
+				cclanguage like #{cclanguage}
+			</if>
+			<if test="ccadditional!=null">
+				ccadditional like #{ccadditional}
+			</if>
+			<if test="sortCriteria!=null">
+				sort_criteria like #{sortCriteria}
+			</if>
+			<if test="ccentdate!=null">
+				ccentdate like #{ccentdate}
+			</if>
+			<if test="ccmoddate!=null">
+				ccmoddate like #{ccmoddate}
+			</if>
+			<if test="ccmod!=null">
+				ccmod like #{ccmod}
+			</if>
+			<if test="cccounty!=null">
+				cccounty like #{cccounty}
+			</if>
+			<if test="ccstate!=null">
+				ccstate like #{ccstate}
+			</if>
+			<if test="ccvaliddate!=null">
+				ccvaliddate like #{ccvaliddate}
+			</if>
+			<if test="ccbillPrevious!=null">
+				ccbill_previous like #{ccbillPrevious}
+			</if>
+			<if test="welcomeCrit!=null">
+				welcome_crit like #{welcomeCrit}
+			</if>
+			<if test="ccmname!=null">
+				ccmname like #{ccmname}
+			</if>
+			<if test="ccemail!=null">
+				ccemail like #{ccemail}
+			</if>
+			<if test="ccaddryears!=null">
+				ccaddryears like #{ccaddryears}
+			</if>
+			<if test="ccsmsno!=null">
+				ccsmsno like #{ccsmsno}
+			</if>
+			<if test="ccbilltemp!=null">
+				ccbilltemp like #{ccbilltemp}
+			</if>
+			<if test="userlastmod!=null">
+				userlastmod like #{userlastmod}
+			</if>
+			<if test="ccvalidation!=null">
+				ccvalidation like #{ccvalidation}
+			</if>
+			<if test="ccuserInst!=null">
+				ccuser_inst like #{ccuserInst}
+			</if>
+			<if test="cclocation1!=null">
+				cclocation_1 like #{cclocation1}
+			</if>
+			<if test="cclocation2!=null">
+				cclocation_2 like #{cclocation2}
+			</if>
+			<if test="ccremark!=null">
+				ccremark like #{ccremark}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+			<if test="maritalStatus!=null">
+				marital_status like #{maritalStatus}
+			</if>
+			<if test="csnationality!=null">
+				csnationality like #{csnationality}
+			</if>
+			<if test="cssocialsecno!=null">
+				cssocialsecno like #{cssocialsecno}
+			</if>
+			<if test="csdrivelicence!=null">
+				csdrivelicence like #{csdrivelicence}
+			</if>
+			<if test="csemployer!=null">
+				csemployer like #{csemployer}
+			</if>
+			<if test="employee!=null">
+				employee like #{employee}
+			</if>
+			<if test="companyType!=null">
+				company_type like #{companyType}
+			</if>
+			<if test="idType!=null">
+				id_type like #{idType}
+			</if>
+			<if test="passportno!=null">
+				passportno like #{passportno}
+			</if>
+			<if test="birthdate!=null">
+				birthdate like #{birthdate}
+			</if>
+			<if test="cscompregno!=null">
+				cscompregno like #{cscompregno}
+			</if>
+			<if test="cscomptaxno!=null">
+				cscomptaxno like #{cscomptaxno}
+			</if>
+			<if test="cscusttype!=null">
+				cscusttype like #{cscusttype}
+			</if>
+			<if test="ccsex!=null">
+				ccsex like #{ccsex}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

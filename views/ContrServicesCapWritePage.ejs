@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeContrServicesCap" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.co_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.Sncode.label%></td>
+                <td><input type="text" class="form-control" name="sncode" value="<%=record.sncode%>"/></td>
+            </tr><tr>
+                <td><%=resource.Seqno.label%></td>
+                <td><input type="text" class="form-control" name="seqno" value="<%=record.seqno%>"/></td>
+            </tr><tr>
+                <td><%=resource.SeqnoPre.label%></td>
+                <td><input type="text" class="form-control" name="seqnoPre" value="<%=record.seqno_pre%>"/></td>
+            </tr><tr>
+                <td><%=resource.Bccode.label%></td>
+                <td><input type="text" class="form-control" name="bccode" value="<%=record.bccode%>"/></td>
+            </tr><tr>
+                <td><%=resource.PendingBccode.label%></td>
+                <td><input type="text" class="form-control" name="pendingBccode" value="<%=record.pending_bccode%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnId.label%></td>
+                <td><input type="text" class="form-control" name="dnId" value="<%=record.dn_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnBlockId.label%></td>
+                <td><input type="text" class="form-control" name="dnBlockId" value="<%=record.dn_block_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.MainDirnum.label%></td>
+                <td><input type="text" class="form-control" name="mainDirnum" value="<%=record.main_dirnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsStatus.label%></td>
+                <td><input type="text" class="form-control" name="csStatus" value="<%=record.cs_status%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsActivDate.label%></td>
+                <td><input type="text" class="form-control" name="csActivDate" value="<%=record.cs_activ_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsDeactivDate.label%></td>
+                <td><input type="text" class="form-control" name="csDeactivDate" value="<%=record.cs_deactiv_date%>"/></td>
+            </tr><tr>
+                <td><%=resource.CsRequest.label%></td>
+                <td><input type="text" class="form-control" name="csRequest" value="<%=record.cs_request%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr><tr>
+                <td><%=resource.PublicNumberDnId.label%></td>
+                <td><input type="text" class="form-control" name="publicNumberDnId" value="<%=record.public_number_dn_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.VpnId.label%></td>
+                <td><input type="text" class="form-control" name="vpnId" value="<%=record.vpn_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.PublicBlockId.label%></td>
+                <td><input type="text" class="form-control" name="publicBlockId" value="<%=record.public_block_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.ProfileId.label%></td>
+                <td><input type="text" class="form-control" name="profileId" value="<%=record.profile_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.DnShownInBill.label%></td>
+                <td><input type="text" class="form-control" name="dnShownInBill" value="<%=record.dn_shown_in_bill%>"/></td>
+            </tr><tr>
+                <td><%=resource.RequestId.label%></td>
+                <td><input type="text" class="form-control" name="requestId" value="<%=record.request_id%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

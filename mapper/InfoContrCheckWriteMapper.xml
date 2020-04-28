@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeInfoContrCheckMapper">			
+	
+	<update id="writeInfoContrCheck">
+		update info_contr_check set co_id = #{coId},
+		check01 = #{check01},
+		check02 = #{check02},
+		check03 = #{check03},
+		check04 = #{check04},
+		check05 = #{check05},
+		check06 = #{check06},
+		check07 = #{check07},
+		check08 = #{check08},
+		check09 = #{check09},
+		check10 = #{check10},
+		check11 = #{check11},
+		check12 = #{check12},
+		check13 = #{check13},
+		check14 = #{check14},
+		check15 = #{check15},
+		check16 = #{check16},
+		check17 = #{check17},
+		check18 = #{check18},
+		check19 = #{check19},
+		check20 = #{check20},
+		rec_version = #{recVersion} where co_id = #{coId};
+	</update>
+
+</mapper>

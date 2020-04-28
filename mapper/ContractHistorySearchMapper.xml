@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchContractHistoryMapper">			
+	
+	<select id="countContractHistorySearch">
+		select count(*) from contract_history
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="chSeqno!=null">
+				and ch_seqno like #{chSeqno}
+			</if>
+			<if test="chStatus!=null">
+				and ch_status like #{chStatus}
+			</if>
+			<if test="chReason!=null">
+				and ch_reason like #{chReason}
+			</if>
+			<if test="chValidfrom!=null">
+				and ch_validfrom like #{chValidfrom}
+			</if>
+			<if test="chPending!=null">
+				and ch_pending like #{chPending}
+			</if>
+			<if test="entdate!=null">
+				and entdate like #{entdate}
+			</if>
+			<if test="userlastmod!=null">
+				and userlastmod like #{userlastmod}
+			</if>
+			<if test="request!=null">
+				and request like #{request}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchContractHistory">
+		select * from contract_history  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="chSeqno!=null">
+				ch_seqno like #{chSeqno}
+			</if>
+			<if test="chStatus!=null">
+				ch_status like #{chStatus}
+			</if>
+			<if test="chReason!=null">
+				ch_reason like #{chReason}
+			</if>
+			<if test="chValidfrom!=null">
+				ch_validfrom like #{chValidfrom}
+			</if>
+			<if test="chPending!=null">
+				ch_pending like #{chPending}
+			</if>
+			<if test="entdate!=null">
+				entdate like #{entdate}
+			</if>
+			<if test="userlastmod!=null">
+				userlastmod like #{userlastmod}
+			</if>
+			<if test="request!=null">
+				request like #{request}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

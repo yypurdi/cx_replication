@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CoId.label%></td>
+                        <td><%=record.co_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check01.label%></td>
+                        <td><%=record.check01%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check02.label%></td>
+                        <td><%=record.check02%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check03.label%></td>
+                        <td><%=record.check03%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check04.label%></td>
+                        <td><%=record.check04%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check05.label%></td>
+                        <td><%=record.check05%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check06.label%></td>
+                        <td><%=record.check06%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check07.label%></td>
+                        <td><%=record.check07%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check08.label%></td>
+                        <td><%=record.check08%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check09.label%></td>
+                        <td><%=record.check09%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check10.label%></td>
+                        <td><%=record.check10%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check11.label%></td>
+                        <td><%=record.check11%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check12.label%></td>
+                        <td><%=record.check12%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check13.label%></td>
+                        <td><%=record.check13%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check14.label%></td>
+                        <td><%=record.check14%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check15.label%></td>
+                        <td><%=record.check15%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check16.label%></td>
+                        <td><%=record.check16%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check17.label%></td>
+                        <td><%=record.check17%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check18.label%></td>
+                        <td><%=record.check18%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check19.label%></td>
+                        <td><%=record.check19%></td>						
+                    </tr><tr>
+                        <td><%=resource.Check20.label%></td>
+                        <td><%=record.check20%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeInfoContrCheck?coId=<%=record.co_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteInfoContrCheck?coId=<%=record.co_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

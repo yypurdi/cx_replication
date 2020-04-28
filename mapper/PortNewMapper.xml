@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newPortMapper">			
+	
+	<insert id="newPort">
+		insert into port(port_id,plcode,hlcode,port_num,port_status,port_statusmoddat,port_ki,port_kind,port_channels,port_channels_excl,sm_id,port_sm_requ,simpoh_id,simpot_id,simpot_batch,dn_id,dealer_id,port_assign_date,port_tkey,port_status_requ,port_sta_requ_date,port_activ_date,port_deactiv_date,port_entdate,port_moddate,port_userlastmod,pre_activated,sms_update,port_ric_batch,external_ind,capacity,available_capacity,prm_value_id,rec_version,port_npcode,transaction_id,business_unit_id) 
+		values (#{portId},#{plcode},#{hlcode},#{portNum},#{portStatus},#{portStatusmoddat},#{portKi},#{portKind},#{portChannels},#{portChannelsExcl},#{smId},#{portSmRequ},#{simpohId},#{simpotId},#{simpotBatch},#{dnId},#{dealerId},#{portAssignDate},#{portTkey},#{portStatusRequ},#{portStaRequDate},#{portActivDate},#{portDeactivDate},#{portEntdate},#{portModdate},#{portUserlastmod},#{preActivated},#{smsUpdate},#{portRicBatch},#{externalInd},#{capacity},#{availableCapacity},#{prmValueId},#{recVersion},#{portNpcode},#{transactionId},#{businessUnitId});
+	</insert>
+
+</mapper>

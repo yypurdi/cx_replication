@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/writeContractHistory" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CoId.label%></td>
+                <td><input type="text" class="form-control" name="coId" value="<%=record.co_id%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChSeqno.label%></td>
+                <td><input type="text" class="form-control" name="chSeqno" value="<%=record.ch_seqno%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChStatus.label%></td>
+                <td><input type="text" class="form-control" name="chStatus" value="<%=record.ch_status%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChReason.label%></td>
+                <td><input type="text" class="form-control" name="chReason" value="<%=record.ch_reason%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChValidfrom.label%></td>
+                <td><input type="text" class="form-control" name="chValidfrom" value="<%=record.ch_validfrom%>"/></td>
+            </tr><tr>
+                <td><%=resource.ChPending.label%></td>
+                <td><input type="text" class="form-control" name="chPending" value="<%=record.ch_pending%>"/></td>
+            </tr><tr>
+                <td><%=resource.Entdate.label%></td>
+                <td><input type="text" class="form-control" name="entdate" value="<%=record.entdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Userlastmod.label%></td>
+                <td><input type="text" class="form-control" name="userlastmod" value="<%=record.userlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Request.label%></td>
+                <td><input type="text" class="form-control" name="request" value="<%=record.request%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.rec_version%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Update</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default""><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

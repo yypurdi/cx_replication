@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchContrDevicesMapper">			
+	
+	<select id="countContrDevicesSearch">
+		select count(*) from contr_devices
+		<trim prefix="where" prefixOverrides="and">
+			<if test="cdId!=null">
+				and cd_id like #{cdId}
+			</if>
+			<if test="cdSeqno!=null">
+				and cd_seqno like #{cdSeqno}
+			</if>
+			<if test="coId!=null">
+				and co_id like #{coId}
+			</if>
+			<if test="portId!=null">
+				and port_id like #{portId}
+			</if>
+			<if test="dnId!=null">
+				and dn_id like #{dnId}
+			</if>
+			<if test="eqId!=null">
+				and eq_id like #{eqId}
+			</if>
+			<if test="cdStatus!=null">
+				and cd_status like #{cdStatus}
+			</if>
+			<if test="cdActivDate!=null">
+				and cd_activ_date like #{cdActivDate}
+			</if>
+			<if test="cdDeactivDate!=null">
+				and cd_deactiv_date like #{cdDeactivDate}
+			</if>
+			<if test="cdValidfrom!=null">
+				and cd_validfrom like #{cdValidfrom}
+			</if>
+			<if test="cdEntdate!=null">
+				and cd_entdate like #{cdEntdate}
+			</if>
+			<if test="cdModdate!=null">
+				and cd_moddate like #{cdModdate}
+			</if>
+			<if test="cdUserlastmod!=null">
+				and cd_userlastmod like #{cdUserlastmod}
+			</if>
+			<if test="cdSmNum!=null">
+				and cd_sm_num like #{cdSmNum}
+			</if>
+			<if test="cdChannels!=null">
+				and cd_channels like #{cdChannels}
+			</if>
+			<if test="cdChannelsExcl!=null">
+				and cd_channels_excl like #{cdChannelsExcl}
+			</if>
+			<if test="cdEqNum!=null">
+				and cd_eq_num like #{cdEqNum}
+			</if>
+			<if test="cdPendingState!=null">
+				and cd_pending_state like #{cdPendingState}
+			</if>
+			<if test="cdRsId!=null">
+				and cd_rs_id like #{cdRsId}
+			</if>
+			<if test="cdPlcode!=null">
+				and cd_plcode like #{cdPlcode}
+			</if>
+			<if test="hlcode!=null">
+				and hlcode like #{hlcode}
+			</if>
+			<if test="recVersion!=null">
+				and rec_version like #{recVersion}
+			</if>
+		</where>		
+	</select>
+
+	<select id="searchContrDevices">
+		select * from contr_devices  
+		<trim prefix="where" prefixOverrides="and">
+			<if test="cdId!=null">
+				cd_id like #{cdId}
+			</if>
+			<if test="cdSeqno!=null">
+				cd_seqno like #{cdSeqno}
+			</if>
+			<if test="coId!=null">
+				co_id like #{coId}
+			</if>
+			<if test="portId!=null">
+				port_id like #{portId}
+			</if>
+			<if test="dnId!=null">
+				dn_id like #{dnId}
+			</if>
+			<if test="eqId!=null">
+				eq_id like #{eqId}
+			</if>
+			<if test="cdStatus!=null">
+				cd_status like #{cdStatus}
+			</if>
+			<if test="cdActivDate!=null">
+				cd_activ_date like #{cdActivDate}
+			</if>
+			<if test="cdDeactivDate!=null">
+				cd_deactiv_date like #{cdDeactivDate}
+			</if>
+			<if test="cdValidfrom!=null">
+				cd_validfrom like #{cdValidfrom}
+			</if>
+			<if test="cdEntdate!=null">
+				cd_entdate like #{cdEntdate}
+			</if>
+			<if test="cdModdate!=null">
+				cd_moddate like #{cdModdate}
+			</if>
+			<if test="cdUserlastmod!=null">
+				cd_userlastmod like #{cdUserlastmod}
+			</if>
+			<if test="cdSmNum!=null">
+				cd_sm_num like #{cdSmNum}
+			</if>
+			<if test="cdChannels!=null">
+				cd_channels like #{cdChannels}
+			</if>
+			<if test="cdChannelsExcl!=null">
+				cd_channels_excl like #{cdChannelsExcl}
+			</if>
+			<if test="cdEqNum!=null">
+				cd_eq_num like #{cdEqNum}
+			</if>
+			<if test="cdPendingState!=null">
+				cd_pending_state like #{cdPendingState}
+			</if>
+			<if test="cdRsId!=null">
+				cd_rs_id like #{cdRsId}
+			</if>
+			<if test="cdPlcode!=null">
+				cd_plcode like #{cdPlcode}
+			</if>
+			<if test="hlcode!=null">
+				hlcode like #{hlcode}
+			</if>
+			<if test="recVersion!=null">
+				rec_version like #{recVersion}
+			</if>
+		</where> limit 100 offset ${rowid}
+	</select>
+
+</mapper>

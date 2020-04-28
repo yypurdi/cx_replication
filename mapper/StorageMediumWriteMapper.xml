@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writeStorageMediumMapper">			
+	
+	<update id="writeStorageMedium">
+		update storage_medium set sm_id = #{smId},
+		plcode = #{plcode},
+		smc_id = #{smcId},
+		sm_serialnum = #{smSerialnum},
+		sm_status = #{smStatus},
+		sm_status_mod_date = #{smStatusModDate},
+		dealer_id = #{dealerId},
+		sm_delivery_id = #{smDeliveryId},
+		sm_delivery_date = #{smDeliveryDate},
+		simpoh_id = #{simpohId},
+		simpot_id = #{simpotId},
+		simpot_batch = #{simpotBatch},
+		sm_pin = #{smPin},
+		sm_puk = #{smPuk},
+		sm_acc_control = #{smAccControl},
+		sm_code_adm = #{smCodeAdm},
+		sp_id_e = #{spIdE},
+		sp_id_g = #{spIdG},
+		sm_status_requ = #{smStatusRequ},
+		sm_sta_requ_date = #{smStaRequDate},
+		sm_entdate = #{smEntdate},
+		sm_moddate = #{smModdate},
+		sm_userlastmod = #{smUserlastmod},
+		sm_pin2 = #{smPin2},
+		sm_puk2 = #{smPuk2},
+		sm_auth = #{smAuth},
+		pi_id = #{piId},
+		external_ind = #{externalInd},
+		vendcode = #{vendcode},
+		sm_adm1 = #{smAdm1},
+		sm_adm2 = #{smAdm2},
+		sm_adm3 = #{smAdm3},
+		sm_adm4 = #{smAdm4},
+		sm_code_retailer = #{smCodeRetailer},
+		sm_code_a = #{smCodeA},
+		sm_code_b = #{smCodeB},
+		sm_auth_pending = #{smAuthPending},
+		rec_version = #{recVersion},
+		sm_orig_esn_id = #{smOrigEsnId},
+		prepaid_profile_id = #{prepaidProfileId},
+		ra_process_id = #{raProcessId},
+		transaction_id = #{transactionId},
+		business_unit_id = #{businessUnitId} where sm_id = #{smId};
+	</update>
+
+</mapper>

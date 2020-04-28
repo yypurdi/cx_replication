@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newContractHistoryMapper">			
+	
+	<insert id="newContractHistory">
+		insert into contract_history(co_id,ch_seqno,ch_status,ch_reason,ch_validfrom,ch_pending,entdate,userlastmod,request,rec_version) 
+		values (#{coId},#{chSeqno},#{chStatus},#{chReason},#{chValidfrom},#{chPending},#{entdate},#{userlastmod},#{request},#{recVersion});
+	</insert>
+
+</mapper>

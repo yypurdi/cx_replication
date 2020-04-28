@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newProfileServiceMapper">			
+	
+	<insert id="newProfileService">
+		insert into profile_service(profile_id,co_id,sncode,spcode_histno,status_histno,entry_date,channel_num,ovw_acc_first,date_billed,sn_class,ovw_subscr,subscript,ovw_access,ovw_acc_prd,accessfee,channel_excl,dis_subscr,install_date,trial_end_date,prm_value_id,currency,srv_type,srv_subtype,ovw_adv_charge,adv_charge,adv_charge_prd,delete_flag,rec_version,attrib_histno,attrib_histno_nnp) 
+		values (#{profileId},#{coId},#{sncode},#{spcodeHistno},#{statusHistno},#{entryDate},#{channelNum},#{ovwAccFirst},#{dateBilled},#{snClass},#{ovwSubscr},#{subscript},#{ovwAccess},#{ovwAccPrd},#{accessfee},#{channelExcl},#{disSubscr},#{installDate},#{trialEndDate},#{prmValueId},#{currency},#{srvType},#{srvSubtype},#{ovwAdvCharge},#{advCharge},#{advChargePrd},#{deleteFlag},#{recVersion},#{attribHistno},#{attribHistnoNnp});
+	</insert>
+
+</mapper>

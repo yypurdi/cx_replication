@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+<form class="form-horizontal" action="/searchAppContact" method="get">    
+    <div style="width:20%;margin-left:-15px">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th></th>
+                <th><%=resource.AppContact.Nickname.header%></th>
+            </tr>
+            <% for(var i in records){let row = records[i]; %>			            
+            <tr>
+				<td><img src="images/avatar1.png" alt="" class="avatar"></td>
+				<td class="card">
+				  <p class="name"><%=row.nickname%></p>
+				  <p class="status"><%=row.status%></p>
+				</td>
+            </tr>
+            <% } %>            
+        </table>
+    </div>
+</form>                
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newStorageMedium" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.SmId.label%></td>
+                <td><input type="text" class="form-control" name="smId" value="<%=record.smId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Plcode.label%></td>
+                <td><input type="text" class="form-control" name="plcode" value="<%=record.plcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmcId.label%></td>
+                <td><input type="text" class="form-control" name="smcId" value="<%=record.smcId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmSerialnum.label%></td>
+                <td><input type="text" class="form-control" name="smSerialnum" value="<%=record.smSerialnum%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmStatus.label%></td>
+                <td><input type="text" class="form-control" name="smStatus" value="<%=record.smStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmStatusModDate.label%></td>
+                <td><input type="text" class="form-control" name="smStatusModDate" value="<%=record.smStatusModDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.DealerId.label%></td>
+                <td><input type="text" class="form-control" name="dealerId" value="<%=record.dealerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmDeliveryId.label%></td>
+                <td><input type="text" class="form-control" name="smDeliveryId" value="<%=record.smDeliveryId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmDeliveryDate.label%></td>
+                <td><input type="text" class="form-control" name="smDeliveryDate" value="<%=record.smDeliveryDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpohId.label%></td>
+                <td><input type="text" class="form-control" name="simpohId" value="<%=record.simpohId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotId.label%></td>
+                <td><input type="text" class="form-control" name="simpotId" value="<%=record.simpotId%>"/></td>
+            </tr><tr>
+                <td><%=resource.SimpotBatch.label%></td>
+                <td><input type="text" class="form-control" name="simpotBatch" value="<%=record.simpotBatch%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmPin.label%></td>
+                <td><input type="text" class="form-control" name="smPin" value="<%=record.smPin%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmPuk.label%></td>
+                <td><input type="text" class="form-control" name="smPuk" value="<%=record.smPuk%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAccControl.label%></td>
+                <td><input type="text" class="form-control" name="smAccControl" value="<%=record.smAccControl%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmCodeAdm.label%></td>
+                <td><input type="text" class="form-control" name="smCodeAdm" value="<%=record.smCodeAdm%>"/></td>
+            </tr><tr>
+                <td><%=resource.SpIdE.label%></td>
+                <td><input type="text" class="form-control" name="spIdE" value="<%=record.spIdE%>"/></td>
+            </tr><tr>
+                <td><%=resource.SpIdG.label%></td>
+                <td><input type="text" class="form-control" name="spIdG" value="<%=record.spIdG%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmStatusRequ.label%></td>
+                <td><input type="text" class="form-control" name="smStatusRequ" value="<%=record.smStatusRequ%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmStaRequDate.label%></td>
+                <td><input type="text" class="form-control" name="smStaRequDate" value="<%=record.smStaRequDate%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmEntdate.label%></td>
+                <td><input type="text" class="form-control" name="smEntdate" value="<%=record.smEntdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmModdate.label%></td>
+                <td><input type="text" class="form-control" name="smModdate" value="<%=record.smModdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmUserlastmod.label%></td>
+                <td><input type="text" class="form-control" name="smUserlastmod" value="<%=record.smUserlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmPin2.label%></td>
+                <td><input type="text" class="form-control" name="smPin2" value="<%=record.smPin2%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmPuk2.label%></td>
+                <td><input type="text" class="form-control" name="smPuk2" value="<%=record.smPuk2%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAuth.label%></td>
+                <td><input type="text" class="form-control" name="smAuth" value="<%=record.smAuth%>"/></td>
+            </tr><tr>
+                <td><%=resource.PiId.label%></td>
+                <td><input type="text" class="form-control" name="piId" value="<%=record.piId%>"/></td>
+            </tr><tr>
+                <td><%=resource.ExternalInd.label%></td>
+                <td><input type="text" class="form-control" name="externalInd" value="<%=record.externalInd%>"/></td>
+            </tr><tr>
+                <td><%=resource.Vendcode.label%></td>
+                <td><input type="text" class="form-control" name="vendcode" value="<%=record.vendcode%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAdm1.label%></td>
+                <td><input type="text" class="form-control" name="smAdm1" value="<%=record.smAdm1%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAdm2.label%></td>
+                <td><input type="text" class="form-control" name="smAdm2" value="<%=record.smAdm2%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAdm3.label%></td>
+                <td><input type="text" class="form-control" name="smAdm3" value="<%=record.smAdm3%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAdm4.label%></td>
+                <td><input type="text" class="form-control" name="smAdm4" value="<%=record.smAdm4%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmCodeRetailer.label%></td>
+                <td><input type="text" class="form-control" name="smCodeRetailer" value="<%=record.smCodeRetailer%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmCodeA.label%></td>
+                <td><input type="text" class="form-control" name="smCodeA" value="<%=record.smCodeA%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmCodeB.label%></td>
+                <td><input type="text" class="form-control" name="smCodeB" value="<%=record.smCodeB%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmAuthPending.label%></td>
+                <td><input type="text" class="form-control" name="smAuthPending" value="<%=record.smAuthPending%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.SmOrigEsnId.label%></td>
+                <td><input type="text" class="form-control" name="smOrigEsnId" value="<%=record.smOrigEsnId%>"/></td>
+            </tr><tr>
+                <td><%=resource.PrepaidProfileId.label%></td>
+                <td><input type="text" class="form-control" name="prepaidProfileId" value="<%=record.prepaidProfileId%>"/></td>
+            </tr><tr>
+                <td><%=resource.RaProcessId.label%></td>
+                <td><input type="text" class="form-control" name="raProcessId" value="<%=record.raProcessId%>"/></td>
+            </tr><tr>
+                <td><%=resource.TransactionId.label%></td>
+                <td><input type="text" class="form-control" name="transactionId" value="<%=record.transactionId%>"/></td>
+            </tr><tr>
+                <td><%=resource.BusinessUnitId.label%></td>
+                <td><input type="text" class="form-control" name="businessUnitId" value="<%=record.businessUnitId%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

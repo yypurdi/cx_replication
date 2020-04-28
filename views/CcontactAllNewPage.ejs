@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <div style="width:40%">
+    <h3><%=resource.Title%></h3>
+    <form class="form-horizontal" action="/newCcontactAll" method="post">
+        <table class="table table-striped">
+            <tr class="heading-tr">
+                <th><%=resource.Heading%></th>
+                <th style="text-align:right"><%=statusMessage%></th>
+            </tr>
+            <tr>
+                <td><%=resource.CustomerId.label%></td>
+                <td><input type="text" class="form-control" name="customerId" value="<%=record.customerId%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccseq.label%></td>
+                <td><input type="text" class="form-control" name="ccseq" value="<%=record.ccseq%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cctitle.label%></td>
+                <td><input type="text" class="form-control" name="cctitle" value="<%=record.cctitle%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccname.label%></td>
+                <td><input type="text" class="form-control" name="ccname" value="<%=record.ccname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccfname.label%></td>
+                <td><input type="text" class="form-control" name="ccfname" value="<%=record.ccfname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cclname.label%></td>
+                <td><input type="text" class="form-control" name="cclname" value="<%=record.cclname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccstreet.label%></td>
+                <td><input type="text" class="form-control" name="ccstreet" value="<%=record.ccstreet%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccstreetno.label%></td>
+                <td><input type="text" class="form-control" name="ccstreetno" value="<%=record.ccstreetno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cclnamemc.label%></td>
+                <td><input type="text" class="form-control" name="cclnamemc" value="<%=record.cclnamemc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccaddr1.label%></td>
+                <td><input type="text" class="form-control" name="ccaddr1" value="<%=record.ccaddr1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccaddr2.label%></td>
+                <td><input type="text" class="form-control" name="ccaddr2" value="<%=record.ccaddr2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccaddr3.label%></td>
+                <td><input type="text" class="form-control" name="ccaddr3" value="<%=record.ccaddr3%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cccity.label%></td>
+                <td><input type="text" class="form-control" name="cccity" value="<%=record.cccity%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cczip.label%></td>
+                <td><input type="text" class="form-control" name="cczip" value="<%=record.cczip%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cctn.label%></td>
+                <td><input type="text" class="form-control" name="cctn" value="<%=record.cctn%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cctn2.label%></td>
+                <td><input type="text" class="form-control" name="cctn2" value="<%=record.cctn2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccfax.label%></td>
+                <td><input type="text" class="form-control" name="ccfax" value="<%=record.ccfax%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline1.label%></td>
+                <td><input type="text" class="form-control" name="ccline1" value="<%=record.ccline1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline2.label%></td>
+                <td><input type="text" class="form-control" name="ccline2" value="<%=record.ccline2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline3.label%></td>
+                <td><input type="text" class="form-control" name="ccline3" value="<%=record.ccline3%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline4.label%></td>
+                <td><input type="text" class="form-control" name="ccline4" value="<%=record.ccline4%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline5.label%></td>
+                <td><input type="text" class="form-control" name="ccline5" value="<%=record.ccline5%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccline6.label%></td>
+                <td><input type="text" class="form-control" name="ccline6" value="<%=record.ccline6%>"/></td>
+            </tr><tr>
+                <td><%=resource.CctnArea.label%></td>
+                <td><input type="text" class="form-control" name="cctnArea" value="<%=record.cctnArea%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cctn2Area.label%></td>
+                <td><input type="text" class="form-control" name="cctn2Area" value="<%=record.cctn2Area%>"/></td>
+            </tr><tr>
+                <td><%=resource.CcfaxArea.label%></td>
+                <td><input type="text" class="form-control" name="ccfaxArea" value="<%=record.ccfaxArea%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccjobdesc.label%></td>
+                <td><input type="text" class="form-control" name="ccjobdesc" value="<%=record.ccjobdesc%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccdeftrk.label%></td>
+                <td><input type="text" class="form-control" name="ccdeftrk" value="<%=record.ccdeftrk%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccuser.label%></td>
+                <td><input type="text" class="form-control" name="ccuser" value="<%=record.ccuser%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccbill.label%></td>
+                <td><input type="text" class="form-control" name="ccbill" value="<%=record.ccbill%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccbilldetails.label%></td>
+                <td><input type="text" class="form-control" name="ccbilldetails" value="<%=record.ccbilldetails%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cccontract.label%></td>
+                <td><input type="text" class="form-control" name="cccontract" value="<%=record.cccontract%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccship.label%></td>
+                <td><input type="text" class="form-control" name="ccship" value="<%=record.ccship%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccmagazine.label%></td>
+                <td><input type="text" class="form-control" name="ccmagazine" value="<%=record.ccmagazine%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccdirectory.label%></td>
+                <td><input type="text" class="form-control" name="ccdirectory" value="<%=record.ccdirectory%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccforward.label%></td>
+                <td><input type="text" class="form-control" name="ccforward" value="<%=record.ccforward%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccurgent.label%></td>
+                <td><input type="text" class="form-control" name="ccurgent" value="<%=record.ccurgent%>"/></td>
+            </tr><tr>
+                <td><%=resource.Country.label%></td>
+                <td><input type="text" class="form-control" name="country" value="<%=record.country%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cclanguage.label%></td>
+                <td><input type="text" class="form-control" name="cclanguage" value="<%=record.cclanguage%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccadditional.label%></td>
+                <td><input type="text" class="form-control" name="ccadditional" value="<%=record.ccadditional%>"/></td>
+            </tr><tr>
+                <td><%=resource.SortCriteria.label%></td>
+                <td><input type="text" class="form-control" name="sortCriteria" value="<%=record.sortCriteria%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccentdate.label%></td>
+                <td><input type="text" class="form-control" name="ccentdate" value="<%=record.ccentdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccmoddate.label%></td>
+                <td><input type="text" class="form-control" name="ccmoddate" value="<%=record.ccmoddate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccmod.label%></td>
+                <td><input type="text" class="form-control" name="ccmod" value="<%=record.ccmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cccounty.label%></td>
+                <td><input type="text" class="form-control" name="cccounty" value="<%=record.cccounty%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccstate.label%></td>
+                <td><input type="text" class="form-control" name="ccstate" value="<%=record.ccstate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccvaliddate.label%></td>
+                <td><input type="text" class="form-control" name="ccvaliddate" value="<%=record.ccvaliddate%>"/></td>
+            </tr><tr>
+                <td><%=resource.CcbillPrevious.label%></td>
+                <td><input type="text" class="form-control" name="ccbillPrevious" value="<%=record.ccbillPrevious%>"/></td>
+            </tr><tr>
+                <td><%=resource.WelcomeCrit.label%></td>
+                <td><input type="text" class="form-control" name="welcomeCrit" value="<%=record.welcomeCrit%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccmname.label%></td>
+                <td><input type="text" class="form-control" name="ccmname" value="<%=record.ccmname%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccemail.label%></td>
+                <td><input type="text" class="form-control" name="ccemail" value="<%=record.ccemail%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccaddryears.label%></td>
+                <td><input type="text" class="form-control" name="ccaddryears" value="<%=record.ccaddryears%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccsmsno.label%></td>
+                <td><input type="text" class="form-control" name="ccsmsno" value="<%=record.ccsmsno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccbilltemp.label%></td>
+                <td><input type="text" class="form-control" name="ccbilltemp" value="<%=record.ccbilltemp%>"/></td>
+            </tr><tr>
+                <td><%=resource.Userlastmod.label%></td>
+                <td><input type="text" class="form-control" name="userlastmod" value="<%=record.userlastmod%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccvalidation.label%></td>
+                <td><input type="text" class="form-control" name="ccvalidation" value="<%=record.ccvalidation%>"/></td>
+            </tr><tr>
+                <td><%=resource.CcuserInst.label%></td>
+                <td><input type="text" class="form-control" name="ccuserInst" value="<%=record.ccuserInst%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cclocation1.label%></td>
+                <td><input type="text" class="form-control" name="cclocation1" value="<%=record.cclocation1%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cclocation2.label%></td>
+                <td><input type="text" class="form-control" name="cclocation2" value="<%=record.cclocation2%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccremark.label%></td>
+                <td><input type="text" class="form-control" name="ccremark" value="<%=record.ccremark%>"/></td>
+            </tr><tr>
+                <td><%=resource.RecVersion.label%></td>
+                <td><input type="text" class="form-control" name="recVersion" value="<%=record.recVersion%>"/></td>
+            </tr><tr>
+                <td><%=resource.MaritalStatus.label%></td>
+                <td><input type="text" class="form-control" name="maritalStatus" value="<%=record.maritalStatus%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csnationality.label%></td>
+                <td><input type="text" class="form-control" name="csnationality" value="<%=record.csnationality%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cssocialsecno.label%></td>
+                <td><input type="text" class="form-control" name="cssocialsecno" value="<%=record.cssocialsecno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csdrivelicence.label%></td>
+                <td><input type="text" class="form-control" name="csdrivelicence" value="<%=record.csdrivelicence%>"/></td>
+            </tr><tr>
+                <td><%=resource.Csemployer.label%></td>
+                <td><input type="text" class="form-control" name="csemployer" value="<%=record.csemployer%>"/></td>
+            </tr><tr>
+                <td><%=resource.Employee.label%></td>
+                <td><input type="text" class="form-control" name="employee" value="<%=record.employee%>"/></td>
+            </tr><tr>
+                <td><%=resource.CompanyType.label%></td>
+                <td><input type="text" class="form-control" name="companyType" value="<%=record.companyType%>"/></td>
+            </tr><tr>
+                <td><%=resource.IdType.label%></td>
+                <td><input type="text" class="form-control" name="idType" value="<%=record.idType%>"/></td>
+            </tr><tr>
+                <td><%=resource.Passportno.label%></td>
+                <td><input type="text" class="form-control" name="passportno" value="<%=record.passportno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Birthdate.label%></td>
+                <td><input type="text" class="form-control" name="birthdate" value="<%=record.birthdate%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscompregno.label%></td>
+                <td><input type="text" class="form-control" name="cscompregno" value="<%=record.cscompregno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscomptaxno.label%></td>
+                <td><input type="text" class="form-control" name="cscomptaxno" value="<%=record.cscomptaxno%>"/></td>
+            </tr><tr>
+                <td><%=resource.Cscusttype.label%></td>
+                <td><input type="text" class="form-control" name="cscusttype" value="<%=record.cscusttype%>"/></td>
+            </tr><tr>
+                <td><%=resource.Ccsex.label%></td>
+                <td><input type="text" class="form-control" name="ccsex" value="<%=record.ccsex%>"/></td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-default">Add</button>
+        <% if(statusCode == 200) { %>
+        <button type="button" class="btn btn-default"><a href="/<%=session.previouspath%>">Back</a></button>
+        <% }else{ %>
+        <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Cancel</button>
+        <% } %>
+    </form>
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

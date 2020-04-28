@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="writePortMapper">			
+	
+	<update id="writePort">
+		update port set port_id = #{portId},
+		plcode = #{plcode},
+		hlcode = #{hlcode},
+		port_num = #{portNum},
+		port_status = #{portStatus},
+		port_statusmoddat = #{portStatusmoddat},
+		port_ki = #{portKi},
+		port_kind = #{portKind},
+		port_channels = #{portChannels},
+		port_channels_excl = #{portChannelsExcl},
+		sm_id = #{smId},
+		port_sm_requ = #{portSmRequ},
+		simpoh_id = #{simpohId},
+		simpot_id = #{simpotId},
+		simpot_batch = #{simpotBatch},
+		dn_id = #{dnId},
+		dealer_id = #{dealerId},
+		port_assign_date = #{portAssignDate},
+		port_tkey = #{portTkey},
+		port_status_requ = #{portStatusRequ},
+		port_sta_requ_date = #{portStaRequDate},
+		port_activ_date = #{portActivDate},
+		port_deactiv_date = #{portDeactivDate},
+		port_entdate = #{portEntdate},
+		port_moddate = #{portModdate},
+		port_userlastmod = #{portUserlastmod},
+		pre_activated = #{preActivated},
+		sms_update = #{smsUpdate},
+		port_ric_batch = #{portRicBatch},
+		external_ind = #{externalInd},
+		capacity = #{capacity},
+		available_capacity = #{availableCapacity},
+		prm_value_id = #{prmValueId},
+		rec_version = #{recVersion},
+		port_npcode = #{portNpcode},
+		transaction_id = #{transactionId},
+		business_unit_id = #{businessUnitId} where port_id = #{portId};
+	</update>
+
+</mapper>

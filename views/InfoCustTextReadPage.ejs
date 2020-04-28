@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<% include head %>
+</head>
+<body>
+<% include side-nav %>
+<div id="main">
+<% include header-nav %>
+<div class="container-fluid">
+<section id="main-content">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h4><%=resource.Heading%></h4></a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">	
+            <div style="width:40%">
+            <form class="form-horizontal">
+                <table class="table table-striped">
+                    <tr class="heading-tr">
+                        <th> <%=resource.Heading%></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><%=resource.CustomerId.label%></td>
+                        <td><%=record.customer_id%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text01.label%></td>
+                        <td><%=record.text01%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text02.label%></td>
+                        <td><%=record.text02%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text03.label%></td>
+                        <td><%=record.text03%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text04.label%></td>
+                        <td><%=record.text04%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text05.label%></td>
+                        <td><%=record.text05%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text06.label%></td>
+                        <td><%=record.text06%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text07.label%></td>
+                        <td><%=record.text07%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text08.label%></td>
+                        <td><%=record.text08%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text09.label%></td>
+                        <td><%=record.text09%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text10.label%></td>
+                        <td><%=record.text10%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text11.label%></td>
+                        <td><%=record.text11%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text12.label%></td>
+                        <td><%=record.text12%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text13.label%></td>
+                        <td><%=record.text13%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text14.label%></td>
+                        <td><%=record.text14%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text15.label%></td>
+                        <td><%=record.text15%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text16.label%></td>
+                        <td><%=record.text16%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text17.label%></td>
+                        <td><%=record.text17%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text18.label%></td>
+                        <td><%=record.text18%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text19.label%></td>
+                        <td><%=record.text19%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text20.label%></td>
+                        <td><%=record.text20%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text21.label%></td>
+                        <td><%=record.text21%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text22.label%></td>
+                        <td><%=record.text22%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text23.label%></td>
+                        <td><%=record.text23%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text24.label%></td>
+                        <td><%=record.text24%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text25.label%></td>
+                        <td><%=record.text25%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text26.label%></td>
+                        <td><%=record.text26%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text27.label%></td>
+                        <td><%=record.text27%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text28.label%></td>
+                        <td><%=record.text28%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text29.label%></td>
+                        <td><%=record.text29%></td>						
+                    </tr><tr>
+                        <td><%=resource.Text30.label%></td>
+                        <td><%=record.text30%></td>						
+                    </tr><tr>
+                        <td><%=resource.RecVersion.label%></td>
+                        <td><%=record.rec_version%></td>						
+                    </tr>
+                
+                </table>
+                <% if(session.user_acl=='ROLE_ADMIN') { %>
+                <button type="submit" class="btn btn-default"><a href="/writeInfoCustText?customerId=<%=record.customer_id%>">Edit</a></button>
+                <button type="submit" class="btn btn-default"><a href="/deleteInfoCustText?customerId=<%=record.customer_id%>">Delete</a></button>
+                <% } %>
+                <button type="button" class="btn btn-default" onclick="javascript:window.history.back()">Back</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+</div>
+</div>
+<% include footer %>
+</body>
+</html>

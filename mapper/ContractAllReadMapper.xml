@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="readContractAllMapper">			
+	
+	<select id="readContractAll">
+		select * from contract_all where co_id = #{coId};
+	</select>
+
+	<select id="contrDevices_WXRW3">         
+		select * from contr_devices where co_id = #{coId};
+	</select>
+  
+	<select id="contrServicesCap_NF5ZV">         
+		select * from contr_services_cap where co_id = #{coId};
+	</select>
+  
+	<select id="contractHistory_OPKSC">         
+		select * from contract_history where co_id = #{coId};
+	</select>
+  
+	<select id="infoContrCheck_WI8NI">         
+		select * from info_contr_check where co_id = #{coId};
+	</select>
+  
+	<select id="infoContrCombo_MGWXV">         
+		select * from info_contr_combo where co_id = #{coId};
+	</select>
+  
+	<select id="infoContrText_EE9RC">         
+		select * from info_contr_text where co_id = #{coId};
+	</select>
+  
+	<select id="profileService_KOQGZ">         
+		select * from profile_service where co_id = #{coId};
+	</select>
+  
+</mapper>
