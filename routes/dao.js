@@ -27,7 +27,7 @@ const createQuery = function(mapper,namespace,method,jsonObj){
     
 const options = {
   port: 1883,
-  host: 'mqtt://localhost',
+  host: 'mqtt://test.mosquitto.org',
   clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
   username: mqttUsername,
   password: mqttPassword,
