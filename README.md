@@ -15,9 +15,11 @@ Additional Funcations : <br />
 <br />
 Requirement : <br />
 <br />
-1. Install MQTT Broker (the default using mqtt://test.mosquitto.org) <br />
-2. Change the MQTT Broker address to you IP installation in file cx_replication/routes/dao.js <br />
-3. Change Security Certificate in directory cx_replication/encryption (Optional) <br />
+1. Install MySQL Server and load file import.sql <br />
+2. Install MQTT Broker (the default using mqtt://test.mosquitto.org) <br />
+3. Change configuration in file cx_replication/routes/dao.js for MySQL DB access <br />
+4. Change configuration in file cx_replication/routes/dao.js for MQTT Broker address <br />
+5. Change Security Certificate in directory cx_replication/encryption (Optional) <br />
 <br />
 Run: <br />
 <br />
