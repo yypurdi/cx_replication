@@ -15,7 +15,7 @@ Additional Funcations : <br />
 <br />
 Requirement : <br />
 <br />
-1. Install MySQL Server and load file import.sql <br />
+1. Install MySQL Server and load file import.sql (for DB Simulation) <br />
 2. Install MQTT Broker (the default using mqtt://test.mosquitto.org) <br />
 3. Change configuration in file cx_replication/routes/dao.js for MySQL DB access <br />
 4. Change configuration in file cx_replication/routes/dao.js for MQTT Broker address <br />
