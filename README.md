@@ -10,8 +10,8 @@ Base Functions : <br />
 Additional Funcations : <br />
 <br />
 1. Messaging <br />
-2. Video Conference for Agent Meeting <br />
-3. Customer Line for Customer Interactive by VoIP <br />
+2. Video Conference for Agent Meeting (WFH or Remote Work) <br />
+3. Customer Line for Customer Interactive by Video Call (for next implementation : customer face recognation) <br />
 <br />
 Requirement : <br />
 <br />
