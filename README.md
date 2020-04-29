@@ -33,3 +33,4 @@ Password : password <br />
 <br />
 Try Restfull : https://[ip_address]:3001/api-docs/ <br />
 <br />
+![Screenshot](CX_Replication.jpg)
