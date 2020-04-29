@@ -1,5 +1,6 @@
 # CX Replication
 Customer eXperience - Non Identical Replication <br />
+<img src="https://user-images.githubusercontent.com/15040338/80561867-15ea2e00-8a10-11ea-982a-471d58605ec2.jpg" width="23%"></img> 
 <br />
 Base Functions : <br />
 1. Customer Maintenance <br />
@@ -33,4 +34,3 @@ Password : password <br />
 <br />
 Try Restfull : https://[ip_address]:3001/api-docs/ <br />
 <br />
-!SampleScreenShot(https://github.com/yypurdi/cx_replication/blob/master/CX_Replication.jpg?raw=true)
