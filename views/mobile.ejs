@@ -21,8 +21,8 @@
                   <tr>
                       <td><img src="images/logo.jpg" alt="" class="logo"></td>
                       <td>
-                          <p style="font-weight: bold">KOMA Admin</p>
-                          <p style="font-size: 11px">Administrator</p>
+                          <p style="font-weight: bold">CX-Replication</p>
+                          <p style="font-size: 11px"><%=session.name%></p>
                           <p style="font-size: 11px">Online</p>
                       </td>
                   </tr>
@@ -32,6 +32,18 @@
               <li>
                   <a href="/"><span class="glyphicon glyphicon-dashboard" style="font-size: 18px;top:5px"></span>Dashboard</a>
               </li>
+              <li>
+                  <a href="/searchCustomerAll"><span class="glyphicon glyphicon-user" style="font-size: 18px;top:5px"></span>Customer Info</a>
+              </li>
+              <li>
+                  <a href="/searchContractAll"><span class="glyphicon glyphicon-user" style="font-size: 18px;top:5px"></span>Contract Info</a>
+              </li>
+              <li>
+                  <a href="#"><span class="glyphicon glyphicon-globe" style="font-size: 18px;top:5px"></span>Billing Info</a>
+              </li>
+              <li>
+                  <a href="#"><span class="glyphicon glyphicon-tags" style="font-size: 18px;top:5px"></span>Payment Info</a>
+              </li>              
               <li>
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                       <span class="glyphicon glyphicon-calendar" style="font-size: 18px;top:5px"></span>Schedulers
@@ -49,29 +61,17 @@
                       <li><a href="#"><span class="glyphicon glyphicon-usd"></span>Revenue Report</a></li>
                   </ul>
               </li>
-              <li>
-                  <a href="#"><span class="glyphicon glyphicon-user" style="font-size: 18px;top:5px"></span>Trainee</a>
-              </li>
-              <li>
-                  <a href="#"><span class="glyphicon glyphicon-user" style="font-size: 18px;top:5px"></span>Trainer</a>
-              </li>
-              <li>
-                  <a href="#"><span class="glyphicon glyphicon-globe" style="font-size: 18px;top:5px"></span>Class</a>
-              </li>
-              <li>
-                  <a href="#"><span class="glyphicon glyphicon-tags" style="font-size: 18px;top:5px"></span>Certification</a>
-              </li>
           </ul>
   
           <ul class="list-unstyled CTAs">
               <li>
-                  <a id="chatPanel" class="button_custom"><span class="glyphicon glyphicon-comment"></span>Chat</a>
+                  <a href="/searchAppContact" class="button_custom"><span class="glyphicon glyphicon-comment"></span>Chat</a>
               </li>
               <li>
-                  <a href="javascript:void(0)" class="button_custom"><span class="glyphicon glyphicon-facetime-video"></span>Video Conference</a>
+                  <a href="/searchAppRoom" class="button_custom"><span class="glyphicon glyphicon-facetime-video"></span>Video Conference</a>
               </li>
               <li>
-                  <a href="javascript:void(0)" class="button_custom"><span class="glyphicon glyphicon-copy"></span>Screen Capture</a>
+                  <a id="chatPanel" class="button_custom"><span class="glyphicon glyphicon-copy"></span>Customer Line</a>
               </li>    
           </ul>
       </nav>    
