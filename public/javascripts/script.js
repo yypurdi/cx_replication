@@ -1,32 +1,32 @@
 window.onload = function () {
          
-    new Chart(document.getElementById("box1-chart"), {
+    new Chart(document.getElementById("box2-chart"), {
         type: 'line',
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
                 data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                label: "Completed",
+                label: "Suspend",
                 borderColor: "#3e95cd",
                 fill: false
             }, {
                 data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                label: "Uncompleted",
+                label: "Active",
                 borderColor: "#8e5ea2",
                 fill: false
             }, {
                 data: [168, 170, 178, 190, 203, 276, 408, 547, 975, 1534],
-                label: "Ongoing",
+                label: "Unsuspend",
                 borderColor: "#3cba9f",
                 fill: false
             }, {
                 data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                label: "Passed In Exam",
+                label: "Deactive",
                 borderColor: "#e8c3b9",
                 fill: false
             }, {
                 data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-                label: "Failed In Exam",
+                label: "Re-Activation",
                 borderColor: "#c45850",
                 fill: false
             }
@@ -35,7 +35,7 @@ window.onload = function () {
         options: {
             title: {
                 display: true,
-                text: 'Trainee (2019)',
+                text: 'Activation',
 				fontColor: '#fff'
             },
             legend: {
@@ -61,13 +61,13 @@ window.onload = function () {
         }
     });
 
-    new Chart(document.getElementById("box2-chart"), {
+    new Chart(document.getElementById("box1-chart"), {
         type: 'bar',
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [
                 {
-                    label: "Trainer Active",
+                    label: "BillCycle",
                     backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                     data: [24, 52, 7, 7, 4]
                 }
@@ -77,7 +77,7 @@ window.onload = function () {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Trainer (2019)',
+                text: 'Customer Creation',
 				fontColor: '#fff'
             },
 			scales: {
@@ -109,7 +109,7 @@ window.onload = function () {
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
-                label: "Class Active",
+                label: "BillCycle",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                 data: [247, 526, 73, 98, 83]
             }]
@@ -118,7 +118,7 @@ window.onload = function () {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Class Room (2019)',
+                text: 'Billing',
 				fontColor: '#fff'
             },
 			scales: {
@@ -146,7 +146,7 @@ window.onload = function () {
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
-                label: "Success",
+                label: "BillCycle",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                 data: [247, 526, 73, 98, 83]
             }]
@@ -155,7 +155,7 @@ window.onload = function () {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Certification (2019)',
+                text: 'Payment',
 				fontColor: '#fff'
             },
 			scales: {
