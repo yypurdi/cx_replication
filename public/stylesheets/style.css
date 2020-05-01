@@ -4,8 +4,8 @@
 }
 
 .navbar-default {
-    background-color: #24426a;
-    border-color: #24426a;
+    background-color: #3c5772;
+    border-color: #3c5772;
 }
 
 .navbar-default .navbar-brand {
@@ -17,7 +17,7 @@
 }
 
 .navbar-default .navbar-nav>li:hover>a {
-    color: #44628a;
+    color: #6c87a2;
     background-color:#fff;
 }
 
@@ -57,7 +57,6 @@ span, a, hr {
 a,
 a:visited,
 a:hover {
-    color: #000;
     text-decoration: none;
 }
 
@@ -66,12 +65,12 @@ a:hover {
 /********** SIDE NAV BAR ***********/
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 0px;
     position: fixed;
     z-index: 1;
     top: 10px;
     left: 5px;
-    background-color: #fff;
+    background-color: #6c87a2;
     overflow-x: hidden;
     transition: 0.2s; /* disable slow motion */
     padding-top: 0px;
@@ -103,7 +102,7 @@ a:hover {
 #sidebar {
     min-width: 220px;
     max-width: 220px;
-    background: #44628a;
+    background: #3c577250;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -116,7 +115,7 @@ a:hover {
 }
 
 #sidebar .sidebar-header {
-    background: #24426a;
+    background: #3c5772;
     font-family: initial;
     font-size: 12px;
     text-align: left;    
@@ -128,7 +127,7 @@ a:hover {
 
 #sidebar ul.components {
     padding-left: 20px 0;
-    border-bottom: 1px solid #24426a;
+    border-bottom: 1px solid #3c5772;
 }
 
 #sidebar ul p {
@@ -150,7 +149,7 @@ a:hover {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #44628a;
+    background: #6c87a2;
 }
 
 a[data-toggle="collapse"] {
@@ -184,7 +183,7 @@ ul.CTAs a {
 }
 
 a.button_custom {
-    background: #24426a;
+    background: #3c5772;
     color: #fff;
 }
 
@@ -312,16 +311,21 @@ a.button_custom {
 }
 
 /*************** MAIN *************/
+body {
+	background-color:#6c87a2; /* updated */
+	color:#fff; /* updated */
+}
 
 .page-header {
     padding-bottom: 10px;
     margin: 10px 0 5px;
     border-bottom: 1px solid #eee;
+    color: white;
 }
 
 .panel-default>.panel-heading {
     color: #fff;
-    background-color: #44628a;
+    background-color: #6c87a2;
     border-color: #ddd;
 }
 
@@ -349,6 +353,7 @@ a.button_custom {
 .col-box {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #3c5772;
 }
 
 .nav-tabs {
@@ -357,10 +362,17 @@ a.button_custom {
 }
 
 .table {
-	margin-bottom:0px;	
+	margin-bottom:10px;	
 }
+
+.table > tbody > tr > td {
+	vertical-align:inherit;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {background-color: #3c577250;}
+
 .table-striped > tbody > tr:nth-of-type(1) {
-    background-color: #24426a;
+    background-color: #3c5772;
     color: white;
 	font-size: 12px;
 	text-align:center;
@@ -373,4 +385,16 @@ a.button_custom {
     border-radius: 5%;
     margin-top: 2px;
     margin-left: 5px;
+}
+
+a {
+    color: #fff;
+}
+
+.btn-default > a {
+	color: #000;
+}
+
+.pagination {
+	margin-top:5px;
 }
