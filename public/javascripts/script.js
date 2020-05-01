@@ -5,61 +5,28 @@ window.onload = function () {
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
-                data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                label: "Activate",
+                data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+                label: "Completed",
                 borderColor: "#3e95cd",
                 fill: false
             }, {
-                data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                label: "Suspend",
+                data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+                label: "Uncompleted",
                 borderColor: "#8e5ea2",
                 fill: false
             }, {
                 data: [168, 170, 178, 190, 203, 276, 408, 547, 975, 1534],
-                label: "Deactivate",
-                borderColor: "#3cba9f",
-                fill: false
-            }
-            ]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Customer'
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-
-    new Chart(document.getElementById("box2-chart"), {
-        type: 'line',
-        data: {
-            labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
-            datasets: [{
-                data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                label: "Activate",
-                borderColor: "#3e95cd",
-                fill: false
-            }, {
-                data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                label: "Suspend",
-                borderColor: "#8e5ea2",
-                fill: false
-            }, {
-                data: [168, 170, 178, 190, 203, 276, 408, 547, 975, 1534],
-                label: "Un-suspend",
+                label: "Ongoing",
                 borderColor: "#3cba9f",
                 fill: false
             }, {
                 data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                label: "Deactivate",
+                label: "Passed In Exam",
                 borderColor: "#e8c3b9",
                 fill: false
             }, {
                 data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-                label: "Re-Activate",
+                label: "Failed In Exam",
                 borderColor: "#c45850",
                 fill: false
             }
@@ -68,20 +35,81 @@ window.onload = function () {
         options: {
             title: {
                 display: true,
-                text: 'Contract'
+                text: 'Trainee (2019)',
+				fontColor: '#fff'
             },
             legend: {
                 display: false,
-            }
+            },
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					},
+					gridLines: {
+						display: true ,
+						color: "#aaa",
+						lineWidth: 0.5
+					}					
+				}],
+				xAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					}
+				}]				
+			}			
         }
     });
-	
+
+    new Chart(document.getElementById("box2-chart"), {
+        type: 'bar',
+        data: {
+            labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
+            datasets: [
+                {
+                    label: "Trainer Active",
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    data: [24, 52, 7, 7, 4]
+                }
+            ]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: 'Trainer (2019)',
+				fontColor: '#fff'
+            },
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					},
+					gridLines: {
+						display: true,
+						color: "#fff",
+						lineWidth: 0.2
+					}										
+				}],
+				xAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					},
+					gridLines: {
+						display: false,
+						color: "#fff"
+					}										
+				}]				
+			}			
+        }
+    });
+
     new Chart(document.getElementById("box3-chart"), {
         type: 'bar',
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
-                label: "Billcycle",
+                label: "Class Active",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                 data: [247, 526, 73, 98, 83]
             }]
@@ -90,8 +118,26 @@ window.onload = function () {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Billing'
-            }
+                text: 'Class Room (2019)',
+				fontColor: '#fff'
+            },
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					},
+					gridLines: {
+						display: true,
+						color: "#fff",
+						lineWidth: 0.2
+					}					
+				}],
+				xAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					}
+				}]				
+			}						
         }
     });   
 
@@ -100,7 +146,7 @@ window.onload = function () {
         data: {
             labels: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
             datasets: [{
-                label: "Billcycle",
+                label: "Success",
                 backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                 data: [247, 526, 73, 98, 83]
             }]
@@ -109,8 +155,26 @@ window.onload = function () {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Payment'
-            }
+                text: 'Certification (2019)',
+				fontColor: '#fff'
+            },
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					},
+					gridLines: {
+						display: true,
+						color: "#fff",
+						lineWidth: 0.2
+					}					
+				}],
+				xAxes: [{
+					ticks: {
+						fontColor: '#fff'
+					}
+				}]				
+			}						
         }
     });
 }
